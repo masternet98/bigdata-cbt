@@ -657,6 +657,14 @@ body {
 <div class="header">
   <h1>빅데이터분석기사 필기 CBT v2</h1>
   <span class="info" id="headerInfo"></span>
+  <div id="authArea" style="display:inline-flex;align-items:center;gap:8px;margin-left:auto;">
+    <span id="syncIndicator" style="display:none;font-size:0.75rem;"></span>
+    <button id="loginBtn" onclick="firebaseLogin()" style="background:#fff;color:#333;border:1px solid #ddd;padding:4px 12px;border-radius:16px;font-size:0.75rem;cursor:pointer;white-space:nowrap;">Google 로그인</button>
+    <span id="userInfo" style="display:none;font-size:0.75rem;color:#fff;white-space:nowrap;">
+      <span id="userName"></span>
+      <button onclick="firebaseLogout()" style="background:rgba(255,255,255,0.2);color:#fff;border:1px solid rgba(255,255,255,0.3);padding:2px 8px;border-radius:12px;font-size:0.7rem;cursor:pointer;margin-left:4px;">로그아웃</button>
+    </span>
+  </div>
 </div>
 
 <!-- 설정 화면 -->
@@ -14365,8 +14373,205 @@ window.QUESTION_BANK = {
 };
 
 </script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 <script src="cbt_userdata.js"></script>
 <script>
+// === Firebase 초기화 ===
+var firebaseConfig = {
+  apiKey: "AIzaSyDrxA0JpgzKbBAmSOXxmUxqdGbNqwj0UCs",
+  authDomain: "bigdata-cbt-f26c5.firebaseapp.com",
+  projectId: "bigdata-cbt-f26c5",
+  storageBucket: "bigdata-cbt-f26c5.firebasestorage.app",
+  messagingSenderId: "1086798637811",
+  appId: "1:1086798637811:web:736e3032afb9b2a7a56586",
+  measurementId: "G-N5QW7BXC9N"
+};
+firebase.initializeApp(firebaseConfig);
+var fbDb = firebase.firestore();
+var fbAuth = firebase.auth();
+var currentUser = null;
+var _cloudSyncEnabled = false;
+var _syncStatus = 'idle'; // 'idle', 'syncing', 'done', 'error'
+
+// === Firebase 인증 ===
+function firebaseLogin() {
+  var provider = new firebase.auth.GoogleAuthProvider();
+  fbAuth.signInWithPopup(provider).catch(function(err) {
+    console.error('Login error:', err);
+    alert('로그인 실패: ' + err.message);
+  });
+}
+
+function firebaseLogout() {
+  fbAuth.signOut();
+}
+
+function updateLoginUI() {
+  var loginBtn = document.getElementById('loginBtn');
+  var userInfo = document.getElementById('userInfo');
+  var userName = document.getElementById('userName');
+  var syncInd = document.getElementById('syncIndicator');
+  if (!loginBtn) return;
+
+  if (currentUser) {
+    loginBtn.style.display = 'none';
+    userInfo.style.display = 'inline';
+    userName.textContent = currentUser.displayName || currentUser.email;
+    syncInd.style.display = 'inline';
+    _cloudSyncEnabled = true;
+  } else {
+    loginBtn.style.display = 'inline';
+    userInfo.style.display = 'none';
+    syncInd.style.display = 'none';
+    _cloudSyncEnabled = false;
+  }
+}
+
+function updateSyncIndicator(status) {
+  _syncStatus = status;
+  var el = document.getElementById('syncIndicator');
+  if (!el) return;
+  if (status === 'syncing') {
+    el.textContent = '동기화 중...';
+    el.style.color = '#ffe066';
+  } else if (status === 'done') {
+    el.textContent = '동기화 완료';
+    el.style.color = '#a5d6a7';
+    setTimeout(function() {
+      if (_syncStatus === 'done') {
+        el.textContent = '클라우드 연결';
+        el.style.color = '#a5d6a7';
+      }
+    }, 3000);
+  } else if (status === 'error') {
+    el.textContent = '동기화 오류';
+    el.style.color = '#ef9a9a';
+  } else {
+    el.textContent = '클라우드 연결';
+    el.style.color = '#a5d6a7';
+  }
+}
+
+// === Firebase 클라우드 동기화 ===
+var CLOUD_KEYS = ['cbt_wrong_notes', 'cbt_edits', 'cbt_memos', 'cbt_ocr_flags'];
+var _cloudSaveTimers = {};
+
+function saveToCloud(key) {
+  if (!_cloudSyncEnabled || !currentUser) return;
+  clearTimeout(_cloudSaveTimers[key]);
+  _cloudSaveTimers[key] = setTimeout(function() {
+    updateSyncIndicator('syncing');
+    try {
+      var raw = localStorage.getItem(key);
+      var data = raw ? JSON.parse(raw) : {};
+      fbDb.collection('users').doc(currentUser.uid)
+        .collection('data').doc(key)
+        .set({
+          data: data,
+          updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+        })
+        .then(function() {
+          updateSyncIndicator('done');
+        })
+        .catch(function(err) {
+          console.error('Cloud save error for ' + key + ':', err);
+          updateSyncIndicator('error');
+        });
+    } catch (e) {
+      console.error('Cloud save parse error:', e);
+      updateSyncIndicator('error');
+    }
+  }, 3000);
+}
+
+function loadFromCloud() {
+  if (!currentUser) return;
+  updateSyncIndicator('syncing');
+
+  var promises = CLOUD_KEYS.map(function(key) {
+    return fbDb.collection('users').doc(currentUser.uid)
+      .collection('data').doc(key).get()
+      .then(function(doc) {
+        if (doc.exists && doc.data().data) {
+          mergeCloudData(key, doc.data().data);
+        }
+      });
+  });
+
+  Promise.all(promises)
+    .then(function() {
+      updateSyncIndicator('done');
+      // Refresh UI if on setup screen
+      if (document.getElementById('setupScreen') &&
+          document.getElementById('setupScreen').style.display !== 'none') {
+        // update any displayed counts
+      }
+    })
+    .catch(function(err) {
+      console.error('Cloud load error:', err);
+      updateSyncIndicator('error');
+    });
+}
+
+function mergeCloudData(key, cloudData) {
+  if (!cloudData || typeof cloudData !== 'object') return;
+
+  var raw = localStorage.getItem(key);
+  var localData = raw ? JSON.parse(raw) : {};
+
+  if (key === 'cbt_edits') {
+    // edits: timestamp-based merge (newer wins)
+    var merged = Object.assign({}, localData);
+    Object.keys(cloudData).forEach(function(qKey) {
+      if (!merged[qKey]) {
+        merged[qKey] = cloudData[qKey];
+      } else {
+        var localTime = merged[qKey].updatedAt || '';
+        var cloudTime = cloudData[qKey].updatedAt || '';
+        if (cloudTime > localTime) {
+          merged[qKey] = cloudData[qKey];
+        }
+      }
+    });
+    localStorage.setItem(key, JSON.stringify(merged));
+  } else if (key === 'cbt_wrong_notes') {
+    // wrongNotes: merge, keep higher wrongCount or newer lastWrongAt
+    var merged = Object.assign({}, localData);
+    Object.keys(cloudData).forEach(function(qKey) {
+      if (!merged[qKey]) {
+        merged[qKey] = cloudData[qKey];
+      } else {
+        // Keep the one with more data (higher total attempts)
+        var localTotal = (merged[qKey].wrongCount || 0) + (merged[qKey].correctCount || 0);
+        var cloudTotal = (cloudData[qKey].wrongCount || 0) + (cloudData[qKey].correctCount || 0);
+        if (cloudTotal > localTotal) {
+          merged[qKey] = cloudData[qKey];
+        } else if (cloudTotal === localTotal) {
+          var lt = merged[qKey].lastWrongAt || '';
+          var ct = cloudData[qKey].lastWrongAt || '';
+          if (ct > lt) merged[qKey] = cloudData[qKey];
+        }
+      }
+    });
+    localStorage.setItem(key, JSON.stringify(merged));
+  } else {
+    // memos, ocrFlags: simple merge (cloud fills gaps, local preserved)
+    var merged = Object.assign({}, cloudData, localData);
+    localStorage.setItem(key, JSON.stringify(merged));
+  }
+}
+
+// Auth state listener
+fbAuth.onAuthStateChanged(function(user) {
+  currentUser = user;
+  updateLoginUI();
+  if (user) {
+    loadFromCloud();
+  }
+});
+
 // ===== 스토리지 추상 레이어 =====
 // localStorage 사용 불가 시(미리보기 등) 메모리 폴백
 var _memoryStore = {};
@@ -14427,6 +14632,7 @@ function getWrongNotes() {
 
 function saveWrongNotes(notes) {
   store.setItem('cbt_wrong_notes', JSON.stringify(notes));
+  saveToCloud('cbt_wrong_notes');
 }
 
 function clearWrongNotes() {
@@ -14480,6 +14686,7 @@ function saveEdit(questionKey, editData) {
   editData.updatedAt = new Date().toISOString();
   edits[questionKey] = editData;
   store.setItem('cbt_edits', JSON.stringify(edits));
+  saveToCloud('cbt_edits');
 }
 
 function deleteEdit(questionKey) {
@@ -14634,11 +14841,12 @@ function saveMemo(questionKey, memoText) {
     delete memos[questionKey];
   }
   store.setItem('cbt_memos', JSON.stringify(memos));
+  saveToCloud('cbt_memos');
 }
 
 // ===== OCR 플래그 =====
 function getOcrFlags(){try{return JSON.parse(store.getItem('cbt_ocr_flags'))||{}}catch(e){return{}}}
-function setOcrFlag(questionKey,flagged){var flags=getOcrFlags();if(flagged){flags[questionKey]=true}else{delete flags[questionKey]}store.setItem('cbt_ocr_flags',JSON.stringify(flags))}
+function setOcrFlag(questionKey,flagged){var flags=getOcrFlags();if(flagged){flags[questionKey]=true}else{delete flags[questionKey]}store.setItem('cbt_ocr_flags',JSON.stringify(flags));saveToCloud('cbt_ocr_flags')}
 function isOcrFlagged(questionKey){return !!getOcrFlags()[questionKey]}
 function getOcrFlagCount(){return Object.keys(getOcrFlags()).length}
 function updateOcrCountDisplay(){var el=document.getElementById('ocrFlagCountSetup');if(el)el.textContent=getOcrFlagCount()}
@@ -14965,6 +15173,8 @@ function importNotes(event) {
         }
         renderNotesList();
         updateOcrCountDisplay();
+        // Sync all imported data to cloud
+        CLOUD_KEYS.forEach(function(k) { saveToCloud(k); });
         if (!hasConflicts) {
           alert('데이터를 가져왔습니다. (오답노트 + 수정사항 + 메모 + OCR플래그)');
         }
@@ -14976,6 +15186,8 @@ function importNotes(event) {
         }
         saveWrongNotes(current);
         renderNotesList();
+        // Sync imported data to cloud
+        CLOUD_KEYS.forEach(function(k) { saveToCloud(k); });
         alert('오답노트를 가져왔습니다.');
       }
     } catch (err) {
