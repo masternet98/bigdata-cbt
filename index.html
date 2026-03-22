@@ -161,6 +161,48 @@ body {
 .stat-bar-green { background: #0f9d58; }
 .stat-bar-gray { background: #ccc; }
 
+/* 과목별 접기/펼치기 */
+.subject-stat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  margin-bottom: 4px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+.subject-stat-header:hover { background: #e8eaed; }
+.subject-stat-header .stat-toggle {
+  font-size: 0.7rem;
+  color: #666;
+  flex-shrink: 0;
+  width: 16px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.subject-stat-header.expanded .stat-toggle { transform: rotate(90deg); }
+.subject-stat-header .stat-subject-name {
+  flex: 1;
+  font-weight: 600;
+  font-size: 0.9rem;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.subject-stat-details {
+  display: none;
+  padding: 4px 0 8px 28px;
+}
+.subject-stat-details.show { display: block; }
+.subject-stat-details .chapter-stat-item {
+  margin-bottom: 6px;
+  font-size: 0.8rem;
+}
+
 /* 퀴즈 영역 */
 .quiz-container {
   max-width: 800px;
@@ -14893,37 +14935,88 @@ function renderChapterStats() {
     return;
   }
 
-  let html = '<div class="chapter-stats"><h3>장별 오답률 현황</h3>';
+  // 과목별로 그룹핑
+  var subjectGroups = {};
+  var SUBJECT_ORDER = ['제1과목', '제2과목', '제3과목', '제4과목'];
 
-  keys.forEach(key => {
-    const s = stats[key];
-    const total = s.totalWrong + s.totalCorrect;
-    const wrongRate = total > 0 ? Math.round((s.totalWrong / total) * 100) : 0;
-
-    let colorClass, barClass;
-    if (total === 0) {
-      colorClass = 'stat-color-gray';
-      barClass = 'stat-bar-gray';
-    } else if (wrongRate > 50) {
-      colorClass = 'stat-color-red';
-      barClass = 'stat-bar-red';
-    } else if (wrongRate >= 30) {
-      colorClass = 'stat-color-orange';
-      barClass = 'stat-bar-orange';
-    } else {
-      colorClass = 'stat-color-green';
-      barClass = 'stat-bar-green';
+  keys.forEach(function(key) {
+    var s = stats[key];
+    var subName = s.subjectName || '기타';
+    // 과목명 축약 (제1과목 빅데이터 분석 기획 → 제1과목)
+    var subKey = '';
+    for (var i = 0; i < SUBJECT_ORDER.length; i++) {
+      if (subName.indexOf(SUBJECT_ORDER[i]) >= 0) { subKey = SUBJECT_ORDER[i]; break; }
     }
+    if (!subKey) subKey = subName;
 
-    html += '<div class="chapter-stat-item">';
-    html += '<span class="stat-label">' + escapeHtml(key) + '</span>';
+    if (!subjectGroups[subKey]) {
+      subjectGroups[subKey] = { name: subName, totalWrong: 0, totalCorrect: 0, chapters: [] };
+    }
+    subjectGroups[subKey].totalWrong += s.totalWrong;
+    subjectGroups[subKey].totalCorrect += s.totalCorrect;
+    subjectGroups[subKey].chapters.push({ key: key, stats: s });
+  });
+
+  let html = '<div class="chapter-stats"><h3>과목별 오답률 현황</h3>';
+
+  SUBJECT_ORDER.forEach(function(subKey) {
+    var g = subjectGroups[subKey];
+    if (!g) return;
+
+    var total = g.totalWrong + g.totalCorrect;
+    var wrongRate = total > 0 ? Math.round((g.totalWrong / total) * 100) : 0;
+    var colorClass = getStatColorClass(wrongRate, total);
+    var barClass = getStatBarClass(wrongRate, total);
+    var sid = 'subjStats_' + subKey.replace(/[^a-zA-Z0-9가-힣]/g, '');
+
+    // 과목 요약 헤더 (클릭 시 접기/펼치기)
+    html += '<div class="subject-stat-header" onclick="toggleSubjectStats(\'' + sid + '\', this)">';
+    html += '<span class="stat-toggle">&#9654;</span>';
+    html += '<span class="stat-subject-name">' + escapeHtml(g.name) + '</span>';
     html += '<div class="stat-bar-bg"><div class="stat-bar-fill ' + barClass + '" style="width:' + wrongRate + '%"></div></div>';
-    html += '<span class="stat-value ' + colorClass + '">오답률 ' + wrongRate + '% (' + s.totalWrong + '/' + total + ')</span>';
+    html += '<span class="stat-value ' + colorClass + '">오답률 ' + wrongRate + '% (' + g.totalWrong + '/' + total + ')</span>';
+    html += '</div>';
+
+    // 세부 장별 (기본 숨김)
+    html += '<div class="subject-stat-details" id="' + sid + '">';
+    g.chapters.forEach(function(ch) {
+      var chTotal = ch.stats.totalWrong + ch.stats.totalCorrect;
+      var chRate = chTotal > 0 ? Math.round((ch.stats.totalWrong / chTotal) * 100) : 0;
+      var chColor = getStatColorClass(chRate, chTotal);
+      var chBar = getStatBarClass(chRate, chTotal);
+
+      html += '<div class="chapter-stat-item">';
+      html += '<span class="stat-label">' + escapeHtml(ch.stats.chapterName) + '</span>';
+      html += '<div class="stat-bar-bg"><div class="stat-bar-fill ' + chBar + '" style="width:' + chRate + '%"></div></div>';
+      html += '<span class="stat-value ' + chColor + '">오답률 ' + chRate + '% (' + ch.stats.totalWrong + '/' + chTotal + ')</span>';
+      html += '</div>';
+    });
     html += '</div>';
   });
 
   html += '</div>';
   area.innerHTML = html;
+}
+
+function getStatColorClass(wrongRate, total) {
+  if (total === 0) return 'stat-color-gray';
+  if (wrongRate > 50) return 'stat-color-red';
+  if (wrongRate >= 30) return 'stat-color-orange';
+  return 'stat-color-green';
+}
+
+function getStatBarClass(wrongRate, total) {
+  if (total === 0) return 'stat-bar-gray';
+  if (wrongRate > 50) return 'stat-bar-red';
+  if (wrongRate >= 30) return 'stat-bar-orange';
+  return 'stat-bar-green';
+}
+
+function toggleSubjectStats(id, headerEl) {
+  var detail = document.getElementById(id);
+  if (!detail) return;
+  detail.classList.toggle('show');
+  headerEl.classList.toggle('expanded');
 }
 
 // ===== 오답노트 패널 =====
