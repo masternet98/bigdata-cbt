@@ -14502,12 +14502,14 @@ function loadFromCloud() {
 
   Promise.all(promises)
     .then(function() {
+      // 로컬에 있는 기존 데이터를 클라우드에 업로드 (최초 로그인 시 동기화)
+      CLOUD_KEYS.forEach(function(k) {
+        var raw = localStorage.getItem(k);
+        if (raw && raw !== '{}') {
+          saveToCloud(k);
+        }
+      });
       updateSyncIndicator('done');
-      // Refresh UI if on setup screen
-      if (document.getElementById('setupScreen') &&
-          document.getElementById('setupScreen').style.display !== 'none') {
-        // update any displayed counts
-      }
     })
     .catch(function(err) {
       console.error('Cloud load error:', err);
