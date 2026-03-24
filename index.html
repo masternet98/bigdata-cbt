@@ -14424,6 +14424,7 @@ window.QUESTION_BANK = {
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked@15.0.0/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/turndown@7.2.0/dist/turndown.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
@@ -16552,6 +16553,37 @@ function openMemoEdit() {
   memoArea.style.display = 'block';
   document.getElementById('memoTextarea').focus();
 }
+
+// 메모 textarea 붙여넣기 시 HTML→마크다운 변환
+(function(){
+  var td = new TurndownService({headingStyle:'atx', bulletListMarker:'-', codeBlockStyle:'fenced'});
+  // KaTeX 렌더링된 수식을 원본 LaTeX로 보존
+  td.addRule('katexBlock', {
+    filter: function(node){ return node.classList && node.classList.contains('katex-display'); },
+    replacement: function(content, node){
+      var tex = node.querySelector('annotation[encoding="application/x-tex"]');
+      return tex ? '\n$$' + tex.textContent + '$$\n' : content;
+    }
+  });
+  td.addRule('katexInline', {
+    filter: function(node){ return node.classList && node.classList.contains('katex'); },
+    replacement: function(content, node){
+      var tex = node.querySelector('annotation[encoding="application/x-tex"]');
+      return tex ? '$' + tex.textContent + '$' : content;
+    }
+  });
+  var ta = document.getElementById('memoTextarea');
+  if(ta) ta.addEventListener('paste', function(e){
+    var html = e.clipboardData && e.clipboardData.getData('text/html');
+    if(html && html.trim()){
+      e.preventDefault();
+      var md = td.turndown(html);
+      var start = this.selectionStart, end = this.selectionEnd;
+      this.value = this.value.substring(0,start) + md + this.value.substring(end);
+      this.selectionStart = this.selectionEnd = start + md.length;
+    }
+  });
+})();
 
 function saveMemoFromForm() {
   var q = state.questions[state.currentIndex];
