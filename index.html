@@ -16400,6 +16400,7 @@ function renderMathInText(text) {
     try { return katex.renderToString(tex.trim(), {displayMode:false, throwOnError:false}); }
     catch(e) { return m; }
   });
+  html = html.replace(/\n/g, '<br>');
   return html;
 }
 
