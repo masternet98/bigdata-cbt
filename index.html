@@ -674,15 +674,9 @@ body {
 .nav-panel-chapter .ch-buttons button.has-memo { box-shadow: 0 0 0 2px #1a73e8 inset; }
 .nav-panel-legend .leg-item .leg-dot.dot-memo { background: #1a73e8; }
 
-.btn-ocr-flag{background:none;border:1px solid #ccc;padding:2px 8px;border-radius:4px;cursor:pointer;font-size:0.75rem;color:#666;margin-left:6px;transition:all 0.15s}
-.btn-ocr-flag:hover{border-color:#e67e22;color:#e67e22}
-.btn-ocr-flag.flagged{background:#fff3e0;border-color:#e67e22;color:#e67e22;font-weight:600}
-.question-card.ocr-flagged{border-left:4px solid #e67e22}
-.badge-ocr{background:#e67e22;color:#fff;padding:2px 8px;border-radius:10px;font-size:0.75rem;font-weight:600;margin-left:6px}
-.ocr-flagged-nav{box-shadow:0 0 0 2px #e67e22 inset !important}
-.leg-dot.dot-ocr{background:#e67e22;border-color:#e67e22}
-.ocr-batch-bar{background:#fff3e0;border:1px solid #e67e22;border-radius:8px;padding:10px 16px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;font-size:0.85rem}
-.ocr-batch-bar .ocr-batch-info{color:#e67e22;font-weight:600}
+.btn-bookmark { background: none; border: 1px solid #ccc; padding: 2px 8px; border-radius: 4px; cursor: pointer; font-size: 1.1rem; color: #999; margin-left: 6px; }
+.btn-bookmark:hover { border-color: #f9ab00; color: #f9ab00; }
+.btn-bookmark.active { color: #f9ab00; border-color: #f9ab00; }
 .conflict-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:10000;display:flex;align-items:center;justify-content:center}
 .conflict-dialog{background:#fff;border-radius:12px;max-width:700px;width:95%;max-height:80vh;overflow-y:auto;padding:24px;box-shadow:0 8px 32px rgba(0,0,0,0.2)}
 .conflict-dialog h2{margin:0 0 16px;font-size:1.1rem;color:#333}
@@ -785,15 +779,19 @@ body {
         <button class="btn btn-secondary" onclick="exportUserDataJS()" style="padding:8px 16px;font-size:0.85rem;">사용자 데이터 내보내기</button>
       </div>
       <p style="margin:10px 0 0;font-size:0.8rem;color:#666;line-height:1.5;">
-JSON 내보내기: 전체 데이터(오답+수정+메모+OCR) 백업 (수동 가져오기 필요)<br>
+JSON 내보내기: 전체 데이터(오답+수정+메모) 백업 (수동 가져오기 필요)<br>
 사용자 데이터 내보내기: 수정+메모를 cbt_userdata.js로 저장 (같은 폴더에 두면 자동 로드)
 </p>
-      <div style="margin-top:10px;padding-top:10px;border-top:1px solid #ddd;">
-        <button class="btn" onclick="startOcrBatchEdit()" style="padding:8px 16px;font-size:0.85rem;background:#fff3e0;color:#e67e22;border:1px solid #e67e22;">
-          OCR 오류 일괄 수정 (<span id="ocrFlagCountSetup">0</span>개)
-        </button>
-      </div>
     </div>
+  </div>
+  <div id="adminPanel" style="display:none; margin-top: 12px; padding: 12px; background: #fff3e0; border-radius: 8px;">
+    <h4 style="margin-bottom:8px; color:#e65100;">관리자 도구</h4>
+    <button class="btn btn-warning" onclick="exportMergedQuestionsJS()" style="padding:8px 16px;">수정본 반영 questions.js 내보내기</button>
+    <span id="editCountDisplay" style="margin-left:8px;font-size:0.85rem;color:#666;"></span>
+  </div>
+  <div id="bookmarkResumeArea" style="display:none; margin-top:16px;">
+    <h4 style="margin-bottom:8px;">북마크 이어하기</h4>
+    <div id="bookmarkList"></div>
   </div>
 </div>
 
@@ -841,13 +839,6 @@ JSON 내보내기: 전체 데이터(오답+수정+메모+OCR) 백업 (수동 가
     <h3>문제 목록</h3>
     <button class="close-btn" onclick="toggleNavPanel()">&#10005;</button>
   </div>
-  <div style="padding:8px 16px;border-bottom:1px solid #eee;flex-shrink:0;">
-    <label style="font-size:0.8rem;display:flex;align-items:center;gap:6px;cursor:pointer;">
-      <input type="checkbox" id="navOcrFilter" onchange="renderNavPanel()">
-      <span style="color:#e67e22;font-weight:600;">OCR 오류만 보기</span>
-      <span id="navOcrCount" style="font-size:0.75rem;color:#999;"></span>
-    </label>
-  </div>
   <div class="nav-panel-body" id="navPanelBody"></div>
   <div class="nav-panel-legend">
     <div class="leg-item"><div class="leg-dot dot-current"></div>현재</div>
@@ -856,7 +847,6 @@ JSON 내보내기: 전체 데이터(오답+수정+메모+OCR) 백업 (수동 가
     <div class="leg-item"><div class="leg-dot dot-wrong"></div>오답</div>
     <div class="leg-item"><div class="leg-dot dot-none"></div>미응답</div>
     <div class="leg-item"><div class="leg-dot dot-memo"></div>메모</div>
-    <div class="leg-item"><div class="leg-dot dot-ocr"></div>OCR오류</div>
   </div>
 </div>
 
@@ -14509,7 +14499,7 @@ function updateSyncIndicator(status) {
 }
 
 // === Firebase 클라우드 동기화 ===
-var CLOUD_KEYS = ['cbt_wrong_notes', 'cbt_edits', 'cbt_memos', 'cbt_ocr_flags'];
+var CLOUD_KEYS = ['cbt_wrong_notes', 'cbt_edits', 'cbt_memos', 'cbt_bookmarks'];
 var _cloudSaveTimers = {};
 
 function saveToCloud(key) {
@@ -14613,7 +14603,7 @@ function mergeCloudData(key, cloudData) {
     });
     localStorage.setItem(key, JSON.stringify(merged));
   } else {
-    // memos, ocrFlags: simple merge (cloud fills gaps, local preserved)
+    // memos, bookmarks: simple merge (cloud fills gaps, local preserved)
     var merged = Object.assign({}, cloudData, localData);
     localStorage.setItem(key, JSON.stringify(merged));
   }
@@ -14728,7 +14718,7 @@ function updateWrongNotes(questions, answers) {
   saveWrongNotes(notes);
 }
 
-// ===== 문제 수정 (OCR 오류 수정) =====
+// ===== 문제 수정 =====
 function getEdits() {
   try {
     return JSON.parse(store.getItem('cbt_edits')) || {};
@@ -14900,12 +14890,64 @@ function saveMemo(questionKey, memoText) {
   saveToCloud('cbt_memos');
 }
 
-// ===== OCR 플래그 =====
-function getOcrFlags(){try{return JSON.parse(store.getItem('cbt_ocr_flags'))||{}}catch(e){return{}}}
-function setOcrFlag(questionKey,flagged){var flags=getOcrFlags();if(flagged){flags[questionKey]=true}else{delete flags[questionKey]}store.setItem('cbt_ocr_flags',JSON.stringify(flags));saveToCloud('cbt_ocr_flags')}
-function isOcrFlagged(questionKey){return !!getOcrFlags()[questionKey]}
-function getOcrFlagCount(){return Object.keys(getOcrFlags()).length}
-function updateOcrCountDisplay(){var el=document.getElementById('ocrFlagCountSetup');if(el)el.textContent=getOcrFlagCount()}
+// ===== Admin Mode =====
+var isAdminMode = new URLSearchParams(window.location.search).get('admin') === '1';
+
+// ===== 북마크 =====
+function getBookmarks() {
+  try { return JSON.parse(store.getItem('cbt_bookmarks')) || {}; }
+  catch(e) { return {}; }
+}
+
+function setBookmark(sectionKey, questionIndex) {
+  var bookmarks = getBookmarks();
+  var q = state.questions[questionIndex];
+  bookmarks[sectionKey] = {
+    index: questionIndex,
+    questionKey: q ? q.key : '',
+    name: buildBookmarkName(questionIndex),
+    savedAt: new Date().toISOString()
+  };
+  store.setItem('cbt_bookmarks', JSON.stringify(bookmarks));
+  saveToCloud('cbt_bookmarks');
+}
+
+function removeBookmark(sectionKey) {
+  var bookmarks = getBookmarks();
+  delete bookmarks[sectionKey];
+  store.setItem('cbt_bookmarks', JSON.stringify(bookmarks));
+  saveToCloud('cbt_bookmarks');
+}
+
+function buildBookmarkName(questionIndex) {
+  var q = state.questions[questionIndex];
+  if (!q) return '';
+  return (questionIndex + 1) + '번 문제';
+}
+
+function getCurrentSectionKey() {
+  var mode = state.mode;
+  if (mode === 'exam') {
+    var examSel = document.getElementById('examSelect');
+    var chapSel = document.getElementById('chapterSelect');
+    return 'exam_' + (examSel ? examSel.value : '') + '_' + (chapSel ? chapSel.value : '');
+  } else {
+    var subjSel = document.getElementById('subjectSelect');
+    var chapSel2 = document.getElementById('chapterSelect');
+    return 'subj_' + (subjSel ? subjSel.value : '') + '_' + (chapSel2 ? chapSel2.value : '');
+  }
+}
+
+function toggleBookmark() {
+  var sectionKey = getCurrentSectionKey();
+  var bookmarks = getBookmarks();
+  if (bookmarks[sectionKey] && bookmarks[sectionKey].index === state.currentIndex) {
+    removeBookmark(sectionKey);
+  } else {
+    setBookmark(sectionKey, state.currentIndex);
+  }
+  renderQuestion();
+}
 
 function toggleDataManage() {
   var panel = document.getElementById('dataManagePanel');
@@ -15207,8 +15249,7 @@ function exportNotes() {
     version: 2,
     wrongNotes: getWrongNotes(),
     edits: getEdits(),
-    memos: getMemos(),
-    ocrFlags: getOcrFlags()
+    memos: getMemos()
   };
   const json = JSON.stringify(data, null, 2);
   const blob = new Blob([json], { type: 'application/json' });
@@ -15289,17 +15330,11 @@ function importNotes(event) {
           }
           store.setItem('cbt_memos', JSON.stringify(currentMemos));
         }
-        if (imported.ocrFlags) {
-          var currentFlags = getOcrFlags();
-          for (var k in imported.ocrFlags) { currentFlags[k] = imported.ocrFlags[k]; }
-          store.setItem('cbt_ocr_flags', JSON.stringify(currentFlags));
-        }
         renderNotesList();
-        updateOcrCountDisplay();
         // Sync all imported data to cloud
         CLOUD_KEYS.forEach(function(k) { saveToCloud(k); });
         if (!hasConflicts) {
-          alert('데이터를 가져왔습니다. (오답노트 + 수정사항 + 메모 + OCR플래그)');
+          alert('데이터를 가져왔습니다. (오답노트 + 수정사항 + 메모)');
         }
       } else {
         // Version 1: wrongNotes only (flat object)
@@ -15498,7 +15533,17 @@ function init() {
 
   checkSavedState();
   renderChapterStats();
-  updateOcrCountDisplay();
+
+  // Admin mode UI
+  if (isAdminMode) {
+    var ap = document.getElementById('adminPanel');
+    if (ap) {
+      ap.style.display = 'block';
+      var ec = Object.keys(getEdits()).length;
+      document.getElementById('editCountDisplay').textContent = '현재 수정: ' + ec + '건';
+    }
+  }
+  renderBookmarkList();
 
   // cbt_userdata.js 자동 로드
   if (window.CBT_USER_DATA && typeof window.CBT_USER_DATA === 'object') {
@@ -15755,6 +15800,11 @@ function startQuiz() {
 
   state.questions = questions;
   state.currentIndex = 0;
+  // 북마크 이어하기 지원
+  if (typeof state.resumeIndex === 'number' && state.resumeIndex >= 0 && state.resumeIndex < questions.length) {
+    state.currentIndex = state.resumeIndex;
+  }
+  delete state.resumeIndex;
   state.answers = {};
   state.checked = {};
   state.mode = mode;
@@ -15996,9 +16046,15 @@ function renderQuestion() {
   if (hasEdit) {
     html += '<span class="badge-edited">[수정됨]</span>';
   }
-  html += '<button class="btn-edit" onclick="enterEditMode()">수정</button>';
-  var ocrFlagged = isOcrFlagged(q.key);
-  html += '<button class="btn-ocr-flag' + (ocrFlagged ? ' flagged' : '') + '" onclick="toggleOcrFlag()">' + (ocrFlagged ? 'OCR오류' : 'OCR오류') + '</button>';
+  if (isAdminMode) {
+    html += '<button class="btn-edit" onclick="enterEditMode()">수정</button>';
+    var sectionKey = getCurrentSectionKey();
+    var bookmarks = getBookmarks();
+    var isBookmarked = bookmarks[sectionKey] && bookmarks[sectionKey].index === state.currentIndex;
+    html += '<button class="btn-bookmark' + (isBookmarked ? ' active' : '') + '" onclick="toggleBookmark()" title="북마크">';
+    html += isBookmarked ? '★' : '☆';
+    html += '</button>';
+  }
   html += '</div>';
   html += '<div class="question-text">' + escapeHtml(q.text) + '</div>';
   if (q.quote) {
@@ -16031,18 +16087,6 @@ function renderQuestion() {
   }
 
   card.innerHTML = html;
-  if(isOcrFlagged(q.key)){card.classList.add('ocr-flagged')}else{card.classList.remove('ocr-flagged')}
-
-  // OCR batch bar
-  var ocrBatchBar = document.getElementById('ocrBatchBar');
-  if(state.mode==='ocr_batch'){
-    if(!ocrBatchBar){
-      ocrBatchBar=document.createElement('div');ocrBatchBar.id='ocrBatchBar';ocrBatchBar.className='ocr-batch-bar';
-      document.getElementById('questionCard').parentNode.insertBefore(ocrBatchBar,document.getElementById('questionCard'));
-    }
-    ocrBatchBar.innerHTML='<span class="ocr-batch-info">OCR 오류 일괄 수정 ('+(state.currentIndex+1)+'/'+state.questions.length+')</span><button class="btn btn-secondary" onclick="exitOcrBatchMode()" style="padding:6px 12px;font-size:0.8rem;">종료</button>';
-    ocrBatchBar.style.display='flex';
-  }else if(ocrBatchBar){ocrBatchBar.style.display='none'}
 
   // 메모 버튼 상태 업데이트
   var memoBtn = document.getElementById('memoBtn');
@@ -16073,13 +16117,6 @@ function renderNavPanel() {
   var body = document.getElementById('navPanelBody');
   var idx = state.currentIndex;
   var memos = getMemos();
-  var ocrFlags = getOcrFlags();
-  var ocrFilterEl = document.getElementById('navOcrFilter');
-  var ocrOnly = ocrFilterEl && ocrFilterEl.checked;
-  var ocrCount = 0;
-  state.questions.forEach(function(qq){if(ocrFlags[qq.key])ocrCount++});
-  var ocrCountEl = document.getElementById('navOcrCount');
-  if(ocrCountEl)ocrCountEl.textContent='('+ocrCount+'개)';
   var chapters = {};
   state.questions.forEach(function(qq, i) {
     var chKey = qq.chapterName;
@@ -16094,7 +16131,6 @@ function renderNavPanel() {
     html += '<div class="ch-title">' + escapeHtml(chName) + '</div>';
     html += '<div class="ch-buttons">';
     items.forEach(function(item) {
-      if(ocrOnly && !ocrFlags[item.question.key]) return;
       var i = item.index;
       var qq = item.question;
       var cls = '';
@@ -16107,7 +16143,6 @@ function renderNavPanel() {
       if (memos[qq.key]) {
         cls += ' has-memo';
       }
-      if(ocrFlags[qq.key]){cls+=' ocr-flagged-nav'}
       html += '<button class="' + cls + '" onclick="autoSaveMemo();state.currentIndex=' + i + ';renderQuestion();saveState();toggleNavPanel();">' + (i + 1) + '</button>';
     });
     html += '</div></div>';
@@ -16476,18 +16511,6 @@ function saveEditFromForm() {
   };
   saveEdit(q.key, editData);
   renderQuestion();
-  if(state.mode==='ocr_batch'){
-    setOcrFlag(q.key,false);
-    if(state.currentIndex<state.questions.length-1){
-      state.currentIndex++;
-      renderQuestion();
-      enterEditMode();
-    }else{
-      alert('모든 OCR 오류 문제 수정이 완료되었습니다!');
-      exitOcrBatchMode();
-    }
-    return;
-  }
 }
 
 function cancelEdit() {
@@ -16614,64 +16637,104 @@ function deleteMemo(questionKey) {
   }
 }
 
-// ===== OCR 플래그 토글 및 일괄 수정 =====
-function toggleOcrFlag(){
-  var q=state.questions[state.currentIndex];
-  setOcrFlag(q.key,!isOcrFlagged(q.key));
-  renderQuestion();
+// ===== 북마크 UI =====
+function renderBookmarkList() {
+  if (!isAdminMode) return;
+  var area = document.getElementById('bookmarkResumeArea');
+  if (!area) return;
+  var bookmarks = getBookmarks();
+  var keys = Object.keys(bookmarks);
+  if (keys.length === 0) { area.style.display = 'none'; return; }
+  area.style.display = 'block';
+  var html = '';
+  keys.sort(function(a,b){ return bookmarks[b].savedAt.localeCompare(bookmarks[a].savedAt); });
+  keys.forEach(function(key) {
+    var bm = bookmarks[key];
+    var date = new Date(bm.savedAt).toLocaleString('ko-KR');
+    html += '<div style="display:flex;align-items:center;gap:8px;padding:8px;background:#fff;border-radius:8px;margin-bottom:6px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">';
+    html += '<span style="flex:1;font-size:0.9rem;">' + escapeHtml(key.replace(/_/g,' ')) + ' — ' + escapeHtml(bm.name) + '</span>';
+    html += '<span style="font-size:0.75rem;color:#888;">' + date + '</span>';
+    html += '<button class="btn btn-primary" style="padding:4px 12px;font-size:0.8rem;" onclick="resumeBookmark(\'' + escapeHtml(key) + '\')">이어하기</button>';
+    html += '<button style="background:none;border:none;cursor:pointer;color:#999;font-size:1rem;" onclick="deleteBookmark(\'' + escapeHtml(key) + '\')" title="삭제">✕</button>';
+    html += '</div>';
+  });
+  document.getElementById('bookmarkList').innerHTML = html;
 }
 
-function startOcrBatchEdit(){
-  var ocrFlags=getOcrFlags();
-  var flaggedKeys=Object.keys(ocrFlags);
-  if(flaggedKeys.length===0){alert('OCR 오류로 표시된 문제가 없습니다.');return}
-  var bank=window.QUESTION_BANK;
-  var questions=[];
-  bank.subjects.forEach(function(s){
-    s.chapters.forEach(function(ch){
-      ch.questions.forEach(function(q){
-        var key=ch.id+'_q'+q.id;
-        if(ocrFlags[key]){
-          questions.push({id:q.id,text:q.text,choices:q.choices,answer:q.answer,quote:q.quote||null,page:q.page,subjectName:s.name,chapterName:ch.name,key:key});
-        }
-      });
-    });
-  });
-  if(bank.exams){
-    bank.exams.forEach(function(exam){
-      exam.sections.forEach(function(sec){
-        sec.questions.forEach(function(q){
-          var key=sec.id+'_q'+q.id;
-          if(ocrFlags[key]){
-            questions.push({id:q.id,text:q.text,choices:q.choices,answer:q.answer,quote:q.quote||null,page:q.page,subjectName:sec.name,chapterName:exam.name,key:key});
+function deleteBookmark(key) {
+  removeBookmark(key);
+  renderBookmarkList();
+}
+
+function resumeBookmark(key) {
+  var bookmarks = getBookmarks();
+  var bm = bookmarks[key];
+  if (!bm) return;
+  state.resumeIndex = bm.index;
+  alert('북마크 위치: ' + bm.name + ' (인덱스: ' + (bm.index + 1) + ')\n해당 과목/장을 선택 후 시작하면 자동으로 이동합니다.');
+}
+
+// ===== 수정본 반영 questions.js 내보내기 (관리자 전용) =====
+function exportMergedQuestionsJS() {
+  var edits = getEdits();
+  var editKeys = Object.keys(edits);
+  if (editKeys.length === 0) {
+    alert('수정된 문제가 없습니다.');
+    return;
+  }
+  if (!confirm(editKeys.length + '건의 수정을 questions.js에 반영합니다. 계속하시겠습니까?')) return;
+
+  var merged = JSON.parse(JSON.stringify(window.QUESTION_BANK));
+
+  if (merged.subjects) {
+    merged.subjects.forEach(function(subj) {
+      subj.chapters.forEach(function(ch) {
+        ch.questions.forEach(function(q) {
+          var key = ch.id + '_q' + q.id;
+          var edit = edits[key];
+          if (edit) {
+            if (edit.text !== undefined) q.text = edit.text;
+            if (edit.quote !== undefined) q.quote = edit.quote;
+            if (edit.choices !== undefined) q.choices = edit.choices;
+            if (edit.answer !== undefined) q.answer = edit.answer;
           }
         });
       });
     });
   }
-  if(questions.length===0){alert('플래그된 문제를 찾을 수 없습니다.');return}
-  state.questions=questions;
-  state.currentIndex=0;
-  state.answers={};
-  state.checked={};
-  state.mode='ocr_batch';
-  state.timerEnd=null;
-  state.examMode=false;
-  state.quickTestMode=false;
-  showQuiz();
-  enterEditMode();
-}
 
-function exitOcrBatchMode(){
-  state.mode='sequential';
-  document.getElementById('quizContainer').style.display='none';
-  document.getElementById('setupPanel').style.display='block';
-  var bar=document.getElementById('ocrBatchBar');
-  if(bar)bar.remove();
-  store.removeItem('cbt_state');
-  renderChapterStats();
-  checkSavedState();
-  updateOcrCountDisplay();
+  if (merged.exams) {
+    merged.exams.forEach(function(exam) {
+      exam.sections.forEach(function(sec) {
+        sec.questions.forEach(function(q) {
+          var key = sec.id + '_q' + q.id;
+          var edit = edits[key];
+          if (edit) {
+            if (edit.text !== undefined) q.text = edit.text;
+            if (edit.quote !== undefined) q.quote = edit.quote;
+            if (edit.choices !== undefined) q.choices = edit.choices;
+            if (edit.answer !== undefined) q.answer = edit.answer;
+          }
+        });
+      });
+    });
+  }
+
+  merged.meta.generatedAt = new Date().toISOString().split('T')[0];
+  merged.meta.editsApplied = editKeys.length;
+
+  var content = 'window.QUESTION_BANK = ' + JSON.stringify(merged, null, 2) + ';\n';
+  var blob = new Blob([content], {type: 'application/javascript'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'questions.js';
+  a.click();
+
+  if (confirm('수정 이력을 초기화하시겠습니까?\n(questions.js에 이미 반영되었으므로 초기화 권장)')) {
+    store.setItem('cbt_edits', '{}');
+    saveToCloud('cbt_edits');
+    alert('수정 이력이 초기화되었습니다.');
+  }
 }
 
 // 키보드 네비게이션
@@ -16683,8 +16746,8 @@ document.addEventListener('keydown', function(e) {
     toggleMemo();
     return;
   }
-  // Ctrl+O OCR 오류 플래그 토글
-  if((e.ctrlKey||e.metaKey)&&e.key==='o'){e.preventDefault();toggleOcrFlag();return}
+  // Ctrl+B 북마크 토글 (관리자 모드)
+  if((e.ctrlKey||e.metaKey)&&e.key==='b'){e.preventDefault();if(isAdminMode)toggleBookmark();return}
   // 수정 모드나 메모 입력 중에는 키보드 네비게이션 비활성화
   var activeTag = document.activeElement ? document.activeElement.tagName.toLowerCase() : '';
   if (activeTag === 'textarea' || activeTag === 'input' || activeTag === 'select') return;
