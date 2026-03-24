@@ -14415,6 +14415,9 @@ window.QUESTION_BANK = {
 };
 
 </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
@@ -15175,7 +15178,7 @@ function renderNotesList() {
     }
     html += '</div>';
     if (memos[n.key]) {
-      html += '<div class="notes-memo"><div class="notes-memo-label">📝 메모</div>' + escapeHtml(memos[n.key]) + '</div>';
+      html += '<div class="notes-memo"><div class="notes-memo-label">📝 메모</div>' + renderMathInText(memos[n.key]) + '</div>';
     }
     html += '</div>';
   });
@@ -16015,7 +16018,7 @@ function renderQuestion() {
     html += '<div class="memo-display" id="memoDisplay" style="display:none;" onclick="openMemoEdit()">';
     html += '<div class="memo-label">📝 내 메모 <span class="memo-edit-hint">(클릭하여 편집)</span></div>';
     html += '<button class="memo-delete-btn" onclick="event.stopPropagation();deleteMemo(\'' + q.key + '\');" title="메모 삭제">✕</button>';
-    html += '<div class="memo-content">' + escapeHtml(memo) + '</div></div>';
+    html += '<div class="memo-content">' + renderMathInText(memo) + '</div></div>';
   }
 
   card.innerHTML = html;
@@ -16385,6 +16388,19 @@ function escapeHtml(str) {
   var div = document.createElement('div');
   div.textContent = str;
   return div.innerHTML;
+}
+
+function renderMathInText(text) {
+  var html = escapeHtml(text);
+  html = html.replace(/\$\$([\s\S]*?)\$\$/g, function(m, tex) {
+    try { return katex.renderToString(tex.trim(), {displayMode:true, throwOnError:false}); }
+    catch(e) { return m; }
+  });
+  html = html.replace(/\$([^\$]+?)\$/g, function(m, tex) {
+    try { return katex.renderToString(tex.trim(), {displayMode:false, throwOnError:false}); }
+    catch(e) { return m; }
+  });
+  return html;
 }
 
 // ===== 문제 수정 UI =====
