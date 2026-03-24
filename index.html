@@ -658,7 +658,12 @@ body {
 .memo-display:hover { box-shadow: 0 3px 12px rgba(200,180,80,0.25); }
 .memo-display .memo-label { font-weight: 700; color: #b8860b; margin-bottom: 6px; font-size: 0.78rem; display: flex; align-items: center; gap: 6px; }
 .memo-display .memo-edit-hint { font-size: 0.68rem; color: #c4a94d; font-weight: 400; }
-.memo-display .memo-content { font-size: 0.9rem; line-height: 1.7; color: #4a4530; white-space: pre-wrap; word-break: break-word; }
+.memo-display .memo-content { font-size: 0.9rem; line-height: 1.7; color: #4a4530; word-break: break-word; }
+.memo-display .memo-content p { margin: 0.4em 0; }
+.memo-display .memo-content ul, .memo-display .memo-content ol { margin: 0.4em 0; padding-left: 1.5em; }
+.memo-display .memo-content h1,.memo-display .memo-content h2,.memo-display .memo-content h3 { font-size: 1em; margin: 0.6em 0 0.3em; }
+.memo-display .memo-content code { background: #f0ede4; padding: 1px 4px; border-radius: 3px; font-size: 0.85em; }
+.memo-display .memo-content blockquote { border-left: 3px solid #d4c88e; margin: 0.4em 0; padding: 0.2em 0.8em; color: #7a6f4e; }
 .memo-display .memo-delete-btn { position: absolute; top: 8px; right: 10px; background: none; border: none; color: #d4c080; cursor: pointer; font-size: 0.95rem; padding: 2px 6px; border-radius: 4px; line-height: 1; }
 .memo-display .memo-delete-btn:hover { background: #f8d7da; color: #d93025; }
 /* 오답노트 내 메모 */
@@ -14418,6 +14423,7 @@ window.QUESTION_BANK = {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@15.0.0/marked.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
@@ -16391,16 +16397,20 @@ function escapeHtml(str) {
 }
 
 function renderMathInText(text) {
-  var html = escapeHtml(text);
-  html = html.replace(/\$\$([\s\S]*?)\$\$/g, function(m, tex) {
-    try { return katex.renderToString(tex.trim(), {displayMode:true, throwOnError:false}); }
-    catch(e) { return m; }
-  });
-  html = html.replace(/\$([^\$]+?)\$/g, function(m, tex) {
-    try { return katex.renderToString(tex.trim(), {displayMode:false, throwOnError:false}); }
-    catch(e) { return m; }
-  });
-  html = html.replace(/\n/g, '<br>');
+  // 1) 수식을 플레이스홀더로 보호 (marked가 수식을 깨지 않도록)
+  var mathBlocks = [];
+  var placeholder = function(tex, display) {
+    var idx = mathBlocks.length;
+    try { mathBlocks.push(katex.renderToString(tex.trim(), {displayMode:display, throwOnError:false})); }
+    catch(e) { mathBlocks.push(display ? '$$'+tex+'$$' : '$'+tex+'$'); }
+    return '%%MATH'+idx+'%%';
+  };
+  var safe = text.replace(/\$\$([\s\S]*?)\$\$/g, function(m,t){ return placeholder(t,true); });
+  safe = safe.replace(/\$([^\$\n]+?)\$/g, function(m,t){ return placeholder(t,false); });
+  // 2) marked로 마크다운 렌더링
+  var html = marked.parse(safe, {breaks:true});
+  // 3) 수식 플레이스홀더 복원
+  html = html.replace(/%%MATH(\d+)%%/g, function(m,i){ return mathBlocks[parseInt(i)]; });
   return html;
 }
 
