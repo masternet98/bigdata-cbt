@@ -16559,6 +16559,8 @@ function openMemoEdit() {
 // 메모 textarea 붙여넣기 시 HTML→마크다운 변환
 (function(){
   var td = new TurndownService({headingStyle:'atx', bulletListMarker:'-', codeBlockStyle:'fenced'});
+  // 백슬래시 이스케이프 비활성화 (LaTeX 수식 보존)
+  td.escape = function(str) { return str; };
   // KaTeX 렌더링된 수식을 원본 LaTeX로 보존
   td.addRule('katexBlock', {
     filter: function(node){ return node.classList && node.classList.contains('katex-display'); },
