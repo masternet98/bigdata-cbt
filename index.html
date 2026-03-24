@@ -260,9 +260,13 @@ body {
   margin: 12px 0;
   font-size: 0.93rem;
   color: #555;
-  white-space: pre-wrap;
   border-radius: 0 8px 8px 0;
+  overflow-x: auto;
 }
+.question-quote img { max-width: 100%; height: auto; border-radius: 6px; margin: 4px 0; }
+.question-quote table { border-collapse: collapse; width: 100%; margin: 8px 0; font-size: 0.88rem; }
+.question-quote th, .question-quote td { border: 1px solid #ddd; padding: 6px 10px; text-align: center; }
+.question-quote th { background: #e8f0fe; font-weight: 700; }
 
 .choices { list-style: none; margin-top: 16px; }
 .choices li {
@@ -15198,9 +15202,9 @@ function renderNotesList() {
     html += '<span class="notes-q-title">[' + escapeHtml(n.subjectName) + ' > ' + escapeHtml(n.chapterName) + '] 문제 ' + n.questionId + '</span>';
     html += '<span class="notes-q-stats">오답률 ' + wrongRate + '%</span>';
     html += '</div>';
-    html += '<div class="notes-q-text">' + escapeHtml(qText) + '</div>';
+    html += '<div class="notes-q-text">' + renderMathInText(qText) + '</div>';
     if (q && q.quote) {
-      html += '<div class="notes-q-quote" style="background:#f0f4f8;border-left:3px solid #1a73e8;padding:8px 12px;margin:6px 0;font-size:0.82rem;color:#555;white-space:pre-wrap;">' + escapeHtml(q.quote) + '</div>';
+      html += '<div class="notes-q-quote" style="background:#f0f4f8;border-left:3px solid #1a73e8;padding:8px 12px;margin:6px 0;font-size:0.82rem;color:#555;white-space:pre-wrap;">' + renderQuoteContent(q.quote) + '</div>';
     }
     if (q && q.choices && q.choices.length === 4) {
       html += '<div class="notes-q-choices" style="margin:8px 0;font-size:0.85rem;">';
@@ -15211,7 +15215,7 @@ function renderNotesList() {
         if (isCorrect) choiceStyle = 'color:#0f9d58;font-weight:700;';
         else if (isWrong) choiceStyle = 'color:#d93025;text-decoration:line-through;';
         html += '<div style="padding:3px 0;' + choiceStyle + '">';
-        html += markers[ci] + ' ' + escapeHtml(q.choices[ci]);
+        html += markers[ci] + ' ' + renderMathInText(q.choices[ci]);
         if (isCorrect) html += ' (정답)';
         if (isWrong) html += ' (내 선택)';
         html += '</div>';
@@ -16054,9 +16058,9 @@ function renderQuestion() {
     html += '</button>';
   }
   html += '</div>';
-  html += '<div class="question-text">' + escapeHtml(q.text) + '</div>';
+  html += '<div class="question-text">' + renderMathInText(q.text) + '</div>';
   if (q.quote) {
-    html += '<div class="question-quote">' + escapeHtml(q.quote) + '</div>';
+    html += '<div class="question-quote">' + renderQuoteContent(q.quote) + '</div>';
   }
   html += '<ul class="choices">';
   var markers = ['①', '②', '③', '④'];
@@ -16071,7 +16075,7 @@ function renderQuestion() {
     }
     html += '<li class="' + cls + '" onclick="selectChoice(\'' + q.key + '\', ' + choiceNum + ', ' + (isChecked ? 'true' : 'false') + ')">';
     html += '<span class="marker">' + markers[ci] + '</span>';
-    html += '<span>' + escapeHtml(c) + '</span></li>';
+    html += '<span>' + renderMathInText(c) + '</span></li>';
   });
   html += '</ul>';
 
@@ -16450,6 +16454,22 @@ function renderMathInText(text) {
   return html;
 }
 
+function renderQuoteContent(text) {
+  if (!text) return '';
+  // 이미지 태그를 플레이스홀더로 보호
+  var images = [];
+  var safe = text.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, function(m, alt, src) {
+    var idx = images.length;
+    images.push('<img src="' + escapeHtml(src) + '" alt="' + escapeHtml(alt) + '" style="max-width:100%;height:auto;border-radius:6px;margin:4px 0;">');
+    return '%%IMG' + idx + '%%';
+  });
+  // renderMathInText로 마크다운+수식 처리
+  var html = renderMathInText(safe);
+  // 이미지 플레이스홀더 복원
+  html = html.replace(/%%IMG(\d+)%%/g, function(m, i) { return images[parseInt(i)]; });
+  return html;
+}
+
 // ===== 문제 수정 UI =====
 function enterEditMode() {
   // 메모 영역 숨기기
@@ -16467,8 +16487,8 @@ function enterEditMode() {
   html += '<label>문제 텍스트</label>';
   html += '<textarea id="editText">' + escapeHtml(q.text) + '</textarea>';
 
-  html += '<label>인용문 (보기)</label>';
-  html += '<textarea id="editQuote">' + escapeHtml(q.quote || '') + '</textarea>';
+  html += '<label>인용문 (보기) — 표: 마크다운 표 문법, 이미지: ![설명](URL), 수식: $...$</label>';
+  html += '<textarea id="editQuote" style="min-height:100px;">' + escapeHtml(q.quote || '') + '</textarea>';
 
   for (var i = 0; i < 4; i++) {
     html += '<label>선택지 ' + markers[i] + '</label>';
