@@ -1000,11 +1000,13 @@ function loadFromCloud() {
   if (!currentUser) return;
   updateSyncIndicator('syncing');
 
+  var cloudExists = {};
   var promises = CLOUD_KEYS.map(function(key) {
     return fbDb.collection('users').doc(currentUser.uid)
       .collection('data').doc(key).get()
       .then(function(doc) {
         if (doc.exists && doc.data().data) {
+          cloudExists[key] = true;
           mergeCloudData(key, doc.data().data);
         }
       });
@@ -1012,11 +1014,13 @@ function loadFromCloud() {
 
   Promise.all(promises)
     .then(function() {
-      // 로컬에 있는 기존 데이터를 클라우드에 업로드 (최초 로그인 시 동기화)
+      // 클라우드에 없는 키만 최초 업로드 (기존 클라우드 데이터 보호)
       CLOUD_KEYS.forEach(function(k) {
-        var raw = localStorage.getItem(k);
-        if (raw && raw !== '{}') {
-          saveToCloud(k);
+        if (!cloudExists[k]) {
+          var raw = localStorage.getItem(k);
+          if (raw && raw !== '{}') {
+            saveToCloud(k);
+          }
         }
       });
       updateSyncIndicator('done');
@@ -1068,9 +1072,41 @@ function mergeCloudData(key, cloudData) {
       }
     });
     localStorage.setItem(key, JSON.stringify(merged));
+  } else if (key === 'cbt_memos') {
+    // memos: 타임스탬프 기반 병합 (최신 우선)
+    var merged = {};
+    var allKeys = new Set(Object.keys(localData).concat(Object.keys(cloudData)));
+    allKeys.forEach(function(qk) {
+      var local = localData[qk];
+      var cloud = cloudData[qk];
+      if (!local) { merged[qk] = cloud; }
+      else if (!cloud) { merged[qk] = local; }
+      else {
+        var lt = typeof local === 'object' ? (local.updatedAt || '') : '';
+        var ct = typeof cloud === 'object' ? (cloud.updatedAt || '') : '';
+        merged[qk] = ct > lt ? cloud : local;
+      }
+    });
+    localStorage.setItem(key, JSON.stringify(merged));
+  } else if (key === 'cbt_bookmarks') {
+    // bookmarks: savedAt 기반 병합 (최신 우선)
+    var merged = {};
+    var allKeys = new Set(Object.keys(localData).concat(Object.keys(cloudData)));
+    allKeys.forEach(function(bk) {
+      var local = localData[bk];
+      var cloud = cloudData[bk];
+      if (!local) { merged[bk] = cloud; }
+      else if (!cloud) { merged[bk] = local; }
+      else {
+        var lt = local.savedAt || '';
+        var ct = cloud.savedAt || '';
+        merged[bk] = ct > lt ? cloud : local;
+      }
+    });
+    localStorage.setItem(key, JSON.stringify(merged));
   } else {
-    // memos, bookmarks: simple merge (cloud fills gaps, local preserved)
-    var merged = Object.assign({}, cloudData, localData);
+    // 기타: 클라우드 우선
+    var merged = Object.assign({}, localData, cloudData);
     localStorage.setItem(key, JSON.stringify(merged));
   }
 }
@@ -1343,13 +1379,15 @@ function getMemos() {
 
 function getMemo(questionKey) {
   var memos = getMemos();
-  return memos[questionKey] || null;
+  var m = memos[questionKey];
+  if (!m) return null;
+  return typeof m === 'string' ? m : (m.text || null);
 }
 
 function saveMemo(questionKey, memoText) {
   var memos = getMemos();
   if (memoText && memoText.trim()) {
-    memos[questionKey] = memoText.trim();
+    memos[questionKey] = { text: memoText.trim(), updatedAt: new Date().toISOString() };
   } else {
     delete memos[questionKey];
   }
