@@ -644,6 +644,8 @@ body {
 .btn-edit { background: none; border: 1px solid #ccc; padding: 2px 8px; border-radius: 4px; cursor: pointer; font-size: 0.75rem; color: #666; margin-left: 6px; }
 .btn-edit:hover { border-color: #1a73e8; color: #1a73e8; }
 .btn-edit.bookmarked { border-color: #f9ab00; color: #f9ab00; background: #fff8e1; }
+.btn-edit.edit-flagged { border-color: #d93025; color: #d93025; background: #fce8e6; }
+.nav-panel-chapter .ch-buttons button.edit-flagged-nav { box-shadow: inset 0 0 0 2px #d93025; }
 
 /* 메모 */
 .btn-memo { background: #e8f0fe; color: #1a73e8; border: 1px solid #1a73e8; padding: 10px 20px; font-size: 0.9rem; position: relative; }
@@ -795,6 +797,10 @@ JSON 내보내기: 전체 데이터(오답+수정+메모) 백업 (수동 가져�
   <div id="bookmarkResumeArea" style="display:none; margin-top:16px;">
     <h4 style="margin-bottom:8px;">북마크 이어하기</h4>
     <div id="bookmarkList"></div>
+  </div>
+  <div id="editFlagArea" style="display:none; margin-top:16px;">
+    <h4 style="margin-bottom:8px; color:#d93025;">수정 필요 문제 (<span id="editFlagCount">0</span>건)</h4>
+    <button class="btn btn-danger" onclick="startEditFlagMode()" style="padding:8px 16px;font-size:0.9rem;">수정필요 문제 모아보기</button>
   </div>
 </div>
 
@@ -965,7 +971,7 @@ function updateSyncIndicator(status) {
 }
 
 // === Firebase 클라우드 동기화 ===
-var CLOUD_KEYS = ['cbt_wrong_notes', 'cbt_edits', 'cbt_memos', 'cbt_bookmarks'];
+var CLOUD_KEYS = ['cbt_wrong_notes', 'cbt_edits', 'cbt_memos', 'cbt_bookmarks', 'cbt_edit_flags'];
 var _cloudSaveTimers = {};
 
 function saveToCloud(key, immediate) {
@@ -1106,6 +1112,22 @@ function mergeCloudData(key, cloudData) {
         var lt = local.savedAt || '';
         var ct = cloud.savedAt || '';
         merged[bk] = ct > lt ? cloud : local;
+      }
+    });
+    localStorage.setItem(key, JSON.stringify(merged));
+  } else if (key === 'cbt_edit_flags') {
+    // edit_flags: flaggedAt 기반 병합 (최신 우선)
+    var merged = {};
+    var allKeys = new Set(Object.keys(localData).concat(Object.keys(cloudData)));
+    allKeys.forEach(function(fk) {
+      var local = localData[fk];
+      var cloud = cloudData[fk];
+      if (!local) { merged[fk] = cloud; }
+      else if (!cloud) { merged[fk] = local; }
+      else {
+        var lt = local.flaggedAt || '';
+        var ct = cloud.flaggedAt || '';
+        merged[fk] = ct > lt ? cloud : local;
       }
     });
     localStorage.setItem(key, JSON.stringify(merged));
@@ -1459,6 +1481,35 @@ function toggleBookmark() {
   renderQuestion();
 }
 
+// ===== 수정 필요 플래그 =====
+function getEditFlags() {
+  try { return JSON.parse(store.getItem('cbt_edit_flags')) || {}; }
+  catch(e) { return {}; }
+}
+
+function isEditFlagged(key) {
+  var flags = getEditFlags();
+  return !!flags[key];
+}
+
+function toggleEditFlag() {
+  var q = state.questions[state.currentIndex];
+  if (!q) return;
+  var flags = getEditFlags();
+  if (flags[q.key]) {
+    delete flags[q.key];
+  } else {
+    flags[q.key] = { flaggedAt: new Date().toISOString() };
+  }
+  store.setItem('cbt_edit_flags', JSON.stringify(flags));
+  saveToCloud('cbt_edit_flags');
+  renderQuestion();
+}
+
+function getEditFlagCount() {
+  return Object.keys(getEditFlags()).length;
+}
+
 function toggleDataManage() {
   var panel = document.getElementById('dataManagePanel');
   panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
@@ -1597,6 +1648,7 @@ function hideNotesPanel() {
   document.getElementById('notesPanel').style.display = 'none';
   document.getElementById('setupPanel').style.display = 'block';
   renderChapterStats();
+  renderEditFlagArea();
   checkSavedState();
 }
 
@@ -2054,6 +2106,7 @@ function init() {
     }
   }
   renderBookmarkList();
+  renderEditFlagArea();
 
   // cbt_userdata.js 자동 로드
   if (window.CBT_USER_DATA && typeof window.CBT_USER_DATA === 'object') {
@@ -2539,7 +2592,11 @@ function renderQuestion() {
   // 진행률
   const answered = Object.keys(state.answers).length;
   document.getElementById('progressFill').style.width = ((answered / total) * 100) + '%';
-  document.getElementById('navCurrentText').textContent = (idx + 1) + ' / ' + total + ' (응답: ' + answered + ')';
+  if (state.mode === 'editflag') {
+    document.getElementById('navCurrentText').textContent = (idx + 1) + ' / ' + total + ' (수정필요 ' + total + '건)';
+  } else {
+    document.getElementById('navCurrentText').textContent = (idx + 1) + ' / ' + total + ' (응답: ' + answered + ')';
+  }
 
   // 슬라이드 패널 내 번호 렌더링
   renderNavPanel();
@@ -2565,6 +2622,10 @@ function renderQuestion() {
     html += isBookmarked ? '북마크 해제' : '북마크';
     html += '</button>';
   }
+  var isFlagged = isEditFlagged(q.key);
+  html += '<button class="btn-edit' + (isFlagged ? ' edit-flagged' : '') + '" onclick="toggleEditFlag()">';
+  html += isFlagged ? '수정필요 해제' : '수정필요';
+  html += '</button>';
   html += '</div>';
   html += '<div class="question-text">' + renderMathInText(q.text) + '</div>';
   if (q.quote) {
@@ -2611,7 +2672,7 @@ function renderQuestion() {
   }
 
   // 헤더 정보
-  var headerLabel = state.quickTestMode ? '퀵테스트' : q.subjectName;
+  var headerLabel = state.mode === 'editflag' ? '수정필요 모아보기' : (state.quickTestMode ? '퀵테스트' : q.subjectName);
   document.getElementById('headerInfo').textContent = headerLabel + ' | ' + answered + '/' + total + ' 응답';
 }
 
@@ -2627,6 +2688,7 @@ function renderNavPanel() {
   var body = document.getElementById('navPanelBody');
   var idx = state.currentIndex;
   var memos = getMemos();
+  var editFlags = getEditFlags();
   var chapters = {};
   state.questions.forEach(function(qq, i) {
     var chKey = qq.chapterName;
@@ -2652,6 +2714,9 @@ function renderNavPanel() {
       }
       if (memos[qq.key]) {
         cls += ' has-memo';
+      }
+      if (editFlags[qq.key]) {
+        cls += ' edit-flagged-nav';
       }
       html += '<button class="' + cls + '" onclick="autoSaveMemo();state.currentIndex=' + i + ';renderQuestion();saveState();toggleNavPanel();">' + (i + 1) + '</button>';
     });
@@ -2922,6 +2987,7 @@ function goBackToSetup() {
   document.getElementById('modeSelect').value = 'sequential';
   onModeChange();
   renderChapterStats();
+  renderEditFlagArea();
 }
 
 function saveState() {
@@ -3249,6 +3315,89 @@ function resumeBookmark(key) {
   if (!bm) return;
   state.resumeIndex = bm.index;
   alert('북마크 위치: ' + bm.name + ' (인덱스: ' + (bm.index + 1) + ')\n해당 과목/장을 선택 후 시작하면 자동으로 이동합니다.');
+}
+
+// ===== 수정필요 문제 모아보기 =====
+function renderEditFlagArea() {
+  var area = document.getElementById('editFlagArea');
+  if (!area) return;
+  var count = getEditFlagCount();
+  if (count === 0) {
+    area.style.display = 'none';
+    return;
+  }
+  area.style.display = 'block';
+  document.getElementById('editFlagCount').textContent = count;
+}
+
+function startEditFlagMode() {
+  var flags = getEditFlags();
+  var flaggedKeys = Object.keys(flags);
+  if (flaggedKeys.length === 0) {
+    alert('수정 필요 문제가 없습니다.');
+    return;
+  }
+
+  var questions = [];
+  // Search subjects
+  QUESTION_BANK.subjects.forEach(function(s) {
+    s.chapters.forEach(function(ch) {
+      ch.questions.forEach(function(q) {
+        var key = ch.id + '_q' + q.id;
+        if (flags[key]) {
+          questions.push({
+            key: key,
+            id: q.id,
+            text: q.text,
+            choices: q.choices,
+            answer: q.answer,
+            quote: q.quote || '',
+            page: q.page || null,
+            subjectName: s.name,
+            chapterName: ch.name
+          });
+        }
+      });
+    });
+  });
+  // Search exams
+  QUESTION_BANK.exams.forEach(function(e) {
+    e.sections.forEach(function(sec) {
+      sec.questions.forEach(function(q) {
+        var key = sec.id + '_q' + q.id;
+        if (flags[key]) {
+          questions.push({
+            key: key,
+            id: q.id,
+            text: q.text,
+            choices: q.choices,
+            answer: q.answer,
+            quote: q.quote || '',
+            page: q.page || null,
+            subjectName: e.name,
+            chapterName: sec.name
+          });
+        }
+      });
+    });
+  });
+
+  if (questions.length === 0) {
+    alert('수정 필요 문제를 찾을 수 없습니다.');
+    return;
+  }
+
+  state.mode = 'editflag';
+  state.questions = questions;
+  state.currentIndex = 0;
+  state.answers = {};
+  state.checked = {};
+
+  document.getElementById('setupPanel').style.display = 'none';
+  document.getElementById('quizContainer').style.display = 'block';
+  document.getElementById('resultContainer').style.display = 'none';
+
+  renderQuestion();
 }
 
 // ===== 수정본 반영 questions.js 내보내기 (관리자 전용) =====
