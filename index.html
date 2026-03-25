@@ -1471,15 +1471,13 @@ function buildBookmarkName(questionIndex) {
 }
 
 function getCurrentSectionKey() {
-  var mode = state.mode;
-  if (mode === 'exam') {
-    var examSel = document.getElementById('examSelect');
-    var chapSel = document.getElementById('chapterSelect');
-    return 'exam_' + (examSel ? examSel.value : '') + '_' + (chapSel ? chapSel.value : '');
+  var source = document.getElementById('sourceSelect').value;
+  var subjSel = document.getElementById('subjectSelect');
+  var chapSel = document.getElementById('chapterSelect');
+  if (source === 'exams') {
+    return 'exam_' + (subjSel ? subjSel.value : '') + '_' + (chapSel ? chapSel.value : '');
   } else {
-    var subjSel = document.getElementById('subjectSelect');
-    var chapSel2 = document.getElementById('chapterSelect');
-    return 'subj_' + (subjSel ? subjSel.value : '') + '_' + (chapSel2 ? chapSel2.value : '');
+    return 'subj_' + (subjSel ? subjSel.value : '') + '_' + (chapSel ? chapSel.value : '');
   }
 }
 
@@ -3335,45 +3333,49 @@ function resumeBookmark(key) {
   var bm = bookmarks[key];
   if (!bm) return;
 
-  // 키에서 모드/과목/장 추출: subj_subject1_s1ch1 또는 exam_exam2021_2_all
-  var parts = key.split('_');
+  var sourceSelect = document.getElementById('sourceSelect');
   var modeSelect = document.getElementById('modeSelect');
   var subjectSelect = document.getElementById('subjectSelect');
-  var examSelect = document.getElementById('examSelect');
   var chapterSelect = document.getElementById('chapterSelect');
 
-  if (parts[0] === 'subj') {
-    // 적중예상문제: subj_subject1_s1ch1
-    modeSelect.value = 'subject';
-    onModeChange();
-    setTimeout(function() {
-      subjectSelect.value = parts[1];
+  // 키 파싱: subj_subject1_s1ch1 또는 exam_examXXXX_Y_chapterVal
+  var isExam = key.startsWith('exam_');
+
+  // 1단계: source 선택
+  sourceSelect.value = isExam ? 'exams' : 'practice';
+  updateSource();
+
+  // 2단계: mode를 subject로 (일반 풀이 모드)
+  modeSelect.value = 'subject';
+  onModeChange();
+
+  // 3단계: subject/chapter 값 추출 및 설정
+  if (isExam) {
+    // exam_exam2021_2_all → subjectSelect=exam2021_2, chapterSelect=all
+    // exam_exam2021_2_exam2021_2_s1 → subjectSelect=exam2021_2, chapterSelect=exam2021_2_s1
+    var afterExam = key.substring(5); // 'exam_' 제거 → exam2021_2_all
+    // 회차 ID는 examYYYY_N 형태 (항상 두 번째 _ 까지)
+    var match = afterExam.match(/^(exam\d+_\d+)_(.+)$/);
+    if (match) {
+      subjectSelect.value = match[1];
       updateChapters();
-      setTimeout(function() {
-        chapterSelect.value = parts.slice(2).join('_');
-        state.resumeQuestionKey = bm.questionKey;
-        state.resumeIndex = bm.index;
-        startQuiz();
-      }, 100);
-    }, 100);
-  } else if (parts[0] === 'exam') {
-    // 기출복원문제: exam_exam2021_2_all 또는 exam_exam2021_2_exam2021_2_s1
-    modeSelect.value = 'exam';
-    onModeChange();
-    setTimeout(function() {
-      // exam 키에서 회차 추출: exam2021_2
-      var examId = parts[1] + '_' + parts[2];
-      examSelect.value = examId;
+      chapterSelect.value = match[2];
+    }
+  } else {
+    // subj_subject1_s1ch1 → subjectSelect=subject1, chapterSelect=s1ch1
+    var afterSubj = key.substring(5); // 'subj_' 제거 → subject1_s1ch1
+    var idx = afterSubj.indexOf('_');
+    if (idx > 0) {
+      subjectSelect.value = afterSubj.substring(0, idx);
       updateChapters();
-      setTimeout(function() {
-        var chapKey = parts.slice(3).join('_');
-        chapterSelect.value = chapKey;
-        state.resumeQuestionKey = bm.questionKey;
-        state.resumeIndex = bm.index;
-        startQuiz();
-      }, 100);
-    }, 100);
+      chapterSelect.value = afterSubj.substring(idx + 1);
+    }
   }
+
+  // 4단계: 북마크 위치 설정 후 시작
+  state.resumeQuestionKey = bm.questionKey;
+  state.resumeIndex = bm.index;
+  startQuiz();
 }
 
 // ===== 수정필요 문제 모아보기 =====
