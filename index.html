@@ -968,10 +968,10 @@ function updateSyncIndicator(status) {
 var CLOUD_KEYS = ['cbt_wrong_notes', 'cbt_edits', 'cbt_memos', 'cbt_bookmarks'];
 var _cloudSaveTimers = {};
 
-function saveToCloud(key) {
+function saveToCloud(key, immediate) {
   if (!_cloudSyncEnabled || !currentUser) return;
   clearTimeout(_cloudSaveTimers[key]);
-  _cloudSaveTimers[key] = setTimeout(function() {
+  var doSave = function() {
     updateSyncIndicator('syncing');
     try {
       var raw = localStorage.getItem(key);
@@ -993,7 +993,12 @@ function saveToCloud(key) {
       console.error('Cloud save parse error:', e);
       updateSyncIndicator('error');
     }
-  }, 3000);
+  };
+  if (immediate) {
+    doSave();
+  } else {
+    _cloudSaveTimers[key] = setTimeout(doSave, 3000);
+  }
 }
 
 function loadFromCloud() {
@@ -1185,7 +1190,7 @@ function saveWrongNotes(notes) {
 
 function clearWrongNotes() {
   store.setItem('cbt_wrong_notes', '{}');
-  saveToCloud('cbt_wrong_notes');
+  saveToCloud('cbt_wrong_notes', true);
 }
 
 function updateWrongNotes(questions, answers) {
@@ -3304,7 +3309,7 @@ function exportMergedQuestionsJS() {
 
   if (confirm('수정 이력을 초기화하시겠습니까?\n(questions.js에 이미 반영되었으므로 초기화 권장)')) {
     store.setItem('cbt_edits', '{}');
-    saveToCloud('cbt_edits');
+    saveToCloud('cbt_edits', true);
     alert('수정 이력이 초기화되었습니다.');
   }
 }
@@ -3356,7 +3361,7 @@ function clearEditsWithCheck() {
   if (!confirm(msg)) return;
 
   store.setItem('cbt_edits', '{}');
-  saveToCloud('cbt_edits');
+  saveToCloud('cbt_edits', true);
   var disp = document.getElementById('editCountDisplay');
   if (disp) disp.textContent = '현재 수정: 0건';
   alert('수정 이력 ' + editKeys.length + '건이 초기화되었습니다.' + (unreflected.length > 0 ? '\n(로컬 + 클라우드 모두 삭제됨)' : ''));
