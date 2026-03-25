@@ -2951,8 +2951,13 @@ function enterEditMode() {
   html += '<label>문제 텍스트</label>';
   html += '<textarea id="editText">' + escapeHtml(q.text) + '</textarea>';
 
-  html += '<label>인용문 (보기) — 표: 마크다운 표 문법, 이미지: ![설명](URL), 수식: $...$</label>';
+  html += '<label>인용문 (보기) — 표: 마크다운 표 문법, 이미지: 첨부 또는 ![설명](URL), 수식: $...$</label>';
   html += '<textarea id="editQuote" style="min-height:100px;">' + escapeHtml(q.quote || '') + '</textarea>';
+  html += '<div style="margin:4px 0 8px;">';
+  html += '<input type="file" id="editQuoteImage" accept="image/*" style="display:none;" onchange="insertImageToQuote(this)">';
+  html += '<button class="btn-edit" onclick="document.getElementById(\'editQuoteImage\').click()" style="padding:4px 12px;">이미지 첨부</button>';
+  html += '<span id="imageUploadStatus" style="margin-left:8px;font-size:0.8rem;color:#888;"></span>';
+  html += '</div>';
 
   for (var i = 0; i < 4; i++) {
     html += '<label>선택지 ' + markers[i] + '</label>';
@@ -2993,6 +2998,52 @@ function saveEditFromForm() {
   };
   saveEdit(q.key, editData);
   renderQuestion();
+}
+
+function insertImageToQuote(input) {
+  if (!input.files || !input.files[0]) return;
+  var file = input.files[0];
+  var status = document.getElementById('imageUploadStatus');
+  status.textContent = '변환 중...';
+  status.style.color = '#1a73e8';
+
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    var img = new Image();
+    img.onload = function() {
+      // 최대 600px 너비로 리사이즈
+      var maxW = 600, maxH = 800;
+      var w = img.width, h = img.height;
+      if (w > maxW) { h = h * maxW / w; w = maxW; }
+      if (h > maxH) { w = w * maxH / h; h = maxH; }
+
+      var canvas = document.createElement('canvas');
+      canvas.width = Math.round(w);
+      canvas.height = Math.round(h);
+      var ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+      // 품질 조절하여 300KB 이하로 압축
+      var quality = 0.7;
+      var base64 = canvas.toDataURL('image/jpeg', quality);
+      while (base64.length > 400000 && quality > 0.2) {
+        quality -= 0.1;
+        base64 = canvas.toDataURL('image/jpeg', quality);
+      }
+
+      var sizeKB = Math.round(base64.length * 3 / 4 / 1024);
+      var textarea = document.getElementById('editQuote');
+      var insertText = '\n![이미지](' + base64 + ')\n';
+      var pos = textarea.selectionStart || textarea.value.length;
+      textarea.value = textarea.value.substring(0, pos) + insertText + textarea.value.substring(pos);
+
+      status.textContent = '첨부 완료 (' + canvas.width + 'x' + canvas.height + ', ' + sizeKB + 'KB)';
+      status.style.color = '#0f9d58';
+      input.value = '';
+    };
+    img.src = e.target.result;
+  };
+  reader.readAsDataURL(file);
 }
 
 function cancelEdit() {
