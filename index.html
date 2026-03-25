@@ -3331,7 +3331,8 @@ function deleteBookmark(key) {
 function resumeBookmark(key) {
   var bookmarks = getBookmarks();
   var bm = bookmarks[key];
-  if (!bm) return;
+  if (!bm) { console.error('북마크 없음:', key); return; }
+  console.log('북마크 이어하기:', key, bm);
 
   var sourceSelect = document.getElementById('sourceSelect');
   var modeSelect = document.getElementById('modeSelect');
@@ -3340,6 +3341,26 @@ function resumeBookmark(key) {
 
   // 키 파싱: subj_subject1_s1ch1 또는 exam_examXXXX_Y_chapterVal
   var isExam = key.startsWith('exam_');
+  var targetSubject = '';
+  var targetChapter = '';
+
+  if (isExam) {
+    var afterExam = key.substring(5);
+    var match = afterExam.match(/^(exam\d+_\d+)_(.+)$/);
+    if (match) {
+      targetSubject = match[1];
+      targetChapter = match[2];
+    }
+  } else {
+    var afterSubj = key.substring(5);
+    var idx = afterSubj.indexOf('_');
+    if (idx > 0) {
+      targetSubject = afterSubj.substring(0, idx);
+      targetChapter = afterSubj.substring(idx + 1);
+    }
+  }
+
+  console.log('파싱 결과 - source:', isExam ? 'exams' : 'practice', 'subject:', targetSubject, 'chapter:', targetChapter);
 
   // 1단계: source 선택
   sourceSelect.value = isExam ? 'exams' : 'practice';
@@ -3349,33 +3370,21 @@ function resumeBookmark(key) {
   modeSelect.value = 'subject';
   onModeChange();
 
-  // 3단계: subject/chapter 값 추출 및 설정
-  if (isExam) {
-    // exam_exam2021_2_all → subjectSelect=exam2021_2, chapterSelect=all
-    // exam_exam2021_2_exam2021_2_s1 → subjectSelect=exam2021_2, chapterSelect=exam2021_2_s1
-    var afterExam = key.substring(5); // 'exam_' 제거 → exam2021_2_all
-    // 회차 ID는 examYYYY_N 형태 (항상 두 번째 _ 까지)
-    var match = afterExam.match(/^(exam\d+_\d+)_(.+)$/);
-    if (match) {
-      subjectSelect.value = match[1];
-      updateChapters();
-      chapterSelect.value = match[2];
-    }
-  } else {
-    // subj_subject1_s1ch1 → subjectSelect=subject1, chapterSelect=s1ch1
-    var afterSubj = key.substring(5); // 'subj_' 제거 → subject1_s1ch1
-    var idx = afterSubj.indexOf('_');
-    if (idx > 0) {
-      subjectSelect.value = afterSubj.substring(0, idx);
-      updateChapters();
-      chapterSelect.value = afterSubj.substring(idx + 1);
-    }
-  }
+  // 3단계: subject/chapter 설정
+  subjectSelect.value = targetSubject;
+  updateChapters();
+  chapterSelect.value = targetChapter;
+
+  console.log('설정 결과 - subject:', subjectSelect.value, 'chapter:', chapterSelect.value);
 
   // 4단계: 북마크 위치 설정 후 시작
   state.resumeQuestionKey = bm.questionKey;
   state.resumeIndex = bm.index;
+  console.log('이동 대상 - questionKey:', bm.questionKey, 'index:', bm.index);
   startQuiz();
+
+  // 5단계: 이동 결과 확인
+  console.log('이동 완료 - currentIndex:', state.currentIndex, 'question:', state.questions[state.currentIndex] ? state.questions[state.currentIndex].key : 'NOT FOUND');
 }
 
 // ===== 수정필요 문제 모아보기 =====
