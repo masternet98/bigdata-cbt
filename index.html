@@ -1251,7 +1251,12 @@ function updateWrongNotes(questions, answers) {
 // ===== 문제 수정 =====
 function getEdits() {
   try {
-    return JSON.parse(store.getItem('cbt_edits')) || {};
+    var raw = JSON.parse(store.getItem('cbt_edits')) || {};
+    var result = {};
+    Object.keys(raw).forEach(function(k) {
+      if (raw[k] && !raw[k].deleted) result[k] = raw[k];
+    });
+    return result;
   } catch (e) {
     return {};
   }
@@ -1267,8 +1272,9 @@ function saveEdit(questionKey, editData) {
 
 function deleteEdit(questionKey) {
   var edits = getEdits();
-  delete edits[questionKey];
+  edits[questionKey] = { deleted: true, updatedAt: new Date().toISOString() };
   store.setItem('cbt_edits', JSON.stringify(edits));
+  saveToCloud('cbt_edits', true);
 }
 
 function mergeEditsWithConflicts(incoming, current) {
@@ -1408,6 +1414,7 @@ function getMemo(questionKey) {
   var memos = getMemos();
   var m = memos[questionKey];
   if (!m) return null;
+  if (typeof m === 'object' && m.deleted) return null;
   return typeof m === 'string' ? m : (m.text || null);
 }
 
@@ -1416,10 +1423,10 @@ function saveMemo(questionKey, memoText) {
   if (memoText && memoText.trim()) {
     memos[questionKey] = { text: memoText.trim(), updatedAt: new Date().toISOString() };
   } else {
-    delete memos[questionKey];
+    memos[questionKey] = { deleted: true, updatedAt: new Date().toISOString() };
   }
   store.setItem('cbt_memos', JSON.stringify(memos));
-  saveToCloud('cbt_memos');
+  saveToCloud('cbt_memos', true);
 }
 
 // ===== Admin Mode =====
@@ -1427,8 +1434,14 @@ var isAdminMode = new URLSearchParams(window.location.search).get('admin') === '
 
 // ===== 북마크 =====
 function getBookmarks() {
-  try { return JSON.parse(store.getItem('cbt_bookmarks')) || {}; }
-  catch(e) { return {}; }
+  try {
+    var raw = JSON.parse(store.getItem('cbt_bookmarks')) || {};
+    var result = {};
+    Object.keys(raw).forEach(function(k) {
+      if (raw[k] && !raw[k].deleted) result[k] = raw[k];
+    });
+    return result;
+  } catch(e) { return {}; }
 }
 
 function setBookmark(sectionKey, questionIndex) {
@@ -1446,9 +1459,9 @@ function setBookmark(sectionKey, questionIndex) {
 
 function removeBookmark(sectionKey) {
   var bookmarks = getBookmarks();
-  delete bookmarks[sectionKey];
+  bookmarks[sectionKey] = { deleted: true, savedAt: new Date().toISOString() };
   store.setItem('cbt_bookmarks', JSON.stringify(bookmarks));
-  saveToCloud('cbt_bookmarks');
+  saveToCloud('cbt_bookmarks', true);
 }
 
 function buildBookmarkName(questionIndex) {
