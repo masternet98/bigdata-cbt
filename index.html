@@ -3326,8 +3326,44 @@ function resumeBookmark(key) {
   var bookmarks = getBookmarks();
   var bm = bookmarks[key];
   if (!bm) return;
-  state.resumeIndex = bm.index;
-  alert('북마크 위치: ' + bm.name + ' (인덱스: ' + (bm.index + 1) + ')\n해당 과목/장을 선택 후 시작하면 자동으로 이동합니다.');
+
+  // 키에서 모드/과목/장 추출: subj_subject1_s1ch1 또는 exam_exam2021_2_all
+  var parts = key.split('_');
+  var modeSelect = document.getElementById('modeSelect');
+  var subjectSelect = document.getElementById('subjectSelect');
+  var examSelect = document.getElementById('examSelect');
+  var chapterSelect = document.getElementById('chapterSelect');
+
+  if (parts[0] === 'subj') {
+    // 적중예상문제: subj_subject1_s1ch1
+    modeSelect.value = 'subject';
+    onModeChange();
+    setTimeout(function() {
+      subjectSelect.value = parts[1];
+      updateChapters();
+      setTimeout(function() {
+        chapterSelect.value = parts.slice(2).join('_');
+        state.resumeIndex = bm.index;
+        startQuiz();
+      }, 100);
+    }, 100);
+  } else if (parts[0] === 'exam') {
+    // 기출복원문제: exam_exam2021_2_all 또는 exam_exam2021_2_exam2021_2_s1
+    modeSelect.value = 'exam';
+    onModeChange();
+    setTimeout(function() {
+      // exam 키에서 회차 추출: exam2021_2
+      var examId = parts[1] + '_' + parts[2];
+      examSelect.value = examId;
+      updateChapters();
+      setTimeout(function() {
+        var chapKey = parts.slice(3).join('_');
+        chapterSelect.value = chapKey;
+        state.resumeIndex = bm.index;
+        startQuiz();
+      }, 100);
+    }, 100);
+  }
 }
 
 // ===== 수정필요 문제 모아보기 =====
