@@ -2376,11 +2376,19 @@ function startQuiz() {
 
   state.questions = questions;
   state.currentIndex = 0;
-  // 북마크 이어하기 지원
-  if (typeof state.resumeIndex === 'number' && state.resumeIndex >= 0 && state.resumeIndex < questions.length) {
+  // 북마크 이어하기 지원 (questionKey로 검색)
+  if (state.resumeQuestionKey) {
+    for (var ri = 0; ri < questions.length; ri++) {
+      if (questions[ri].key === state.resumeQuestionKey) {
+        state.currentIndex = ri;
+        break;
+      }
+    }
+  } else if (typeof state.resumeIndex === 'number' && state.resumeIndex >= 0 && state.resumeIndex < questions.length) {
     state.currentIndex = state.resumeIndex;
   }
   delete state.resumeIndex;
+  delete state.resumeQuestionKey;
   state.answers = {};
   state.checked = {};
   state.mode = mode;
@@ -3343,6 +3351,7 @@ function resumeBookmark(key) {
       updateChapters();
       setTimeout(function() {
         chapterSelect.value = parts.slice(2).join('_');
+        state.resumeQuestionKey = bm.questionKey;
         state.resumeIndex = bm.index;
         startQuiz();
       }, 100);
@@ -3359,6 +3368,7 @@ function resumeBookmark(key) {
       setTimeout(function() {
         var chapKey = parts.slice(3).join('_');
         chapterSelect.value = chapKey;
+        state.resumeQuestionKey = bm.questionKey;
         state.resumeIndex = bm.index;
         startQuiz();
       }, 100);
