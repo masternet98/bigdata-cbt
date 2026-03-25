@@ -3316,8 +3316,8 @@ function renderBookmarkList() {
     html += '<div style="display:flex;align-items:center;gap:8px;padding:8px;background:#fff;border-radius:8px;margin-bottom:6px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">';
     html += '<span style="flex:1;font-size:0.9rem;">' + escapeHtml(key.replace(/_/g,' ')) + ' — ' + escapeHtml(bm.name) + '</span>';
     html += '<span style="font-size:0.75rem;color:#888;">' + date + '</span>';
-    html += '<button class="btn btn-primary" style="padding:4px 12px;font-size:0.8rem;" onclick="resumeBookmark(\'' + escapeHtml(key) + '\')">이어하기</button>';
-    html += '<button style="background:none;border:none;cursor:pointer;color:#999;font-size:1rem;" onclick="deleteBookmark(\'' + escapeHtml(key) + '\')" title="삭제">✕</button>';
+    html += '<button class="btn btn-primary" style="padding:4px 12px;font-size:0.8rem;" onclick="try{resumeBookmark(\'' + key + '\')}catch(e){alert(e.message)}">이어하기</button>';
+    html += '<button style="background:none;border:none;cursor:pointer;color:#999;font-size:1rem;" onclick="try{deleteBookmark(\'' + key + '\')}catch(e){alert(e.message)}" title="삭제">✕</button>';
     html += '</div>';
   });
   document.getElementById('bookmarkList').innerHTML = html;
