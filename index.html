@@ -769,7 +769,7 @@ body {
   <div id="chapterStatsArea"></div>
   <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
     <button class="btn btn-primary" onclick="startQuiz()">시험 시작</button>
-    <button class="btn btn-secondary" id="resumeBtn" style="display:none;" onclick="resumeQuiz()">이어서 풀기</button>
+    <button class="btn btn-secondary" id="resumeBtn" style="display:none;" onclick="resumeQuiz()">이어서 풀기 (이 기기)</button>
     <button class="btn btn-notes" onclick="showNotesPanel()">오답노트</button>
   </div>
   <div style="margin-top:12px;">
@@ -795,7 +795,7 @@ JSON 내보내기: 전체 데이터(오답+수정+메모) 백업 (수동 가져�
     <span id="editCountDisplay" style="margin-left:8px;font-size:0.85rem;color:#666;"></span>
   </div>
   <div id="bookmarkResumeArea" style="display:none; margin-top:16px;">
-    <h4 style="margin-bottom:8px;">북마크 이어하기</h4>
+    <h4 style="margin-bottom:8px;">북마크 (클라우드 동기화)</h4>
     <div id="bookmarkList"></div>
   </div>
   <div id="editFlagArea" style="display:none; margin-top:16px;">
@@ -3317,7 +3317,7 @@ function renderBookmarkList() {
     html += '<div style="display:flex;align-items:center;gap:8px;padding:8px;background:#fff;border-radius:8px;margin-bottom:6px;box-shadow:0 1px 3px rgba(0,0,0,0.1);">';
     html += '<span style="flex:1;font-size:0.9rem;">' + escapeHtml(key.replace(/_/g,' ')) + ' — ' + escapeHtml(bm.name) + '</span>';
     html += '<span style="font-size:0.75rem;color:#888;">' + date + '</span>';
-    html += '<button class="btn btn-primary" style="padding:4px 12px;font-size:0.8rem;" data-action="resume" data-key="' + key + '">이어하기</button>';
+    html += '<button class="btn btn-primary" style="padding:4px 12px;font-size:0.8rem;" data-action="resume" data-key="' + key + '">이동</button>';
     html += '<button style="background:none;border:none;cursor:pointer;color:#999;font-size:1rem;" data-action="delete-bm" data-key="' + key + '" title="삭제">✕</button>';
     html += '</div>';
   });
@@ -3333,7 +3333,7 @@ function renderBookmarkList() {
     var action = btn.getAttribute('data-action');
     var key = btn.getAttribute('data-key');
     if (action === 'resume') {
-      resumeBookmark(key);
+      goToBookmark(key);
     } else if (action === 'delete-bm') {
       removeBookmark(key);
       renderBookmarkList();
@@ -3341,11 +3341,11 @@ function renderBookmarkList() {
   });
 })();
 
-function resumeBookmark(key) {
+function goToBookmark(key) {
   var bookmarks = getBookmarks();
   var bm = bookmarks[key];
   if (!bm) { console.error('북마크 없음:', key); return; }
-  console.log('북마크 이어하기:', key, bm);
+  console.log('북마크로 이동:', key, bm);
 
   var sourceSelect = document.getElementById('sourceSelect');
   var modeSelect = document.getElementById('modeSelect');
