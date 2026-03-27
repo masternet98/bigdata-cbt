@@ -3322,8 +3322,12 @@ function renderBookmarkList() {
   });
   var listEl = document.getElementById('bookmarkList');
   listEl.innerHTML = html;
-  listEl.addEventListener('click', function(e) {
-    var btn = e.target.closest('[data-action]');
+}
+
+// 북마크 이벤트 위임 (한 번만 등록)
+(function() {
+  document.addEventListener('click', function(e) {
+    var btn = e.target.closest('[data-action="resume"], [data-action="delete-bm"]');
     if (!btn) return;
     var action = btn.getAttribute('data-action');
     var key = btn.getAttribute('data-key');
@@ -3334,7 +3338,7 @@ function renderBookmarkList() {
       renderBookmarkList();
     }
   });
-}
+})();
 
 function resumeBookmark(key) {
   var bookmarks = getBookmarks();
