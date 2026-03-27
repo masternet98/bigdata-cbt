@@ -1445,7 +1445,8 @@ function getBookmarks() {
 }
 
 function setBookmark(sectionKey, questionIndex) {
-  var bookmarks = getBookmarks();
+  var raw = store.getItem('cbt_bookmarks');
+  var bookmarks = raw ? JSON.parse(raw) : {};
   var q = state.questions[questionIndex];
   bookmarks[sectionKey] = {
     index: questionIndex,
@@ -1454,7 +1455,7 @@ function setBookmark(sectionKey, questionIndex) {
     savedAt: new Date().toISOString()
   };
   store.setItem('cbt_bookmarks', JSON.stringify(bookmarks));
-  saveToCloud('cbt_bookmarks');
+  saveToCloud('cbt_bookmarks', true);
 }
 
 function removeBookmark(sectionKey) {
