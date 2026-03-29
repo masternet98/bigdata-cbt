@@ -1809,80 +1809,112 @@ function renderNotesList() {
     }
   }
 
-  var memos = getMemos();
   let html = '';
 
-  // 오답 현황 카드
-  html += '<div class="notes-summary" style="background:#f8f9fa;border-radius:10px;padding:16px;margin-bottom:16px;">';
-  html += '<div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;flex-wrap:wrap;">';
-  html += '<div style="font-size:1.1rem;font-weight:700;">오답 현황</div>';
-  html += '<div style="font-size:0.9rem;color:#555;">오답 문제 <strong>' + filtered.length + '</strong>개</div>';
-  html += '<div style="font-size:0.9rem;color:#555;">전체 오답률 <strong style="color:' + (overallRate > 50 ? '#d93025' : overallRate >= 30 ? '#e65100' : '#0f9d58') + ';">' + overallRate + '%</strong> (' + totalWrongAll + '/' + totalAll + ')</div>';
+  // ─── 오답 현황 요약 (컴팩트) ───
+  var overallColor = overallRate > 50 ? '#d93025' : overallRate >= 30 ? '#e65100' : '#0f9d58';
+  html += '<div style="background:#f8f9fa;border-radius:10px;padding:14px 16px;margin-bottom:14px;">';
+  html += '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">';
+  html += '<strong style="font-size:1rem;">오답 현황</strong>';
+  html += '<span style="font-size:0.85rem;color:#555;">' + filtered.length + '문제</span>';
+  html += '<span style="font-size:0.85rem;font-weight:700;color:' + overallColor + ';">오답률 ' + overallRate + '%</span>';
   html += '</div>';
-  html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;">';
-  for (var ssn in summaryBySubject) {
-    var ss = summaryBySubject[ssn];
-    var ssTotal = ss.wrong + ss.correct;
-    var ssRate = ssTotal > 0 ? Math.round((ss.wrong / ssTotal) * 100) : 0;
-    var ssColor = ssRate > 50 ? '#d93025' : ssRate >= 30 ? '#e65100' : '#0f9d58';
-    html += '<div style="background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 1px 3px rgba(0,0,0,0.08);">';
-    html += '<div style="font-size:0.8rem;color:#888;margin-bottom:4px;">' + escapeHtml(ssn) + '</div>';
-    html += '<div style="display:flex;align-items:center;gap:8px;">';
-    html += '<div style="flex:1;height:6px;background:#eee;border-radius:3px;overflow:hidden;"><div style="height:100%;width:' + ssRate + '%;background:' + ssColor + ';border-radius:3px;"></div></div>';
-    html += '<span style="font-size:0.85rem;font-weight:700;color:' + ssColor + ';">' + ssRate + '%</span>';
-    html += '</div>';
-    html += '<div style="font-size:0.75rem;color:#aaa;margin-top:2px;">' + ss.count + '문제 / 오답 ' + ss.wrong + '회</div>';
+  // 과목별 한 줄씩
+  var subjectKeys = Object.keys(summaryBySubject);
+  if (subjectKeys.length > 1) {
+    html += '<div style="display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:8px;">';
+    subjectKeys.forEach(function(ssn) {
+      var ss = summaryBySubject[ssn];
+      var ssTotal = ss.wrong + ss.correct;
+      var ssRate = ssTotal > 0 ? Math.round((ss.wrong / ssTotal) * 100) : 0;
+      var ssColor = ssRate > 50 ? '#d93025' : ssRate >= 30 ? '#e65100' : '#0f9d58';
+      // 과목명 축약
+      var shortName = ssn.replace(/^(제\d과목).*/, '$1');
+      html += '<span style="font-size:0.8rem;color:#666;">' + escapeHtml(shortName);
+      html += ' <strong style="color:' + ssColor + ';">' + ssRate + '%</strong>';
+      html += ' <span style="color:#bbb;">(' + ss.count + ')</span></span>';
+    });
     html += '</div>';
   }
-  html += '</div></div>';
+  html += '</div>';
 
-  filtered.forEach(n => {
-    const q = qMap[n.key];
-    const qText = q ? q.text : '(문제 데이터 없음)';
-    const markers = ['①', '②', '③', '④'];
-    const total = n.wrongCount + n.correctCount;
-    const wrongRate = total > 0 ? Math.round((n.wrongCount / total) * 100) : 0;
+  // ─── 오답 목록 (접기/펼치기) ───
+  filtered.forEach(function(n, ni) {
+    var q = qMap[n.key];
+    var qText = q ? q.text : '(문제 데이터 없음)';
+    var markers = ['①', '②', '③', '④'];
+    var total = n.wrongCount + n.correctCount;
+    var wrongRate = total > 0 ? Math.round((n.wrongCount / total) * 100) : 0;
+    var rateColor = wrongRate > 70 ? '#d93025' : wrongRate >= 40 ? '#e65100' : '#888';
+    var memoText = getMemo(n.key);
+    var correctAns = q ? formatAnswer(q.answer) : '?';
+    var yourAns = n.lastSelectedAnswer ? formatAnswer(n.lastSelectedAnswer) : '?';
 
-    html += '<div class="notes-item">';
-    html += '<div class="notes-q-header">';
-    html += '<span class="notes-q-title">[' + escapeHtml(n.subjectName) + ' > ' + escapeHtml(n.chapterName) + '] 문제 ' + n.questionId + '</span>';
-    html += '<span class="notes-q-stats">오답률 ' + wrongRate + '%</span>';
+    // 축약된 문제 텍스트 (60자)
+    var shortText = qText.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ');
+    if (shortText.length > 60) shortText = shortText.substring(0, 60) + '...';
+
+    html += '<div class="notes-item" style="padding:0;margin-bottom:6px;">';
+    // 헤더 (항상 표시) — 클릭하면 상세 토글
+    html += '<div class="notes-q-header" style="cursor:pointer;padding:10px 14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;" onclick="toggleNoteDetail(\'noteDetail' + ni + '\', this)">';
+    html += '<span class="stat-toggle" style="font-size:0.7rem;color:#999;">&#9654;</span>';
+    html += '<span style="font-size:0.75rem;color:#888;white-space:nowrap;">[' + escapeHtml(n.subjectName.replace(/^(제\d과목).*/, '$1')) + '] Q' + n.questionId + '</span>';
+    html += '<span style="flex:1;font-size:0.85rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + escapeHtml(shortText) + '</span>';
+    html += '<span style="font-size:0.8rem;font-weight:700;color:' + rateColor + ';white-space:nowrap;">' + wrongRate + '%</span>';
+    html += '<span style="font-size:0.75rem;color:#999;white-space:nowrap;">정답 ' + correctAns + '</span>';
+    if (memoText) html += '<span style="font-size:0.75rem;" title="메모 있음">📝</span>';
     html += '</div>';
-    html += '<div class="notes-q-text">' + renderMathInText(qText) + '</div>';
+
+    // 상세 (기본 숨김)
+    html += '<div id="noteDetail' + ni + '" style="display:none;padding:8px 14px 14px;border-top:1px solid #f0f0f0;">';
+    html += '<div class="notes-q-text" style="font-size:0.9rem;margin-bottom:8px;">' + renderMathInText(qText) + '</div>';
     if (q && q.quote) {
-      html += '<div class="notes-q-quote" style="background:#f0f4f8;border-left:3px solid #1a73e8;padding:8px 12px;margin:6px 0;font-size:0.82rem;color:#555;white-space:pre-wrap;">' + renderQuoteContent(q.quote) + '</div>';
+      html += '<div style="background:#f0f4f8;border-left:3px solid #1a73e8;padding:8px 12px;margin:6px 0;font-size:0.82rem;color:#555;white-space:pre-wrap;">' + renderQuoteContent(q.quote) + '</div>';
     }
     if (q && q.choices && q.choices.length === 4) {
-      html += '<div class="notes-q-choices" style="margin:8px 0;font-size:0.85rem;">';
+      html += '<div style="margin:8px 0;font-size:0.85rem;">';
       for (var ci = 0; ci < 4; ci++) {
-        var isCorrect = isInAnswer(ci + 1, q.answer);
-        var isWrong = isInSelection(ci + 1, n.lastSelectedAnswer) && !isCorrect;
-        var choiceStyle = '';
-        if (isCorrect) choiceStyle = 'color:#0f9d58;font-weight:700;';
-        else if (isWrong) choiceStyle = 'color:#d93025;text-decoration:line-through;';
-        html += '<div style="padding:3px 0;' + choiceStyle + '">';
+        var isCorr = isInAnswer(ci + 1, q.answer);
+        var isWrn = isInSelection(ci + 1, n.lastSelectedAnswer) && !isCorr;
+        var cStyle = '';
+        if (isCorr) cStyle = 'color:#0f9d58;font-weight:700;';
+        else if (isWrn) cStyle = 'color:#d93025;text-decoration:line-through;';
+        html += '<div style="padding:2px 0;' + cStyle + '">';
         html += markers[ci] + ' ' + renderMathInText(q.choices[ci]);
-        if (isCorrect) html += ' (정답)';
-        if (isWrong) html += ' (내 선택)';
+        if (isCorr) html += ' (정답)';
+        if (isWrn) html += ' (내 선택)';
         html += '</div>';
       }
       html += '</div>';
     }
-    html += '<div class="notes-q-counts">';
+    html += '<div class="notes-q-counts" style="font-size:0.8rem;margin-top:6px;">';
     html += '<span class="count-wrong">오답 ' + n.wrongCount + '회</span>';
     html += '<span class="count-correct">정답 ' + n.correctCount + '회</span>';
     if (n.lastWrongAt) {
-      const d = new Date(n.lastWrongAt);
-      html += '<span>최근 오답: ' + d.toLocaleDateString('ko-KR') + '</span>';
+      html += '<span>최근: ' + new Date(n.lastWrongAt).toLocaleDateString('ko-KR') + '</span>';
     }
     html += '</div>';
-    if (memos[n.key]) {
-      html += '<div class="notes-memo"><div class="notes-memo-label">📝 메모</div>' + renderMathInText(memos[n.key]) + '</div>';
+    if (memoText) {
+      html += '<div class="notes-memo"><div class="notes-memo-label">📝 메모</div>' + renderMathInText(memoText) + '</div>';
     }
+    html += '</div>';
     html += '</div>';
   });
 
   container.innerHTML = html;
+}
+
+function toggleNoteDetail(id, header) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var arrow = header.querySelector('.stat-toggle');
+  if (el.style.display === 'none') {
+    el.style.display = 'block';
+    if (arrow) arrow.innerHTML = '&#9660;';
+  } else {
+    el.style.display = 'none';
+    if (arrow) arrow.innerHTML = '&#9654;';
+  }
 }
 
 function confirmClearNotes() {
