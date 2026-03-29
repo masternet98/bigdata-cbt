@@ -343,6 +343,11 @@ body {
 .bottom-nav .btn-list { background: #e8f0fe; border-color: #1a73e8; color: #1a73e8; }
 
 /* 상단 진행 정보 바 */
+.btn-quiz-back {
+  background: none; border: none; cursor: pointer; font-size: 1.2rem; color: #888;
+  padding: 4px 8px; border-radius: 6px; line-height: 1;
+}
+.btn-quiz-back:hover { background: #f0f0f0; color: #333; }
 .nav-compact {
   display: flex;
   align-items: center;
@@ -809,6 +814,7 @@ JSON 내보내기: 전체 데이터(오답+수정+메모) 백업 (수동 가져�
 <div class="quiz-container" id="quizContainer">
   <div class="progress-bar"><div class="fill" id="progressFill"></div></div>
   <div class="nav-compact">
+    <button id="quizBackBtn" class="btn-quiz-back" onclick="exitQuiz()" title="나가기">✕</button>
     <span class="q-num" id="navCurrentText">1 / 142</span>
     <span class="timer" id="timerDisplay" style="display:none;">120:00</span>
   </div>
@@ -2049,6 +2055,7 @@ function startWrongQuiz() {
   state.subjectId = 'all';
   state.chapterId = 'all';
   state.timerEnd = null;
+  state.entryPoint = 'notes';
 
   document.getElementById('notesPanel').style.display = 'none';
   showQuiz();
@@ -2112,6 +2119,7 @@ function startSingleNoteQuiz(clickedKey) {
   state.subjectId = 'all';
   state.chapterId = 'all';
   state.timerEnd = null;
+  state.entryPoint = 'notes';
 
   document.getElementById('notesPanel').style.display = 'none';
   showQuiz();
@@ -2511,6 +2519,7 @@ function startQuiz() {
   state.timerEnd = null;
   state.examMode = (mode === 'exam' || mode === 'quicktest');
   state.quickTestMode = (mode === 'quicktest');
+  state.entryPoint = 'setup';
 
   showQuiz();
 
@@ -3186,9 +3195,14 @@ function showResult() {
   }
 
   html += '<div style="margin-top:24px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">';
+  if (state.entryPoint === 'notes') {
+    html += '<button class="btn btn-notes" onclick="showNotesPanel()">오답노트로 돌아가기</button>';
+  }
   html += '<button class="btn btn-primary" onclick="goBackToSetup()">새 시험</button>';
   html += '<button class="btn btn-secondary" onclick="reviewQuiz()">오답 다시보기</button>';
-  html += '<button class="btn btn-notes" onclick="showNotesPanel()">오답노트</button>';
+  if (state.entryPoint !== 'notes') {
+    html += '<button class="btn btn-notes" onclick="showNotesPanel()">오답노트</button>';
+  }
   html += '</div>';
   html += '</div>';
   rc.innerHTML = html;
@@ -3228,6 +3242,22 @@ function startWeakSubjectQuiz(subjectName) {
   document.getElementById('modeSelect').value = 'weak';
   onModeChange();
   updateChapters();
+}
+
+function exitQuiz() {
+  if (!confirm('퀴즈를 중단하시겠습니까?\n(진행 상황은 "이어서 풀기"로 복원 가능)')) return;
+  saveState(); // 현재까지 진행 상황 저장
+  stopTimer();
+  document.getElementById('quizContainer').style.display = 'none';
+  if (state.entryPoint === 'notes') {
+    document.getElementById('notesPanel').style.display = 'block';
+    renderNotesList();
+  } else {
+    document.getElementById('setupPanel').style.display = 'block';
+    checkSavedState();
+    renderChapterStats();
+    renderEditFlagArea();
+  }
 }
 
 function goBackToSetup() {
