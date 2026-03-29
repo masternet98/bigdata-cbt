@@ -876,6 +876,11 @@ JSON 내보내기: 전체 데이터(오답+수정+메모) 백업 (수동 가져�
 <div class="notes-panel" id="notesPanel">
   <h2>오답노트</h2>
   <div class="notes-toolbar">
+    <select id="notesSourceFilter" onchange="renderNotesList()">
+      <option value="all">전체 유형</option>
+      <option value="practice">적중예상문제</option>
+      <option value="exams">기출복원문제</option>
+    </select>
     <select id="notesSubjectFilter">
       <option value="all">전체 과목</option>
     </select>
@@ -1737,6 +1742,10 @@ function showNotesPanel() {
   document.getElementById('quizContainer').style.display = 'none';
   document.getElementById('resultContainer').style.display = 'none';
   document.getElementById('notesPanel').style.display = 'block';
+  // 메인화면 source 필터 동기화
+  var mainSource = document.getElementById('sourceSelect');
+  var notesSource = document.getElementById('notesSourceFilter');
+  if (mainSource && notesSource) notesSource.value = mainSource.value;
   populateNotesFilters();
   renderNotesList();
 }
@@ -1801,15 +1810,32 @@ function updateNotesChapterFilter() {
   });
 }
 
+function getSourceValidKeys() {
+  var srcFilter = document.getElementById('notesSourceFilter');
+  var source = srcFilter ? srcFilter.value : 'all';
+  if (source === 'all') return null;
+  var bank = window.QUESTION_BANK;
+  var keys = new Set();
+  if (source === 'practice' && bank) {
+    bank.subjects.forEach(function(s) { s.chapters.forEach(function(ch) { ch.questions.forEach(function(q) { keys.add(ch.id + '_q' + q.id); }); }); });
+  }
+  if (source === 'exams' && bank && bank.exams) {
+    bank.exams.forEach(function(exam) { exam.sections.forEach(function(sec) { sec.questions.forEach(function(q) { keys.add(sec.id + '_q' + q.id); }); }); });
+  }
+  return keys;
+}
+
 function renderNotesList() {
   const notes = getWrongNotes();
   const subFilter = document.getElementById('notesSubjectFilter').value;
   const chFilter = document.getElementById('notesChapterFilter').value;
   const container = document.getElementById('notesList');
+  const sourceKeys = getSourceValidKeys();
 
   // 필터된 오답 + 확신없음 문제
   let filtered = [];
   for (const key in notes) {
+    if (sourceKeys && !sourceKeys.has(key)) continue;
     const n = notes[key];
     if (n.wrongCount === 0 && !(n.uncertainCount > 0)) continue;
     if (subFilter !== 'all' && n.subjectName !== subFilter) continue;
@@ -1823,6 +1849,7 @@ function renderNotesList() {
   var statsBySubject = {};
   var totalAnswered = 0, totalWrongQ = 0;
   for (var nk in notes) {
+    if (sourceKeys && !sourceKeys.has(nk)) continue;
     var nn = notes[nk];
     if (subFilter !== 'all' && nn.subjectName !== subFilter) continue;
     if (chFilter !== 'all' && nn.chapterName !== chFilter) continue;
