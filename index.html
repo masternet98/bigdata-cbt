@@ -1590,14 +1590,14 @@ function getChapterStats() {
       stats[chKey] = {
         subjectName: n.subjectName,
         chapterName: n.chapterName,
-        totalWrong: 0,
-        totalCorrect: 0,
-        questionCount: 0,
+        totalAnswered: 0,
+        wrongQuestions: 0,
+        uncertainQuestions: 0,
       };
     }
-    stats[chKey].totalWrong += n.wrongCount;
-    stats[chKey].totalCorrect += n.correctCount;
-    stats[chKey].questionCount++;
+    stats[chKey].totalAnswered++;
+    if (n.wrongCount > 0) stats[chKey].wrongQuestions++;
+    if (n.uncertainCount > 0) stats[chKey].uncertainQuestions++;
   }
 
   return stats;
@@ -1628,10 +1628,11 @@ function renderChapterStats() {
     if (!subKey) subKey = subName;
 
     if (!subjectGroups[subKey]) {
-      subjectGroups[subKey] = { name: subName, totalWrong: 0, totalCorrect: 0, chapters: [] };
+      subjectGroups[subKey] = { name: subName, totalAnswered: 0, wrongQuestions: 0, uncertainQuestions: 0, chapters: [] };
     }
-    subjectGroups[subKey].totalWrong += s.totalWrong;
-    subjectGroups[subKey].totalCorrect += s.totalCorrect;
+    subjectGroups[subKey].totalAnswered += s.totalAnswered;
+    subjectGroups[subKey].wrongQuestions += s.wrongQuestions;
+    subjectGroups[subKey].uncertainQuestions += s.uncertainQuestions;
     subjectGroups[subKey].chapters.push({ key: key, stats: s });
   });
 
@@ -1641,10 +1642,9 @@ function renderChapterStats() {
     var g = subjectGroups[subKey];
     if (!g) return;
 
-    var total = g.totalWrong + g.totalCorrect;
-    var wrongRate = total > 0 ? Math.round((g.totalWrong / total) * 100) : 0;
-    var colorClass = getStatColorClass(wrongRate, total);
-    var barClass = getStatBarClass(wrongRate, total);
+    var wrongRate = g.totalAnswered > 0 ? Math.round((g.wrongQuestions / g.totalAnswered) * 100) : 0;
+    var colorClass = getStatColorClass(wrongRate, g.totalAnswered);
+    var barClass = getStatBarClass(wrongRate, g.totalAnswered);
     var sid = 'subjStats_' + subKey.replace(/[^a-zA-Z0-9가-힣]/g, '');
 
     // 과목 요약 헤더 (클릭 시 접기/펼치기)
@@ -1652,21 +1652,24 @@ function renderChapterStats() {
     html += '<span class="stat-toggle">&#9654;</span>';
     html += '<span class="stat-subject-name">' + escapeHtml(g.name) + '</span>';
     html += '<div class="stat-bar-bg"><div class="stat-bar-fill ' + barClass + '" style="width:' + wrongRate + '%"></div></div>';
-    html += '<span class="stat-value ' + colorClass + '">오답률 ' + wrongRate + '% (' + g.totalWrong + '/' + total + ')</span>';
+    html += '<span class="stat-value ' + colorClass + '">오답 ' + g.wrongQuestions + '/' + g.totalAnswered + '문제';
+    if (g.uncertainQuestions > 0) html += ' <span style="color:#ff9800;">⚠' + g.uncertainQuestions + '</span>';
+    html += '</span>';
     html += '</div>';
 
     // 세부 장별 (기본 숨김)
     html += '<div class="subject-stat-details" id="' + sid + '">';
     g.chapters.forEach(function(ch) {
-      var chTotal = ch.stats.totalWrong + ch.stats.totalCorrect;
-      var chRate = chTotal > 0 ? Math.round((ch.stats.totalWrong / chTotal) * 100) : 0;
-      var chColor = getStatColorClass(chRate, chTotal);
-      var chBar = getStatBarClass(chRate, chTotal);
+      var chRate = ch.stats.totalAnswered > 0 ? Math.round((ch.stats.wrongQuestions / ch.stats.totalAnswered) * 100) : 0;
+      var chColor = getStatColorClass(chRate, ch.stats.totalAnswered);
+      var chBar = getStatBarClass(chRate, ch.stats.totalAnswered);
 
       html += '<div class="chapter-stat-item">';
       html += '<span class="stat-label">' + escapeHtml(ch.stats.chapterName) + '</span>';
       html += '<div class="stat-bar-bg"><div class="stat-bar-fill ' + chBar + '" style="width:' + chRate + '%"></div></div>';
-      html += '<span class="stat-value ' + chColor + '">오답률 ' + chRate + '% (' + ch.stats.totalWrong + '/' + chTotal + ')</span>';
+      html += '<span class="stat-value ' + chColor + '">오답 ' + ch.stats.wrongQuestions + '/' + ch.stats.totalAnswered + '문제';
+      if (ch.stats.uncertainQuestions > 0) html += ' <span style="color:#ff9800;">⚠' + ch.stats.uncertainQuestions + '</span>';
+      html += '</span>';
       html += '</div>';
     });
     html += '</div>';
@@ -1794,13 +1797,14 @@ function renderNotesList() {
     if (chFilter !== 'all' && nn.chapterName !== chFilter) continue;
     var sn = nn.subjectName || '기타';
     var shortSn = sn.replace(/^(제\d과목).*/, '$1');
-    if (!statsBySubject[shortSn]) statsBySubject[shortSn] = { answered: 0, wrong: 0, fullName: sn };
+    if (!statsBySubject[shortSn]) statsBySubject[shortSn] = { answered: 0, wrong: 0, uncertain: 0, fullName: sn };
     statsBySubject[shortSn].answered++;
     totalAnswered++;
     if (nn.wrongCount > 0) {
       statsBySubject[shortSn].wrong++;
       totalWrongQ++;
     }
+    if (nn.uncertainCount > 0) statsBySubject[shortSn].uncertain++;
   }
 
   if (filtered.length === 0) {
@@ -1851,6 +1855,7 @@ function renderNotesList() {
     html += '<span style="font-size:0.8rem;color:#666;min-width:56px;">' + escapeHtml(ssn) + '</span>';
     html += '<div style="flex:1;height:6px;background:#eee;border-radius:3px;overflow:hidden;max-width:120px;"><div style="height:100%;width:' + ssRate + '%;background:' + ssColor + ';border-radius:3px;"></div></div>';
     html += '<span style="font-size:0.8rem;color:' + ssColor + ';font-weight:700;">' + ss.wrong + '/' + ss.answered + '</span>';
+    if (ss.uncertain > 0) html += '<span style="font-size:0.75rem;color:#ff9800;">⚠' + ss.uncertain + '</span>';
     html += '</div>';
   });
   html += '</div>';
