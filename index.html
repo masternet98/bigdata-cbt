@@ -2277,12 +2277,52 @@ function resumeTimer() {
 }
 
 // ===== 초기화 =====
+// 기존 wrongNotes의 subjectName/chapterName 보정 (1회만 실행)
+function migrateWrongNotes() {
+  var bank = window.QUESTION_BANK;
+  if (!bank || !bank.exams) return;
+  var notes = getWrongNotes();
+  var changed = false;
+
+  // 기출 문제 키 → 올바른 subjectName/chapterName 매핑 구축
+  var keyMap = {};
+  bank.exams.forEach(function(exam) {
+    exam.sections.forEach(function(sec) {
+      sec.questions.forEach(function(q) {
+        keyMap[sec.id + '_q' + q.id] = { subjectName: sec.name, chapterName: exam.name };
+      });
+    });
+  });
+  bank.subjects.forEach(function(s) {
+    s.chapters.forEach(function(ch) {
+      ch.questions.forEach(function(q) {
+        keyMap[ch.id + '_q' + q.id] = { subjectName: s.name, chapterName: ch.name };
+      });
+    });
+  });
+
+  for (var key in notes) {
+    var correct = keyMap[key];
+    if (correct && (notes[key].subjectName !== correct.subjectName || notes[key].chapterName !== correct.chapterName)) {
+      notes[key].subjectName = correct.subjectName;
+      notes[key].chapterName = correct.chapterName;
+      changed = true;
+    }
+  }
+
+  if (changed) {
+    store.setItem('cbt_wrong_notes', JSON.stringify(notes));
+    console.log('wrongNotes 과목명 마이그레이션 완료');
+  }
+}
+
 function init() {
   const bank = window.QUESTION_BANK;
   if (!bank) {
     document.getElementById('setupPanel').innerHTML = '<h2 style="color:#d93025">questions.js 파일을 찾을 수 없습니다.</h2><p>build_questions.py를 실행하여 생성하세요.</p>';
     return;
   }
+  migrateWrongNotes();
   var sel = document.getElementById('subjectSelect');
   sel.addEventListener('change', function() { updateChapters(); renderChapterStats(); });
   updateSource();
