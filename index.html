@@ -3128,6 +3128,7 @@ function escapeHtml(str) {
 }
 
 function renderMathInText(text) {
+  if (typeof text !== 'string') text = String(text || '');
   // 1) 수식을 플레이스홀더로 보호 (marked가 수식을 깨지 않도록)
   var mathBlocks = [];
   var placeholder = function(tex, display) {
