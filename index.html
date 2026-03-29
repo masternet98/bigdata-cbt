@@ -1756,6 +1756,7 @@ function renderNotesList() {
   const chFilter = document.getElementById('notesChapterFilter').value;
   const container = document.getElementById('notesList');
 
+  // 필터된 오답 문제
   let filtered = [];
   for (const key in notes) {
     const n = notes[key];
@@ -1767,25 +1768,28 @@ function renderNotesList() {
 
   filtered.sort((a, b) => b.wrongCount - a.wrongCount);
 
+  // 과목별 전체 풀이 통계 (wrongCount=0 포함)
+  var statsBySubject = {};
+  var totalAnswered = 0, totalWrongQ = 0;
+  for (var nk in notes) {
+    var nn = notes[nk];
+    if (subFilter !== 'all' && nn.subjectName !== subFilter) continue;
+    if (chFilter !== 'all' && nn.chapterName !== chFilter) continue;
+    var sn = nn.subjectName || '기타';
+    var shortSn = sn.replace(/^(제\d과목).*/, '$1');
+    if (!statsBySubject[shortSn]) statsBySubject[shortSn] = { answered: 0, wrong: 0, fullName: sn };
+    statsBySubject[shortSn].answered++;
+    totalAnswered++;
+    if (nn.wrongCount > 0) {
+      statsBySubject[shortSn].wrong++;
+      totalWrongQ++;
+    }
+  }
+
   if (filtered.length === 0) {
     container.innerHTML = '<div class="notes-empty">오답 기록이 없습니다.</div>';
     return;
   }
-
-  // ─── 오답 현황 요약 ───
-  var summaryBySubject = {};
-  var totalWrongAll = 0, totalCorrectAll = 0;
-  filtered.forEach(function(n) {
-    var sn = n.subjectName || '기타';
-    if (!summaryBySubject[sn]) summaryBySubject[sn] = { wrong: 0, correct: 0, count: 0 };
-    summaryBySubject[sn].wrong += n.wrongCount;
-    summaryBySubject[sn].correct += n.correctCount;
-    summaryBySubject[sn].count++;
-    totalWrongAll += n.wrongCount;
-    totalCorrectAll += n.correctCount;
-  });
-  var totalAll = totalWrongAll + totalCorrectAll;
-  var overallRate = totalAll > 0 ? Math.round((totalWrongAll / totalAll) * 100) : 0;
 
   // 문제 텍스트 가져오기
   const bank = window.QUESTION_BANK;
@@ -1811,110 +1815,52 @@ function renderNotesList() {
 
   let html = '';
 
-  // ─── 오답 현황 요약 (컴팩트) ───
-  var overallColor = overallRate > 50 ? '#d93025' : overallRate >= 30 ? '#e65100' : '#0f9d58';
+  // ─── 오답 현황 (풀이 대비 오답 카운트) ───
+  var overallWrongRate = totalAnswered > 0 ? Math.round((totalWrongQ / totalAnswered) * 100) : 0;
+  var overallColor = overallWrongRate > 50 ? '#d93025' : overallWrongRate >= 30 ? '#e65100' : '#0f9d58';
   html += '<div style="background:#f8f9fa;border-radius:10px;padding:14px 16px;margin-bottom:14px;">';
-  html += '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">';
+  html += '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px;">';
   html += '<strong style="font-size:1rem;">오답 현황</strong>';
-  html += '<span style="font-size:0.85rem;color:#555;">' + filtered.length + '문제</span>';
-  html += '<span style="font-size:0.85rem;font-weight:700;color:' + overallColor + ';">오답률 ' + overallRate + '%</span>';
+  html += '<span style="font-size:0.85rem;color:#555;">오답 <strong style="color:#d93025;">' + totalWrongQ + '</strong>문제 / 전체 풀이 ' + totalAnswered + '문제</span>';
+  html += '<span style="font-size:0.85rem;font-weight:700;color:' + overallColor + ';">' + overallWrongRate + '%</span>';
   html += '</div>';
-  // 과목별 한 줄씩
-  var subjectKeys = Object.keys(summaryBySubject);
-  if (subjectKeys.length > 1) {
-    html += '<div style="display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:8px;">';
-    subjectKeys.forEach(function(ssn) {
-      var ss = summaryBySubject[ssn];
-      var ssTotal = ss.wrong + ss.correct;
-      var ssRate = ssTotal > 0 ? Math.round((ss.wrong / ssTotal) * 100) : 0;
-      var ssColor = ssRate > 50 ? '#d93025' : ssRate >= 30 ? '#e65100' : '#0f9d58';
-      // 과목명 축약
-      var shortName = ssn.replace(/^(제\d과목).*/, '$1');
-      html += '<span style="font-size:0.8rem;color:#666;">' + escapeHtml(shortName);
-      html += ' <strong style="color:' + ssColor + ';">' + ssRate + '%</strong>';
-      html += ' <span style="color:#bbb;">(' + ss.count + ')</span></span>';
-    });
+  // 과목별 통계 (항상 표시)
+  var subKeys = Object.keys(statsBySubject);
+  subKeys.forEach(function(ssn) {
+    var ss = statsBySubject[ssn];
+    var ssRate = ss.answered > 0 ? Math.round((ss.wrong / ss.answered) * 100) : 0;
+    var ssColor = ssRate > 50 ? '#d93025' : ssRate >= 30 ? '#e65100' : '#0f9d58';
+    html += '<div style="display:flex;align-items:center;gap:8px;margin-top:4px;">';
+    html += '<span style="font-size:0.8rem;color:#666;min-width:56px;">' + escapeHtml(ssn) + '</span>';
+    html += '<div style="flex:1;height:6px;background:#eee;border-radius:3px;overflow:hidden;max-width:120px;"><div style="height:100%;width:' + ssRate + '%;background:' + ssColor + ';border-radius:3px;"></div></div>';
+    html += '<span style="font-size:0.8rem;color:' + ssColor + ';font-weight:700;">' + ss.wrong + '/' + ss.answered + '</span>';
     html += '</div>';
-  }
+  });
   html += '</div>';
 
-  // ─── 오답 목록 (접기/펼치기) ───
+  // ─── 오답 목록 (1줄 요약, 클릭 시 퀴즈 진입) ───
   filtered.forEach(function(n, ni) {
     var q = qMap[n.key];
     var qText = q ? q.text : '(문제 데이터 없음)';
-    var markers = ['①', '②', '③', '④'];
-    var total = n.wrongCount + n.correctCount;
-    var wrongRate = total > 0 ? Math.round((n.wrongCount / total) * 100) : 0;
-    var rateColor = wrongRate > 70 ? '#d93025' : wrongRate >= 40 ? '#e65100' : '#888';
     var memoText = getMemo(n.key);
     var correctAns = q ? formatAnswer(q.answer) : '?';
-    var yourAns = n.lastSelectedAnswer ? formatAnswer(n.lastSelectedAnswer) : '?';
 
-    // 축약된 문제 텍스트 (60자)
-    var shortText = qText.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ');
-    if (shortText.length > 60) shortText = shortText.substring(0, 60) + '...';
+    // 축약된 문제 텍스트 (50자)
+    var shortText = qText.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+    if (shortText.length > 50) shortText = shortText.substring(0, 50) + '...';
 
-    html += '<div class="notes-item" style="padding:0;margin-bottom:6px;">';
-    // 헤더 (항상 표시) — 클릭하면 상세 토글
-    html += '<div class="notes-q-header" style="cursor:pointer;padding:10px 14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;" onclick="toggleNoteDetail(\'noteDetail' + ni + '\', this)">';
-    html += '<span class="stat-toggle" style="font-size:0.7rem;color:#999;">&#9654;</span>';
-    html += '<span style="font-size:0.75rem;color:#888;white-space:nowrap;">[' + escapeHtml(n.subjectName.replace(/^(제\d과목).*/, '$1')) + '] Q' + n.questionId + '</span>';
+    html += '<div class="notes-item" style="padding:0;margin-bottom:4px;cursor:pointer;" onclick="startSingleNoteQuiz(\'' + n.key.replace(/'/g, "\\'") + '\')" title="클릭하여 이 문제부터 풀기">';
+    html += '<div style="padding:9px 14px;display:flex;align-items:center;gap:8px;">';
+    html += '<span style="font-size:0.75rem;color:#888;white-space:nowrap;">[' + escapeHtml((n.subjectName || '').replace(/^(제\d과목).*/, '$1')) + '] Q' + n.questionId + '</span>';
     html += '<span style="flex:1;font-size:0.85rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + escapeHtml(shortText) + '</span>';
-    html += '<span style="font-size:0.8rem;font-weight:700;color:' + rateColor + ';white-space:nowrap;">' + wrongRate + '%</span>';
-    html += '<span style="font-size:0.75rem;color:#999;white-space:nowrap;">정답 ' + correctAns + '</span>';
-    if (memoText) html += '<span style="font-size:0.75rem;" title="메모 있음">📝</span>';
-    html += '</div>';
-
-    // 상세 (기본 숨김)
-    html += '<div id="noteDetail' + ni + '" style="display:none;padding:8px 14px 14px;border-top:1px solid #f0f0f0;">';
-    html += '<div class="notes-q-text" style="font-size:0.9rem;margin-bottom:8px;">' + renderMathInText(qText) + '</div>';
-    if (q && q.quote) {
-      html += '<div style="background:#f0f4f8;border-left:3px solid #1a73e8;padding:8px 12px;margin:6px 0;font-size:0.82rem;color:#555;white-space:pre-wrap;">' + renderQuoteContent(q.quote) + '</div>';
-    }
-    if (q && q.choices && q.choices.length === 4) {
-      html += '<div style="margin:8px 0;font-size:0.85rem;">';
-      for (var ci = 0; ci < 4; ci++) {
-        var isCorr = isInAnswer(ci + 1, q.answer);
-        var isWrn = isInSelection(ci + 1, n.lastSelectedAnswer) && !isCorr;
-        var cStyle = '';
-        if (isCorr) cStyle = 'color:#0f9d58;font-weight:700;';
-        else if (isWrn) cStyle = 'color:#d93025;text-decoration:line-through;';
-        html += '<div style="padding:2px 0;' + cStyle + '">';
-        html += markers[ci] + ' ' + renderMathInText(q.choices[ci]);
-        if (isCorr) html += ' (정답)';
-        if (isWrn) html += ' (내 선택)';
-        html += '</div>';
-      }
-      html += '</div>';
-    }
-    html += '<div class="notes-q-counts" style="font-size:0.8rem;margin-top:6px;">';
-    html += '<span class="count-wrong">오답 ' + n.wrongCount + '회</span>';
-    html += '<span class="count-correct">정답 ' + n.correctCount + '회</span>';
-    if (n.lastWrongAt) {
-      html += '<span>최근: ' + new Date(n.lastWrongAt).toLocaleDateString('ko-KR') + '</span>';
-    }
-    html += '</div>';
-    if (memoText) {
-      html += '<div class="notes-memo"><div class="notes-memo-label">📝 메모</div>' + renderMathInText(memoText) + '</div>';
-    }
-    html += '</div>';
-    html += '</div>';
+    html += '<span style="font-size:0.75rem;color:#d93025;white-space:nowrap;">오답' + n.wrongCount + '</span>';
+    html += '<span style="font-size:0.75rem;color:#999;white-space:nowrap;">정답' + correctAns + '</span>';
+    if (memoText) html += '<span style="font-size:0.75rem;">📝</span>';
+    html += '<span style="font-size:0.7rem;color:#ccc;">▶</span>';
+    html += '</div></div>';
   });
 
   container.innerHTML = html;
-}
-
-function toggleNoteDetail(id, header) {
-  var el = document.getElementById(id);
-  if (!el) return;
-  var arrow = header.querySelector('.stat-toggle');
-  if (el.style.display === 'none') {
-    el.style.display = 'block';
-    if (arrow) arrow.innerHTML = '&#9660;';
-  } else {
-    el.style.display = 'none';
-    if (arrow) arrow.innerHTML = '&#9654;';
-  }
 }
 
 function confirmClearNotes() {
@@ -2097,6 +2043,69 @@ function startWrongQuiz() {
 
   state.questions = questions;
   state.currentIndex = 0;
+  state.answers = {};
+  state.checked = {};
+  state.mode = 'weak';
+  state.subjectId = 'all';
+  state.chapterId = 'all';
+  state.timerEnd = null;
+
+  document.getElementById('notesPanel').style.display = 'none';
+  showQuiz();
+}
+
+// 오답노트에서 개별 문제 클릭 → 해당 문제부터 퀴즈 시작
+function startSingleNoteQuiz(clickedKey) {
+  var notes = getWrongNotes();
+  var subFilter = document.getElementById('notesSubjectFilter').value;
+  var chFilter = document.getElementById('notesChapterFilter').value;
+
+  // 필터된 오답 키 수집
+  var wrongKeys = new Set();
+  for (var key in notes) {
+    var n = notes[key];
+    if (n.wrongCount === 0) continue;
+    if (subFilter !== 'all' && n.subjectName !== subFilter) continue;
+    if (chFilter !== 'all' && n.chapterName !== chFilter) continue;
+    wrongKeys.add(key);
+  }
+
+  // 전체 문제 뱅크에서 오답 문제 추출
+  var bank = window.QUESTION_BANK;
+  var questions = [];
+  bank.subjects.forEach(function(s) {
+    s.chapters.forEach(function(ch) {
+      ch.questions.forEach(function(q) {
+        var k = ch.id + '_q' + q.id;
+        if (wrongKeys.has(k)) {
+          questions.push({ ...q, subjectName: s.name, chapterName: ch.name, key: k });
+        }
+      });
+    });
+  });
+  if (bank.exams) {
+    bank.exams.forEach(function(exam) {
+      exam.sections.forEach(function(sec) {
+        sec.questions.forEach(function(q) {
+          var k = sec.id + '_q' + q.id;
+          if (wrongKeys.has(k)) {
+            questions.push({ ...q, subjectName: exam.name, chapterName: sec.name, key: k });
+          }
+        });
+      });
+    });
+  }
+
+  questions = sortByWeakness(questions);
+
+  // 클릭한 문제의 인덱스 찾기
+  var startIdx = 0;
+  for (var i = 0; i < questions.length; i++) {
+    if (questions[i].key === clickedKey) { startIdx = i; break; }
+  }
+
+  state.questions = questions;
+  state.currentIndex = startIdx;
   state.answers = {};
   state.checked = {};
   state.mode = 'weak';
