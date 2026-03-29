@@ -2092,12 +2092,8 @@ function startWrongQuiz() {
     });
   }
 
-  // 오답 횟수 내림차순 정렬
-  questions.sort((a, b) => {
-    const na = notes[a.key] ? notes[a.key].wrongCount : 0;
-    const nb = notes[b.key] ? notes[b.key].wrongCount : 0;
-    return nb - na;
-  });
+  // 취약 점수순 정렬 (오답률 + 최근성 + 반복 가중치)
+  questions = sortByWeakness(questions);
 
   state.questions = questions;
   state.currentIndex = 0;
@@ -2470,12 +2466,16 @@ function startQuiz() {
 
     if (mode === 'random') {
       questions = shuffle([...questions]);
+      if (maxCount > 0 && maxCount < questions.length) {
+        questions = questions.slice(0, maxCount);
+      }
     } else if (mode === 'weak') {
-      questions = sortByWeakness(questions);
-    }
-
-    if (maxCount > 0 && maxCount < questions.length) {
-      questions = questions.slice(0, maxCount);
+      var weakMax = (maxCount > 0 && maxCount < questions.length) ? maxCount : questions.length;
+      questions = buildWeakQuestions(questions, weakMax);
+    } else {
+      if (maxCount > 0 && maxCount < questions.length) {
+        questions = questions.slice(0, maxCount);
+      }
     }
   }
 
@@ -2662,22 +2662,119 @@ function buildQuickTestQuestions() {
 }
 
 function sortByWeakness(questions) {
-  const notes = getWrongNotes();
+  var notes = getWrongNotes();
+  var now = Date.now();
 
-  return questions.sort((a, b) => {
-    const na = notes[a.key];
-    const nb = notes[b.key];
+  // 문제별 취약 점수 계산
+  function weakScore(q) {
+    var n = notes[q.key];
+    if (!n || (n.wrongCount + n.correctCount === 0)) {
+      // 미풀이: 중간 우선순위 (0.5)
+      return 0.5;
+    }
+    var rate = n.wrongCount / (n.wrongCount + n.correctCount);
 
-    const rateA = na ? (na.wrongCount + na.correctCount > 0 ? na.wrongCount / (na.wrongCount + na.correctCount) : -1) : -1;
-    const rateB = nb ? (nb.wrongCount + nb.correctCount > 0 ? nb.wrongCount / (nb.wrongCount + nb.correctCount) : -1) : -1;
+    // 최근 틀린 문제 가중치 (7일 이내 +0.2, 30일 이내 +0.1)
+    var recency = 0;
+    if (n.lastWrongAt) {
+      var daysSince = (now - new Date(n.lastWrongAt).getTime()) / (1000 * 60 * 60 * 24);
+      if (daysSince <= 7) recency = 0.2;
+      else if (daysSince <= 30) recency = 0.1;
+    }
 
-    // 기록 없는 문제(-1)는 뒤로
-    if (rateA === -1 && rateB === -1) return 0;
-    if (rateA === -1) return 1;
-    if (rateB === -1) return -1;
+    // 반복 오답 가중치 (3회 이상 +0.1)
+    var repeatBonus = n.wrongCount >= 3 ? 0.1 : 0;
 
-    return rateB - rateA;
+    return rate + recency + repeatBonus;
+  }
+
+  // 점수 계산 후 내림차순 정렬
+  var scored = questions.map(function(q) {
+    return { q: q, score: weakScore(q) };
   });
+  scored.sort(function(a, b) { return b.score - a.score; });
+  return scored.map(function(s) { return s.q; });
+}
+
+// 과목별 취약도 기반 자동 배분 (취약 과목에서 더 많이 출제)
+function buildWeakQuestions(allQuestions, maxCount) {
+  var notes = getWrongNotes();
+
+  // 과목별 그룹핑
+  var bySubject = {};
+  allQuestions.forEach(function(q) {
+    var sn = q.subjectName || '기타';
+    if (!bySubject[sn]) bySubject[sn] = [];
+    bySubject[sn].push(q);
+  });
+
+  // 과목별 취약도 계산
+  var subjectWeakness = {};
+  var totalWeakness = 0;
+  for (var sn in bySubject) {
+    var qs = bySubject[sn];
+    var wrongSum = 0, totalAttempts = 0, unanswered = 0;
+    qs.forEach(function(q) {
+      var n = notes[q.key];
+      if (n && (n.wrongCount + n.correctCount > 0)) {
+        wrongSum += n.wrongCount;
+        totalAttempts += n.wrongCount + n.correctCount;
+      } else {
+        unanswered++;
+      }
+    });
+    // 취약도 = 오답률 * 0.7 + 미풀이비율 * 0.3 (미풀이도 취약으로 간주)
+    var wrongRate = totalAttempts > 0 ? wrongSum / totalAttempts : 0.5;
+    var unansweredRate = qs.length > 0 ? unanswered / qs.length : 0;
+    var weakness = wrongRate * 0.7 + unansweredRate * 0.3;
+    // 최소 가중치 0.1 보장 (모든 과목에서 최소 출제)
+    weakness = Math.max(weakness, 0.1);
+    subjectWeakness[sn] = weakness;
+    totalWeakness += weakness;
+  }
+
+  // 과목별 배분 수 결정
+  var subjectAlloc = {};
+  var allocated = 0;
+  var subjectNames = Object.keys(bySubject);
+  subjectNames.forEach(function(sn) {
+    var ratio = subjectWeakness[sn] / totalWeakness;
+    var count = Math.round(maxCount * ratio);
+    count = Math.min(count, bySubject[sn].length); // 과목 문제수 초과 방지
+    subjectAlloc[sn] = count;
+    allocated += count;
+  });
+
+  // 반올림 오차 보정
+  while (allocated < maxCount) {
+    // 가장 취약한 과목에 추가
+    var maxSn = subjectNames.reduce(function(a, b) {
+      return (subjectWeakness[a] / (subjectAlloc[a] + 1)) > (subjectWeakness[b] / (subjectAlloc[b] + 1)) ? a : b;
+    });
+    if (subjectAlloc[maxSn] < bySubject[maxSn].length) {
+      subjectAlloc[maxSn]++;
+      allocated++;
+    } else break;
+  }
+  while (allocated > maxCount) {
+    var minSn = subjectNames.reduce(function(a, b) {
+      return subjectAlloc[a] > 0 && (subjectWeakness[a] < subjectWeakness[b] || subjectAlloc[b] === 0) ? a : b;
+    });
+    if (subjectAlloc[minSn] > 0) {
+      subjectAlloc[minSn]--;
+      allocated--;
+    } else break;
+  }
+
+  // 각 과목에서 취약 문제 우선 선별
+  var result = [];
+  for (var sn2 in subjectAlloc) {
+    var sorted = sortByWeakness(bySubject[sn2]);
+    result = result.concat(sorted.slice(0, subjectAlloc[sn2]));
+  }
+
+  // 최종: 취약 점수 순 섞기
+  return sortByWeakness(result);
 }
 
 function resumeQuiz() {
