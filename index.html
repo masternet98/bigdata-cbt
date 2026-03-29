@@ -2889,29 +2889,29 @@ function showResult() {
 
   var percent = Math.round((correct / total) * 100);
 
-  // 정식 시험 모드: 과목별 채점
+  // 과목별 채점 (모든 모드에서 수행)
   var subjectScores = {};
   var examPass = true;
-  if (state.examMode) {
-    state.questions.forEach(function(q) {
-      if (!subjectScores[q.subjectName]) {
-        subjectScores[q.subjectName] = { total: 0, correct: 0 };
-      }
-      subjectScores[q.subjectName].total++;
-      if (checkCorrect(state.answers[q.key] || (isMultiAnswer(q) ? [] : 0), q.answer)) {
-        subjectScores[q.subjectName].correct++;
-      }
-    });
-    // 과목당 40% 이상 체크
-    for (var sn in subjectScores) {
-      var sc = subjectScores[sn];
-      sc.percent = Math.round((sc.correct / sc.total) * 100);
-      sc.pass = sc.percent >= 40;
-      if (!sc.pass) examPass = false;
+  state.questions.forEach(function(q) {
+    var sName = q.subjectName || '기타';
+    if (!subjectScores[sName]) {
+      subjectScores[sName] = { total: 0, correct: 0 };
     }
+    subjectScores[sName].total++;
+    if (checkCorrect(state.answers[q.key] || (isMultiAnswer(q) ? [] : 0), q.answer)) {
+      subjectScores[sName].correct++;
+    }
+  });
+  var subjectCount = Object.keys(subjectScores).length;
+  // 과목당 과락 체크 (40점 미만)
+  for (var sn in subjectScores) {
+    var sc = subjectScores[sn];
+    sc.percent = Math.round((sc.correct / sc.total) * 100);
+    sc.pass = sc.percent >= 40;
+    if (!sc.pass) examPass = false;
   }
 
-  var pass = state.examMode ? (percent >= 60 && examPass) : (percent >= 60);
+  var pass = (subjectCount > 1) ? (percent >= 60 && examPass) : (percent >= 60);
 
   // 오답노트 저장
   updateWrongNotes(state.questions, state.answers);
@@ -2926,16 +2926,14 @@ function showResult() {
 
   if (state.quickTestMode) {
     html += '<div style="font-size:1.1rem;margin-bottom:8px;">취약 과목 분석</div>';
-  } else if (state.examMode) {
+  } else {
     var passText = pass ? 'PASS' : 'FAIL';
     var failReasons = [];
-    if (percent < 60) failReasons.push('전체 60% 미만');
-    if (!examPass) failReasons.push('과락 과목 존재 (40% 미만)');
+    if (percent < 60) failReasons.push('전체 60점 미만');
+    if (!examPass && subjectCount > 1) failReasons.push('과락 과목 존재 (40점 미만)');
     html += '<div style="font-size:1.1rem;margin-bottom:8px;">' + passText;
-    if (!pass) html += ' (' + failReasons.join(', ') + ')';
+    if (!pass && failReasons.length > 0) html += ' (' + failReasons.join(', ') + ')';
     html += '</div>';
-  } else {
-    html += '<div style="font-size:1.1rem;margin-bottom:8px;">' + (pass ? 'PASS (60점 이상)' : 'FAIL (60점 미만)') + '</div>';
   }
 
   html += '<div class="result-stats">';
@@ -2944,8 +2942,8 @@ function showResult() {
   html += '<div class="stat"><div class="num" style="color:#d93025">' + (total - correct) + '</div><div class="label">오답</div></div>';
   html += '</div>';
 
-  // 정식 시험: 과목별 성적표
-  if (state.examMode) {
+  // 과목별 성적표 (2개 이상 과목일 때 항상 표시)
+  if (subjectCount > 1) {
     html += '<div style="margin-top:20px;border-top:1px solid #eee;padding-top:16px;text-align:left;">';
     html += '<h3 style="margin-bottom:12px;">과목별 성적</h3>';
     html += '<table style="width:100%;border-collapse:collapse;font-size:0.9rem;">';
@@ -2961,16 +2959,12 @@ function showResult() {
       html += '<td style="padding:8px;border:1px solid #eee;">' + escapeHtml(sn2) + '</td>';
       html += '<td style="padding:8px;border:1px solid #eee;text-align:center;">' + sc2.total + '</td>';
       html += '<td style="padding:8px;border:1px solid #eee;text-align:center;">' + sc2.correct + '</td>';
-      html += '<td style="padding:8px;border:1px solid #eee;text-align:center;">' + sc2.percent + '%</td>';
-      html += '<td style="padding:8px;border:1px solid #eee;text-align:center;font-weight:700;color:' + (sc2.pass ? '#0f9d58' : '#d93025') + ';">' + (sc2.pass ? 'PASS' : 'FAIL') + '</td>';
+      html += '<td style="padding:8px;border:1px solid #eee;text-align:center;">' + sc2.percent + '점</td>';
+      html += '<td style="padding:8px;border:1px solid #eee;text-align:center;font-weight:700;color:' + (sc2.pass ? '#0f9d58' : '#d93025') + ';">' + (sc2.pass ? '' : '과락') + '</td>';
       html += '</tr>';
     }
     html += '</table>';
-    if (state.quickTestMode) {
-      html += '<div style="margin-top:8px;font-size:0.8rem;color:#666;">퀵테스트: 과목당 60% 이상 권장</div>';
-    } else {
-      html += '<div style="margin-top:8px;font-size:0.8rem;color:#666;">합격 기준: 전체 60% 이상 + 과목당 40% 이상</div>';
-    }
+    html += '<div style="margin-top:8px;font-size:0.8rem;color:#666;">합격 기준: 전체 평균 60점 이상 + 과목별 40점 이상 (과락)</div>';
     html += '</div>';
 
     if (state.quickTestMode) {
