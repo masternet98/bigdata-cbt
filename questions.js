@@ -80,7 +80,8 @@ window.QUESTION_BANK = {
                 "데이터베이스에 저장된 작성 자료"
               ],
               "answer": 4,
-              "page": 41
+              "page": 41,
+              "quote": ""
             },
             {
               "id": 7,
@@ -152,7 +153,8 @@ window.QUESTION_BANK = {
                 "빅데이터를 어떻게 활용하느냐에 따라 그 가치가 결정되며, 일반적으로 사전에 일괄적인 기준을 설정하여 데이터의 가치를 평가하는 작업은 수월하게 이루어진다."
               ],
               "answer": 4,
-              "page": 45
+              "page": 45,
+              "quote": ""
             },
             {
               "id": 13,
@@ -164,7 +166,8 @@ window.QUESTION_BANK = {
                 "프로젝트 소스 비용의 감소"
               ],
               "answer": 4,
-              "page": 45
+              "page": 45,
+              "quote": ""
             },
             {
               "id": 14,
@@ -189,7 +192,8 @@ window.QUESTION_BANK = {
                 "사용자 간 링크 예측"
               ],
               "answer": 3,
-              "page": 47
+              "page": 47,
+              "quote": ""
             },
             {
               "id": 16,
@@ -301,7 +305,8 @@ window.QUESTION_BANK = {
                 "한 곳에 집중되어 있는 자료를 모든 부서의 사용자가 공유"
               ],
               "answer": 3,
-              "page": 51
+              "page": 51,
+              "quote": ""
             },
             {
               "id": 25,
@@ -313,7 +318,8 @@ window.QUESTION_BANK = {
                 "비용가치 → 정화학 데이터로부터 정확하게 처리되어 인지된 정보"
               ],
               "answer": 2,
-              "page": 51
+              "page": 51,
+              "quote": ""
             },
             {
               "id": 26,
@@ -337,7 +343,8 @@ window.QUESTION_BANK = {
                 "하드웨어 및 소프트웨어"
               ],
               "answer": 3,
-              "page": 53
+              "page": 53,
+              "quote": ""
             },
             {
               "id": 28,
@@ -349,7 +356,8 @@ window.QUESTION_BANK = {
                 "현재 대부분의 문제해결이 가능한 기술"
               ],
               "answer": 4,
-              "page": 53
+              "page": 53,
+              "quote": ""
             },
             {
               "id": 29,
@@ -387,7 +395,8 @@ window.QUESTION_BANK = {
                 "머신러닝은 확률·통계학 분야와 함께 컴퓨터 과학, 데이터베이스, 인지과학, 신경과학, 패턴인식 등 다양한 분야의 학문적 배경과 관련된다."
               ],
               "answer": 1,
-              "page": 55
+              "page": 55,
+              "quote": ""
             },
             {
               "id": 32,
@@ -399,7 +408,8 @@ window.QUESTION_BANK = {
                 "NCS에서는 딥러닝의 한 분야로서 머신러닝을 이해한다."
               ],
               "answer": 4,
-              "page": 55
+              "page": 55,
+              "quote": ""
             },
             {
               "id": 33,
@@ -411,7 +421,8 @@ window.QUESTION_BANK = {
                 "지도 학습"
               ],
               "answer": 2,
-              "page": 55
+              "page": 55,
+              "quote": ""
             },
             {
               "id": 34,
@@ -423,7 +434,8 @@ window.QUESTION_BANK = {
                 "지도 학습"
               ],
               "answer": 4,
-              "page": 55
+              "page": 55,
+              "quote": ""
             },
             {
               "id": 35,
@@ -471,7 +483,8 @@ window.QUESTION_BANK = {
                 "Neural Algorithm"
               ],
               "answer": 1,
-              "page": 57
+              "page": 57,
+              "quote": ""
             },
             {
               "id": 39,
@@ -559,7 +572,8 @@ window.QUESTION_BANK = {
                 "개인 프라이시 훼손"
               ],
               "answer": 3,
-              "page": 59
+              "page": 59,
+              "quote": ""
             },
             {
               "id": 46,
@@ -571,7 +585,8 @@ window.QUESTION_BANK = {
                 "데이터를 여러 곳에 복제하여 분산 저장하는 경우, 모든 데이터의 폐기가 제대로 이루어졌는지를 검증한다."
               ],
               "answer": 3,
-              "page": 59
+              "page": 59,
+              "quote": ""
             },
             {
               "id": 47,
@@ -652,7 +667,8 @@ window.QUESTION_BANK = {
                 "프로젝트 WBS 수립 → 프로젝트 업무 분장 계획 및 배분 → 프로젝트 소요 비용 배분"
               ],
               "answer": 2,
-              "page": 79
+              "page": 79,
+              "quote": ""
             },
             {
               "id": 4,
@@ -688,7 +704,8 @@ window.QUESTION_BANK = {
                 "모형화 및 변수 선정 시 분석대상이 되는 여러 변수들의 주요 정보는 최대한 유지하면서 데이터세트 변수의 개수를 줄이는 일련의 탐색적 분석 기법을 요인분석(Factor Analysis)이라 한다."
               ],
               "answer": 4,
-              "page": 81
+              "page": 81,
+              "quote": ""
             },
             {
               "id": 7,
@@ -712,7 +729,8 @@ window.QUESTION_BANK = {
                 "연대감"
               ],
               "answer": 1,
-              "page": 81
+              "page": 81,
+              "quote": ""
             },
             {
               "id": 9,
@@ -724,7 +742,8 @@ window.QUESTION_BANK = {
                 "빅데이터 품질 보고서"
               ],
               "answer": 1,
-              "page": 83
+              "page": 83,
+              "quote": ""
             },
             {
               "id": 10,
@@ -736,7 +755,8 @@ window.QUESTION_BANK = {
                 "실시간 분석, 텍스트 데이터 분석 수행 여부 등의 분석 타당성에 대한 검토 의견"
               ],
               "answer": 3,
-              "page": 83
+              "page": 83,
+              "quote": ""
             },
             {
               "id": 11,
@@ -748,7 +768,8 @@ window.QUESTION_BANK = {
                 "소셜 네트워크 분석"
               ],
               "answer": 2,
-              "page": 83
+              "page": 83,
+              "quote": ""
             },
             {
               "id": 12,
@@ -849,7 +870,8 @@ window.QUESTION_BANK = {
                 "요구사항 도출 → 분석목표 정의 → 예산안 수립 → 데이터 확보 계획 수립"
               ],
               "answer": 2,
-              "page": 86
+              "page": 86,
+              "quote": ""
             },
             {
               "id": 20,
@@ -861,7 +883,8 @@ window.QUESTION_BANK = {
                 "요구사항 분석 → 모델링 → 프로파일링 → 리모델링"
               ],
               "answer": 3,
-              "page": 86
+              "page": 86,
+              "quote": ""
             },
             {
               "id": 21,
@@ -893,7 +916,8 @@ window.QUESTION_BANK = {
                 "데이터 수집의 난이도와 비용을 고려하여 가능한 내부 데이터만을 수집하는 것이 바람직하다."
               ],
               "answer": 4,
-              "page": 142
+              "page": 142,
+              "quote": ""
             },
             {
               "id": 2,
@@ -918,7 +942,8 @@ window.QUESTION_BANK = {
                 "소셜 데이터"
               ],
               "answer": 4,
-              "page": 142
+              "page": 142,
+              "quote": ""
             },
             {
               "id": 4,
@@ -930,7 +955,8 @@ window.QUESTION_BANK = {
                 "경제, 의료, 정책, 과학 등 공공 LOD 데이터"
               ],
               "answer": 2,
-              "page": 144
+              "page": 144,
+              "quote": ""
             },
             {
               "id": 5,
@@ -942,7 +968,8 @@ window.QUESTION_BANK = {
                 "데이터 재수집 비용"
               ],
               "answer": 2,
-              "page": 144
+              "page": 144,
+              "quote": ""
             },
             {
               "id": 6,
@@ -954,7 +981,8 @@ window.QUESTION_BANK = {
                 "데이터의 유형 파악 →  아키텍처 파악·수립 → 하드웨어 스펙·규모결정 → 수집 기능 결정 → 수집 솔루션 설치"
               ],
               "answer": 1,
-              "page": 144
+              "page": 144,
+              "quote": ""
             },
             {
               "id": 7,
@@ -1003,7 +1031,8 @@ window.QUESTION_BANK = {
                 "Sqoop"
               ],
               "answer": 1,
-              "page": 146
+              "page": 146,
+              "quote": ""
             },
             {
               "id": 11,
@@ -1078,7 +1107,8 @@ window.QUESTION_BANK = {
                 "자바 클래스 생성 → 테이블 메타 데이터의 수집→ 데이터의 Import → Map task 실행"
               ],
               "answer": 1,
-              "page": 150
+              "page": 150,
+              "quote": ""
             },
             {
               "id": 17,
@@ -1153,7 +1183,8 @@ window.QUESTION_BANK = {
                 "표본 변수"
               ],
               "answer": 1,
-              "page": 152
+              "page": 152,
+              "quote": ""
             },
             {
               "id": 23,
@@ -1189,7 +1220,8 @@ window.QUESTION_BANK = {
                 "척도에 따라 명목 척도, 시열 척도, 등간 척도, 비율 척도로 나눈다."
               ],
               "answer": 3,
-              "page": 154
+              "page": 154,
+              "quote": ""
             },
             {
               "id": 26,
@@ -1201,7 +1233,8 @@ window.QUESTION_BANK = {
                 "계량 척도(Quantitative Scale)"
               ],
               "answer": 4,
-              "page": 154
+              "page": 154,
+              "quote": ""
             },
             {
               "id": 27,
@@ -1265,7 +1298,8 @@ window.QUESTION_BANK = {
                 "데이터의 속성값들을 연산했을 때 그 결과가 의미 없으면 비율 척도이고, 의미가 있다면 등간 척도이다."
               ],
               "answer": 3,
-              "page": 156
+              "page": 156,
+              "quote": ""
             },
             {
               "id": 32,
@@ -1277,7 +1311,8 @@ window.QUESTION_BANK = {
                 "Variable Transformation"
               ],
               "answer": 1,
-              "page": 156
+              "page": 156,
+              "quote": ""
             },
             {
               "id": 33,
@@ -1289,7 +1324,8 @@ window.QUESTION_BANK = {
                 "Variable Transformation"
               ],
               "answer": 2,
-              "page": 156
+              "page": 156,
+              "quote": ""
             },
             {
               "id": 34,
@@ -1338,7 +1374,8 @@ window.QUESTION_BANK = {
                 "범주화"
               ],
               "answer": 3,
-              "page": 158
+              "page": 158,
+              "quote": ""
             },
             {
               "id": 38,
@@ -1411,7 +1448,8 @@ window.QUESTION_BANK = {
                 "통합적 관점"
               ],
               "answer": 4,
-              "page": 160
+              "page": 160,
+              "quote": ""
             },
             {
               "id": 44,
@@ -1423,7 +1461,8 @@ window.QUESTION_BANK = {
                 "통합적 관점"
               ],
               "answer": 2,
-              "page": 160
+              "page": 160,
+              "quote": ""
             },
             {
               "id": 45,
@@ -1535,7 +1574,8 @@ window.QUESTION_BANK = {
                 "Filtering(데이터 필터링)"
               ],
               "answer": 3,
-              "page": 164
+              "page": 164,
+              "quote": ""
             },
             {
               "id": 54,
@@ -1610,7 +1650,8 @@ window.QUESTION_BANK = {
                 "우수한 질의 인터페이스가 필요하면 MongoDB를 활용한다."
               ],
               "answer": 1,
-              "page": 166
+              "page": 166,
+              "quote": ""
             },
             {
               "id": 60,
@@ -1722,7 +1763,8 @@ window.QUESTION_BANK = {
                 "클라우드 컴퓨팅"
               ],
               "answer": 3,
-              "page": 168
+              "page": 168,
+              "quote": ""
             },
             {
               "id": 69,
@@ -2230,7 +2272,8 @@ window.QUESTION_BANK = {
                 "요인분석"
               ],
               "answer": 1,
-              "page": 217
+              "page": 217,
+              "quote": ""
             },
             {
               "id": 37,
@@ -2242,7 +2285,8 @@ window.QUESTION_BANK = {
                 "데이터의 인과관계를 나타내고자 할 때 공분산, 상관분석 등이 사용된다."
               ],
               "answer": 3,
-              "page": 217
+              "page": 217,
+              "quote": ""
             },
             {
               "id": 38,
@@ -2280,7 +2324,8 @@ window.QUESTION_BANK = {
                 "k개의 주성분으로 나누면 이러한 주성분들은 서로 직교하여 상관관계를 가지게 된다."
               ],
               "answer": 4,
-              "page": 218
+              "page": 218,
+              "quote": ""
             },
             {
               "id": 41,
@@ -2695,7 +2740,8 @@ window.QUESTION_BANK = {
                 "표준성"
               ],
               "answer": 3,
-              "page": 303
+              "page": 303,
+              "quote": ""
             },
             {
               "id": 5,
@@ -2744,7 +2790,8 @@ window.QUESTION_BANK = {
                 "분포형태의 특성값 — 평균, 첨도"
               ],
               "answer": 4,
-              "page": 304
+              "page": 304,
+              "quote": ""
             },
             {
               "id": 9,
@@ -3266,7 +3313,8 @@ window.QUESTION_BANK = {
                 "Mahout"
               ],
               "answer": 4,
-              "page": 345
+              "page": 345,
+              "quote": ""
             },
             {
               "id": 9,
@@ -3278,7 +3326,8 @@ window.QUESTION_BANK = {
                 "MongoDB의 경우 DBMS가 자동으로 생성하는 id식별자를 이용할 수 있다."
               ],
               "answer": 1,
-              "page": 345
+              "page": 345,
+              "quote": ""
             },
             {
               "id": 10,
@@ -3377,7 +3426,8 @@ window.QUESTION_BANK = {
                 "많은 컴퓨터가 데이터 처리 작업에 참여하므로, 시스템 장애는 쉽게 극복될 수 있다."
               ],
               "answer": 4,
-              "page": 349
+              "page": 349,
+              "quote": ""
             },
             {
               "id": 18,
@@ -3421,7 +3471,8 @@ window.QUESTION_BANK = {
                 "회귀분석의 설명력을 알아보기 위한 척도는 F 값이다."
               ],
               "answer": 4,
-              "page": 436
+              "page": 436,
+              "quote": ""
             },
             {
               "id": 2,
@@ -3433,7 +3484,8 @@ window.QUESTION_BANK = {
                 "오차항은 이분산을 가진다."
               ],
               "answer": 4,
-              "page": 436
+              "page": 436,
+              "quote": ""
             },
             {
               "id": 3,
@@ -3445,7 +3497,8 @@ window.QUESTION_BANK = {
                 "결정계수가 1이면 상관계수는 반드시 1이다."
               ],
               "answer": 4,
-              "page": 437
+              "page": 437,
+              "quote": ""
             },
             {
               "id": 4,
@@ -3457,7 +3510,8 @@ window.QUESTION_BANK = {
                 "분산분석은 집단 간 평균차이 검정을 위한 것이다."
               ],
               "answer": 3,
-              "page": 437
+              "page": 437,
+              "quote": ""
             },
             {
               "id": 5,
@@ -3469,43 +3523,47 @@ window.QUESTION_BANK = {
                 "k + 1"
               ],
               "answer": 2,
-              "page": 437
+              "page": 437,
+              "quote": ""
             },
             {
               "id": 6,
-              "text": "시계열분석에 대한 정의로 올바른 것은?",
+              "text": "다음 분산분석표에 관한 설명으로 옳지 않은 것은?",
               "choices": [
-                "ARIMA를 이용할 수 있으며 SARIMA가 더 효율적이다.",
-                "자기회귀모형은 과거 시계열 자료를 이용한다.",
-                "이동평균은 과거 시계열 자료의 오차를 이용한다.",
-                "계절성과 추세를 고려하지 않는다."
+                "요인은 Month로서 수준 수는 8개이다.",
+                "오차항의 분산 추정값은 11,913이다.",
+                "총 관측자료 수는 142개이다.",
+                "유의수준 0.05에서 인자의 효과가 인정되지 않는다."
               ],
               "answer": 3,
-              "page": 438
+              "page": 438,
+              "quote": "\n![이미지](data:image/jpeg;base64,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)\n"
             },
             {
               "id": 7,
-              "text": "다음 중 비지도학습에 해당하는 기법은?",
+              "text": "일원 분산분석으로 4개의 평균의 차이를 동시에 검정하기 위하여 귀무가설을 $H_0 : \\mu_1=\\mu_2=\\mu_3=\\mu_4$라 정할 때 대립가설 $H_1$은?",
               "choices": [
-                "Regression",
-                "Classification",
-                "Reinforcement Learning",
-                "Clustering"
+                "$H_1$ : 모든 평균이 다르다.",
+                "$H_1$ : 적어도 한 쌍 이상의 평균이 다르다.",
+                "$H_1$ : 적어도 두 쌍 이상의 평균이 다르다.",
+                "$H_1$ : 적어도 세 쌍 이상의 평균이 다르다."
               ],
               "answer": 2,
-              "page": 438
+              "page": 438,
+              "quote": ""
             },
             {
               "id": 8,
-              "text": "데이터 분석의 주요한 단계적 구조인 KDD 과정에는?",
+              "text": "데이터 분석모형 중 독립변수와 종속변수가 모두 연속형인 경우 사용되는 기법으로 적절하지 않은 것은?",
               "choices": [
-                "데이터 선택",
-                "데이터 마이닝",
-                "데이터 변환",
-                "데이터 정제"
+                "$k-$평균 군집화 분석",
+                "로지스틱 회귀분석",
+                "인공신경망 모델",
+                "단순회귀분석"
               ],
               "answer": 2,
-              "page": 438
+              "page": 438,
+              "quote": ""
             },
             {
               "id": 9,
@@ -3517,23 +3575,25 @@ window.QUESTION_BANK = {
                 "Text Mining"
               ],
               "answer": 1,
-              "page": 439
+              "page": 439,
+              "quote": "주로 분류 및 예측을 위하여 사용되며, 데이터를 분석하여 이들 사이에 존재하는 패턴을 예측 가능한 규칙들의 조합으로 나타낸다."
             },
             {
               "id": 10,
-              "text": "의사결정나무 분석에서 분류 기준 변수의 선택에 사용되는 기준이 아닌 것은?",
+              "text": "의사결정나무에서 분석에서 분류 기준 변수의 선택에 사용되는 기준이 아닌 것은?",
               "choices": [
                 "일반화분산",
                 "지니지수",
                 "엔트로피지수",
-                "카이제곱 통계량 p값"
+                "카이제곱 통계량의 p값"
               ],
               "answer": 1,
-              "page": 439
+              "page": 439,
+              "quote": ""
             },
             {
               "id": 11,
-              "text": "Decision Tree(의사결정나무)를 이용한 데이터 분석 방법에서 결과를 표현할 때 맨 위 노드는 무엇인가?",
+              "text": "Decision Tree(의사결정나무)를 이용한 데이터 분석 방법에서 결과를 표현할 때 맨 위의 노드는 무엇인가?",
               "choices": [
                 "Floor",
                 "Root",
@@ -3541,7 +3601,8 @@ window.QUESTION_BANK = {
                 "Top"
               ],
               "answer": 2,
-              "page": 439
+              "page": 439,
+              "quote": ""
             },
             {
               "id": 12,
@@ -3549,15 +3610,16 @@ window.QUESTION_BANK = {
               "choices": [
                 "깊이 우선 탐색 방법",
                 "너비 우선 탐색 방법",
-                "선택 추출적 탐색 방법",
+                "랜덤 확률적 탐색 방법",
                 "휴리스틱 탐색 방법"
               ],
               "answer": 4,
-              "page": 440
+              "page": 440,
+              "quote": ""
             },
             {
               "id": 13,
-              "text": "다음 설명 중 `( )`에 들어갈 용어는?",
+              "text": "다음 설명 중 ( ) 에 들어갈 용어는?",
               "choices": [
                 "Association Analysis",
                 "Deep Learning",
@@ -3566,23 +3628,24 @@ window.QUESTION_BANK = {
               ],
               "answer": 4,
               "page": 440,
-              "quote": "사람의 뇌는 Neuron이라는 세포들의 복합적인 연결을 통해 신호를 처리한다. 이러한 구조에서 모티브를 얻어 `( )`에서는 인공 Neuron의 Network를 구성하고, 다층신경망을 만들어 복잡한 분류 및 회귀 문제를 해결하는 수단으로 사용된다."
+              "quote": "사람의 뇌는 Neuron이라는 세포들의 방대한 연결을 통해 신호를 처리한다. 이러한 구조에서 Motive를 얻어 (  )(에서)은(는) 인공 Neuron의 Network를 구성하고 다층신경망을 만들어 복잡한 분류 및 비선형 문제를 해결하며 수치예측 등에 사용된다."
             },
             {
               "id": 14,
               "text": "다음 중 Artificial Neural Network(인공신경망)에 대한 특징으로 옳지 않은 것은?",
               "choices": [
-                "대표적인 비선형 기법으로서 다량의 방대한 자료에 유용하게 사용된다.",
-                "적용 결과에 대해 쉽게 설명하기 어렵고, 분석 모형에서 소요되는 학습시간이 적다.",
-                "수집 정보에 대한 총체적 분석 과정 없이 의사결정을 지원한다.",
+                "대표적인 비선형 기법으로서 다른 방법과 비교하여 예측이 뛰어나다.",
+                "적용 결과에 대한 해석이 쉽고, 분석 모델에서 소요되는 학습시간이 짧다.",
+                "수집 자료에 대한 통계적 분석 과정 없이 의사결정을 지원한다.",
                 "복잡하고 비선형적이며, 상호 관계성을 갖는 다변량을 분석할 수 있다."
               ],
               "answer": 2,
-              "page": 440
+              "page": 440,
+              "quote": ""
             },
             {
               "id": 15,
-              "text": "다음 중 인공신경망 모형에서 사용되는 알고리즘으로서 오차들을 출력계층에서 입력계층으로 역방향으로 반영하는 방법은 무엇인가?",
+              "text": "다음 중 인공신경망 모델에서 사용되는 알고리즘으로서 오차들을 출력계층에서 입력계층으로 역방향으로 반영하는 방법은 무엇인가?",
               "choices": [
                 "Back Propagation Algorithm",
                 "Clustering Propagation Algorithm",
@@ -3590,91 +3653,99 @@ window.QUESTION_BANK = {
                 "Support Vector Machine"
               ],
               "answer": 1,
-              "page": 441
+              "page": 441,
+              "quote": ""
             },
             {
               "id": 16,
               "text": "인공신경망 분석에서 입력신호들의 중요도에 따른 가중치를 부여하여 가중합을 구하고 결과값을 출력하기 위해 사용되는 함수는 무엇인가?",
               "choices": [
                 "뉴런 함수",
-                "퍼셉트론 함수",
+                "페셉트론 함수",
                 "XOR 함수",
                 "활성함수"
               ],
               "answer": 4,
-              "page": 441
+              "page": 441,
+              "quote": ""
             },
             {
               "id": 17,
               "text": "다음 중 활성함수로 비교적 많이 사용되지 않는 함수는?",
               "choices": [
                 "계단 함수",
-                "부분적선 함수(Piecewise Linear)",
-                "시그모이드(Sigmoid)",
-                "모서리 함수"
+                "임계논리 함수",
+                "시그모이드(Sigmoid) 함수",
+                "코사인 함수"
               ],
               "answer": 4,
-              "page": 441
+              "page": 441,
+              "quote": ""
             },
             {
               "id": 18,
               "text": "SVM(Support Vector Machine) 머신러닝 알고리즘에 대한 설명으로 옳지 않은 것은?",
               "choices": [
-                "서로 다른 분류에 속한 데이터 사이의 여백(margin)이 최대가 되는 이진분류에만 한정된 머신러닝 기법이다.",
-                "결정경계에 가장 가까운 데이터를 서포트 벡터라 하고 이것은 실수공간 평면으로 구분한다.",
-                "분류를 잘하는 규칙을 두 그룹에서 가까운 점의 관점에서 최대화하여 판별을 수행한다.",
-                "노이즈에 의한 결과의 영향이 거의 없어 데이터에 대한 성능이 우수하다."
+                "서로 다른 분류에 속한 데이터들 사이 마진(간격)이 최대가 되는 선(초평면)을 찾아 이를 기준으로 데이터를 분류한다.",
+                "경계선과 가장 가까운 각 분류에 속한 값(점)을 서포트벡터라고 한다.",
+                "분류 성능은 좋지만 과적합화 문제와 일반화 능력이 낮아 정교한 분류 성능이 요구되는 분야에 대한 적용은 어렵다.",
+                "노이즈 데이터에 큰 영향을 받지 않아 주로 분류와 수치예측에 활용되고 있다."
               ],
               "answer": 3,
-              "page": 442
+              "page": 442,
+              "quote": ""
             },
             {
               "id": 19,
               "text": "다음 중 SVM(Support Vector Machine) 머신러닝 알고리즘의 장점에 대한 설명으로 옳지 않은 것은?",
               "choices": [
                 "입력 데이터의 양이 많거나 변수가 많은 경우에도 짧은 시간에 분류 결과를 도출해 낸다.",
-                "노이즈 데이터에 큰 영향을 받지 않고 과적합되기 쉽지 않다.",
-                "특히 범주 분류에 대한 성능이 우수한 편이다.",
+                "노이즈 데이터에 큰 영향을 받지 않고 과적합화가 잘 되지 않는다.",
+                "특히 분류 문제에 대한 성능이 우수한 편이다.",
                 "분류 경계가 복잡한 비선형 문제의 경우 다른 기법과 비교하여 성능이 우수하다."
               ],
               "answer": 1,
-              "page": 442
+              "page": 442,
+              "quote": ""
             },
             {
               "id": 20,
               "text": "다음 중 두 군집 사이의 거리를 두 군집의 중심 간 거리로 계산하는 계층적 군집방법은?",
               "choices": [
-                "중심법(Centroid)",
+                "중심연결법",
                 "최단연결법",
-                "중간연결법",
-                "완전연결법"
+                "최장연결법",
+                "평균연결법"
               ],
               "answer": 1,
-              "page": 442
+              "page": 442,
+              "quote": ""
             },
             {
               "id": 21,
               "text": "비계층적 군집분석에 대한 설명으로 잘못된 것은?",
               "choices": [
-                "K-means는 임의로 군집 개수와 초기값을 설정해 Seed 중심으로 군집을 형성한다.",
-                "혼합 분포군집은 K-평균군집과 다르게 2개 이상의 차원에 민감하지 않다.",
-                "K-means는 데이터의 내부구조에 대한 사전 정보 없이 이와 같은 자료구조를 찾을 수 있다.",
+                "K-means는 군집 개수의 초기값을 설정해 Seed 중심으로 군집을 형성한다.",
+                "혼합 분포군집은 K-평균군집과 다르게 이상치에 민감하지 않다.",
+                "K-means는 데이터의 내부구조에 대한 사전 정보 없이 의미 있는 자료구조를 찾을 수 있다.",
                 "혼합 분포군집은 확률분포를 도입해서 군집을 수행한다."
               ],
               "answer": 2,
-              "page": 443
+              "page": 443,
+              "quote": ""
             },
             {
               "id": 22,
-              "text": "다음 중 관련도와 기여도를 이용한 적합도 검정을 위해 사용되는 검정통계량은 무엇인가?",
+              "text": "다음 중 관측빈도와 기대빈도를 이용한 적합도 검정을 위해 사용되는 검정통계량은 무엇인가?",
               "choices": [
                 "카이제곱 검정통계량",
-                "교차도 검정통계량",
+                "표준정규검정통계량",
                 "F-검정통계량",
                 "t-검정통계량"
               ],
               "answer": 1,
-              "page": 443
+              "page": 443,
+              "quote": ""
             },
             {
               "id": 23,
@@ -3683,38 +3754,41 @@ window.QUESTION_BANK = {
                 "군집분석",
                 "요인분석",
                 "회귀분석",
-                "다군집분석"
+                "다중회귀분석"
               ],
               "answer": 2,
-              "page": 443
+              "page": 443,
+              "quote": ""
             },
             {
               "id": 24,
               "text": "요인분석에 대한 설명으로 옳지 않은 것은?",
               "choices": [
-                "요인분석을 위해서는 요인분석의 대상이 되는 적어도 3개 이상의 연속자료가 상호독립적이어야 한다.",
+                "요인분석을 위해서는 요인분석의 대상이 등간 척도 이상의 관측치로서 상호독립적이어야 한다.",
                 "변수가 정규분포를 따라야 한다.",
-                "표본의 수는 변수의 5배 정도 되어야 한다.",
-                "변수의 분산은 다른 모든 변수와 공유하는 요인공통분산, 고유분산, 오차분산으로 나뉘어져 있다."
+                "표본의 수는 변수의 2배 정도 되어야 한다.",
+                "변수의 분산은 다른 모든 변수와 공유하는 요인공통분산, 고유분산, 오차분산으로 나누어져 있다."
               ],
               "answer": 3,
-              "page": 444
+              "page": 444,
+              "quote": ""
             },
             {
               "id": 25,
               "text": "다음 요인분석에 대한 설명 중 옳지 않은 것은?",
               "choices": [
-                "일반적으로 요인 수 결정은 고유값 기준 1을 둔다.",
-                "요인의 회전에서 베리맥스는 사각회전이다.",
-                "요인적재값(Factor Loading)은 각 변수와 요인 사이의 상관관계를 의미한다.",
-                "요인적재값 제곱은 해당 요인에 의해서 설명되는 변수의 비율을 의미한다."
+                "일반적으로 요인 수 결정은 고유 값 기준 1을 둔다.",
+                "요인의 회전에서 쿼티맥스는 사각회전이다.",
+                "요인적재값은 변수와 요인 사이에 상관관계를 의미한다.",
+                "요인적재값의 제곱은 해당요인에 의해서 설명되는 분산의 비율을 의미한다."
               ],
               "answer": 2,
-              "page": 444
+              "page": 444,
+              "quote": ""
             },
             {
               "id": 26,
-              "text": "개체의 유사성 척도 값을 이용해서 지각맵이나 가시적 공간에 표현하는 그래프적 통계기법은 무엇이라 하는가?",
+              "text": "개체의 유사성 측도 값을 이용해서 저차원의 가시적 공간에 표현하는 그래프적 통계기법은 무엇이라 하는가?",
               "choices": [
                 "시계열 분석",
                 "다차원 척도",
@@ -3722,43 +3796,47 @@ window.QUESTION_BANK = {
                 "요인분석"
               ],
               "answer": 2,
-              "page": 444
+              "page": 444,
+              "quote": ""
             },
             {
               "id": 27,
               "text": "판별분석에 대한 설명으로 잘못된 것은?",
               "choices": [
-                "사용자 제품이나 다변량의 공간으로 이산적인 기준에 적용된다.",
-                "판별분석에서의 변수는 결과에 의존한다.",
-                "선형판별함수에 의한 결과로서 판별한다.",
-                "판별분석은 확률을 최소화 기준에 의한 판별식이다."
+                "사용된 개체들이 다변량 정규분포를 따른다는 가정이 필요하다.",
+                "판별분석에의 집단변수는 범주형 변수이다.",
+                "판별함수의 수는 (집단수 - 1)이다.",
+                "판별분석은 차원을 축소하기 위한 분석이다."
               ],
               "answer": 3,
-              "page": 445
+              "page": 445,
+              "quote": ""
             },
             {
               "id": 28,
               "text": "시계열 분석에 대한 설명으로 옳지 않은 것은?",
               "choices": [
-                "추세선 이전의 관측값은 시간의 변수로 표현하는 스포트 시점 불연속적 데이터이다.",
-                "시계열 분석의 가용 자기적 수치는 순환적 시계열 데이터로 반복하여 사용한다.",
-                "수세부에서 AR, MA, ARMA를 사용한다.",
-                "AR(Autoregressive): 시기별(내부) Random Variable에 의한 외부 관계를 분석한다."
+                "추세분석법은 관측값을 시간의 함수로 표현하는 것으로 이동평균법이 대표적이다.",
+                "시계열 분석의 가장 큰 목적은 수집된 시계열 데이터를 분석하여 미래를 예측하는 것이다.",
+                "시계열 분석은 모형의 식별, 분석, 진단의 단계를 거친다.",
+                "관측값이 일정한 추세를 가지고 증가하거나 감소하는 모형은 선형추세모형이다."
               ],
               "answer": 1,
-              "page": 445
+              "page": 445,
+              "quote": ""
             },
             {
               "id": 29,
-              "text": "단순지수평활법에서 최기예측을 추정하고자 할 때 사용하는 기법은?",
+              "text": "단순회귀모형에서 회귀계수를 추정하고자 할 때 사용하는 기법은?",
               "choices": [
                 "최소제곱법",
-                "추가적, 체곱수산",
-                "수순분배",
+                "유크리드 제곱거리법",
+                "모수추정법",
                 "분산분석법"
               ],
               "answer": 1,
-              "page": 445
+              "page": 445,
+              "quote": ""
             },
             {
               "id": 30,
@@ -3860,7 +3938,7 @@ window.QUESTION_BANK = {
             },
             {
               "id": 38,
-              "text": "다음 중 개발자라고 불리며, 오픈소스 소프트웨어의 중심적 역할을 하고 있는 서비스의 이름은 무엇인가?",
+              "text": "다음 중 개발자의 성지라고 불리며, 오픈소스 소프트웨어의 중심적 역할을 하고 있는 서비스의 이름은 무엇인가?",
               "choices": [
                 "CVS",
                 "GitHub",
@@ -3868,7 +3946,8 @@ window.QUESTION_BANK = {
                 "Python"
               ],
               "answer": 2,
-              "page": 449
+              "page": 449,
+              "quote": ""
             },
             {
               "id": 39,
@@ -3898,37 +3977,40 @@ window.QUESTION_BANK = {
               "id": 41,
               "text": "다음 중 두 모집단에 대한 분포의 가정이 어렵거나 모집단의 순위적 표현이 있을 때 주로 사용하는 검정 방법으로 모집단의 확률분포가 같은지 다른지를 검정하는 것은 무엇인가?",
               "choices": [
-                "유의확인 검정",
-                "Kruskal-Wallis 순위 검정",
-                "Wilcoxon 순위합 검정",
-                "맨-위트니 검정"
+                "중앙값 검정",
+                "카이제곱 검정",
+                "Kruskall-Wallis 순위 검정",
+                "Wilcoxon 순위합 검정"
               ],
               "answer": 4,
-              "page": 451
+              "page": 451,
+              "quote": ""
             },
             {
               "id": 42,
-              "text": "다음 중 두 그룹 모집단에 대한 대표 평균 검정 시 모집단이 정규분포를 따른다는 가정을 할 수 없을 때 비모수적이며 가장 많이 사용되는 검정 방법은 무엇인가?",
+              "text": "다음 중 k개의 모집단에 대한 평균 검정 시, 모집단이 정규분포를 따른다는 가정을 할 수 없을 때 사용되는 비모수적 검정 방법은 무엇인가?",
               "choices": [
-                "군집형 검정",
-                "분산형 검정",
+                "중앙값 검정",
+                "카이제곱 검정",
                 "Kruskal-Wallis 순위 검정",
                 "Wilcoxon 순위합 검정"
               ],
               "answer": 3,
-              "page": 451
+              "page": 451,
+              "quote": ""
             },
             {
               "id": 43,
-              "text": "추론적 표본의 특성을 검정하기 위해 사용되는 \"잠재된 관측값의 연속적으로 이루어진 값\"을 무엇이라 하는가?",
+              "text": "추론적 표본의 특성을 검정하기 위해 사용되는 \"동일한 관측값이 연속적으로 이어진 값\"을 무엇이라 하는가?",
               "choices": [
+                "Run",
                 "Sample",
                 "Statistics",
-                "Test",
-                "t"
+                "Test"
               ],
               "answer": 1,
-              "page": 451
+              "page": 451,
+              "quote": ""
             }
           ]
         }
@@ -3964,8 +4046,9 @@ window.QUESTION_BANK = {
                 "회귀분석에서 영향을 미치는 변수를 독립변수라 한다.",
                 "한 변수가 다른 변수에 미치는 영향을 함수 형태로 추정하기 위해 고안된 방법이다."
               ],
-              "answer": 3,
-              "page": 503
+              "answer": 1,
+              "page": 503,
+              "quote": ""
             },
             {
               "id": 3,
@@ -4072,38 +4155,40 @@ window.QUESTION_BANK = {
               "id": 11,
               "text": "ROC(Receiver Operating Characteristic) 곡선을 이용한 성능평가 판단 방법으로 옳지 않은 것은?",
               "choices": [
-                "ROC 곡선은 여러 가지의 임계값에 대응하는 각각의 FP rate와 TP rate 사이에서의 관계를 사용한다.",
-                "시각적 매핑도와 결합된 측정 결과로 TPR과 FPR의 관계 변화에 의한 긍정 도출방법이다.",
-                "분석결과를 바탕으로 한 측정 관점에서 TP rate 값이 증가 시 FP rate도 같은 측도가 높아지는 측정이 필요하다.",
-                "FP rate 값이 높아질 때 TP rate의 값 증가가 없다면 해당 모형의 성능이 좋지 않다는 해석이다."
+                "ROC 곡선은 머신러닝의 성능평가 지표들 중 거짓긍정률(FP rate)과 참긍정률(TP rate) 사이의 관계를 분석하기 위해 사용된다.",
+                "분석대상의 데이터세트가 작은 경우 TP와 FP 비율의 값의 변화가 커서 분석모형에 따라 다양한 곡선 형태로 그려진다.",
+                "데이터 분석모형에 대한 평가 결과 TP rate 값이 클수록, FP rate 값이 작을수록 성능이 우수한 모형으로 평가된다.",
+                "FP rate 값이 동일한 경우, TP rate의 값이 클수록 성능이 우수한 모형이다."
               ],
               "answer": 2,
-              "page": 507
+              "page": 507,
+              "quote": ""
             },
             {
               "id": 12,
               "text": "ROC(Receiver Operating Characteristic) 곡선에 대한 설명으로 옳지 않은 것은?",
               "choices": [
-                "모형에 대한 분석 결과로 TP rate 값이 높을수록 FP rate이 증가하며, 주관적 해석 능력에 의존하는 측면이 있다.",
-                "최적 임계값은 ROC 곡선에 가장 가까운 목표 분류값을 기준으로 구간의 적합값을 확인한다.",
-                "AUC는 ROC 곡선의 밑의 면적이며 넓을수록 성능이 좋다.",
-                "ROC 곡선에서 대각선에 가까울수록 데이터 변별이 불가능하며 멀수록 변별 가능하다."
+                "모형에 대한 분석결과 TP rate 값이 동일한 경우 FP rate가 클수록 우수한 성능을 갖는 모형으로 평가된다.",
+                "혼동행렬의 요소들 중 기준값의 변화에 따른 참긍정과 거짓긍정 비율의 변화를 분석하기 위해 사용된다.",
+                "분석모형에 사용되는 데이터세트가 많을 때 모형에 따라 복잡한 ROC 곡선이 만들어진다.",
+                "ROC 곡선에서 대각선 모양에 가까울수록 예측을 위한 분석모형의 예측력 성능이 우수하지 않음을 알 수 있다."
               ],
               "answer": 1,
-              "page": 508
+              "page": 508,
+              "quote": ""
             },
             {
               "id": 13,
               "text": "다음 특징을 가지는 성능평가 방법은 무엇인가?",
               "choices": [
-                "잔차도 분석",
-                "K-fold 교차 검증",
+                "민감도 분석",
+                "K-교차 검증",
                 "주성분 분석",
-                "ROC 곡선 분석"
+                "ROC 곡선 검증"
               ],
               "answer": 2,
               "page": 508,
-              "quote": "· 데이터베이스에 활용된 모집의 학습 데이터를 이용하여 테스트 데이터에서의 예측 정확도 진단\n· 현재 데이터베이스 분류 데이터 결과 진단·예측에의 유용함\n· 데이터셋을 K개 훈련 데이터셋과 테스트 데이터셋으로 분류\n· 분석모형의 K-fold 교차 검증에 의한 판단 결과를 활용"
+              "quote": "· 데이터세트를 분할하여 일부 데이터세트로 모델 훈련, 나머지 데이터세트에서 예측력 평가\n· 전체 데이터를 K개로 분할, 차례로 검증 데이터세트로 사용\n· 전체 데이터세트를 훈련 데이터와 검증 데이터로 나누어 모델링\n· 성능평가를 K회 반복 수행, 성능평가들에 대한 평균값 활용"
             },
             {
               "id": 14,
@@ -4121,26 +4206,27 @@ window.QUESTION_BANK = {
               "id": 15,
               "text": "다음 오차 계산 방법 중 옳지 않은 것은? (단, 여기서 yᵢ는 실젯값, ŷᵢ은 예측값이다)",
               "choices": [
-                "Mean Absolute Error(MAE): MAE = (1/n)Σ|yᵢ - ŷᵢ|",
-                "Mean Squared Error(MSE): MSE = (1/n)Σ(yᵢ - ŷᵢ)²",
-                "Root Mean Square(RMS): RMS = (1/n)Σ(yᵢ - ŷᵢ)²",
-                "Mean Absolute Percentage Error(MAPE): MAPE = (1/n)Σ|(yᵢ - ŷᵢ)/yᵢ| × 100(%)"
+                "Mean Absolute Error(MAE) : $MAE = \\frac{1}{n} \\sum_{i=1}^{n} |y_i - \\hat{y}_i|$",
+                "Mean Squared Error(MSE) : $MSE = \\frac{1}{n} \\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2$",
+                "Root Mean Square(RMS) : $RMS = \\frac{1}{n} \\sum_{i=1}^{n} (y_i - \\hat{y}_i)^2$",
+                "Mean Absolute Percentage Error(MAPE) : $MAPE = \\frac{1}{n} \\sum_{i=1}^{n} \\left| \\frac{y_i - \\hat{y}_i}{y_i} \\right| \\times 100(\\%)$"
               ],
               "answer": 3,
-              "page": 509
+              "page": 509,
+              "quote": ""
             },
             {
               "id": 16,
               "text": "다음 설명에 해당하는 방법은?",
               "choices": [
-                "데이터 수집성",
-                "데이터 임의적 결정",
+                "데이터 무결성",
+                "데이터 평가지표 진단",
                 "데이터 프로파일링",
-                "데이터 패턴결정 설정"
+                "데이터 체크리스트 설정"
               ],
               "answer": 3,
               "page": 510,
-              "quote": "수집 데이터에 대하여 데이터의 값이 일정한 수행 절차에 따라 다른 데이터에 적합한 효과와 임의의 통계적 수치를 활용하여 유사한 결과를 수집하며 교차된 배분에도 사용할 수 있다."
+              "quote": "수집 데이터에 대해 데이터 검사 절차를 수행함으로써 데이터에 관한 중요한 정보와 통계치를 수집하며, 통계적 분석 방법을 적용하여 데이터 오류를 발견하고 수정하면서 고품질 데이터를 사용할 수 있는 기반환경을 제공한다."
             },
             {
               "id": 17,
@@ -4156,27 +4242,29 @@ window.QUESTION_BANK = {
             },
             {
               "id": 18,
-              "text": "데이터 분석모형의 오류 검출 방법으로 적절한 것은?",
+              "text": "데이터 분석모형의 오류 분류 방법으로 적절한 것은?",
               "choices": [
-                "잔차에 교도, 잔차 포함",
-                "잔차 분석과 변수 검토",
-                "변수 오류와 포도변 등",
-                "목시 오류와 해석 오류"
+                "일반화 오류, 진단 오류",
+                "일반화 오류, 훈련 오류",
+                "학습 오류, 훈련 오류",
+                "제1종 오류, 제2종 오류"
               ],
               "answer": 2,
-              "page": 511
+              "page": 511,
+              "quote": ""
             },
             {
               "id": 19,
               "text": "공분산에 대한 설명으로 옳지 않은 것은?",
               "choices": [
-                "확률변수 X의 기댓값이 μ일 때 V(X) = E(X²) - {E(X)}² 이다.",
-                "확률변수의 X의 분산이 σ²이면 V(aX+b) = a²σ²이다.",
-                "공분산은 두 변수 사이의 양의(+) 관계를 의미한다.",
-                "공분산은 그 자체로 -1과 1 사이의 값을 갖는다."
+                "두 확률변수 x, y의 평균이 같아야 한다.",
+                "두 확률변수 x, y 편차의 곱의 합으로 구한다.",
+                "두 확률변수 x, y가 독립이면 공분산은 0이다.",
+                "공분산은 크기보다 +, - 의 부호에 의미가 있는 값이다."
               ],
               "answer": 1,
-              "page": 511
+              "page": 511,
+              "quote": ""
             },
             {
               "id": 20,
@@ -4196,12 +4284,13 @@ window.QUESTION_BANK = {
               "text": "교차분석을 위한 통계적 검정 기법에 해당되지 않은 것은?",
               "choices": [
                 "독립성 검정",
-                "동질성 검정",
-                "적합도 검정",
-                "카이제곱 선정"
+                "동일성 검정",
+                "유효성 검정",
+                "적합도 검정"
               ],
               "answer": 3,
-              "page": 512
+              "page": 512,
+              "quote": ""
             },
             {
               "id": 22,
@@ -4219,63 +4308,66 @@ window.QUESTION_BANK = {
               "id": 23,
               "text": "다음 중 교차 타당성 검증을 위해 사용되는 교차 방식에 대한 설명으로 옳지 않은 것은?",
               "choices": [
-                "교차검증 방법은 데이터에 의한 전반적인 분석 베이스라인 비교에 관하여 적용한다.",
-                "교차검증에서 기존 학습데이터를 K개로 분할하여(예: K=5) K회 교차 분석한다.",
-                "교차검증의 결과 도출 시 K=5이면 5회차 검증을 진행한다.",
-                "결과에 의해 사용되는 교차검증 결과의 도출 시 K회를 종합하여 교차 검증을 수행한다."
+                "교차분석 방법을 이용하여 빅데이터 분석모형에 대한 성능(예측값의 정확성)을 평가한다.",
+                "교차분석표에서의 각 셀의 기대빈도(예측값)와 관찰빈도(실제값)가 5보다 작은 셀이 20% 미만인 경우를 가정한다.",
+                "일반적으로 두 변수의 척도가 범주형인 명목 척도 또는 서열 척도인 경우에 적용된다.",
+                "교차분석을 위해 사용되는 교차분석표 상의 각 셀의 빈도는 상호 의존적인 값이다."
               ],
               "answer": 4,
-              "page": 512
+              "page": 512,
+              "quote": ""
             },
             {
               "id": 24,
               "text": "다음 중 상관분석에 대한 설명으로 옳지 않은 것은?",
               "choices": [
-                "상관관계를 이용하여 두 변수의 관계에 따른 값을 알 수 있다.",
-                "상관 분석의 상관계수 수준 범위에는 Pearson 상관계수를 사용한다.",
-                "상관 계수가 높은 변수를 찾아 제거한다면 다중공선성(Multicollinearity)을 제거할 수 있다.",
-                "서열 자료의 상관관계를 측정할 때는 Spearman 상관계수를 사용한다."
+                "상관분석을 이용하여 두 변수의 관계를 어느 정도 알 수 있다",
+                "등간 척도 변수의 상관관계를 측정할 때는 Pearson 상관계수를 이용한다.",
+                "상관계수의 범위는 0과 1 사이이다.",
+                "서열 척도 변수의 상관관계를 측정할 때는 Spearman 상관계수를 이용한다."
               ],
               "answer": 3,
-              "page": 513
+              "page": 513,
+              "quote": ""
             },
             {
               "id": 25,
               "text": "상관계수(r)에 대한 설명이다. 빈 칸에 들어갈 수치로 옳은 것은?",
               "choices": [
                 "0, 1",
-                "0, 0",
+                "1, 0",
                 "1, 1",
                 "1, 2"
               ],
               "answer": 1,
               "page": 513,
-              "quote": "상관계수 r은 두 변수 X와 Y 사이 관계의 정도를 수치로 나타낸 것이다. 상관계수의 범위는 ( ) ≤ r ≤ ( )로 결정된다."
+              "quote": "상관계수는 두 변수 $X$와 $Y$ 사이 존재하는 관계의 정도를 측정하는 척도이다. 상관계수의 크기 범위는 $-1 \\le r \\le 1$로 절댓값이 **( 0 )**에 근접할수록 상관관계는 약하고, **( 1 )**에 가까울수록 상관관계는 강하다."
             },
             {
               "id": 26,
               "text": "다음 설명에 해당하는 가설 검정 방법은 무엇인가?",
               "choices": [
                 "분산분석",
-                "추정분석",
-                "카이제곱 분석",
-                "회귀분석"
+                "요인분석",
+                "주성분 분석",
+                "카이제곱 분석"
               ],
               "answer": 1,
               "page": 514,
-              "quote": "두 개 이상의 집단 간 사이의 비교를 수행하고자 할 때 사용되며, 집단 간 분산과 집단 내 분산 사이에 대해 차이가 있는지 판단할 수 있는 검정 방법이다."
+              "quote": "두 개 이상의 집단 간 사이의 비교를 수행하고자 할 때 사용되며, 집단 내의 분산, 총 평균과 각 집단의 평균 차이에 의해 생긴 집단 간 분산비교로 얻은 F분포를 이용하여 가설을 검정한다."
             },
             {
               "id": 27,
-              "text": "A, B, C, D 네 가지 제품에 대한 클레임 테스트를 했을 때 측정결과를 이용하여 F-검정하고자 한다. 다음 중 틀린 검정 방법이 가장 적절한가?",
+              "text": "A, B, C, D 네 가지 제품에 대한 콜레스트롤 함량 측정결과를 이용하여 F-검정하고자 한다. 다음 중 어느 검정 방법이 가장 적절한가?",
               "choices": [
                 "일원 분산분석",
                 "이원 분산분석",
                 "다변량 분산분석",
-                "다변인분석"
+                "단일표본 t-검정"
               ],
               "answer": 1,
-              "page": 514
+              "page": 514,
+              "quote": ""
             },
             {
               "id": 28,
@@ -4291,28 +4383,29 @@ window.QUESTION_BANK = {
             },
             {
               "id": 29,
-              "text": "데이터 모델 진단 기법 중, 데이터 일부를 서로 겹치지 않는 훈련집합과 시험집합으로 무작위 구분 후, 훈련집합을 이용하여 분석모형을 구축하고 시험집합으로 모델의 성능을 평가하는 방법은?",
+              "text": "데이터 모델 진단 기법 중, 데이터 집합을 서로 겹치지 않는 훈련집합과 시험집합으로 무작위 구분 후, 훈련집합을 이용하여 분석모형을 구축하고 시험집합으로 모형의 성능을 평가하는 방법으로 옳은 것은?",
               "choices": [
-                "과적합 및 시험분석 결과",
-                "시험 교차분석",
-                "홀드아웃 데이터 검증",
-                "홀드 데이터의 검증"
+                "과적합 및 미적합 검증",
+                "다중 교차검증",
+                "홀드아웃 교차검증",
+                "훈련 데이터셋 검증"
               ],
               "answer": 3,
-              "page": 515
+              "page": 515,
+              "quote": ""
             },
             {
               "id": 30,
               "text": "다음 특징을 갖는 추정 방법은 무엇인가?",
               "choices": [
-                "가상추정",
+                "가설추정",
                 "구간추정",
-                "보간추정(Interpolation)",
-                "최대우도추정"
+                "신뢰도추정",
+                "점추정"
               ],
               "answer": 4,
               "page": 515,
-              "quote": "· 주어진 데이터에서 일부의 결과를 추정하는 방법\n· 알려져 있는 데이터 지점의 값에서 미지의 결과 추측\n· 관측된 데이터 추정값을 이용하여 값을 추측\n· 주어진 데이터의 추정값을 이용하여 값을 추측하는 기법"
+              "quote": "- 모수를 단일치로 추측\n- 표본을 이용하여 모수의 참값으로 생각되는 하나의 값 추측\n- 어떠한 값을 택할 것인가를 사전에 지정(추정량)\n- 관측값에 대하여 추정량을 이용하여 값 추측(추정값)"
             },
             {
               "id": 31,
@@ -4331,12 +4424,13 @@ window.QUESTION_BANK = {
               "text": "두 집단 사이 평균의 차이를 검정하는 방법으로 옳은 것은?",
               "choices": [
                 "카이제곱 검정",
-                "분균 검정",
+                "평균 검정",
                 "F-검정",
                 "t-검정"
               ],
               "answer": 4,
-              "page": 516
+              "page": 516,
+              "quote": ""
             },
             {
               "id": 33,
@@ -4367,50 +4461,53 @@ window.QUESTION_BANK = {
               "id": 35,
               "text": "통계적 가설 검정 절차를 바르게 나타낸 것은?",
               "choices": [
-                "(가)→(나)→(다)→(라)",
-                "(라)→(가)→(다)→(나)",
-                "(나)→(다)→(라)→(가)",
-                "(라)→(가)→(나)→(다)"
+                "(마)→(가)→(다)→(나)→(라)",
+                "(마)→(라)→(가)→(다)→(나)",
+                "(라)→(가)→(마)→(다)→(나)",
+                "(라)→(마)→(가)→(다)→(나)"
               ],
               "answer": 4,
               "page": 518,
-              "quote": "(가) 유의수준과 자유도의 임계값(기각역)을 정한다.\n(나) 임계값과 검정통계를 비교하여 귀무가설의 기각/채택을 결정한다.\n(다) 수집된 데이터로 검정통계량을 계산한다.\n(라) 귀무가설과 대립가설을 설정한다."
+              "quote": "(가) 유의수준과 자유도의 임계값(기각역)을 정한다.\n(나) 임계값과 검정통계량을 비교하여 귀무가설의 기각여부를 판정한다.\n(다) 표본자료를 수집하여 검정통계량을 구한다.\n(라) 귀무가설과 대립가설을 설정한다.\n(마) 검정에 적용할 분포와 검정통계량을 선택한다."
             },
             {
               "id": 36,
               "text": "상대적 검정통계량의 비율에서 구한 유의확률(p)과 유의수준(α)의 비교하여 검정을 확정하는 방법으로 옳은 것은?",
               "choices": [
-                "p < α이면 귀무가설을 기각한다.",
-                "p > α이면 귀무가설을 기각한다.",
-                "p ≤ α이면 귀무가설을 채택한다.",
-                "p = α이면 귀무가설을 기각한다."
+                "p > α 이면 귀무가설은 기각된다.",
+                "p > α 이면 대립가설은 쳬택된다.",
+                "p ≤ α 이면 귀무가설은 기각된다.",
+                "p ≤ α 이면 대립가설은 기각된다."
               ],
               "answer": 3,
-              "page": 518
+              "page": 518,
+              "quote": ""
             },
             {
               "id": 37,
               "text": "통계적 분석 기법의 결과에 적합하지 않는 것은?",
               "choices": [
-                "결과에 대한 설명이 주요 기준으로 분류",
-                "변수들의 시연 상관분석에서 교차분석, 주성분 분석",
-                "시각적 표시에 대한 데이터 분석 보고서, 시계열 분석",
-                "회귀분석 기반의 예측과 추정"
+                "평균에 대한 검정과 추정 - T 검정",
+                "분할표의 검정 - 카이제곱 검정, Fisher 검정, 잔차 분석",
+                "변수들 사이의 상관관계의 강도 검증 - 요인분석, 주성분 분석",
+                "시간의 흐름에 따른 데이터 분석 모델 - 시계열 분석"
               ],
               "answer": 3,
-              "page": 518
+              "page": 518,
+              "quote": ""
             },
             {
               "id": 38,
               "text": "P대학교 통계학과 3학년 50명 학생의 중간고사 및 기말고사 시험 성적에 차이가 있는지를 확인하기 위한 가장 바람직한 검정 방법은?",
               "choices": [
                 "대응표본 t-검정",
-                "단일표본 t-검정",
                 "독립표본 t-검정",
-                "분산분석"
+                "단일표본 t-검정",
+                "일원배치 분산분석"
               ],
               "answer": 1,
-              "page": 519
+              "page": 519,
+              "quote": ""
             },
             {
               "id": 39,
@@ -4426,15 +4523,16 @@ window.QUESTION_BANK = {
             },
             {
               "id": 40,
-              "text": "적합도 검정에서의 검정통계량(χ²)에서 표본으로부터 분석적 결론으로 옳은 것은?",
+              "text": "적합도 검정에서의 검정통계량(n개의 표본으로부터 분석)의 분포로 옳은 것은?",
               "choices": [
-                "χ²(오류) ≥ χ²(α)이면 귀무가설 기각",
-                "χ²(오류) ≤ χ²(1-α)이면 귀무가설 기각",
-                "χ²(오류) ≤ χ²이면 기각",
-                "χ²(오류) ≤ α이면 기각"
+                "자유도가 n인 카이제곱 분포",
+                "자유도가 n-1인 카이제곱 분포",
+                "자유고가 n인 F-분포",
+                "자유도가 n-1인 F-분포"
               ],
               "answer": 2,
-              "page": 519
+              "page": 519,
+              "quote": ""
             },
             {
               "id": 41,
@@ -4453,13 +4551,14 @@ window.QUESTION_BANK = {
               "id": 42,
               "text": "다음 중 학습 데이터셋를 이용한 데이터 분석모형(예측 및 추정)의 결과로 가장 바람직한 것은? (단, 점은 학습데이터, 선은 예측(추정) 결과이다)",
               "choices": [
-                "[과대적합 그래프]",
-                "[미적합 그래프]",
-                "[적합 그래프]",
-                "[과대적합+미적합 혼합 그래프] > ⚠️ Q43~Q44: 해당 페이지(p.521~522) 스캔 누락으로 원본 교재 확인 필요"
+                "보기 1",
+                "보기 2",
+                "보기 3",
+                "보기 4"
               ],
               "answer": 3,
-              "page": 520
+              "page": 520,
+              "quote": "\n![이미지](data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAEGAe8DASIAAhEBAxEB/8QAGwABAAIDAQEAAAAAAAAAAAAAAAQFAQMGBwL/xABIEAABAwICBAkJBQcDAwUAAAAAAQIDBAUGERIhMZIHExQWNkFUdLEVIjVRVXFzkbIyU2GBoSNCRVLB0fAkM4JEYvEXJUOT4f/EABcBAQEBAQAAAAAAAAAAAAAAAAACAQP/xAAlEQEBAAICAgICAQUAAAAAAAAAAQIREiExQSJRA2GBE3GhweH/2gAMAwEAAhEDEQA/APZgAABhVRNarkYR7HLkjkVQPoGFVGoqquSJtMMe17Ee1UVrkzRU6wPoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8rIxFyVyIvvMouewDIPhJGLIsaOTTRM1TryPsAAAAAAAAAAAAAAAAAAAAAAAAAAAKauc6uvcdtc5UhbFxr0T97XkiFfBxtdS18mbY56CZzIJGJlkiIi6/mW9fQzurYq6kc1Jo00HNdse31FdFa6x0dVTxMfA2rkV0z3qmetERdHL3Afd2u0qYIqLlGxyyOp80aia811Grg/uE1wwfRSztc2RjdDzk2ompF+SFvU08dPZZ4GNRGMgciJ/xU04ZREwxbMky/0sf0oBaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQrxWOoLVPUsTNzG6iaaKylZWUslPJ9mRuSgctWrWWyCXSRkiysZk52t0z1VM092WZa2eSWnr5be9VVnFNlYirnoZ6lb88yHLaK7NrZ9Ooc1nFtkZlqT169i+4tLTbZKR8lTUvR08iI3Vsa1NSIBy1Leql/CxUUaxyJT8nSPZqzRVVF/U7w5+Fqc+ahckz5Izq/Fx0AAGDIAAAAAAAAAAAAAAAAAAAAAAAAAwZAEa4+jar4L/BSJhnozbO6x/ShLuPo2q+C/wAFImGejNs7rH9KAWTntYxXuVEaiZqq9RwzeE+hmvzaKFqLTrLxXGLtVfWhL4TbtLbMJzR0+aS1S8WmXq6/E4nE1gjw9hnD2gxEmSZHSuy1q5csysbrzEZY8updPZTJ8sXSjaqbFQ+iVgAAAAAYMnM4/vz8P4WqKiFcp5Mo4/eupf0UDpGva7PRVFy25H0eYYCuVwixjUWyrkVyPpmvVqr161z/AFPTjcpJeqnG24y5TVZABigAAAAAAAAAAAAAAAAAAAAAAAAAAAABQQ9Oajukfi4vygh6c1HdI/FxdT1ENNEss8iRsTa5TZN9Rlsk3Ua4pXqsHIXNREenGaX8pNTPJM9phrmvYjmrm1yZovrQ+jbepPpOOOrct+QAErAAAAAA1MqIZJXRska57PtNRdaG0iwW+np6mWojZlJL9pfWVNau05ctzX8pQMK5G7VRM/WZJUAAAAAAAAAAAAAI1x9G1XwX+CkTDXRm2d1j+lCXcfRtV8F/gpEwz0ZtndY/pQDbdLPSXdsTatmk2J2aJmchwt06phmlnamqCqZ+Sa/7HfFViSzMv9jqLc/JOMTzVXqUrdskqZjjjblJ3Um0zpU2iknRc0kha7P3oTDzdtv4QKBkdJbXRMpIWoxjXKiqiIXGBsT1N6nrqGtcq1NI7J+aIn4eJtx1vvwjH8lvH43v/H93YAAh1AAAPNuE9619/sFmTWkk7ZHJ+Glkp6SefVtPFceFul05U0qSNUSP/hpZ/NSpjcvCcs5jrftDtcaU3DVNCmxaRcvyTIt236eu4S1tMD3pFSx6UiIupepUX81QqL/M2w8K0F0ma5Kd9Guk9E1Iua//AIbuDCmluVwuuJ6hio6slVsar6s81/oJbj2zLHHPq+noxkwZJWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKCLpzUd0j8XFzVUsNZCsM7EexdqKU0PTmo7pH4uLmqq6eigdPVTMhib9p73ZIn5my2XcZZLNVsYxscbWNTJrURET8D6KdcW4eT+MUf/3NK6ixJZqaqqZZsQU0rJVzY3jE802SWW2ptsskn/HUg5WlxRZKeuqJpb/TyRyLmxmmnmktccYbT+K0++gykl6u24W5Tdml+Dnlx3hpP4rDvIfC4/wyn8Ui+ZKnSA5leELDCfxNh8rwjYXT+JN+QHUA4mu4TbIyWHklWyRir+0VyZZJ+BOg4RcNVMmhFWq52WeSMUvhete3P+pjN760u7hbkr3Qqsr4+Kfpeau0mImSIhyT+FDCjHK11c7NFyX9mpZ2LF9mxHLLFbKh0rokRXZsVMjLlbNX0qYYy3Ke12ACVAAAAAAAAAAAjXH0bVfBf4KRMM9GbZ3WP6UJdx9G1XwX+CkTDPRm2d1j+lALQAAYPN8MwyW7hWvUGgqRTomS9Sroo7+p6SedYkqJMP8ACTa69zsqSt8x6rsRy+b4ZFTXe05cuuL0UHysjGxrIrkRiJnmuzIrKDEdsuNU6mp6lrpE1tTP7aetDJLZuFykslvlagwctSY8oKnELbXmxGyOVsciO2uTqU2Y2y2ejLOY2S+3VHm1hXlvDHdqjbxMSJ7vNRp3t1uUFotk9dUPRscLFcufX6kOL4No1uNVcMRLTrClW5WppbXJpZ5/0EksvZcrLJry6y9WCivsTY6tq+bnk5upcl6iVbrfTWuhjo6OJI4Ykya1CSZMttmiYyW2TugAMUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKCHpzUd0j8XFjebRTXy2S2+r0uJlTJ2iusroenNR3SPxcX4HDJwSYZT9yZf8AkfacE2GU/wDhkX/kdsAOBquDvCFFNDDNTy6Uy5Ny1kxOCzC6f9Iq/mde+KORzXPYjlbsVU2H0Vdamkzlu7vXpyKcF+Fk/wChz/M+k4MsLJ/D2r+ZfpcVW7ch4h+WhpcZlqJwuNx8mOcy3r05RODXCqfwxin2nBxhRP4TEpdPnrkuscLYEWlVqq6TPYpOFx1oxz5b/TmP/T3CSLo+SKfP1dZtiwFhiF2lHaYWr60LOS1tkuzLhxrkcxujoZ6ieLqa1WTeW5lHPcw8MZ5+SYM/cT7Zh+1WZ732+jjgc9MnK1NpZAlYAAAAAAAAAAAAAjXH0bVfBf4KRMM9GbZ3WP6UJdx9G1XwX+CkTDPRm2d1j+lALQAADlOEawuveF5eJbnU0v7WJU26tqJ8jqzCoipkqZooHkNRjiqvuGbfYKBXeUqpeJnVNrUT+/8AQu77gF1DYqSqssr2XC2MRyORf93LaXlqwRRWy/PubdBUTPiWI3LRz25r1nTqiKmSlXU6lRjblN5TTgWcIUFXgOtrnLxVfTxrFJGupWyLqRfmcjLhWal4P6PEELXeUGTrUOcm3RXLwy/U6HFHBw2qvjqmia5IKzLjWNXJGuz2+49AbbqdbU23yRo6Hi0YrepUGtSXZyttknh5dPV3zhLuEFAyCSjtsGS1Krq0l6z1S30EFsoYaOmYjIomo1qIYoLfTW2DiaWJGMzzXLrUlGZa314bjy4zl5AAYoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQQ9Oajukfi4vygh6c1HdI/FxfgAAAPnTajkZpJpL1H0Q326J9yjr1e/jGNVqNRdRWOvacrlNcYl5JnnkZBGr+VLRycj0ePy83S2GSbujK8ZakEajuFNXLIlPJpLE7Rdq2KbKXjuSx8oy43RTTy2ZmYaaGn0lijRmmubsk2qb8ZuXyzeVss8e20AErAAAAAAAAAAAAAAAARrj6Nqvgv8FImGejNs7rH9KEu4+jar4L/AAUiYZ6M2zusf0oBaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoIenNR3SPxcX5QQ9Oajukfi4vwAAAAAAAAAAAAAAAAAAAAAAAAAAAAACNcEzttUifcv8FKXD99tUGHrfDLXQskZTRtc1Xa0VGpqOiVM0VF2KRVtdCq5rSxa/wDtQDRzis/tGDeHOKz+0YN43eSqDssW6g8lUHZYt1ANPOKz+0YN4c4rP7Rg3jd5KoOyxbqDyVQdli3UA084rP7Rg3hzis/tGDeN3kqg7LFuoPJVB2WLdQDTzis/tGDeHOKz+0YN43eSqDssW6g8lUHZYt1ANPOKz+0YN4c4rP7Rg3jd5KoOyxbqDyVQdli3UA084rP7Rg3hzis/tGDeN3kqg7LFuoPJVB2SLdQCsrMb4eoqiOCa4M0pEzRU1p+alrRXGjuMfGUdQyZnrYuZArMJ2O4VEc9VboZHRJk3NupCzpqSno4kip4mxMTY1qZAbgAAAAAAAAAAAAAAAAAAAAAAAAAAMGQBzM1bTUGNZpKuZsLX0jEar1yRVzcWnOKz+0YN4lz0dPUqizQseqbFcmZq8lUHZYt1ANPOKz+0YN4c4rP7Rg3jd5KoOyxbqDyVQdli3UA084rP7Rg3hzis/tGDeN3kqg7LFuoPJVB2WLdQDTzis/tGDeHOKz+0YN43eSqDssW6g8lUHZYt1ANPOKz+0YN4c4rP7Rg3jd5KoOyxbqDyVQdli3UA084rP7Rg3hzis/tGDeN3kqg7LFuoPJVB2WLdQDTzis/tGDeI1djGw2+BJprhGrVcjfM1qT/JVB2WLdQjV+GrRcoEgqqGJ8aOR2Wj1gbLbfrXdkRaGsjmVepq6yxIdBaaC2R8XRUscDfUxuRMAAAAAAAAAAhV9yjodFuiskr81axFy1JtVfUhEdiGCNWq7QezR0nqx+asT15daalAuAfLXtexHtXNqpmimUVFTNAMgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAfEkjIo3SPXJrUzVVA+wVbbxpwpOkaRxPXKFZH5LL7vUSKG4MrUe3RWOWJcpI3bWqBMBVx3uB+I5bNq41kLZU9yqv9izAyAAAAAAAAAAAAAAAAAAAAAAAAAAOfujkpr4s80fGRyUjmMb/ADO1ro/mhTpxcFZPUJTK2ndRIzQy+w7Ny6KevadnPTQ1LNCaNr255pmmxSNDaaWKTTVHyKi5t4xyu0V/DMCtrKqWy4IknmVeNgptfrz2f1IOHMVU7cBU94uDnIyFmhIuWa5ouj+p0d1ijltVUyRiPbxLtSpmmxSkorTBcOD2GgbE1EnoW6kT97QzRfmBe26vgulBFW0rtKGZuk1SScDwUXJz7RU2eZ37a3zOYiL/AC/+czvgAAAAAAAAAAAGDJGuNYy326oq5HIjYY1cqqBCgxJbqm/TWWKRzqqFqOemWrZntLY854KqOStfc8S1CLxldM5I1X+XP+56MAAAAAAAAAAAAAAAAAAAAAAAAAK6/wAMs9kqY4ftqzUWJjaBwd7SetmttbG1jqSKVnEta5fN1a1VMtR0VvclTiKrqIf9psTY3KmxXbfAmy2ilkfpIj40zzVsblair+KISoIIqaNI4Y2sanU1MgOKprFOzhTqLjy1VTk6O4vR/dVV1fp+prpb3cLfwoTWmuqnyUtVHnTtcupq7ck/IvoenNR3SPxcczwo0j6OoteIoEyfSTI16p/Kv/gD0UGijqo6yigqmKmjNG16a/WmZvAAAAAAAAAAAAAAAAAAAAAAAAAAACNcfRtV8F/gpEw10ZtndY/pQl3H0bVfBf4KRMNdGbZ3WP6UA4WFOa/C66NfMprqxFROrPYn65noNHcOV1NRDxD4+IciaTtjvccjwp2eSpssd2pEyqrc/jEc3bo9fyOjwteI75h+lr2ZaUjER6J1O60NlmruJstssq3MmDJigAAAAAAIlypJa2jdBDULA9VTz0TZrNxkt1anK2Y2ybSzg+FW6ugskNogd/qLjKjMk26PX+uR3DE4mBEe/PQbrcvWeZWhjsb8JE91emlb7Z5sPqV3V89fyMVHfYdtTLLYaOgY1EWKJEdl/Nlr/XMswAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgi6c1PdI/FxJxPaW3rDtZQuTNZI10femtCNF05qO6R+Li0uNatDSrMkTpdaJotNxlyuonLKYy5XxHCcH1Q+9WNtrqah8VVaZ1a5GrrciL1/h1HoqJkiIeX1z+aHCPTXFrVjobu1EkTYjXL6/z1nqDVRzUci5oqZoptyutX0yY4y3Ke2QASsAAAAAAAANc08VPGsk0jY2Jtc5ckQ+zzvHl0qKzElBh+kk0UyWWf3dXgps1vtOW5Lx8vQo5GSxpJG5HMcmaKi6lPs4jgquM1fhdyTvVzopVRFX1Hao5FzyVFy25KZWz9voABoAAAAAAACNcfRtV8F/gpEwz0ZtndY/pQl3H0bVfBf4KRMM9GbZ3WP6UA+pLSs9ZUSTzukp549BYV+zkcNgKofhvFVxwpUu8xXLLTquxU/D3/0PSzhcf2PQq6TE1NIsM1Ev7RzU2t/H/OsvvOyOesfxY2/y7owU1NepLth+C42prJnSoiq1V2L1oW8auWJivTJ6omkidSmXHU22Zy5cX2ACVgAAAwupMyFR3WGrZUv0XRtp3K17n6k1bVNmNstibnjLMb5rneEm/rZsOOggd/qq1eKjRNuXWv6krAthksFjSGVrGulyeqJtz/E5K1Mkx7wgSXOVFW2W1USJF2OVF/z9D1JNSGy6lhcZbL9BkAlQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoIenNR3SPxcXyoi7UKGHpzUd0j8XF+BynCJh9b7hqTiW/6ml/axKm3VtT5GzAV9W9Ych49FbU06cXK123V1nTKiKioqZop5jW1U+Bsexyyqvkmv83ZqYuf9M8/zKmtXaby3NeHpMNXBUPkZDIj3RLk9E6lNpHpKalh05qdiJx66TnJ1kgzLW+jHlr5eWQAYoAAAAAYXYeWWhFu3Cfe6t3nMpYXRtX8tX9T1GVyNic5VyREVTz/g4pIZaq91kUiycpejVcvUqZ6ipjuWpuUlk+2jgtnSjwxdnquXESKvyRS34OLpNeaCurpWq1r6lUZrzzT1nDLcJsOWvEVpSN6TVdVxcCompda5npuCbOtjwrR0j0ykVmm/3rr/AKjeWM19s1jlZl9L8AErAAAAAAAARrj6Nqvgv8FImGejNs7rH9KEu4+jar4L/BSJhnozbO6x/SgFoaaumirKWWmmajo5Wq1yL6jcAPMMMVMmBsWz4crnqlDVOV9LI7YmetE/zrPS4po5kVY3o9EXJVRTncb4VZiW15xeZW0/nwSJtzTqKfg3xBE+Kay1zVguUL102vX/AHPxQqa1d+U25cpqdO+BqqKiKlp3zzO0Y2Jm5RTzx1MDJ4naTHpm1fWhmrrZym+O+20GuaVIYHyuRVRjVcqJt1GqgrY7hSNqI2ua13U5MlHG636OePLjvtIPPeEa+zOWLDFm11tc5El0P3Wr6/8ANhf4xxbS4ZoURXadXMujFE3WvvKzBGFlhrJsR3BHurKvzmJLrWNqm663s5fLWlvhTC0OGqFsbJHPe5iI/PZn/inQAGZZXK7pjhjhNYgAMUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKCHpzUd0j8XF+UEPTmo7pH4uL8AUeLcOw4msktE/JJETSifl9l3UXhgDzXA2J7pFWR4ZuDWNnpXKxVkXW5qbMj0s4fHeD5a9zL5aFWK50vnJo6uMROokYLxxBfoEo67KnuUXmyRP1aSp1oVbuTpOOOrbvy7AEGGKubcppJZmupnInFsTahOGU17McuU8aYzTPLPWZK2pp1p611zdPIscca5xJsUWi/UF7Y9aSVFfGuT41+01fxNuGpynhGP5N5XG9X/X2sgQLzdYbLa5q+dU0Ikz19ZU4WxnSYlmqKdiNZNDkuii5o5PWhnG65L5zlx9re9S8RZaybPLQhcv6HJcEkOjheadU86Wqf8tRJ4RcSts9qbQwsSaqrl4tsW3Nq6lLjCVsW1YfggcxGPf+0cxP3VXqGprezd5a119t9Th211daysnpGPmY7SRyp1+sssjIMtt8tmMngABjQAAAAAAAEa4+jar4L/BSJhnozbO6x/ShLuPo2q+C/wAFImGejNs7rH9KAWgAAwcbjLBcl0kZd7NJyW6Qa2ubq4zLqU7M1VLZX00jYXaEitVGu9Smzyy3U24ew49p5/8A2bE0XI65vmuWVMmSfjrO4p1hWBnJ1asWXm6C6sihrsI0d9tjYbyxstSif77Uyci+85yTg4vFvaqWbEU0TE2MkRV/XM29dbZjrKTLWq9DkcxkaukVGtRNarsONxFwh260tWitLUrq5dTI4dbUX8cjnGYFxLc7itJc73PxTUzc5qLk78E1nW2ng7stpZGsTZHTNdpOlcvnON46smSOe5bhN2dfSmwrguurrkmIsUvWaqd50UDtjPyPQ01JkiZAyQ6gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAoIenNR3SPxcX5QQ9Oajukfi4vwAAAwcJivCNBersjrbOtDd4000fGmSO953hr4mPjeN0E08stLLWVNe05cuuLzemxZi3C7eTX60yVsLNSVESZqqflqJqcLtpVMkoKrjfu8tZ3r2MkbovajkXqVCvrbDbq6Li307Ga89JjURTMdb78GdsxvGduQoMaYgxDdYWW6xujt+l+1fMioqt6/wI2LLTU4QvDMVWVjkhVU5XA3Yqda5HotPTx00LIYmo1rEyTJBU00VXTvp52I+ORqtc1etA2PMMdYjixPbbRbrY/T8oSI57WrrbllqX5mi/W2fAuKaC5WqBZIVp9CRjdSOVEy1+JdWHg7ZaMU8r0NKnhcr4XK7Zn1ZHcVlvpa9rEqoWyIx2k3PqUrWMs34/SOWWWN4zV/bgMI4euF/vC4pxE1c886aByamp1LkejhrWsajWoiIiZIiGSHQAAAAAAAAAAAAARrj6Nqvgv8FImGejNs7rH9KEu4+jar4L/BSJhnozbO6x/SgFoAAAAAAADAMgAAAABgDIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYAoYenNR3SPxcX5QQ9Oajukfi4vwAAAAAAYMgAYMgDBkAAAYAyAAAAAAAAAAAAAjXH0bVfBf4KQMNzxNw1bUWViKlLHqV3/ahbOa17FY5M2uTJU9aFMuDcPKqr5Lh1/gBb8oh+9ZvIOUQ/es3kKfmbh72XD8hzNw97Lh+QFxyiH71m8g5RD96zeQp+ZuHvZcPyHM3D3suH5AXHKIfvWbyDlEP3rN5Cn5m4e9lw/IczcPey4fkBccoh+9ZvIOUQ/es3kKfmbh72XD8hzNw97Lh+QFxyiH71m8g5RD96zeQp+ZuHvZcPyHM3D3suH5AXHKIfvWbyGOUQ/es3kKjmbh72XD8hzMw97Lh+QEp2ILSyvdQvr4W1Dcs41dr1pmhYNc17Uc1UVF60OVk4NcNyXJ1a6kVFdl+zRfNTJPUdLR0dPQU7aeljSOJmxqAbwAAAAAAAAAAAAAAAAAAAAAAAAAAAAHP19DdYb+65W9sUjZIWxua/Vlkq/3PrlGJuyU28XwAoeUYm7JTbw5RibslNvF8AKHlGJuyU28OUYm7JTbxfACh5RibslNvDlGJuyU28XwAoeUYm7JTbw5RibslNvF8AKHlGJuyU28OUYm7JTbxfACh5RibslNvFZfq7GMFv06KjhWXSTJGLmp2IA57DdViaojRb5SU8OrVxarmdCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//Z)\n"
             },
             {
               "id": 45,
@@ -4470,8 +4569,9 @@ window.QUESTION_BANK = {
                 "학습 데이터에 노이즈를 추가한다.",
                 "모형의 복잡도를 높인다."
               ],
-              "answer": 2,
-              "page": 523
+              "answer": 4,
+              "page": 523,
+              "quote": ""
             },
             {
               "id": 46,
@@ -4482,20 +4582,22 @@ window.QUESTION_BANK = {
                 "정규화 적용",
                 "모형 복잡도 증가"
               ],
-              "answer": 1,
-              "page": 523
+              "answer": 4,
+              "page": 523,
+              "quote": ""
             },
             {
               "id": 47,
               "text": "'어떤 목적을 가지고 만들어진 데이터'는 무엇인가?",
               "choices": [
-                "# 데이터",
+                "\\# 데이터",
                 "메타 데이터",
                 "키워드 데이터",
                 "태그 데이터"
               ],
               "answer": 2,
-              "page": 523
+              "page": 523,
+              "quote": ""
             },
             {
               "id": 48,
@@ -4537,37 +4639,40 @@ window.QUESTION_BANK = {
               "id": 51,
               "text": "머신러닝에서의 데이터 최적화 방법에 대한 설명으로 옳지 않은 것은?",
               "choices": [
-                "머신러닝 기계학습의 주요 계산은 주어진 데이터에서 최적값을 찾기 위해 오차 함수의 미분값을 도입하는 것이다.",
-                "기계적 학습 시 결과로서 사용되는 데이터 값들을 이전 단계의 가중치에 반영, 새로운 데이터에서는 더 적은 오차를 나타내게 하는 과정을 반복한다.",
-                "머신러닝 목적함수(비용 함수)는 최소화되어야 한다. 최솟값 산출을 위해 함수의 미분값이 0이 되는 곳을 우선 찾아서 이를 최적값으로 결정한다.",
-                "머신러닝 알고리즘은 비용 함수의 미분값이 0이 되도록 학습한다."
+                "머신러닝 기법의 주요 역할은 주어진 데이터세트를 학습하여 최적의 모수(파라미터)를 도출하는 것이다.",
+                "일반적으로 최적의 모수를 추정하여 특정 설명변수(특성)가 주어졌을 때 목적변수(반응변수)의 값을 예측한다.",
+                "머신러닝에서 사용된 훈련 데이터세트의 패턴은 신규로 수집한 신규 데이터세트의 패턴과 반드시 일치한다.",
+                "머신러닝 알고리즘 적용 시 훈련 데이터세트의 특성을 너무 많이 반영하면, 과적합이 발생하여 일반화 능력이 오히려 떨어진다."
               ],
               "answer": 3,
-              "page": 525
+              "page": 525,
+              "quote": ""
             },
             {
               "id": 52,
               "text": "머신러닝에서 원시 데이터셋을 별도로 구분하여 사용하는 이유로 가장 옳은 것은?",
               "choices": [
-                "RMSE가 작은 것이기 때문이다.",
-                "머신러닝 학습에서 결과에 대한 검증이 필수적이고 분리하는 것이 유리하다.",
-                "학습 데이터와 테스트 데이터가 같은 데이터를 사용할 경우 과대적합이 발생할 수 있는 위험이다.",
-                "머신러닝 기반 분석모형의 일반화 능력과 테스트 결과의 영향성 때문이다."
+                "RMSE 오차를 줄이기 위해서이다.",
+                "방대한 데이터 양으로 인하여 빅데이터 분석 시스템이 한 번에 처리할 수 잇는 처리능력이 제한되기 때문이다.",
+                "학습 데이터세트 외에 외부에서 평가 데이터세트를 구하기 쉽기 때문이다.",
+                "머신러닝 기반 분석모형의 일반화 능력을 측정하고 성능을 향상시키기 위해서이다."
               ],
               "answer": 4,
-              "page": 525
+              "page": 525,
+              "quote": ""
             },
             {
               "id": 53,
               "text": "다음 중 분류 분석의 특징으로 옳지 않은 것은?",
               "choices": [
-                "고객가치들을 특정 계급으로 나누는 분류 분석 기법은 Clustering 분석 방법과 유사하다.",
+                "고객기록들을 특정 계급으로 나누는 분류 분석 기법은 Clustering 분석 방법과 유사하다.",
                 "분류 분석에서는 각 계급들이 어떻게 성립되는지 알 필요 없다.",
                 "분류 분석이란 데이터의 실체가 어떤 그룹에 속하는지 예측하기 위하여 사용하는 데이터 마이닝 기법 중 하나이다.",
                 "{0, 1}을 구분하거나 또는 {0, 1, 2, 3, 4} 등으로 구분하는 데 적용된다."
               ],
               "answer": 2,
-              "page": 526
+              "page": 526,
+              "quote": ""
             },
             {
               "id": 54,
@@ -4598,14 +4703,14 @@ window.QUESTION_BANK = {
               "id": 56,
               "text": "다음 설명에 해당하는 것은?",
               "choices": [
-                "Clustering Analysis",
-                "Text Mining",
-                "Neural Network",
-                "Decision Tree"
+                "Clustering Analysis (군집 분석)",
+                "Text Mining (텍스트 마이닝)",
+                "Neural Network (인공신경망)",
+                "Decision Tree (의사결정나무)"
               ],
               "answer": 1,
               "page": 527,
-              "quote": "전혀 배경 지식이 없거나 미리 사전에 정보를 가지고 있지 않은 상태에서 컴퓨터가 스스로 유사한 데이터를 발견하고 이를 기반으로 새로운 규칙을 추출하거나 알고리즘을 학습하는 방식"
+              "quote": "전체 데이터를 구분하기 위하여 다양한 특징을 가진 관찰 대상으로부터 동일 집단을 분류하는 방법으로서, 유사한 특성을 가진 개체들을 합쳐가며 최종적으로 동일한 특성을 갖는 대상을 찾는다. 대상을 분류하기 위하여 사전에 아무런 지식이 없는 상태에서 분류하므로 무감독 학습(Unsupervised Learning 또는 비지도 학습, 자율 학습)에 해당된다."
             },
             {
               "id": 57,
@@ -4659,13 +4764,14 @@ window.QUESTION_BANK = {
               "id": 61,
               "text": "K-평균 군집화 알고리즘의 수행 절차로 옳은 것은?",
               "choices": [
-                "군집 중심점 결정 → 중심점에서의 거리측정 → 할당군집을 통한 군집 생성 → 재중심 거리 계산 → 재중심 거리 측정",
-                "군집 중심 결정 → 할당군집을 통해 군집 생성 → 가까운 군집 생성 → 중심점에서의 거리측정 → 할당군집 수행",
-                "군집중심에서의 군집 설정 → 거리 군집 생성 → 중심점에서의 거리측정 → 할당군집을 통한 군집 생성",
-                "군집 중심점 결정 → 중심점에서의 거리측정 → 재중심 군집의 생성 → 재중심의 거리 관계 → 할당군집 수행"
+                "군집 중심설정 → 중심점과의 거리계산 → 관측값들을 새로운 군집에 할당 → 새로운 중심점 계산",
+                "군집 중심설정 → 관측값들을 새로운 군집에 할당 → 중심점과의 거리계산 → 새로운 중심점 계산",
+                "관측값들을 새로운 군집에 할당 → 군집 중심설정 → 중심점과의 거리계산 → 새로운 중심점 계산",
+                "군집 중심설정 → 중심점과의 거리계산 → 새로운 중심점 계산 → 관측값들을 새로운 군집에 할당"
               ],
-              "answer": 4,
-              "page": 530
+              "answer": 1,
+              "page": 530,
+              "quote": ""
             },
             {
               "id": 62,
@@ -4678,7 +4784,7 @@ window.QUESTION_BANK = {
               ],
               "answer": 4,
               "page": 530,
-              "quote": "· 주어진 형태의 임의 복잡 사용\n· 임의의 전체 데이터 중 대표점을 선정하여 군집 중심으로 활용\n· 비모수적 방법으로 클러스터의 특성을 보장\n· 이상값에 대한 건전한 분류로 보장"
+              "quote": "· 모든 형태의 유사성 척도 사용\n· 임의의 점이 아닌 실제 데이터세트의 값을 이용한 클러스터 중심 결정\n· 노이즈나 이상값 처리에 강건한 특징을 보임"
             },
             {
               "id": 63,
@@ -4741,19 +4847,20 @@ window.QUESTION_BANK = {
               ],
               "answer": 1,
               "page": 533,
-              "quote": "X를 구매한 경우 그 가운데 Y를 포함한 경우의 구입 비율이며, X가 주어졌을 때 Y의 확률이다. 즉, X를 구매한 사람이 Y를 구매한 조건부 확률이다."
+              "quote": "$X$를 구매한 경우 그 거래에 $Y$가 포함될 경우와 $Y$가 단독으로 거래된 경우의 비율로서, $Y$가 $X$와 연관되어 구매되는 것이 일반적으로 $Y$가 구매되는 것에 비해 얼마나 더 많은지를 나타낸다. 이를 구하는 공식은 $P(Y|X)/P(Y)$이며, 여기서 $P(Y)$는 $Y$가 단독으로 거래된 경우의 비율이며, $P(Y|X)$는 $X$를 구매한 경우 그 거래에 $Y$가 포함될 경우의 비율을 나타낸다."
             },
             {
               "id": 68,
               "text": "연관성 분석의 Measure에 대한 설명으로 옳지 않은 것은?",
               "choices": [
-                "Lift(향상도)가 1보다 커야 의미, 클수록 연관성 높은 규칙이다.",
-                "Support(지지도)는 전체 데이터에서 동시에 포함하는 거래의 비율이다.",
-                "항상 Lift는 1보다 크다. X와 Y가 서로 독립이면 Lift=1 이다.",
-                "Confidence(신뢰도)는 X를 구매한 건 중 Y도 같이 구매한 비율이다."
+                "$Lift$(향상도)가 1보다 작으면, 적용된 연관성 규칙은 결과 예측에 있어 우연적으로 평가하기 보다는 우수한 규칙으로 평가된다.",
+                "$Support$(지지도)는 전체 데이터세트 중에서 항목 $X$와 항목 $Y$가 동시에 포함된 비율로 구한다.",
+                "$Lift$(향상도)는 조건 $X$가 주어지지 않았을 때의 결과 $Y$가 발생할 확률 대비, 조건 $X$가 주어졌을 때의 결과 $Y$의 발생 확률의 증가 비율로 구힌다.",
+                "$Confidence$(신뢰도)는 일반적으로 조건부 확률로 구하며, 예를 들어 '$X$ 규칙이 발생하면 $Y$ 규칙이 발생할 확률이 높다'라고 말할 수 있는 비율이다."
               ],
               "answer": 1,
-              "page": 533
+              "page": 533,
+              "quote": ""
             },
             {
               "id": 69,
@@ -4766,7 +4873,7 @@ window.QUESTION_BANK = {
               ],
               "answer": 3,
               "page": 534,
-              "quote": "[벤다이어그램: X=10, Y=5, Z=25, X∩Y=20, X∩Z=15, Y∩Z=20, X∩Y∩Z=5, 전체=100]"
+              "quote": "\n![이미지](data:image/jpeg;base64,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)\n"
             },
             {
               "id": 70,
@@ -4792,7 +4899,7 @@ window.QUESTION_BANK = {
               ],
               "answer": 1,
               "page": 535,
-              "quote": "[벤다이어그램: X=15, Y=15, Z=20, X∩Y=10, X∩Z=5, Y∩Z=25, X∩Y∩Z=5, 전체=100]"
+              "quote": "\n![이미지](data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAC0AMYDASIAAhEBAxEB/8QAGwABAQADAQEBAAAAAAAAAAAAAAUBAwQGAgf/xAA+EAABBAIAAwUFBAgFBQEAAAABAAIDBAUREiExBhNBUWEUIjKBkTNCcaEVI0NSYrHB0RZEcoKiNFNUkuHS/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/AP2ZERAREQEREBFg8wQDpeOq3sq/tBfwZvuc/iEkcx4dxs8QOXVB7JF8RMLI2sc8vIGi49SvtAREQEREBEWuZrnwvax5Y4ggOHUFBsReQwlzLZCKbGyWpRYrTkS2S0fDvkBy1zXrWgtaAXFxA6nxQfSIiAiIgIiICIiAiIgIiICLTYsw1IXTTyNjY3xJUn2nLZckU2ihW6d/INvd6tb/AH0gpX36rPY22ys8jk9w3r5bXl5osRWyNO7FmY4Zq+xKRGXd9vrvyViLstjy7jud5ek6k2HF4+TTyCoRY2jANRVIWDyawBByxdo8RNyZejP4ghd8ViGcbilY/wD0u2tcuOpTDhlqQvHk5gKny9l8cXGSo19KTe+Ks4sG/UDkUFhZUPv8viNe0j9IVt85GACRg9R0Py5qtVtwXIRNXkD2Hy8PQoNyLlvZCvQj4pne8fhY0bc4+gU0R5jLNDpZDjq7v2bdGQj1Ph8igqzXK1cHvp42a83Lgl7SYgAsF+NriOR4SdJB2ZxUR4pa3tL9fHZPeO+rl3Mo1IhqOtE0DwDAEEPs/YxlBkzf0rFYksSmQvLODr4c16Fksco3G9rx5tO1zT4jG2W8M9CvKPJ8YK4Xdma8Dg/HTzUXDoI3Hg/9eiCysqI3J38ZII8tCHwnpbh5tH+odR9NKxHIyVgkje17HDYc07BQfaIiAiIgIiICIiDC027UVOs+xM7hY0fX0W5RADmc07i06nSOtfvyf/OaDbWpSZGVt7Is5dYax5tYPAnzP8lW1roiygIiICIiDCg5YNw8zbtAHvpDo1W9J/l4H1V2R7Yo3PedNaNkqPiGPyNmTLWGjhJLKw8mef4nmgzhK8Npn6Tlk7+xIeZd+y/hA8NfVWFEn3hswydum07Z4ZB+6/wKuICIiAiwsoPl7GyMLHtDmnqCNgqPJHJgpXWIQXUHfaRj9l6j0VpfL2NkYWPG2uGiCgxHIyWNsjHBzHgEEeIX2omOc7GZOTFvP6mTclb0Hi1W0BERAREQEREHFl7goYuezvRY3kfXwWvA03UsRDHJ9q8ccp83nmT9Vz9pR3lKKuek0zWFWB0QZXPduRUaslmbi4Ixs8LST9AuhabbHSVJWNG3OYQB8kEOHtfDbkhZToWbBlj7z3SwcI9dkL0DHFzGuLS0kbIPULwsWIkq0BFLi5vbHQhkc8T3cj5HR0F7PHxzRY+COw7imbG0PPrrmg6UREEbtLO4UWVIzp9uRsX+0nn+SiZDOZTE3342MQNYI2Mr8PPRPLZ2FYyB77tRjYifdjD3ka6+6QvnLdl4spalsmw6ORzGhpH3SOYKDh727cdfwuQlbYkZEJYpQwN2evQequYO469iIJnncgbwvP8AEOR/NacZh31LU1y1OJrEzQ0kDQAHktXZs8AvV98orDtem+aC2pOfzEuGqsmjpvnDnhpIIAbs9SqymZ7HS5TGmtE4NcXA7PoUHBje0NnI3nxj2OOJshYA6R3G7XkNaXoV5mXC3rNiBj69aJkM3ed/EAC4eWuu16ZBlERBE7TRObTjyEfJ9OQSE/w75j5hWIZBNCyQdHtBWnIRCfHzxHo6Mj8lzdnpTNgajydks6/MoKSIiAiIgIiII/aH3WU5DrTLLSdqupfaWB8+En7se+wB7fku2jaZdow2o/hlYHD5oOhFhZQEREBc13IVcdD3tqVsbfDfUrTkcj7LwwQN721Lyjj/AKnyC1U8O1k4uXXmzb6hzukfo0eCDz1u9k7/AGmqPoVvZBJG5rJLTeZ5b3w//VXGHuu07IZ6cE9RBqJp+R2s9od1rWPyAHKCbhdy8He7/Vc/aLHHI5Go/iqSRxMc4xT/AHvwGkHSOzUJAc3LZE/xCZv/AOVIwuLybbOQkoZZw/X/AOYZ3nFoeOtK1iMhE7s6LQrsrsia7bGfCNeSz2XiczENmePesPdL8nHY/IoNYy2RocsrRJj/APIrniH4keH1VatbguQiavK2SM9C0rb18FJs4h1eV1zFu7ibe3xD4JfxHn6oKyyuPH5CO9EdDglZykjPVpXWgyiIg1WSG1ZSToBh/kp/ZkEdnqe9b4D0/ErPaKz7NhZ+E/rJB3cY83HkAuvHwCrj4IRy4GAIOlERAREQEREHy9jZGOY4ba4aIUbBu9hs2MPIdGImSDfjGT4fhyCtqdlaD7AZZqngtwHbHfvDxafxQUFlcmPvx3oeIAskYeGSN3IsK60BcuQusx9N9h/PhHutHVx8AF1KJbb+ku0MNUgmGo3vX+Rd4D5dUGzFRMr8Vi7Mz22wONwc4bY3yHoF31r9O7xey2oZ+E6d3bw7X0Xiu2FYw5aSarG4SPqu4y0nmF24sQntVVOPAEPsX63g6b2Nb9UHpsjTbfoTVnffaQD5HwKl4+GrmaLYbsW7NQ90/RLXDXqPAjSvKHmCcVZblK/NzvckhHWUeGvVB85dkZjr4Om0MMx94NHwRjqf6Kz+pp1vBkUTfkAFNwcAljdkpntknsc9joxv7oVG3IIqsshjMga0ngA+L0QSP8X4gNe5z5mBg4hxwPHEP4djn8lSoZKHIxl8LJmgf92JzN/ULyFirFlYvbst3rSOUcFYaMLN+PXas9nJLD7dtrZJZaLeEQPk678QD9EHVl68laRuVqA95D9qwD7Vnjv1HVUq1iO1XjnjO2yNBC2OAc0tI2CNFRcNujkLWLOwxp72HZ+6fD67QW0RT8nfMI9lrDjtyjTGjnw+p9EHFaAy+eiqj3oKREkh8OP7o+SurjxlBuPqiMuL5Xe9LIerneK60GUREBERAREQEREE2/jZJJfbKMvcW2jW9bbIPJy1Vs9GJfZsjG6nYHL3/hf6g+X46VdabNSvciMVmFkzD917QQg2B7XM4muDh4EFROzp9onyN0jnLOQD6N5f0WHdmzVLn4zI2anjwF3eN+jt6+Sk9l4c/wDopxq2qrh38m++ad/GfIIPYuije7icwE61sjwWqGrVpNcYYY4QebuEaUz2ftLINPu0ovWNhJ/MLB7OPtO4snk7Nob3wNd3Tf8AjrfzQbrWehbJ7PRY65YPLhi5hvqT00vujjZRMLuQkE1n7oHwxDyH912VadalEIqsEcLPJjQNregkWMfYozvuYvR4zxS1idNefMeRW2nm6loiKQmvOPihl5Ef0KpLku4ynkWcNqBryOjtac38D1CDpAB8AsgAdAojcDcqDWOy9iJg6Ry6kH1dsrIg7TMOhaoPHm9rgfyCC2oOVlZS7Q4+05wa14dG8k6HTkvs0+0cwAkyVaDzMMez/wAgo+ZwLGXca+7bnuyOstB7w6brf7o5fkgszZqW4818PEZn9HTuGo2f3XbQxzafFLJIZrMn2kxGi7+wXVFFHDGI4mNYwdGtGgF9IMoiICIiAiIgIiICIiAiIgwRsEKJ2caK82Qpb5w2CQPR3P8AqriiWj+je0UVkkiG23un+Qd4H59EFtFhZQFx5G5NTgDq9R9qRzuFrGnX1PgF2KXnW5GSmI8ceF73APeOrW+OvVBMb2wfJO6lFjXPvMJ44BKNADx4tK1icnHlqLbMbSzmWuYerSORC84MLZx2Rgv0KT3hsbo5WvPvuJ+969Fa7OY6bG4zu7GhLJI6RwHQbO9IKqyiICh5MCz2ix1cH7PikcPwHJWyQ0EnoFFw+72St5M7MZPdQ7H3R1P12gtosLKAiIgIiICIiAiIgIiICIiAuXIUmZCm+u8kE82uHVp8CupEE3E3nTMdUs+7ag914P3h4OCorhyOONktsV3CK3H8Enn6HzC10swyWb2O232a2P2bvv8Aq3zCCmiIgIiICLClW8s6WZ1LGt7+x0e8fBF+J8/RBjL2ZLD24uoSZZvtHt/Zs8SVSrV46laOCIaZG3QWjH49lGMknjmfzkkPVxXYgIiICIiAiIgIiICIiAiIgIiICIiAuW9jquRh7qzEHjqD4g+YK6kQQnUc3jf+gtsuQjpDZOnD/fz/AJLLc9ch0LuFttPi6EB7B8+X8lbRBF/xRX3oULxPl3Q/usOzeRscqWFsb3oOskRt+o2teSz93Hve01I3SPfwVouLb5D5nyCtVXTurRustY2YtHG1h2AUEluLymQ55S73UR/y9bl8i7xHyVWpTr0YBDWibFG3oGhbllAREQEREBERAREQEREBERAREQEREBERAREQF8yFwjcWN4nAchvW19Ig8tWxmXZcflLNaOa7I7hY10g4YGenmV6hu+EcXXx0sogIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgwiIgyiIgLCIgyiIgIiICIiAiIg//Z)\n"
             },
             {
               "id": 72,
@@ -4805,7 +4912,7 @@ window.QUESTION_BANK = {
               ],
               "answer": 1,
               "page": 536,
-              "quote": "· 자주 빈번하게 발생(Frequent Pattern) 아이템 항목을 효과적으로 예측\n· 갈수 대체적인 항목(Item)은 효과적으로 군집\n· 하나 아이템의 항목(Item)에 대하여 다른 아이템의 관계를 대해 항목별 빈번하게 활동\n· 데이터의 양이 매우 클 때 비교적 효율적으로 작동"
+              "quote": "자주 판매되는 빈출(Frequent Pattern) 아이템 집합을 효과적으로 계산\n검토 대상의 집합 Pool을 효과적으로 줄임\n특정 집합이 빈발하지 않으면 이를 포함한 다른 집합도 빈발하지 않음\n데이터가 많아지면 계산량 및 속도면에서 비효율적"
             },
             {
               "id": 73,
@@ -4814,11 +4921,11 @@ window.QUESTION_BANK = {
                 "나이브 베이즈",
                 "로지스틱 회귀",
                 "랜덤 포레스트",
-                "서포트벡터머신"
+                "의사결정트리"
               ],
               "answer": 3,
               "page": 536,
-              "quote": "· 주어진 데이터를 대상으로 여러 개의 의사결정트리를 만들어 다수결 결정\n· 만들어진 분류/회귀 모델의 결과를 종합하여 최적의 모형을 결정\n· 판별의 수를 늘리면 예측력이 개선됨 (단, 속도가 느려짐)\n· Overfitting 감소"
+              "quote": "· 주어진 데이터를 이용하여 여러 개의 의사결정트리 생성\n· 각각의 의사결정트리의 예측 결과를 투표형식으로 집계\n· 앙상블 모형을 이용한 분류 결과 사용"
             },
             {
               "id": 74,
@@ -4831,19 +4938,20 @@ window.QUESTION_BANK = {
               ],
               "answer": 3,
               "page": 537,
-              "quote": "· 지도분석의 원산값 없이 순수한 데이터(비지도)에서 자동으로 범주 설정\n· 해당 데이터포인트를 가장 가까운 이웃 클래스(Nearest Neighbor)에 자동 분류\n· 여러가지 군집에서 유사한 개체끼리의 카테고리별 분류가 가능한 기법\n· 군집 결과의 대표값을 갖게 되며 비교적 사전 정보 없이 군집이 가능"
+              "quote": "목표변수의 범주를 알지 못하는 데이터셋의 분류에 활용\n해당 데이터셋과 가장 유사한 주변 데이터셋의 범주로 지정\n유사성은 유클리디안 제곱 거리의 역수, 피어슨 상관계수, Jacard Coefficient로 계산\n분류 및 예측 모형에 주로 사용"
             },
             {
               "id": 75,
               "text": "머신러닝 알고리즘 선정 방법으로 옳지 않은 것은?",
               "choices": [
-                "모형의 적용 환경을 모두 확인하여 최적의 결과를 제공하는 것이 필요하다.",
-                "학습 데이터와 향후 데이터의 변화(계절 등과 같은)를 고려한다. 향상도, 지지도, 정확도 등의 지표를 활용한다.",
-                "특정 알고리즘 하나를 반복적으로 사용하면 모든 데이터에 대해 항상 유효한 결과를 얻을 수 있다.",
-                "머신러닝 알고리즘의 결과 비교를 위한 여러 가지 성능평가를 이용하여 결과를 비교/분석하여 최종 모형을 결정한다. > 📌 **제1장 완료** — Q43~Q44는 해당 페이지(p.521~522) 스캔 불일치로 원본 교재에서 확인 필요 ---"
+                "모형의 적용 결과값 등에 유의성 검정이 요구되는 경우 로지스틱 회귀모형을 사용한다.",
+                "어떤 변수가 목표변수의 분류에 중요한지 빠르게 탐색하고자 할 때 의사결정트리 모형을 고려한다.",
+                "비정형 데이터를 변환하여 분류를 수행하는 경우 분류 결과는 중요하나, 분류 확률값 자체는 상대적으로 덜 중요하다면 로지스틱 회귀모형을 사용한다.",
+                "배경이론이나 확률적 접근이 가능하다면 로지스틱 회귀 및 나이브 베이즈 모형을 적용한다."
               ],
               "answer": 3,
-              "page": 537
+              "page": 537,
+              "quote": ""
             }
           ]
         },
@@ -4854,27 +4962,29 @@ window.QUESTION_BANK = {
           "questions": [
             {
               "id": 1,
-              "text": "시각화를 포함한 데이터 분석결과를 해석하는 방법으로 가장 적합하지 않은 것은?",
+              "text": "시각화를 포함한 데이터 분석결과를 제시하는 방법으로 가장 적절하지 않은 것은?",
               "choices": [
-                "데이터 분석결과의 해석에 대한 연구과정의 개요, 분석 과정, 결과 해석 등이 포함되어야 한다.",
-                "데이터 분석결과의 해석에 대해 프리젠테이션에서의 적절한 의사결정이 포함된다.",
-                "데이터 분석결과에 대한 해석, 작성된 차트나 그래프들의 해석을 포함한다.",
-                "분석 결과를 통해 비교 작성에 다른 인원의 스토리텔링에 의한 결과가 제시되어 전달할 수 있도록 해석한다."
+                "데이터 분석결과를 제시할 때 연구과정의 개요, 결과 요약, 문제 해결 방안 등이 포함되어야 한다.",
+                "데이터 분석결과를 명료하게 해석 · 요약함으로써 적절한 의사결정을 지원해야 한다.",
+                "데이터 분석결과를 제시할 때, 복잡한 차트나 그래프보다는 표를 활용하는 것이 좋은 방법이다.",
+                "주어진 문제나 문제해결의 목표와 직접적으로 연관된 스토리로 만들어 내는 것은 호소력 있는 방법 중 하나이다."
               ],
               "answer": 3,
-              "page": 579
+              "page": 579,
+              "quote": ""
             },
             {
               "id": 2,
               "text": "데이터 시각화의 주요 목적 중 하나로서, 데이터의 정확하고 신뢰할 수 있는 표현을 통해 전달하고자 하는 메시지에 대한 긍정적, 감정적 반응을 유도하는 수용적·예술적 측면의 목적은 무엇인가?",
               "choices": [
-                "데이터 전달",
-                "데이터 수용적",
-                "데이터 감성",
-                "도달전달"
+                "데이터 처리",
+                "데이터 추상화",
+                "설득",
+                "정보전달"
               ],
               "answer": 3,
-              "page": 579
+              "page": 579,
+              "quote": ""
             },
             {
               "id": 3,
@@ -4904,25 +5014,27 @@ window.QUESTION_BANK = {
               "id": 5,
               "text": "데이터 분석결과에 대한 검증 사례로서 시각화 요소로 옳은 것은?",
               "choices": [
-                "변수 및 패턴 분류 관점",
-                "유사도/지지의 일관성 검증",
-                "트렌드 일치 검증",
-                "패턴분석의 결과 검증"
+                "범주 및 비율값 검증",
+                "분석모형의 정확성 검증",
+                "관계와 연결 검증",
+                "추세와 패턴 검증"
               ],
               "answer": 4,
-              "page": 581
+              "page": 581,
+              "quote": "값의 증가, 감소 등 변화 여부 검증\n변화가 없는지, 선형 및 지수형 변화인지 확인\n얼마나 빨리 변하는지 확인\n변동폭, 계절 효과, 무작위 변화 등 검증\n관계 변화를 나타내는 교차점 확인"
             },
             {
               "id": 6,
               "text": "데이터 분석결과에 대한 검증 사례로서 군집화 요소로 옳은 것은?",
               "choices": [
-                "변수 및 패턴 분류 관점",
-                "유사도 시각화 검증 관점",
-                "유사의 일치 검증",
-                "데이터 분석의 군집화(Cluster) 결과 검증"
+                "변수 및 비율값 검증",
+                "분석모형의 정확성 검증",
+                "관계와 연결 검증",
+                "추세와 패턴 검"
               ],
               "answer": 3,
-              "page": 581
+              "page": 581,
+              "quote": "이상값(Outlier)을 보이는 변수 검증\n\n변수들 사이의 관련성 검증\n\n약한 상관관계의 존재 확인\n\n변수 및 변수의 조합들 사이에 의미 있는 관계 확인\n\n데이터 클러스터(군집화) 검증"
             },
             {
               "id": 7,
@@ -4950,15 +5062,16 @@ window.QUESTION_BANK = {
             },
             {
               "id": 9,
-              "text": "시각화를 세분화한 7단계 프로세스로 옳은 것은?",
+              "text": "사용자별로 구분하여 분석결과에 대한 활용 시나리오를 수행하는 목적으로 옳지 않은 것은?",
               "choices": [
-                "데이터 획득 → 구조화 → 마이닝 → 수출 → 시각화 → 재정의 → 상호작용",
-                "데이터 획득 → 수출 → 구조화 → 마이닝 → 재정의 → 시각화 → 상호작용",
-                "데이터 획득 → 구조화 → 수출 → 시각화 → 마이닝 → 재정의 → 상호작용",
-                "데이터 획득 → 파싱 → 필터링 → 마이닝 → 표현 → 정제 → 인터랙션"
+                "사용자별로 요구되는 데이터 분석결과의 성능을 임의로 조정할 수 있다.",
+                "사용자별로 최적의 그래픽 레이아웃을 설정할 수 있다.",
+                "전달하고자 하는 핵심요소를 선정한다.",
+                "사용자별로 요구되는 데이터 표시 수준을 결정한다."
               ],
               "answer": 1,
-              "page": 583
+              "page": 583,
+              "quote": ""
             },
             {
               "id": 10,
@@ -4977,12 +5090,13 @@ window.QUESTION_BANK = {
               "text": "빅데이터 분석결과의 적용 방법과 사례에 대한 설명으로 옳지 않은 것은?",
               "choices": [
                 "빅데이터 분석결과를 활용하여 기업에서는 새로운 상품과 서비스 개발의 아이디어를 얻을 수 있다.",
-                "규모보다는 효율성을 더 중시하는 비즈니스 기업들이 고용 측면의 기회가 생긴다.",
-                "빅데이터 분석 프로젝트는 반드시 비용과 위험요소를 가지고 있다.",
+                "규모보다는 효율성을 더 중시하는 비즈니스가 창출되어 고용 증대의 기회가 생긴다.",
+                "빅데이터 분석 프로젝트는 반드시 비용과 위험요소를 주지 않는다.",
                 "기업 의사결정의 효율성과 효과를 극대화시킬 수 있다."
               ],
               "answer": 3,
-              "page": 584
+              "page": 584,
+              "quote": ""
             },
             {
               "id": 12,
@@ -4994,7 +5108,8 @@ window.QUESTION_BANK = {
                 "최근 다양화되고 있는 비즈니스 상황에서도 기여도 분석을 완벽하게 수행하는 상용화 도구들이 제공되고 있다."
               ],
               "answer": 4,
-              "page": 584
+              "page": 584,
+              "quote": ""
             },
             {
               "id": 13,
@@ -5025,13 +5140,14 @@ window.QUESTION_BANK = {
               "id": 15,
               "text": "데이터 시각화(Data Visualization)에 대한 설명으로 옳지 않은 것은?",
               "choices": [
-                "시각화 이론은 변수 사이의 흥미를 가지고 볼 수 있도록 설계되고, 직관성이 높아 쉽게 이해할 수 있게 한다.",
-                "데이터 사이의 유사성과 차이를 파악하기에는 편리하지만, 문자나 수치에서 발견하기 힘든 내용을 알 수는 없다.",
-                "문자보다 상대적으로 직관적 정보를 전달할 수 있으며, 조직 내에서의 다양한 구성원들에게 쉽게 다가갈 수 있다.",
-                "많은 데이터를 서로 비교하면서 동시에 시각적으로 보여줄 수 있다."
+                "시각화는 이를 보는 사람이 흥미를 가지고 볼 수 있도록 설계되며, 주목성이 높아 쉽게 이해가 된다.",
+                "데이터들 사이의 유사성을 명확히 파악하기에는 편리하지만, 문자나 수치에서 발견하기 힘든 내용을 알 수는 없다.",
+                "문자보다 상대적으로 친근하게 정보를 전달할 수 있으며, 조직 내에서의 다양한 구성원들에게 쉽게 다가갈 수 있다.",
+                "은 데이터를 서로 비교하면서 동시에 차별적으로 보여줄 수 있다."
               ],
               "answer": 2,
-              "page": 586
+              "page": 586,
+              "quote": ""
             },
             {
               "id": 16,
@@ -5049,13 +5165,14 @@ window.QUESTION_BANK = {
               "id": 17,
               "text": "시각화를 세분화한 7단계 프로세스로 옳은 것은?",
               "choices": [
-                "데이터 획득 → 구조화 → 마이닝 → 수출 → 시각화 → 재정의 → 상호작용",
-                "데이터 획득 → 구조화 → 수출 → 마이닝 → 시각화 → 재정의 → 상호작용",
-                "데이터 획득 → 구조화 → 수출 → 시각화 → 마이닝 → 재정의 → 상호작용",
-                "데이터 획득 → 파싱 → 필터링 → 마이닝 → 표현 → 정제 → 인터랙션"
+                "데이터 획득 → 구조화 → 마이닝 → 출출 → 시각화 → 재정의 → 상호작용",
+                "데이터 획득 → 구조화 → 마이닝 → 재정의 → 추출 → 시각화 → 상호작용",
+                "데이터 획득 → 구조화 → 추출 → 마이닝 → 시각화 → 재정의 → 상호작용",
+                "데이터 획득 → 구조화 → 추출 → 시각화 → 마이닝 → 재정의 → 상호작용"
               ],
               "answer": 3,
-              "page": 587
+              "page": 587,
+              "quote": ""
             },
             {
               "id": 18,
@@ -5067,7 +5184,8 @@ window.QUESTION_BANK = {
                 "(나), (다)"
               ],
               "answer": 3,
-              "page": 587
+              "page": 587,
+              "quote": "(가) 많은 데이터를 동시에 차별적으로 보여줄 수 있다.\n\n(나) 관계와 차이를 명확하게 표시하기보다는 다소 추상적으로 표현한다.\n\n(다) 데이터를 평면화하여 일반적으로 수직적 구조로 표현된다.\n\n(라) 정보를 직관적으로 이해할 수 있게 도와준다."
             },
             {
               "id": 19,
@@ -5076,10 +5194,11 @@ window.QUESTION_BANK = {
                 "기하학적 기술",
                 "그래프 기술",
                 "심미·예술적 기술",
-                "최소 지향적 기술"
+                "화소 지향적 기술"
               ],
               "answer": 3,
-              "page": 587
+              "page": 587,
+              "quote": ""
             },
             {
               "id": 20,
@@ -5087,11 +5206,12 @@ window.QUESTION_BANK = {
               "choices": [
                 "그래픽 기술",
                 "하이브리드 기술",
-                "매칭 기술",
+                "왜곡기술",
                 "동적 인터렉션 기술"
               ],
               "answer": 2,
-              "page": 588
+              "page": 588,
+              "quote": ""
             },
             {
               "id": 21,
@@ -5114,8 +5234,9 @@ window.QUESTION_BANK = {
                 "크기",
                 "다중표현"
               ],
-              "answer": 1,
-              "page": 588
+              "answer": 4,
+              "page": 588,
+              "quote": ""
             },
             {
               "id": 23,
@@ -5246,11 +5367,12 @@ window.QUESTION_BANK = {
               "choices": [
                 "히트맵 — 관계 시각화",
                 "추세선 — 시간 시각화",
-                "빈도 플롯 — 분포 시각화",
+                "밀도 플롯 — 분포 시각화",
                 "트리맵 — 비교 시각화"
               ],
               "answer": 2,
-              "page": 593
+              "page": 593,
+              "quote": ""
             },
             {
               "id": 34,
@@ -5312,20 +5434,20 @@ window.QUESTION_BANK = {
               ],
               "answer": 2,
               "page": 595,
-              "quote": "색상으로 표현할 수 있는 다양한 정보를 일정한 이미지 위에 열 분포 형태로 비교하여 표현하여 그래프로서 시각화되어 시각화에 의한 데이터의 관계를 이용하여 보여주는 시각적 이용하여 제공한다."
+              "quote": "색상으로 표현할 수 있는 다양한 정보를 일정한 이미지 위에 열 분포 형태의 비주얼한 그래픽으로 표현하는 것이 특징이다.\n주로 웹사이트 방문자들의 로그 분석에 많이 사용되고, 웹페이지에서 발생하는 방문자의 마우스 클릭을 열 분포 형태의 이미지로 변환하여 사이트 이미지 위에 겹쳐서 보여준다.\n클릭이 많이 발생하는 영역은 붉은색으로, 클릭이 적게 발생하는 영역은 푸른색으로 표현한다."
             },
             {
               "id": 39,
               "text": "다음 설명에 해당하는 것은?",
               "choices": [
                 "Data Science",
-                "표",
+                "R",
                 "Infographics",
                 "Data Visualization"
               ],
               "answer": 3,
               "page": 595,
-              "quote": "텍스트, 사진/이미지를, 표, 결과/수치/데이터 등을 이용하여 다양한 정보를 효과적으로 활용할 때 Information과 Graphic의 합성단어이다."
+              "quote": "차트, 다이어그램, 로고, 일러스트레이션 등을 이용하여 다량의 정보를 표현하여 Information과 Graphic의 합성어이다."
             },
             {
               "id": 40,
@@ -5392,13 +5514,14 @@ window.QUESTION_BANK = {
               "id": 45,
               "text": "데이터 분석결과 보고서 작성 시 유의사항과 거리가 먼 것은?",
               "choices": [
-                "스토리라인의 내용을 토대로 요약본을 작성하며, 요약본에는 독자가 이해하기 쉬운 자료로 작성한다.",
-                "분석결과 요약의 내용에는 읽는 독자가 이해하기 쉽게 처리한 적절한 각 항 내용을 모두 포함시켜야 한다.",
-                "가능한 한 길어야 하나 디자인은 간결하게 하고, 전달하고자 하는 메시지를 명확하게 전달하도록 작성한다.",
-                "요약문을 작성하기 전에 목적과 주제를 먼저 떠올리고 전체적인 요약본의 내용을 검토하여 작성하는 것이 바람직하다."
+                "스토리보드의 내용을 토대로 요약문을 작성하며, 요약문에는 독자가 이해하기 쉬운 자료로 작성한다.",
+                "분석결과 요약문의 내용에는 읽는 독자가 이해하기 쉽게 최대한 전달하고자 하는 내용을 모두 포함시켜야 한다.",
+                "가능한 한 레이아웃이나 디자인은 간결하게 하고, 전달하고자 하는 메시지를 명확하게 전달하도록 작성한다.",
+                "요약문은 작성하기 전에 목차를 먼저 만들어보고 전체적인 요약문의 내용을 검토하여 작성하는 것이 바람직하다."
               ],
               "answer": 2,
-              "page": 598
+              "page": 598,
+              "quote": ""
             },
             {
               "id": 46,
@@ -5448,7 +5571,7 @@ window.QUESTION_BANK = {
               ],
               "answer": 1,
               "page": 600,
-              "quote": "· 드릴액션 수준까지의 분석결과 제공\n· 데이터 정밀 분석결과 제공\n· 사용자와의 인터랙티브 정보요약 기능 제공"
+              "quote": "· 트렌잭션 수준까지의 분석결과 제공\n· 데이터 정밀 분석결과 제공\n· 사용자와의 인터랙티브 정보교환 기능 제공"
             },
             {
               "id": 50,
@@ -5522,7 +5645,7 @@ window.QUESTION_BANK = {
               ],
               "answer": 3,
               "page": 603,
-              "quote": "· 데이터 분석결과의 개선점을 적용한 경우와 그렇지 않은 경우로 구분\n· 가설 검증을 위한 대조군과 실험군 설정\n· 데이터 분석모형의 가치 검증\n· 버킷 테스트, A/B 테스트, split 테스트라고도 함"
+              "quote": "· 데이터 분석결과의 개선점을 적용한 경우와 그렇지 않은 경우로 구분\n· 가설 검증을 위한 대조군과 실험군 설정\n· 데이터 분석모형의 가치 검증\n· 버킷 테스트, 대조실험, 분할 및 실행 테스트라고도 함"
             },
             {
               "id": 56,
@@ -5585,7 +5708,7 @@ window.QUESTION_BANK = {
                 "IT 거버넌스",
                 "데이터 플랫폼 구축"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 606,
               "quote": "데이터에 대한 표준화된 관리 체계를 수립하고 운영을 위한 프레임워크 및 저장소를 구축하는 것"
             },
@@ -5610,7 +5733,7 @@ window.QUESTION_BANK = {
                 "연관성",
                 "시계열"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 607
             },
             {
@@ -5634,7 +5757,7 @@ window.QUESTION_BANK = {
                 "가중치(Weights)",
                 "손실값(Loss Value)"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 608
             },
             {
@@ -5646,7 +5769,7 @@ window.QUESTION_BANK = {
                 "딥러닝에서는 과적합 문제가 발생하지 않는다.",
                 "드롭아웃(Dropout)을 적용하는 경우 반드시 입력 가중치를 조절해야 하며, 이 값은 일정 비율로 끊음으로써 은닉 유닛(Hidden Units)을 제거한다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 608
             },
             {
@@ -5658,7 +5781,7 @@ window.QUESTION_BANK = {
                 "Convolutional Neural Network(합성곱 신경망)",
                 "Regression Analysis(회귀분석)"
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 608
             },
             {
@@ -5670,7 +5793,7 @@ window.QUESTION_BANK = {
                 "발생될 수 있는 문제 또는 사건에 대하여 즉각 대응할 수 있도록 현재 무슨 일이 벌어지고 있는지를 조기에 탐지할 수 있다.",
                 "사람의 생명과 직접 연관되어 있어 시약 및 의료기기에서의 진단분석 방법은 잘 사용되지 않는다."
               ],
-              "answer": 2,
+              "answer": 1,
               "page": 609
             },
             {
@@ -5682,7 +5805,7 @@ window.QUESTION_BANK = {
                 "회사가 사용자에게 세금을 부과하기 위한 개인정보 조회",
                 "정보주체의 신체, 재산의 이익을 위해 필요한 경우의 개인정보 조회"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 609
             },
             {
@@ -5694,7 +5817,7 @@ window.QUESTION_BANK = {
                 "개인정보의 관리 및 보관",
                 "개인정보의 수집, 저장, DB 적재, 활용 및 품질관리 방안 마련"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 609
             },
             {
@@ -5706,7 +5829,7 @@ window.QUESTION_BANK = {
                 "데이터 수집 → 정제 → 적재 → 분석 → 시각화",
                 "데이터 수집 → 적재 → 정제 → 분석 → 시각화"
               ],
-              "answer": 2,
+              "answer": 3,
               "page": 610
             },
             {
@@ -5718,7 +5841,7 @@ window.QUESTION_BANK = {
                 "이상값(Outlier)",
                 "잡음(Noise)"
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 610,
               "quote": "데이터 집합에서 대부분의 다른 측정값들과 현저한 차이를 보이는 샘플 혹은 변숫값"
             },
@@ -5731,7 +5854,7 @@ window.QUESTION_BANK = {
                 "센서 데이터 - Open API",
                 "동영상 - Streaming"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 610
             },
             {
@@ -5743,7 +5866,7 @@ window.QUESTION_BANK = {
                 "Apache Flume을 사용하여 수집한 로그 데이터",
                 "y=f(x) 형태로 주어진 음성 데이터"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 611
             },
             {
@@ -5767,7 +5890,7 @@ window.QUESTION_BANK = {
                 "T-근접성 : 데이터 집합에서 구별되지 않은 Record들의 민감한 정보의 분포와 전체 데이터의 민감한 정보의 분포의 차이를 T 이하로 만들어 비식별화 조치한다.",
                 "데이터 유일성 : 기본키(또는 수퍼키 등)를 활용하여 유일한 데이터 Record인지 확인하고 이를 삭제함으로써 비식별화 조치한다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 611
             },
             {
@@ -5810,7 +5933,10 @@ window.QUESTION_BANK = {
                 "이상값",
                 "최댓값"
               ],
-              "answer": 1,
+              "answer": [
+                1,
+                2
+              ],
               "page": 613
             },
             {
@@ -5846,7 +5972,7 @@ window.QUESTION_BANK = {
                 "파생변수 생성 시 분석 도메인 및 데이터 자체에 대한 지식이 요구되며 EDA를 통한 Insight 방법을 통해 생성되기도 한다.",
                 "항상 데이터 적합한 것이 아니기 때문에 데이터 분석 목적에 맞게 분석 이전에 개발해 낸 유의미하고 적합한 변수이기도 하다."
               ],
-              "answer": 4,
+              "answer": 2,
               "page": 614
             },
             {
@@ -5943,7 +6069,7 @@ window.QUESTION_BANK = {
                 "병렬 차트는 여러 범주의 데이터를 비교하기 위해 사용한다.",
                 "병렬 차트는 그룹화된 막대 그래프의 형식으로 표현되기도 한다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 617
             },
             {
@@ -5967,7 +6093,7 @@ window.QUESTION_BANK = {
                 "기하 분포",
                 "포아송 분포"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 618
             },
             {
@@ -5979,7 +6105,7 @@ window.QUESTION_BANK = {
                 "e⁻⁶",
                 "e⁻²"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 618
             },
             {
@@ -5991,7 +6117,7 @@ window.QUESTION_BANK = {
                 "정규 분포는 평균과 표준편차에 따라서 모양이 달라지기 때문에 표준화 작업을 수행하고 표준 정규 분포를 이용하여 정규화를을 계산한다.",
                 "표본의 크기가 작을 때 t-분포를 사용하며 표본의 크기가 n이면 t-분포의 자유도는 n이다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 618
             },
             {
@@ -6028,7 +6154,7 @@ window.QUESTION_BANK = {
                 "(168.289, 171.711)",
                 "(168.292, 171.708)"
               ],
-              "answer": 4,
+              "answer": 1,
               "page": 620,
               "quote": "[t-분포 표 제공]"
             },
@@ -6041,7 +6167,7 @@ window.QUESTION_BANK = {
                 "(ㄱ) - 제2종 오류, (ㄴ) - 제1종 오류",
                 "(ㄱ) - 제2종 오류, (ㄴ) - 검정 오류"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 620,
               "quote": "통계적 가설이란 표본의 특성을 나타내는 모수에 대한 주장을 의미한다. 모집단의 모수에 대하여 어떤 조건을 가정하여 가설을 설정하는데 이 가설을 귀무가설(Null Hypothesis)이라 하며 귀무가설과 반대되는 가설을 대립가설(Alternative Hypothesis)이라 한다.\n아래와 같이 가설 검정 시 오류는 필연적으로 발생하게 되며 이 경우 대립가설이 참인데 대립가설을 기각하면서 생기는 오류를 (ㄱ)이라 하고 귀무가설이 참인데 참인 귀무가설을 기각하면서 생기는 오류를 (ㄴ)이라 한다.\n\n| 구분 | 귀무가설 참 | 귀무가설 거짓 |\n|------|-------------|---------------|\n| 귀무가설 채택 | 옳은 결정 | (ㄱ) |\n| 귀무가설 기각 | (ㄴ) | 옳은 결정 |"
             }
@@ -6109,7 +6235,7 @@ window.QUESTION_BANK = {
                 "단계 선택법(Stepwise Selection)",
                 "임의 선택법(Random Selection)"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 622
             },
             {
@@ -6121,7 +6247,7 @@ window.QUESTION_BANK = {
                 "병원에서 어떤 입원 환자의 간경화 진행 유무를 진단하고자 한다.",
                 "제과점에서 그동안 판매했던 상품을 앞으로 계속 판매할 것인지 폐기할 것인지를 결정하고자 한다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 622
             },
             {
@@ -6133,7 +6259,7 @@ window.QUESTION_BANK = {
                 "학습률(Learning Rate)이란 적절한 학습 속도를 유지하기 위해 Gradient 방향으로 얼마나 빠르게 이동할 것인지를 결정하는 변수이다.",
                 "손실 함수(Cost Function)는 입력에 따른 기대값과 실제값 차이를 계산하는 함수로 평균제곱오차, 교차엔트로피오차 등을 고려하여 지정한다."
               ],
-              "answer": 4,
+              "answer": 2,
               "page": 623
             },
             {
@@ -6145,7 +6271,7 @@ window.QUESTION_BANK = {
                 "은닉층의 개수(Number of Hidden Units)",
                 "편향(Bias)"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 623
             },
             {
@@ -6181,7 +6307,7 @@ window.QUESTION_BANK = {
                 "요인 분석(Factor Analysis)",
                 "다차원 척도 MDS(Multi-dimensional Scaling)"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 624,
               "quote": "· 제한적이 비교적 프로세스적이 데이터적의 비적에서적이 데이터서비스되어: 적합되어서 비관적 관적\n· 관적적되어서 관적하고 절합적적에서의: 관적 설합하고 이 관적적적이이다.\n· 결과적적에서의 관적적인 결적적에서의 관적적되어이 관적하다: 결과적이이다.\n· 관적적 관적적이다."
             },
@@ -6194,7 +6320,7 @@ window.QUESTION_BANK = {
                 "자기회귀(Autoregressive)",
                 "이동평균(Moving Average)"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 625
             },
             {
@@ -6256,7 +6382,7 @@ window.QUESTION_BANK = {
                 "오피니언 마이닝(Opinion Mining)",
                 "텍스트 마이닝(Text Mining)"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 627,
               "quote": "· 기업 내에서 발생하는 트랜잭션 데이터를 모델링하기 위해 사용된다.\n· 트랜잭션 데이터의 각 이벤트(개체 쌍)는 링크로 정의된다.\n· 이벤트 속성은 링크 속성, 각 객체는 노드로 정의된다.\n· 노드의 연결 주소상 위치 속성값을 계산하는 방법으로 활용된다."
             },
@@ -6282,7 +6408,7 @@ window.QUESTION_BANK = {
                 "부스팅 — 랜덤 포레스트",
                 "부스팅 — Meta Modeling"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 627
             },
             {
@@ -6313,7 +6439,7 @@ window.QUESTION_BANK = {
                 "(ㄴ), (ㄷ)",
                 "(ㄷ), (ㄹ)"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 629,
               "quote": "(ㄱ) 독립변수에 대한 회귀계수의 유의성을 검정하기 위해 카이제곱 검정통계량을 이용한다.  \n(ㄴ) 독립변수와 종속변수가 각각 1개인 경우 단순선형회귀분석이라 한다.  \n(ㄷ) 회귀분석모형에 대한 유의성 검정을 위해 일반적으로 귀무가설은 설정된 회귀모형은 타당하다 또는 유의하다고 설정한다.  \n(ㄹ) 결정계수(사전설명에 들어간 정도 중에서 회귀에 의해 설명되는 부분의 비율, R²)가 1에 가까울수록 회귀에 의한 설명이 잘 됨을 의미한다."
             },
@@ -6339,7 +6465,7 @@ window.QUESTION_BANK = {
                 "`Y = β0 + β1X1 + β2X2 + ··· + βkXk + e`",
                 "`Y = β0 + β1X1 + β2X2^2 + ··· + βkXk + e`"
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 629
             },
             {
@@ -6351,7 +6477,7 @@ window.QUESTION_BANK = {
                 "모집단의 분포에 대한 가정이 옳은지 실제 관측된 자료를 토대로 검정할 때 사용한다.",
                 "관측 자료에 대한 적합도 검정을 위해 검정통계량은 관찰 도수와 기대 도수를 이용하여 구한다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 630
             },
             {
@@ -6363,7 +6489,7 @@ window.QUESTION_BANK = {
                 "`Precision = 12/13`, `Recall = 3/4`",
                 "`Precision = 3/4`, `Recall = 12/13`"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 630,
               "quote": "| 실제 \\\\ 예측 | 참(Yes) | 거짓(No) |\n|---|---:|---:|\n| 실제 범주 값 참(Yes) | 60 | 5 |\n| 실제 범주 값 거짓(No) | 20 | 15 |"
             },
@@ -6388,7 +6514,7 @@ window.QUESTION_BANK = {
                 "`F1-score = 2 × Precision × Recall / (Precision + Recall)`",
                 "`F1-score = (Precision + Recall) / (2 × Precision × Recall)`"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 631
             },
             {
@@ -6400,7 +6526,7 @@ window.QUESTION_BANK = {
                 "ROC 곡선으로 예측하여 AUC(Area Under Curve, ROC 곡선 아래 영역) 값을 구할 수 있고, AUC 값이 클수록 모델의 성능이 우수하므로, 따라서 Model 1보다 Model 2의 성능이 우수하다.",
                 "Model 1과 같이 ROC 선이 대각선에 가까울수록 참 긍정과 거짓 긍정을 제대로 구별하지 못해 바람직하지 않은 분석모형으로 평가한다."
               ],
-              "answer": 2,
+              "answer": 3,
               "page": 631,
               "quote": "[ROC 곡선 그래프 제공]"
             },
@@ -6413,7 +6539,7 @@ window.QUESTION_BANK = {
                 "분석모형에 대한 기본 가정을 만족시키지 못했더라도 가설 검정을 통과했다면 분석모형에 대한 진단 과정은 불필요하다.",
                 "최근 데이터 분석을 위한 소프트웨어의 개발로 분석 결과를 쉽게 얻을 수 있지만 적용한 데이터 분석 방법이 적절한지 여부에는 사전의 진단할 필요가 있다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 632
             },
             {
@@ -6425,7 +6551,7 @@ window.QUESTION_BANK = {
                 "독립성",
                 "정규성"
               ],
-              "answer": 4,
+              "answer": 1,
               "page": 632
             },
             {
@@ -6476,7 +6602,7 @@ window.QUESTION_BANK = {
                 "훈련 데이터와 시험 데이터의 비율은 `50:50`, `70:30`, `K%:(100-K)%` 등으로 사용자가 설정이 가능하다.",
                 "데이터 분석모형 평가 결과가 훈련 데이터와 시험 데이터의 구성에 의존적이며, 계산량이 많지 않아 쉽게 평가할 수 있다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 634
             },
             {
@@ -6488,7 +6614,10 @@ window.QUESTION_BANK = {
                 "부정형인 범주 중 긍정으로 잘못 예측(False Positive)한 비율은 정밀도(Precision)라고 하며 `TP / (TP + FP)`라고 표시한다.",
                 "머신러닝 성능평가지표 중 정확도(Accuracy)를 표기하는 식은 `(TP + TN) / (TP + FP + FN + TN)`이다."
               ],
-              "answer": 1,
+              "answer": [
+                2,
+                3
+              ],
               "page": 634,
               "quote": "| 구분 | 예측(예) | 예측(아니오) |\n|---|---|---|\n| 실제(예) | 참긍정, True Positive(TP) | 거짓부정, False Negative(FN) |\n| 실제(아니오) | 거짓긍정, False Positive(FP) | 참부정, True Negative(TN) |"
             },
@@ -6501,7 +6630,7 @@ window.QUESTION_BANK = {
                 "데이터 분석모형의 예측값들의 평균과 실제 정답값과의 차이(또는 절댓값, 차이의 제곱)를 편향(Bias)이라 한다.",
                 "예측수준과 정답이 널리 떨어져 있으면 결과의 편향이 높다고 하고, 예측수준이 자기들끼리 널리 흩어져 있으면 분산이 높다고 평가한다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 635
             },
             {
@@ -6513,7 +6642,7 @@ window.QUESTION_BANK = {
                 "트리맵(Tree Map)",
                 "버블 차트(Bubble Chart)"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 635
             },
             {
@@ -6525,7 +6654,7 @@ window.QUESTION_BANK = {
                 "바 차트(Bar Chart)",
                 "스타 차트(Star Chart)"
               ],
-              "answer": 4,
+              "answer": 2,
               "page": 635,
               "quote": "· 변수의 수만큼 축을 그리고 각각의 축에 측정값 표시  \n· 여러 측정항목 간 균형을 한눈에 볼 수 있음  \n· 각 측정항목에 대한 중심점은 동일하게 시각화함  \n· 중심으로부터 일정간격으로 척도를 새로 나누어 각 항목의 점수 표시  \n· 각 항목에 점을 찍고 그림 선으로 이어 만듦"
             },
@@ -6587,7 +6716,7 @@ window.QUESTION_BANK = {
                 "업무 및 데이터에 대한 통찰 역량",
                 "최적의 모델 인자를 구성할 수 있는 특징공학(Feature Engineering) 역량"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 637
             },
             {
@@ -6635,7 +6764,7 @@ window.QUESTION_BANK = {
                 "업무상 알게 된 개인정보를 누설하거나 권한 없이 다른 사람이 이용하도록 제공하는 행위",
                 "정당한 권한 없이 또는 허용된 권한을 초과하여 다른 사람의 개인정보를 훼손, 멸실(훼손), 변경, 위조 또는 유출하는 행위"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 638
             },
             {
@@ -6659,7 +6788,7 @@ window.QUESTION_BANK = {
                 "개인정보 보안 서비스",
                 "마이 데이터 서비스"
               ],
-              "answer": 2,
+              "answer": 4,
               "page": 639
             },
             {
@@ -6671,7 +6800,7 @@ window.QUESTION_BANK = {
                 "마스터 플랜을 수립하기 위해 분석과제 과제 정의(도출), 우선순위 평가, 단계적 세부 이행 과제 수립, 중장기적 로드맵 작성의 절차를 수행하게 된다.",
                 "일반적으로 단계적 세부 이행 계획 수립을 수행하기 위하여 WBS(Work Breakdown Structure)를 이용한다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 639
             },
             {
@@ -6720,7 +6849,7 @@ window.QUESTION_BANK = {
                 "데이터의 개인정보 포함 여부, 지적 재산권 여부를 고려하여 적절한 조치 계획을 수립한다.",
                 "적절한 데이터 분석모형을 활용한 데이터 분석 주기를 고려한다."
               ],
-              "answer": 2,
+              "answer": 3,
               "page": 641
             },
             {
@@ -6732,7 +6861,7 @@ window.QUESTION_BANK = {
                 "Policy Directive",
                 "Regulation EC"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 641,
               "quote": "유럽 연합의 법으로서 유럽 연합에 속해 있거나 유럽경제지역에 속해 있는 모든 사람들의 사생활 보호와 개인정보 보호에 주는 규제이다. 유럽 연합과 유럽경제지역 이외 지역의 개인(기업)에게도 확대 적용이 가능하며, 본 규제에 따르는 개인정보를 자유롭게 주고받게 하여 유럽 단일시장의 제도들을 통합시킴으로써 규제에 짙은 국내 비즈니스 환경을 단순화하는 것이다."
             },
@@ -6757,7 +6886,7 @@ window.QUESTION_BANK = {
                 "적시성(Timeliness)",
                 "정확성(Accuracy)"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 642,
               "quote": "· 실제계에 존재하는 객체(사건, 사물, 개념 등)의 값이 오류 없이 저장되어 있음  \n· 분석대상이 매우 올바른 값 저장  \n· 내재적(고유) 데이터 품질 특성(Intrinsic Data Quality)  \n· 사실성, 정확성, 일관성의 특성을 가짐"
             },
@@ -6770,7 +6899,7 @@ window.QUESTION_BANK = {
                 "데이터를 정규화하거나 표준화한다.",
                 "데이터의 값을 정규화하기 위해 `(대상값 - 최댓값) / (최댓값 - 최솟값)` 수식을 이용한다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 642
             },
             {
@@ -6782,7 +6911,7 @@ window.QUESTION_BANK = {
                 "NoSQL",
                 "RDBS"
               ],
-              "answer": 2,
+              "answer": 3,
               "page": 642
             },
             {
@@ -6794,7 +6923,7 @@ window.QUESTION_BANK = {
                 "주제 중심적이다.",
                 "종합적 내용을 저장한다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 643
             },
             {
@@ -6806,7 +6935,7 @@ window.QUESTION_BANK = {
                 "Pig",
                 "Tajo"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 643
             }
           ]
@@ -6825,7 +6954,7 @@ window.QUESTION_BANK = {
                 "데이터 웨어하우스를 위하여 분석대상이 되는 여러 변수들의 주요 정보는 최대한 유지하면서 데이터를 변수의 개수를 줄인다.",
                 "변수의 기능에 따라 독립, 종속, 통제, 매개, 조절, 억제 변수로 구분한다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 644
             },
             {
@@ -6837,7 +6966,7 @@ window.QUESTION_BANK = {
                 "차원축소를 위해 대표적으로 사용되는 다차원 척도법(Multi-Dimensional Scaling)에서는 고차원 데이터를 데이터 행렬이 0이 되도록 가시적인 저차원의 좌표상에 표현한다.",
                 "차원축소를 위해 대표적으로 사용되는 요인분석(Factor Analysis)에서는 설정된 분석모형을 이용하여 구성변수와 비슷한 특성을 가지는 변수를 제거한다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 644
             },
             {
@@ -6849,7 +6978,7 @@ window.QUESTION_BANK = {
                 "변수 선형변환 분석 방법으로서 음수가 포함되지 않은 전체 변수가 양수인 행렬 `V`를 음수로 분해하지 않는 행인 `W`와 `H`의 곱으로 분해하는 알고리즘이다.",
                 "통계적으로 독립변수들 사이에 상관관계가 없도록 하고 요인 적재량을 확인하며, 요인 적재값에 차이가 나지 않아 요인 분류가 어려운 경우 데이터 회전 방법으로 분석을 실시한다."
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 645
             },
             {
@@ -6861,7 +6990,7 @@ window.QUESTION_BANK = {
                 "공분산 행렬의 고유벡터가 해당 데이터를 대표하는 축축이 되도록 하는 방법으로 주성분을 분석한다.",
                 "공분산 행렬을 이용하여 고유벡터를 구하고, 고유벡터 행렬의 방향성은 유지하되 선형변환의 주축은 1의(선형변환 이후 크기만 바뀌고 방향은 유지한다)."
               ],
-              "answer": 2,
+              "answer": 1,
               "page": 645
             },
             {
@@ -6873,7 +7002,7 @@ window.QUESTION_BANK = {
                 "1.07",
                 "1.08"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 646,
               "quote": "[고유값/공분산 행렬/고유벡터 표 제공]"
             },
@@ -6898,7 +7027,7 @@ window.QUESTION_BANK = {
                 "다수 클래스를 언더샘플링하고 일부 데이터를 사용하는 다운(또는 언더) 샘플링 방법에서는 유의미한 데이터만 남기는 방식으로 이루어지며, 데이터의 손실이 크고 때로는 정상 데이터를 왜곡시키기도 한다.",
                 "소수 클래스 데이터를 증가시키는 오버 샘플링 방법에서는 기존은 중복된 소수의 데이터를 복제하거나, 정보가 손실되지 않는 장점이 있으나 여러 유형의 학습치를 다수 추가함으로써 Overfitting을 초래하기도 한다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 647
             },
             {
@@ -6922,7 +7051,7 @@ window.QUESTION_BANK = {
                 "왜도(Skewness) < 0, 최빈값(Mode) < 중앙값(Median) < 평균값(Mean)",
                 "왜도(Skewness) < 0, 최빈값(Mode) > 중앙값(Median) > 평균값(Mean)"
               ],
-              "answer": 2,
+              "answer": 1,
               "page": 647,
               "quote": "[우측 꼬리 분포 그래프 제공]"
             },
@@ -6935,7 +7064,7 @@ window.QUESTION_BANK = {
                 "최빈값(Mode)",
                 "평균(Mean)"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 648
             },
             {
@@ -6959,7 +7088,7 @@ window.QUESTION_BANK = {
                 "평균과 분산을 측정하기 위해 수집된 데이터 관측값의 단위는 동일하다.",
                 "평균은 일반적으로 크기에 따라 차례로 나열했을 때 가운데에 놓이는 값과 동일하다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 648
             },
             {
@@ -6971,7 +7100,7 @@ window.QUESTION_BANK = {
                 "압착장 중 5년 생존자 수",
                 "우주선 부품 조사"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 649
             },
             {
@@ -7007,7 +7136,7 @@ window.QUESTION_BANK = {
                 "모집단의 평균이 `μ`이고 모분산이 `σ²`인 경우 임의로 추출된 `n`개의 표본으로부터 구한 표본평균(`X̄`)의 표준편차는 `σ/√n`이다.",
                 "모집단의 분포가 정규분포가 아니더라도 표본의 크기(`n`)가 큰 경우 `X̄`의 분포는 모집단의 분포와 상관없이 정규분포로 근사화된다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 650
             },
             {
@@ -7019,7 +7148,7 @@ window.QUESTION_BANK = {
                 "모집단의 분포가 정규분포인 경우 표본의 크기가 크더라도 표본평균은 정규분포를 따르지 않는다.",
                 "분포의 비대칭도를 나타내는 왜도(Skewness)의 값이 양수나 음수를 가지는 경우에도 표본의 크기가 큰 경우 표본평균은 정규분포를 따른다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 650
             },
             {
@@ -7031,7 +7160,7 @@ window.QUESTION_BANK = {
                 "편의성(Convenience)",
                 "효율성(Efficiency)"
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 651
             },
             {
@@ -7055,7 +7184,7 @@ window.QUESTION_BANK = {
                 "대립가설만 맞다고 가정할 때 주어진 검정통계량을 이용하여 대립가설을 기각하면서 생기는 오류값",
                 "귀무가설이 맞다고 가정할 때 주어진 검정통계량을 이용하여 구한 최소의 유의수준 값"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 651
             }
           ]
@@ -7086,7 +7215,7 @@ window.QUESTION_BANK = {
                 "ANOVA 표를 이용하여 독립변수의 종속변수의 선형성, 오차의 정규성, 등분산성, 독립성을 검정할 수 있다.",
                 "`F` 통계량 값은 `MSR / MSE`로 구하며, 유의확률 값이 유의수준보다 작으면 회귀식이 유의하다고 판단한다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 652,
               "quote": "[ANOVA 분산분석표 제공]"
             },
@@ -7111,7 +7240,7 @@ window.QUESTION_BANK = {
                 "13",
                 "19"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 653,
               "quote": "[인공신경망 연결도 제공]"
             },
@@ -7124,7 +7253,7 @@ window.QUESTION_BANK = {
                 "편향(Bias)",
                 "학습률(Learning Rate)"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 654
             },
             {
@@ -7136,7 +7265,7 @@ window.QUESTION_BANK = {
                 "비모수적 추정에서 커널 밀도 추정을 위하여 커널 함수를 사용하며, 이 경우 추출된 데이터에 대한 데이터 값을 중심으로 커널 함수를 반복 생성하는 방법들을 이용한다.",
                 "SVM 분류를 위하여 저차원 공간에서 선형 분리가 안 되는 데이터를 고차원 공간에 매핑시켜서 선형분리되도록 하기 위하여 비선형식의 새로운 커널 함수를 사용한다."
               ],
-              "answer": 4,
+              "answer": 2,
               "page": 654
             },
             {
@@ -7148,7 +7277,7 @@ window.QUESTION_BANK = {
                 "비용, 감마 두 가지 매개변수를 사용하는 가우시안 RBF 커널 기법에서는 매개변수 값이 증가할수록 알고리즘의 복잡도는 증가한다.",
                 "비용, 감마 두 가지 매개변수를 사용하는 가우시안 RBF 커널 기법에서 비용 매개변수는 데이터 샘플들이 다른 클래스에 놓이는 것을 허용하는 정도를 설정하고, 감마는 결정 경계의 굴곡을 설정한다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 655
             },
             {
@@ -7160,7 +7289,7 @@ window.QUESTION_BANK = {
                 "백색잡음(White Noise)",
                 "자기상관(Autocorrelation)"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 655
             },
             {
@@ -7172,7 +7301,7 @@ window.QUESTION_BANK = {
                 "`ARIMA(p, d, q)`에서 `d`는 ARIMA 모형으로 정상성(자료 변동이 시간에 따라 일정)을 만족 및 분산불변을 의미한다.",
                 "`ARIMA(p, d, q)`에서 `p`는 AR(Autoregressive) 모형과 관련되고 `q`는 MA(Moving Average) 모형과 관련된다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 656
             },
             {
@@ -7184,7 +7313,7 @@ window.QUESTION_BANK = {
                 "`(가) CNN, (라) Markov Decision Process`",
                 "`(가) CNN, (라) 강화 학습`"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 656,
               "quote": "[모형 설명 표 제공: 합성곱 신경망(CNN), 순환신경망(RNN), 심층신뢰신경망(DBN), 강화학습 관련 설명]"
             },
@@ -7197,7 +7326,7 @@ window.QUESTION_BANK = {
                 "입력 집합에 대한 확률 분포를 학습시키는 신경망 구조인 RBM(Restricted Boltzmann Machine) 구축을 전혀 사용하지 않는다.",
                 "학습 데이터가 충분해야 하며, 제한된 Gradient Descent Vanishing 문제가 여전히 해결되지 않은 구조를 제공한다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 657
             },
             {
@@ -7209,7 +7338,7 @@ window.QUESTION_BANK = {
                 "분류 문제에서 `n`개의 벡터, `n`차원의 벡터일 때마다, 각 클래스에 속할 확률을 추정한다.",
                 "각 클래스에 대한 예측 결과는 정규화하여 확률값으로 표현해 주며 최종(Weights) 행렬의 총합이 1이다."
               ],
-              "answer": 4,
+              "answer": 2,
               "page": 657
             },
             {
@@ -7221,7 +7350,7 @@ window.QUESTION_BANK = {
                 "활성화 함수를 선형함수로 사용하는 경우 은닉층이 없는 네트워크로 되어 있어 일정한 사용 시 층을 제거하는 의미가 줄어든다.",
                 "은닉층의 수가 많아지면 피처 변수의 수가 늘어나서 필요한 인식의 수가 증가한다."
               ],
-              "answer": 2,
+              "answer": 3,
               "page": 657
             },
             {
@@ -7233,7 +7362,7 @@ window.QUESTION_BANK = {
                 "하이퍼볼릭 탄젠트(Hyperbolic Tangent)",
                 "시그모이드(Sigmoid)"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 658,
               "quote": "· 유한한 구간 `(a, b)` 사이의 한정된 값을 반환하고, `a`와 `b`는 주로 0과 1을 사용한다.  \n· 정규화된 지수 전체 집합이자 덧셈 역적 형태이다.  \n· 정의역의 전구간의 급속한 미분값으로 수렴한다.  \n· 가중치가 업데이트되지 않고 소실되는 기울기 손실 현상이 발생될 수 있다."
             },
@@ -7246,7 +7375,7 @@ window.QUESTION_BANK = {
                 "Nesterov Accelerated Gradient",
                 "RMSProp"
               ],
-              "answer": 4,
+              "answer": 1,
               "page": 658
             },
             {
@@ -7282,7 +7411,7 @@ window.QUESTION_BANK = {
                 "부호 검정(Sign Test)",
                 "대응표본 t-검정(Paired T-test)"
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 659,
               "quote": "· 우리나라 대학생의 IQ 중앙값은 115이다.  \n· P대학 학생의 IQ 중앙값이 115 이상이라고 주장한다.  \n· 이 주장이 옳은지를 확인하기 위해 임의로 P대학 학생 20명을 추출하여 IQ를 조사하였다.  \n· 유의수준 `α=0.06`에서 비모수 검정 방법을 이용하여 검정하고자 한다."
             },
@@ -7295,7 +7424,7 @@ window.QUESTION_BANK = {
                 "부호 검정(Sign Test)",
                 "대응표본 t-검정(Paired T-test)"
               ],
-              "answer": 2,
+              "answer": 1,
               "page": 660
             },
             {
@@ -7307,7 +7436,7 @@ window.QUESTION_BANK = {
                 "검정통계량(카이제곱)=6.36이고 유의확률 0.095를 기준으로 해석한다.",
                 "프리드만 검정을 위하여 대립가설로 “4개 혈압 치료약에 대한 의사들의 평균 선호도(순위)에 차이가 있다”로 설정한다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 660,
               "quote": "[의사별 치료약 A, B, C, D 선호도 표 제공]"
             }
@@ -7352,7 +7481,7 @@ window.QUESTION_BANK = {
                 "특이도(Specificity)",
                 "정밀도(Precision)"
               ],
-              "answer": 4,
+              "answer": 2,
               "page": 662,
               "quote": "[혼동행렬 표 제공]"
             },
@@ -7365,7 +7494,7 @@ window.QUESTION_BANK = {
                 "민감도=`2/3`, 정밀도=`4/5`",
                 "민감도=`4/5`, 정밀도=`2/3`"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 662,
               "quote": "[혼동행렬 표 제공: `TP=2`, `FP=5`, `FN=3`, `TN=15`]"
             },
@@ -7378,7 +7507,7 @@ window.QUESTION_BANK = {
                 "Model B의 AUC 값은 Model A의 AUC 값보다 크다.",
                 "Model C에 대한 AUC 값이 가장 크다."
               ],
-              "answer": 2,
+              "answer": 1,
               "page": 663,
               "quote": "[ROC 곡선 그래프 제공: Model A, B, C]"
             },
@@ -7391,7 +7520,7 @@ window.QUESTION_BANK = {
                 "`1/n Σ (yi - ŷi)^2`",
                 "`sqrt(1/n Σ |yi - ŷi|)`"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 663
             },
             {
@@ -7403,7 +7532,7 @@ window.QUESTION_BANK = {
                 "K-means 교차 검증",
                 "K-medoids 교차 검증"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 664,
               "quote": "· 주어진 데이터를 서로 겹치지 않게(Random) 두 부분으로 분리한다.  \n· 하나는 모형의 학습 및 구축을 위한 훈련용 데이터로 사용한다.  \n· 다른 하나는 모형평가를 위한 검증용 데이터로 사용한다.  \n· 훈련 데이터로 이용하여 분석모형을 구축하고 검증용 데이터세트로 분석모형의 성능을 평가한다.  \n· 훈련집합과 검증집합의 비율은 `50:50`, `70:30` 등으로 결정한다.  \n· 검증용 데이터의 결과는 분석모형에는 영향을 주지 않고 모형의 성과 측정을 위해 사용된다."
             },
@@ -7416,7 +7545,7 @@ window.QUESTION_BANK = {
                 "훈련, 테스트, 검증 데이터세트로 구분한 경우 훈련 데이터세트만 이용하여 분석모형을 구축하게 된다.",
                 "일반적으로 테스트 데이터(Testing Set)와 검증 데이터(Validation Set)는 같아도 무방하다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 664
             },
             {
@@ -7428,7 +7557,7 @@ window.QUESTION_BANK = {
                 "`1/k Σ (Oi - Ei)^2 / Ei`",
                 "`Σ (Oi - Ei)^2`"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 665
             },
             {
@@ -7440,7 +7569,7 @@ window.QUESTION_BANK = {
                 "은닉층 노드 수 줄이기",
                 "학습률 줄이기"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 665
             },
             {
@@ -7452,7 +7581,7 @@ window.QUESTION_BANK = {
                 "주기성(Cycle)",
                 "추세(Trend)"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 665
             },
             {
@@ -7464,7 +7593,7 @@ window.QUESTION_BANK = {
                 "지지도=`33%`, 신뢰도=`66%`",
                 "지지도=`33%`, 신뢰도=`50%`"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 666,
               "quote": "`[오렌지, 사과, 자몽]`  \n`[수박, 체리]`  \n`[오렌지, 사과, 레몬, 자몽]`  \n`[딸기, 수박, 사과, 레몬]`  \n`[딸기, 수박, 레몬, 자몽]`  \n`[오렌지, 사과]`"
             },
@@ -7477,7 +7606,7 @@ window.QUESTION_BANK = {
                 "종속변수가 두 개의 카테고리로 나누어져 있는 경우 조각화 확률은 이항분포를 따른다.",
                 "종속변수가 정규분포를 따르는 경우 적용한다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 666
             },
             {
@@ -7489,7 +7618,7 @@ window.QUESTION_BANK = {
                 "(가) 선형 회귀분석, (나) 시그모이드 회귀분석",
                 "(가) 시그모이드 회귀분석, (나) 선형 회귀분석"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 667,
               "quote": "(가) 뉴턴의 관성의 법칙에 따르면 관성은 물체의 질량(m)에 정비례한다. 물체의 질량에 따른 관성은 예측값이 된다. 그리고 가속도는 `F=ma`이다. 여기서 `F`는 힘(물체에 힘을 가하는 양 또는 모임), `m`은 질량(물체의 무게), `a`는 가속도(물체가 갖게 되는 변화 또는 속도의 변화를 나타낸다. 즉 물체가 가지는 힘이 동일할 경우 질량이 클수록 가속도는 작고, 가속도가 클수록 동일한 과대는 의미를 포함한다. 동일한 힘(F)을 알게 하면 질량(m)에 따른 가속도(a)의 값을 예측하고자 한다.  \n(나) 고객의 분류를 구분하여 예측을 하려고 한다. 이를 위해 회귀분석을 설명으로 종속변수는 이진값(1,0 혹은 아니오)을 사용한다. 이처럼 독립변수에 따른 종속변수(이변값)를 추정하기 위해 사용되며, 주로 시그모이드(Sigmoid) 함수를 사용한다."
             },
@@ -7502,7 +7631,7 @@ window.QUESTION_BANK = {
                 "사회경제적 가치 측면에서 자동화된 알고리즘의 사용으로 의사결정 자동화 및 비즈니스 혁신이 가능하다.",
                 "질관리 의사결정을 돕는 데이터 분석 툴과, 미래예측을 통한 효과 창출 등으로 수익증대가 가능하다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 667
             },
             {
@@ -7514,7 +7643,7 @@ window.QUESTION_BANK = {
                 "최근에는 방대한 양의 정보를 하나의 인사이트로 도출해 내기 위하여 다양한 시각화 도구들이 이용되고 있다.",
                 "데이터 시각화는 구조화, 시각화, 시각표현의 단계로 수행되며, 구축 단계에서 데이터 분석결과를 이용하는 사용자에 따른 시나리오 작성 및 스토리 구성 작업이 필요하다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 668
             },
             {
@@ -7526,7 +7655,7 @@ window.QUESTION_BANK = {
                 "체르노프 페이스(Chernoff Face)",
                 "히트맵(Heat Map)"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 668
             },
             {
@@ -7538,7 +7667,7 @@ window.QUESTION_BANK = {
                 "체르노프 페이스(Chernoff Face)",
                 "버블 차트(Bubble Chart)"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 668
             },
             {
@@ -7563,7 +7692,7 @@ window.QUESTION_BANK = {
                 "Point Map(포인트 맵)",
                 "Star Chart(스타 차트)"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 669
             }
           ]
@@ -7600,7 +7729,7 @@ window.QUESTION_BANK = {
                 "`2의 50승 Byte`",
                 "`2의 70승 Byte`"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 670
             },
             {
@@ -7661,7 +7790,7 @@ window.QUESTION_BANK = {
                 "데이터 분석 기술의 용이성",
                 "데이터 분석모형 적용을 위한 데이터 탐색 및 준비"
               ],
-              "answer": 2,
+              "answer": 4,
               "page": 672
             },
             {
@@ -7721,7 +7850,7 @@ window.QUESTION_BANK = {
                 "가명처리(Pseudonymization)는 개인 식별에 중요한 데이터를 식별할 수 없는 다른 값으로 변경하는 방법이다.",
                 "범주화(Suppression)는 데이터 값을 구간이나 범주 값으로 변경하는 방법이다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 673
             },
             {
@@ -7733,7 +7862,7 @@ window.QUESTION_BANK = {
                 "데이터 값 변환",
                 "L-다양성"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 674,
               "quote": "각각의 데이터 블록이 적어도 `l`개의 다양한 민감 정보를 가지고 있어야 한다. 여기서 블록은 데이터에서 민감하지 않은 속성값들이 동질적으로 동일한 Record 집합을 의미한다."
             },
@@ -7746,7 +7875,7 @@ window.QUESTION_BANK = {
                 "데이터 범주화",
                 "데이터 K-익명성"
               ],
-              "answer": 2,
+              "answer": 1,
               "page": 674,
               "quote": "· 데이터에 수학적인 노이즈 데이터 추가  \n· 개인정보에 임의의 숫자 등을 주입하거나 곱하기  \n· 개인의 정확한 고유데이터를 제거하고 일정한 알고리즘의 결과값 이용  \n· 개인이 특정 데이터에 속하는지 알기 어려움  \n· 노이즈가 추가되어 데이터의 유용성이 줄어들 수 있음"
             },
@@ -7759,7 +7888,7 @@ window.QUESTION_BANK = {
                 "적시성(Timeliness)",
                 "일관성(Consistency)"
               ],
-              "answer": 4,
+              "answer": 1,
               "page": 674
             },
             {
@@ -7771,7 +7900,7 @@ window.QUESTION_BANK = {
                 "Data Mining",
                 "Data Warehouse"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 675
             },
             {
@@ -7783,7 +7912,7 @@ window.QUESTION_BANK = {
                 "특정 사용자가 접속을 시도했을 때 사용 요청을 서버에 접속하도록 트래픽을 처리하는 시스템",
                 "파일 접근 방식에 응용 프로그램과 데이터 간 의존관계가 존재하여 데이터 구조가 변경되면 프로그램도 함께 변경해야 하는 시스템"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 675
             },
             {
@@ -7807,7 +7936,7 @@ window.QUESTION_BANK = {
                 "GFS(Google File System)와 동일한 특징을 가진다.",
                 "Name Node에 일정한 크기로 나눈 블록 데이터를 저장한다."
               ],
-              "answer": 2,
+              "answer": 3,
               "page": 676
             },
             {
@@ -7838,7 +7967,7 @@ window.QUESTION_BANK = {
                 "도메인 지식에서 이론적 혹은 물리적으로 맞지 않는 값",
                 "가설 검정의 노이즈 값"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 677
             },
             {
@@ -7850,7 +7979,7 @@ window.QUESTION_BANK = {
                 "하위 80%에 해당하는 값",
                 "제4사분위수"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 677
             },
             {
@@ -7862,7 +7991,7 @@ window.QUESTION_BANK = {
                 "X3의 평균은 4에 가깝다.",
                 "X1의 제1사분위수는 5에 가깝다."
               ],
-              "answer": 2,
+              "answer": 3,
               "page": 677,
               "quote": "[박스플롯 그림 제공]"
             },
@@ -7900,7 +8029,7 @@ window.QUESTION_BANK = {
                 "정규분포를 표준화하면 표준정규분포가 된다.",
                 "표준화는 각 요소에서 평균을 뺀 값에 분산을 나누어 구한다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 678
             },
             {
@@ -7912,7 +8041,7 @@ window.QUESTION_BANK = {
                 "데이터 최적화(Data Optimization)",
                 "데이터 축소(Data Reduction)"
               ],
-              "answer": 4,
+              "answer": 2,
               "page": 679
             },
             {
@@ -7924,7 +8053,7 @@ window.QUESTION_BANK = {
                 "`N(150, 0)`",
                 "`N(0, 1/150)`"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 679
             },
             {
@@ -7936,7 +8065,7 @@ window.QUESTION_BANK = {
                 "데이터 탐색 과정에서 가능한 분석결과를 도출한다.",
                 "데이터 탐색 과정에서 분석대상 데이터의 패턴을 찾는 과정이 포함된다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 679
             },
             {
@@ -7948,7 +8077,7 @@ window.QUESTION_BANK = {
                 "상관계수가 0에 가까우면 두 변수 사이의 선형적 관계가 낮다고 본다.",
                 "두 변수 사이의 관계를 알아보기 위해 산점도(Scatter Plot)를 이용해 시각적으로 관계를 확인할 수 있다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 680
             },
             {
@@ -7972,7 +8101,7 @@ window.QUESTION_BANK = {
                 "왜도 < 0, 중앙값 < 최빈값 < 평균",
                 "왜도 < 0, 최빈값 < 중앙값 < 평균"
               ],
-              "answer": 4,
+              "answer": 1,
               "page": 680
             },
             {
@@ -7996,7 +8125,7 @@ window.QUESTION_BANK = {
                 "표준편차",
                 "사분위범위"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 681
             },
             {
@@ -8008,7 +8137,7 @@ window.QUESTION_BANK = {
                 "`σ/√2`",
                 "`σ²`"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 681
             },
             {
@@ -8020,7 +8149,7 @@ window.QUESTION_BANK = {
                 "Odds Ratio",
                 "Random Variable"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 681,
               "quote": "· Probability에 대한 표현  \n· 어떤 사건이 일어날 확률을 `p`라 하면, 그 사건에 대한 Odds는 `p/(1-p)`의 값  \n· 경마에서 특정 말이 이길 확률이 0.75인 경우 `0.75/0.25=3` 즉 4번 중 3번 이길 것으로 예측  \n· 특정 유전자를 가진 사람의 특정 질병 비율을 구하여 유전자 질환 사이의 연관성 평가"
             },
@@ -8033,7 +8162,7 @@ window.QUESTION_BANK = {
                 "초기하분포(Hypergeometric)",
                 "포아송분포(Poisson)"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 682,
               "quote": "· 확률분포는 단위 시간 안에 어떤 사건이 몇 번 발생할 것인지를 표현하는 이산확률분포  \n· 시간 또는 공간의 일정한 구간에서 발생하는 사건의 횟수 측정  \n· 동일한 길이의 어떤 두 구간에서 사건 발생 확률은 동일함  \n· 어떤 구간에서 사건 발생이나 사건발생은 다른 구간의 사건발생과는 독립  \n· 예를 들어 시간당 평균 5대 정도 도착하는 자동차의 대수에 대한 확률분포 측정"
             },
@@ -8058,7 +8187,7 @@ window.QUESTION_BANK = {
                 "정규분포는 평균을 중심으로 종 모양을 이룬다.",
                 "정규분포는 좌우대칭의 형태를 띠며, 평균값에서 확률값이 가장 높다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 682
             },
             {
@@ -8070,7 +8199,7 @@ window.QUESTION_BANK = {
                 "표준정규분포값 `z=3`, 귀무가설 채택",
                 "표준정규분포값 `z=3`, 귀무가설 기각"
               ],
-              "answer": 2,
+              "answer": 4,
               "page": 683,
               "quote": "[표준정규분포표 제공]"
             }
@@ -8090,7 +8219,7 @@ window.QUESTION_BANK = {
                 "서포트벡터머신",
                 "의사결정나무"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 684
             },
             {
@@ -8102,7 +8231,7 @@ window.QUESTION_BANK = {
                 "데이터 분석 목적에 부합하는 모형(또는 선형 및 데이터 모델링) 구성",
                 "데이터 분석모형 적용 및 시스템 운영 방안 제시"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 684
             },
             {
@@ -8114,7 +8243,7 @@ window.QUESTION_BANK = {
                 "비정규성",
                 "등분산성"
               ],
-              "answer": 2,
+              "answer": 3,
               "page": 684
             },
             {
@@ -8126,7 +8255,7 @@ window.QUESTION_BANK = {
                 "분리기준으로 사용하는 CHAID, QUEST 알고리즘에서는 카이제곱 통계량을 이용한 F-검정 방법을 사용한다.",
                 "나무 구조는 뿌리마디, 중간마디, 끝마디로 이루어지며 끝마디에 하나의 가지가 남을 때까지 진행하여 모형을 구축한다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 685
             },
             {
@@ -8138,7 +8267,7 @@ window.QUESTION_BANK = {
                 "데이터 변환 등의 작업을 거쳐 이산형 및 연속형 변수를 활용하여 입력과 출력을 생성할 수 있다.",
                 "복잡한 문제들에 대해서도 우수한 결과를 도출할 수 있다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 685
             },
             {
@@ -8150,7 +8279,7 @@ window.QUESTION_BANK = {
                 "3",
                 "4"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 685
             },
             {
@@ -8162,7 +8291,7 @@ window.QUESTION_BANK = {
                 "3",
                 "4"
               ],
-              "answer": 4,
+              "answer": 2,
               "page": 686,
               "quote": "[실루엣 계수 그래프 제공]"
             },
@@ -8175,7 +8304,7 @@ window.QUESTION_BANK = {
                 "정준 상관분석(Canonical Correlation Analysis)",
                 "판별 분석(Discriminant Analysis)"
               ],
-              "answer": 2,
+              "answer": 3,
               "page": 686,
               "quote": "· 상관분석과 회귀분석에 관한 확장된 분석 방법  \n· 몇 개의 변수가 집단으로 구성된 두 집단 사이의 연관성을 구하는 통계분석 방법  \n· 두 변수 간의 상관계수가 최대가 되도록 두 변수 군의 선형결합 변수 유도"
             },
@@ -8188,7 +8317,7 @@ window.QUESTION_BANK = {
                 "잔차의 분산은 일정하다. 즉 잔차는 등분산성을 만족한다.",
                 "잔차끼리는 서로 선형적 관계가 존재한다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 687
             },
             {
@@ -8200,7 +8329,7 @@ window.QUESTION_BANK = {
                 "주기(Cycle)",
                 "추세(Trend)"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 687,
               "quote": "· 중·장기적인 특성을 나타내며, 반복한 발생 빈도가 없는 패턴  \n· 시간의 경과흐름에 따라 상향은 변화하는 현상  \n· 경기변동곡선 등 주로 경제상황에서 나타남"
             },
@@ -8213,7 +8342,7 @@ window.QUESTION_BANK = {
                 "`P(정상|텍스트)=0.006`",
                 "`P(스팸|텍스트)=0.006`"
               ],
-              "answer": 2,
+              "answer": 3,
               "page": 688,
               "quote": "[정상 메일/스팸 메일 예시 표 제공]"
             },
@@ -8226,7 +8355,7 @@ window.QUESTION_BANK = {
                 "`P(A|B,C)=P(A|C)`",
                 "`P(B|A,C)=P(B|C)`"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 688,
               "quote": "[확률 그래프 제공]"
             },
@@ -8239,7 +8368,7 @@ window.QUESTION_BANK = {
                 "다양한 계층구조를 가진 오토인코더가 단순히 입력을 바로 출력으로 복사하지 못하도록 조정된다.",
                 "입력 데이터 수는 은닉층의 수보다 항상 작다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 689
             },
             {
@@ -8251,7 +8380,7 @@ window.QUESTION_BANK = {
                 "NOR",
                 "XOR"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 689
             },
             {
@@ -8263,7 +8392,7 @@ window.QUESTION_BANK = {
                 "그리드 탐색(Grid Search)",
                 "랜덤 탐색(Random Search)"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 689
             },
             {
@@ -8299,7 +8428,7 @@ window.QUESTION_BANK = {
                 "데이터 랜덤 추출을 수행한 후, 훈련 과정에서 구성된 다수의 결정트리들로부터 분류 또는 회귀분석 예측 결과를 산출한다.",
                 "Bootstrap Aggregation의 의미로, 샘플을 여러 번 뽑아 부트스트랩 정보를 생성하고 각 부트스트랩 자료로 결합하여 학습시키며 결과를 집계하여 최종적인 예측 모형을 구축한다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 690
             },
             {
@@ -8311,7 +8440,7 @@ window.QUESTION_BANK = {
                 "Greedy Algorithm",
                 "XGBoost"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 691,
               "quote": "· 관측치에 가중치를 더하면서 동작  \n· 분류하기 어려운 instances에는 가중치를 더하고 이미 잘 분류되어진 instances는 가중치를 줄임  \n· 약한 학습기의 오류에 가중치를 더하고 부스팅 수행  \n· 약한 학습기로 의사결정트리 사용"
             },
@@ -8343,7 +8472,7 @@ window.QUESTION_BANK = {
                 "오분류율(Error Rate)",
                 "ROC Curve의 x축 값"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 692
             },
             {
@@ -8355,7 +8484,7 @@ window.QUESTION_BANK = {
                 "실제값=`1(참)`, 예측값=`0(거짓이 아닌 것)`",
                 "실제값=`0(거짓이 아닌 것)`, 예측값=`0(거짓이 아닌 것)`"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 692
             },
             {
@@ -8391,7 +8520,7 @@ window.QUESTION_BANK = {
                 "가장 이상적인 ROC 그래프는 민감도가 1, 특이도가 1인 점을 지난다.",
                 "민감도가 0, 특이도가 1인 점을 지난다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 693
             },
             {
@@ -8403,7 +8532,7 @@ window.QUESTION_BANK = {
                 "학습 데이터",
                 "오그먼트 데이터"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 693
             },
             {
@@ -8427,7 +8556,7 @@ window.QUESTION_BANK = {
                 "아이가 없는 남성에게서, A 상품을 모를 확률은 0.06이다.",
                 "아이가 있는 남성 중에서 A 상품을 알고 있을 확률은 0.92이다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 694,
               "quote": "| 구분 | 알고 있다 | 모른다 | 계 |\n|---|---:|---:|---:|\n| 아이가 있는 남성(명) | 460 | 40 | 500 |\n| 아이가 없는 남성(명) | 440 | 60 | 500 |\n| 계 | 900 | 100 | 1000 |"
             },
@@ -8440,7 +8569,7 @@ window.QUESTION_BANK = {
                 "㉠, ㉢",
                 "㉠, ㉡, ㉢"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 694,
               "quote": "㉠ `n`개의 표본자료로부터 구간별 몇 회씩 관찰된 교통사고 발생 횟수의 평균을 구한다.  \n㉡ 기대도수와 관측도수를 이용하여 카이제곱 검정통계량을 구하고, 카이제곱 값이 클수록 귀무가설을 기각한다.  \n㉢ 관측도수와 기대도수를 이용하여 카이제곱 검정통계량을 구하고, 카이제곱 값이 클수록 대립가설을 기각한다."
             },
@@ -8453,7 +8582,7 @@ window.QUESTION_BANK = {
                 "카이제곱 값=`4.64`이다.",
                 "검정통계량 `4(자유도 3인 카이제곱 분포)`가 7.8 이상일 때 귀무가설을 기각한다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 695,
               "quote": "`54, 46, 60, 40`"
             },
@@ -8466,7 +8595,7 @@ window.QUESTION_BANK = {
                 "학습과정에서 일부를 사용하지 않는 Dropout 적용",
                 "정해진 크기 안에서 가장 큰 값을 추출하는 Max Pooling 기법"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 695
             },
             {
@@ -8478,7 +8607,7 @@ window.QUESTION_BANK = {
                 "토픽 모델링(Topic Modeling)",
                 "회귀분석(Regression Analysis)"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 695
             },
             {
@@ -8503,7 +8632,7 @@ window.QUESTION_BANK = {
                 "데이터를 각 표현하려면 구간을 잘 정의해야 한다.",
                 "상대도수 히스토그램에서 구간의 간격으로 상대도수를 나누면, 확률도수 히스토그램은 확률밀도함수를 나타낸다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 696
             },
             {
@@ -8515,7 +8644,7 @@ window.QUESTION_BANK = {
                 "병렬 좌표계(Parallel Coordinates)",
                 "히스토그램(Histogram)"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 696
             },
             {
@@ -8527,7 +8656,7 @@ window.QUESTION_BANK = {
                 "히트맵",
                 "산점도"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 697
             },
             {
@@ -8539,7 +8668,7 @@ window.QUESTION_BANK = {
                 "영역차트",
                 "누적영역차트"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 697,
               "quote": "[교통사고 히트맵 그림 제공]"
             },
@@ -8552,7 +8681,7 @@ window.QUESTION_BANK = {
                 "정보의 규칙성을 찾아 시각적으로 표현하여 보다 간결하게 정보를 나타내 사람의 이해를 돕는다.",
                 "쉽게 흥미를 유발하고, 정보 습득 시간을 절감하며, 기억 지속시간을 연장시킨다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 698
             },
             {
@@ -8564,7 +8693,7 @@ window.QUESTION_BANK = {
                 "사업, 기술 요구사항과 함께 데이터 품질요건을 반영하고 최신 업무 형태를 고려하여 시나리오를 개발한다.",
                 "데이터 분석결과를 사용자들이 이해하기 쉽도록 시각화(또는 도식화)하여 보여준다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 698
             },
             {
@@ -8601,7 +8730,7 @@ window.QUESTION_BANK = {
                 "데이터 아키텍트(Data Architect)",
                 "데이터 엔지니어(Data Engineer)"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 699
             },
             {
@@ -8626,7 +8755,7 @@ window.QUESTION_BANK = {
                 "인공지능 ⊂ 딥러닝 ⊂ 머신러닝",
                 "인공지능 ⊂ 머신러닝 ⊂ 딥러닝"
               ],
-              "answer": 2,
+              "answer": 4,
               "page": 700
             },
             {
@@ -8675,7 +8804,7 @@ window.QUESTION_BANK = {
                 "인터뷰(Interview) : 상대방에게 어떤 문제에 대한 질문을 해서 정보나 의견 등을 알아낸다.",
                 "포커스그룹 인터뷰(Focus Group Interview) : 시계열 과거 값에 대한 시계열 모델 최적합을 찾기 위해 소규모 그룹 예측값들의 회귀누적이동평균을 이용한다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 701
             },
             {
@@ -8687,7 +8816,7 @@ window.QUESTION_BANK = {
                 "비즈니스 이해 → 데이터 이해 → 데이터 준비 → 평가 → 모델링 → 전개",
                 "비즈니스 이해 → 데이터 준비 → 데이터 이해 → 평가 → 모델링 → 전개"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 701
             },
             {
@@ -8699,7 +8828,7 @@ window.QUESTION_BANK = {
                 "프로젝트 계획 수립",
                 "보유 데이터 자산 확인"
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 702
             },
             {
@@ -8711,7 +8840,7 @@ window.QUESTION_BANK = {
                 "웹 메타 데이터 - 스크래핑",
                 "웹 문서 데이터 - 크롤링"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 702
             },
             {
@@ -8723,7 +8852,7 @@ window.QUESTION_BANK = {
                 "비정형 데이터",
                 "비구조 데이터"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 702
             },
             {
@@ -8735,7 +8864,7 @@ window.QUESTION_BANK = {
                 "성별, 출신지, 직업, 국적 등의 명목 척도 데이터는 비계량적 변수로 표현하여 해석하게 된다.",
                 "연속형 척도와 동일하게 범주형 척도도 평균, 표준편차와 같은 기술통계량을 구하여 해석하게 된다."
               ],
-              "answer": 2,
+              "answer": 4,
               "page": 703
             },
             {
@@ -8772,7 +8901,7 @@ window.QUESTION_BANK = {
                 "비식별 정보를 제공하거나 혹은 위탁한 자가 재식별 가능성을 발견한 경우 정보 처리자에게 즉시 통지하여 정보의 회수 및 파기 조치한다.",
                 "데이터 처리 과정 중 개인정보가 재식별되는 경우 즉시 파기하거나 추가적인 비식별 조치를 시행한다."
               ],
-              "answer": 2,
+              "answer": 1,
               "page": 704
             },
             {
@@ -8784,7 +8913,7 @@ window.QUESTION_BANK = {
                 "데이터 마스킹(Data Masking) - 개인정보의 식별 가능한 값이 보이지 않도록 처리",
                 "총계처리(Aggregation) - 개인정보 데이터 값을 모두 더해 주거나 데이터의 평균값 등을 사용"
               ],
-              "answer": 4,
+              "answer": 1,
               "page": 704
             },
             {
@@ -8796,7 +8925,7 @@ window.QUESTION_BANK = {
                 "데이터 전체가 유사한 특징을 가진 개인으로 구성되어 있는 경우 데이터의 대표값이 특징 개인의 정보를 노출시킬 수 있다.",
                 "개인정보 비식별화가 불가능하다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 704
             },
             {
@@ -8820,7 +8949,7 @@ window.QUESTION_BANK = {
                 "데이터 적재, 색인 빌드, 쿼리 평가 등의 다양한 동작의 병렬 컴퓨팅을 통해 성능을 개선한다.",
                 "일반적으로 Massive Parallel Processing 구조이며, 대량의 데이터를 빠르게 적재하고 저장한다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 705
             },
             {
@@ -8832,7 +8961,7 @@ window.QUESTION_BANK = {
                 "서비스형 인프라스트럭처 플랫폼",
                 "서비스형 자원관리 플랫폼"
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 705,
               "quote": "· 서버, 스토리지, 네트워크 등의 자원 사용 지원\n· 클라우드 서비스 제공\n· 서버 가상화, 데스크톱 가상화 등의 자원관리 모듈 지원"
             }
@@ -8864,7 +8993,7 @@ window.QUESTION_BANK = {
                 "상자수염 그림은 데이터 분포를 사분위수로 나타내며 중위수, 이상값을 강조하여 표현한다.",
                 "수염(선)을 이용하여 제1사분위수와 제3사분위수 외부의 변동성을 나타내며 선 또는 수염 외부의 모든 점은 이상값으로 간주한다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 706
             },
             {
@@ -8876,7 +9005,7 @@ window.QUESTION_BANK = {
                 "학습 과정에서 일부의 데이터를 사용하지 않고 회귀분석모형을 구축한다.",
                 "회귀분석모형을 이용하여 (실젯값, 예측값)의 차이가 큰 학습 데이터를 삭제한 후, 회귀분석모형을 다시 구축한다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 706
             },
             {
@@ -8888,7 +9017,7 @@ window.QUESTION_BANK = {
                 "주성분을 설명하기 위해 필요한 변수는 수집된 표본의 수보다 반드시 커야 한다.",
                 "주성분을 찾아내기 위해 변수들의 공분산 행렬 및 상관행렬을 이용한다."
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 707
             },
             {
@@ -8900,7 +9029,7 @@ window.QUESTION_BANK = {
                 "타깃 인코딩(Target Encoding) : 분석 대상의 범주형 변수에 대한 표준편차를 실수 벡터로 변환하고 임베딩 계층에서 범주형 변수를 부여하여 학습한다.",
                 "특징 해싱(Feature Hashing) : 데이터 변환 후의 특징의 수를 먼저 정하고, 해시 함수를 이용하여 레벨별로 플래그를 표시한 위치를 결정한다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 707
             },
             {
@@ -8912,7 +9041,7 @@ window.QUESTION_BANK = {
                 "오버 샘플링(Oversampling)",
                 "정규화(Normalization)"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 707
             },
             {
@@ -8924,7 +9053,7 @@ window.QUESTION_BANK = {
                 "클래스 불균형 해소",
                 "클래스 학습 데이터 삭제"
               ],
-              "answer": 2,
+              "answer": 3,
               "page": 708,
               "quote": "[샘플링 개념도 제공]"
             },
@@ -8937,7 +9066,7 @@ window.QUESTION_BANK = {
                 "비용 민감 학습 - 소수 클래스 데이터에 더 민감하게 학습하도록 다른 클래스 가중치(비용 함수)를 지정한다.",
                 "소수 클래스 추가 수집 - 심하게 상호 균형적인 데이터 불균형 데이터가 되도록 소수 클래스를 추가 수집한다."
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 708
             },
             {
@@ -8962,7 +9091,7 @@ window.QUESTION_BANK = {
                 "파이 차트(Pie Chart)",
                 "히스토그램(Histogram)"
               ],
-              "answer": 2,
+              "answer": 1,
               "page": 709,
               "quote": "[산점도 그래프 제공]"
             },
@@ -8975,7 +9104,7 @@ window.QUESTION_BANK = {
                 "평균(Mean)",
                 "최빈수(Mode)"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 710,
               "quote": "[분포 그래프 제공]"
             },
@@ -8988,7 +9117,7 @@ window.QUESTION_BANK = {
                 "암 말기 환자를 대상으로 볼 때 신약 A의 생존율이 신약 B의 생존율보다 낮다.",
                 "암 초기 환자를 대상으로 볼 때 신약 A의 생존율이 신약 B의 생존율보다 낮다."
               ],
-              "answer": 4,
+              "answer": 2,
               "page": 710,
               "quote": "| 구분 | 암 초기 생존자 수 | 사망자 수 | 암 말기 생존자 수 | 사망자 수 | 합계 생존자 수 | 사망자 수 |\n|------|-------------------|-----------|-------------------|-----------|----------------|-----------|\n| 신약 A | 18 | 2 | 2 | 8 | 20 | 10 |\n| 신약 B | 7 | 3 | 9 | 21 | 16 | 24 |"
             },
@@ -9001,7 +9130,7 @@ window.QUESTION_BANK = {
                 "초기하분포(Hypergeometric Distribution)",
                 "포아송분포(Poisson Distribution)"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 711
             },
             {
@@ -9013,7 +9142,7 @@ window.QUESTION_BANK = {
                 "연속확률분포는 초기하분포, 지수분포, 정규분포가 있다.",
                 "이산확률분포에는 베르누이 분포, 포아송 분포, 다항분포가 있다."
               ],
-              "answer": 2,
+              "answer": 3,
               "page": 711
             },
             {
@@ -9025,7 +9154,7 @@ window.QUESTION_BANK = {
                 "확률변수(X₁, X₂, X₃, X₄)의 평균에 대한 분산(표본평균의 분산)은 모집단보다 작다.",
                 "확률변수 X₁, X₂는 서로 종속이다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 711
             },
             {
@@ -9061,7 +9190,7 @@ window.QUESTION_BANK = {
                 "콜모고로프-스미르노프 검정(Kolmogorov-smirnov Test)",
                 "큐-큐 플롯(Quantile-quantile Plot)"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 712
             },
             {
@@ -9073,7 +9202,7 @@ window.QUESTION_BANK = {
                 "(33.36, 36.64)",
                 "(33.36, 36.96)"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 713
             },
             {
@@ -9085,7 +9214,7 @@ window.QUESTION_BANK = {
                 "대응표본, 단측 검정",
                 "대응표본, 양측 검정"
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 713
             }
           ]
@@ -9104,7 +9233,7 @@ window.QUESTION_BANK = {
                 "로지스틱 회귀분석은 종속변수가 범주형일 때 사용하는 회귀분석 방법으로써 회귀분석과 모든 형태가 같고 단지 종속변수만 이항 또는 순서적인 다항일 경우 사용된다.",
                 "회귀분석(Regression Analysis)은 관찰된 연속형 변수에 대해 두 변수 사이의 모형을 구한 뒤 적절도를 측정하는 분석 방법이다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 714
             },
             {
@@ -9116,7 +9245,7 @@ window.QUESTION_BANK = {
                 "두 확률변수 중 하나의 값이 상승하는 경향을 보일 때 다른 값이 하강하는 선형 상관성이 있다면 공분산은 음수의 값을 가진다.",
                 "두 확률변수(X, Y)의 공분산이 0이면, 두 확률변수 X, Y는 항상 독립이다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 714
             },
             {
@@ -9128,7 +9257,7 @@ window.QUESTION_BANK = {
                 "종속변수에 유의한 독립변수가 2개 이상일 때 단순(Simple) 회귀분석이라 한다.",
                 "회귀분석모형에서 회귀계수(Regression Coefficient)는 (독립, 종속) 변수 사이에 영향을 미치지 않는다."
               ],
-              "answer": 2,
+              "answer": 1,
               "page": 714
             },
             {
@@ -9140,7 +9269,7 @@ window.QUESTION_BANK = {
                 "차수 선택법(Degree Selection)",
                 "후진 제거법(Backward Elimination)"
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 715
             },
             {
@@ -9152,7 +9281,7 @@ window.QUESTION_BANK = {
                 "0.9",
                 "-0.9"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 715,
               "quote": "[산점도 그래프 제공]"
             },
@@ -9215,7 +9344,7 @@ window.QUESTION_BANK = {
                 "데이터 학습량 수정",
                 "은닉층 노드 삭제"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 717
             },
             {
@@ -9227,7 +9356,7 @@ window.QUESTION_BANK = {
                 "지지도(Support)",
                 "향상도(Lift)"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 717
             },
             {
@@ -9239,7 +9368,7 @@ window.QUESTION_BANK = {
                 "3",
                 "4"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 718,
               "quote": "[덴드로그램 제공]"
             },
@@ -9252,7 +9381,7 @@ window.QUESTION_BANK = {
                 "인자분석을 위해 사용하는 공분산 행렬에서 행과 열의 수는 동일해야 한다.",
                 "회귀분석, 상관분석, 판별분석 등에 사용될 적은 수의 변수를 새롭게 만들기 위해 사용된다."
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 718
             },
             {
@@ -9264,7 +9393,7 @@ window.QUESTION_BANK = {
                 "시계열 분석(Time Series Analysis)",
                 "앙상블 분석(Ensemble Analysis)"
               ],
-              "answer": 2,
+              "answer": 3,
               "page": 718
             },
             {
@@ -9276,7 +9405,7 @@ window.QUESTION_BANK = {
                 "ARIMA 모형은 Autoregression(AR) 모형과 Moving Average(MA) 모형을 합친 모형이다.",
                 "ARIMA 모형에서 사용하는 복수개의 데이터는 서로 독립적이지 않다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 719
             },
             {
@@ -9288,7 +9417,7 @@ window.QUESTION_BANK = {
                 "역전파 과정에서 레이어(Layer)를 많이 쌓아 데이터 표현력을 증가시킴으로써 학습 기울기가 커지는 현상이다.",
                 "활성함수 도함수 값이 계속 곱해지면서 가중치에 대한 편잇값의 기울기가 0이 되어, 경사하강법을 이용할 수 없게 되는 현상이다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 719
             },
             {
@@ -9300,7 +9429,7 @@ window.QUESTION_BANK = {
                 "Term Frequency-Inverse Document Frequency(TF-IDF)",
                 "Word2Vec"
               ],
-              "answer": 4,
+              "answer": 2,
               "page": 719
             },
             {
@@ -9312,7 +9441,7 @@ window.QUESTION_BANK = {
                 "(나), (다)",
                 "(나), (라)"
               ],
-              "answer": 2,
+              "answer": 1,
               "page": 720,
               "quote": "(가) 단일 데이터 분석모형에 비해 분류 성능이 우수하다.\n(나) 여러 가지 우수한 학습 모형을 조합하여 예측력을 향상시킨다.\n(다) 분석모형에 대한 결과 해석이 쉽고 예측 시간이 짧다.\n(라) 최종 모형의 예측값을 결정하는 방법 중 각 모형의 예측 확률값의 평균 또는 가중 합을 이용하는 것은 보팅(Hard Voting)이라 한다."
             },
@@ -9337,7 +9466,7 @@ window.QUESTION_BANK = {
                 "부호검정(Sign Test)은 두 표본의 분포가 동일한지 여부를 검정하는 비모수 검정 방법으로서 중앙값을 사용하여 비교한다.",
                 "크루스칼-왈리스(Kruskal-Wallis) 검정은 동일한 케이스에 대해 반복된 측정이 이루어질 때 세 개 이상의 집단 비교를 위해 사용되는 비모수 검정 방법으로서 순위의 합을 이용한다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 720
             }
           ]
@@ -9382,7 +9511,7 @@ window.QUESTION_BANK = {
                 "49%",
                 "50%"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 721
             },
             {
@@ -9430,7 +9559,7 @@ window.QUESTION_BANK = {
                 "전체 데이터세트를 K개의 부분집합으로 나누며, 각 부분집합을 차례대로 교체하여 검증 데이터로 사용한다.",
                 "훈련, 검증, 평가 데이터세트를 2:3:5의 비율로 구성한다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 723
             },
             {
@@ -9454,7 +9583,7 @@ window.QUESTION_BANK = {
                 "과대적합의 경우 데이터 분석모형의 파라미터가 많아 주어진 데이터에서 다소 복잡한 모형을 만든다.",
                 "훈련 데이터세트에서 오차 점수가 작고 테스트 데이터세트에서 점수가 굉장히 나쁘다면 훈련 데이터세트에 과대적합되었다고 판단한다."
               ],
-              "answer": 4,
+              "answer": 2,
               "page": 723
             },
             {
@@ -9466,7 +9595,7 @@ window.QUESTION_BANK = {
                 "예측값과 실젯값 사이의 편향(Bias)",
                 "예측산출의 분산(Variance)"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 724
             },
             {
@@ -9478,7 +9607,7 @@ window.QUESTION_BANK = {
                 "Predictive Analysis",
                 "Propagation Analysis"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 724
             },
             {
@@ -9490,7 +9619,7 @@ window.QUESTION_BANK = {
                 "바람직한 데이터 분석모형을 선정하기 위하여 사전에 분석 데이터 수준, 기술적 적용 수준, 분석의 한계적 중요성을 고려한다.",
                 "상황에 따라 어떤 분석모형을 적용해야 하는지에 대한 명확하고 검증된 이론이나 기준은 일반적으로 존재하지 않는다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 724
             },
             {
@@ -9526,7 +9655,7 @@ window.QUESTION_BANK = {
                 "시각화",
                 "정제"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 725
             },
             {
@@ -9538,7 +9667,7 @@ window.QUESTION_BANK = {
                 "산점도(Scatter Plot)",
                 "히스토그램(Histogram)"
               ],
-              "answer": 4,
+              "answer": 2,
               "page": 725
             },
             {
@@ -9575,7 +9704,7 @@ window.QUESTION_BANK = {
                 "분석대상의 가치와 변수에 대한 패턴을 발견하고 분석 결과를 수 있다.",
                 "시각화된 정보의 여러 경로와 요소들은 기억할 수 있으며, 인터뷰 등을 통해 자발적으로 확산되는 효과가 있다."
               ],
-              "answer": 2,
+              "answer": 3,
               "page": 726
             },
             {
@@ -9587,7 +9716,7 @@ window.QUESTION_BANK = {
                 "알고리즘 보안 계획서",
                 "효과검증 프로젝트 결과 보고서"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 726
             }
           ]
@@ -9636,7 +9765,7 @@ window.QUESTION_BANK = {
                 "의학, 공학 등 영역에서는 많이 사용되고 있지만 비즈니스 인사이트 추출에는 한계가 있어 널리 이용되지 않고 있다.",
                 "데이터에서 인사이트를 얻기 위한 종합적인 접근 방법이긴 하지만 데이터 가치는 크게 낮다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 727
             },
             {
@@ -9648,7 +9777,7 @@ window.QUESTION_BANK = {
                 "분석목표 수립",
                 "프로젝트 계획"
               ],
-              "answer": 4,
+              "answer": 1,
               "page": 728
             },
             {
@@ -9684,7 +9813,7 @@ window.QUESTION_BANK = {
                 "분석 인력 및 조직 진단",
                 "분석 활용 진단"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 729
             },
             {
@@ -9696,7 +9825,7 @@ window.QUESTION_BANK = {
                 "딥러닝은 인간의 뇌 신경망을 모방한 인공신경망의 한 종류이다.",
                 "머신러닝은 딥러닝의 일부이다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 729
             },
             {
@@ -9708,7 +9837,7 @@ window.QUESTION_BANK = {
                 "분석하고자 하는 과제 현황을 파악, 분석하고 개선 과제를 정의, 도출한다.",
                 "최종적으로 데이터 분석 보고서를 작성하고 빅데이터 분석결과 시각화 기법을 이용한다."
               ],
-              "answer": 2,
+              "answer": 1,
               "page": 729
             },
             {
@@ -9720,7 +9849,7 @@ window.QUESTION_BANK = {
                 "변수 파악, 통계량 산출, 상관분석 등을 수행하고 시각화를 통해 Data Insights를 얻는다.",
                 "데이터 분석 모형의 수행 결과를 해석하는 업무에 해당된다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 730
             },
             {
@@ -9732,7 +9861,7 @@ window.QUESTION_BANK = {
                 "데이터를 분석을 이용한 추론통계에서는 모집단을 이용하여 표본집단을 추론한다.",
                 "데이터 수집 후 기술통계에서는 데이터 분석을 위해 필요한 통계적 기법을 이용하여 데이터 정리 및 요약한다."
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 730
             },
             {
@@ -9756,7 +9885,7 @@ window.QUESTION_BANK = {
                 "다양성",
                 "속도"
               ],
-              "answer": 2,
+              "answer": 3,
               "page": 731
             },
             {
@@ -9780,7 +9909,7 @@ window.QUESTION_BANK = {
                 "데이터를 변수 특성에 맞게 하고 데이터 분석자가 이해하기 쉽게 하기 위해 데이터 유형을 변환한다.",
                 "이상값 데이터를 결측값으로 대체하거나 해당 이상치를 제거(Trimming)한다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 731
             },
             {
@@ -9804,7 +9933,7 @@ window.QUESTION_BANK = {
                 "분산 파일 시스템에 저장할 수 있다.",
                 "데이터 저장 시스템 설정 시 데이터 유형을 고려하지 않아도 된다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 732
             },
             {
@@ -9828,7 +9957,7 @@ window.QUESTION_BANK = {
                 "병렬 파일 시스템",
                 "분산 파일 시스템"
               ],
-              "answer": 2,
+              "answer": 4,
               "page": 733
             },
             {
@@ -9840,7 +9969,7 @@ window.QUESTION_BANK = {
                 "데이터를 분리하여 다른 위치에 중복하여 저장함으로써 디스크 장애 발생 시 복구가 용이하다.",
                 "사용자가 원하는 파일들이 분산되어 있어 다수의 사용자들은 원격으로 데이터를 공유할 수 없다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 733
             }
           ]
@@ -9859,7 +9988,7 @@ window.QUESTION_BANK = {
                 "데이터 필터링(Filtering)",
                 "데이터 유형 변환(Type Transformation)"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 734
             },
             {
@@ -9883,7 +10012,7 @@ window.QUESTION_BANK = {
                 "조인 패턴",
                 "필터링 패턴"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 734,
               "quote": "· 특별한 관계를 발견하기 위해 다른 데이터셋들을 함께 분석한다.\n· 대표적으로 이를 하둡을 사용 시 서로 다른 유형의 데이터를 함께 분석하기 위해 사용된다.\n· 실제 연산이 수행되는 위치에 따라 Map 단, Reduce 단계에서 연산으로 나눈다.\n· 이행연산자의 경우 두 개의 입력을 요구한다."
             },
@@ -9896,7 +10025,7 @@ window.QUESTION_BANK = {
                 "단순 통계 대치법",
                 "평균 대치법(Mean Imputation)"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 735,
               "quote": "데이터 값이 과소되거나 해당 칸이 비어 있는 결측치를 처리하기 위하여 평균 내지 단순 대치 등의 처리 방법을 한 번 적용하지 않고, 가상의 완전한 데이터셋을 만들어서 유사한 대치 과정을 단계적으로 수행한다."
             },
@@ -9909,7 +10038,7 @@ window.QUESTION_BANK = {
                 "측정 오류(Measurement Error)",
                 "표본 오류(Sampling Error)"
               ],
-              "answer": 4,
+              "answer": 1,
               "page": 736
             },
             {
@@ -9921,8 +10050,9 @@ window.QUESTION_BANK = {
                 "분석의 목적이나 종류에 따라 이상값을 제거하거나 대체한다.",
                 "이상값을 평균값으로 대체하여 사용하는 경우 데이터 변환 과정 시 데이터의 신뢰도 문제가 발생하지 않는다."
               ],
-              "answer": 2,
-              "page": 736
+              "answer": 4,
+              "page": 736,
+              "quote": ""
             },
             {
               "id": 27,
@@ -9945,7 +10075,7 @@ window.QUESTION_BANK = {
                 "직급",
                 "원액형"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 736
             },
             {
@@ -9957,7 +10087,7 @@ window.QUESTION_BANK = {
                 "두 번째로 커지는 축을 두 번째 주성분으로 놓이도록 새로운 좌표계로 데이터를 선형 변환한다.",
                 "음수가 포함되지 않은 전체 원소가 양수인 행렬 V를 음수가 포함되지 않는 행렬 W와 H의 곱으로 분해한다."
               ],
-              "answer": 2,
+              "answer": 3,
               "page": 737
             },
             {
@@ -9977,12 +10107,13 @@ window.QUESTION_BANK = {
               "text": "변수 변환을 위한 원-핫 인코딩(One-hot Encoding)에 대한 설명으로 옳지 않은 것은?",
               "choices": [
                 "단어 집합의 크기를 벡터 차원으로 하고 표현하고자 하는 단어의 인덱스에는 1, 나머지 인덱스에는 0을 부여한다.",
-                "데이터는 하나의 1값으로 구별되는 인코딩 방식이다.",
+                "데이터를 수많은 0과 한 개의 1의 값으로 데이터를 구별하는 인코딩 방법이다.",
                 "범주형의 종류 개수 크기의 벡터를 0으로 초기화하고, 특정 범주를 나타내기 위해 특정 위치의 값을 1로 설정한다.",
                 "범주형 변수를 숫자형 변수로 변환하기 위한 공간을 효율적으로 사용하게 된다."
               ],
               "answer": 4,
-              "page": 737
+              "page": 737,
+              "quote": ""
             },
             {
               "id": 32,
@@ -9993,7 +10124,7 @@ window.QUESTION_BANK = {
                 "Undersampling(언더 샘플링)은 양이 많은 데이터를 양이 적은 데이터로 대표성을 살리는 쪽으로 샘플링하는 방법이다.",
                 "Weight Balancing(클래스 가중치 조정) 기법으로는 불균형 문제를 해결할 수 없다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 738
             },
             {
@@ -10005,7 +10136,7 @@ window.QUESTION_BANK = {
                 "분석 대상이 되는 상호 의미 있는 변수 사이의 상관관계를 찾는 수집의 소양을 갖는 과정이 수반된다.",
                 "주성분 분석(PCA, Principal Component Analysis) 과정은 포함되지 않는다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 738
             },
             {
@@ -10030,7 +10161,7 @@ window.QUESTION_BANK = {
                 "평균=7, 분산=8",
                 "평균=7, 분산=10"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 739
             },
             {
@@ -10042,7 +10173,7 @@ window.QUESTION_BANK = {
                 "왜도(Skewness)",
                 "첨도(Kurtosis)"
               ],
-              "answer": 4,
+              "answer": 2,
               "page": 740
             },
             {
@@ -10079,7 +10210,7 @@ window.QUESTION_BANK = {
                 "5",
                 "6"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 741
             },
             {
@@ -10110,7 +10241,7 @@ window.QUESTION_BANK = {
                 "로지스틱 회귀분석",
                 "서포트벡터머신"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 741
             },
             {
@@ -10122,7 +10253,7 @@ window.QUESTION_BANK = {
                 "성능을 높이기 위해 하이퍼파라미터를 미세조정할 때 검증 데이터보다 학습 데이터세트를 이용한다.",
                 "학습 데이터와 검증 데이터세트는 반드시 동일한 데이터 전처리 과정을 거쳐야 한다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 742
             },
             {
@@ -10134,7 +10265,7 @@ window.QUESTION_BANK = {
                 "결정계수가 0에 가까울수록 회귀식의 설명도는 매우 낮고 1에 가까울수록 설명도는 매우 높다.",
                 "분석 대상인 독립변수가 많을수록 결정계수는 0에 가까워지고 적어질수록 1에 가까워진다."
               ],
-              "answer": 2,
+              "answer": 4,
               "page": 742
             },
             {
@@ -10146,7 +10277,7 @@ window.QUESTION_BANK = {
                 "회귀모형의 잔차는 종속변수와 선형관계에 있다.",
                 "회귀모형의 잔차는 평균이 0인 정규분포를 따른다."
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 743
             },
             {
@@ -10158,7 +10289,7 @@ window.QUESTION_BANK = {
                 "분석 대상자 수에 비해 고려하는 변수의 개수가 많으면 회귀분석 모형에서 회귀계수에 대한 추정이 불안정할 수 있다.",
                 "차원의 저주(The Curse of Dimensionality)는 데이터 학습을 위해 차원이 증가하면서 학습 데이터 수가 차원의 수보다 적어져 성능이 저하되는 현상을 뜻한다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 743
             },
             {
@@ -10170,7 +10301,7 @@ window.QUESTION_BANK = {
                 "데이터 정제(Data Cleansing)",
                 "데이터 축소(Data Reduction)"
               ],
-              "answer": 2,
+              "answer": 4,
               "page": 744,
               "quote": "데이터세트의 특성이 많아지면 각 특성이 하나의 차원이 증가하게 된다. 적은 양의 데이터를 대상으로 분석하는 경우 많은 차원의 데이터는 비현실적이다. 데이터의 차원이 증가할수록 데이터 공간의 부피가 기하급수적으로 증가하게 된다."
             },
@@ -10183,7 +10314,7 @@ window.QUESTION_BANK = {
                 "분석 대상의 독립변수 및 종속변수 설정 → 기본 가정 검증 → 회귀계수 추정 및 독립변수별 유의성 검정 → 회귀분석 모형의 유의성 검정 및 최종 모형 선정",
                 "분석 대상의 독립변수 및 종속변수 설정 → 회귀계수 추정 및 독립변수별 유의성 검정 → 기본 가정 검증 → 회귀분석 모형의 유의성 검정 및 최종 모형 선정"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 744
             },
             {
@@ -10195,7 +10326,7 @@ window.QUESTION_BANK = {
                 "Coefficient of Determination",
                 "Variance Inflation Factor"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 745
             },
             {
@@ -10219,7 +10350,7 @@ window.QUESTION_BANK = {
                 "두 개 또는 그 이상의 설명변수들이 서로 밀접하게 상관되어 있는 경우 다중공선성을 검토한다.",
                 "주어진 잔차(관측값-예측값)를 설명변수에 대해 그대로 표현했을 때 일정한 패턴이 관찰되는 경우 선형 회귀분석 모형으로는 문제가 있으므로 다른 모형을 사용한다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 745
             },
             {
@@ -10231,7 +10362,7 @@ window.QUESTION_BANK = {
                 "8",
                 "9"
               ],
-              "answer": 2,
+              "answer": 4,
               "page": 746
             },
             {
@@ -10243,7 +10374,7 @@ window.QUESTION_BANK = {
                 "데이터 전체의 흩어진 정도를 나타내는 사분위 범위를 이용한다.",
                 "분산팽창지수(VIF)를 이용한다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 746
             },
             {
@@ -10280,7 +10411,7 @@ window.QUESTION_BANK = {
                 "CART",
                 "CHAID"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 747
             },
             {
@@ -10305,7 +10436,7 @@ window.QUESTION_BANK = {
                 "자기상관(Autocorrelation)",
                 "주기성(Cycle)"
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 748
             },
             {
@@ -10317,7 +10448,7 @@ window.QUESTION_BANK = {
                 "Gated Recurrent Unit(GRU)",
                 "Long Short-Term Memory(LSTM)"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 748
             },
             {
@@ -10329,7 +10460,7 @@ window.QUESTION_BANK = {
                 "부스팅 방식에서는 이전 모형의 오차를 보완하며, 오차가 컸던 데이터에 가중치를 부여하여 데이터세트를 생성한다.",
                 "부스팅 방식에서는 여러 모형이 순차적으로 처리되며 각 모형은 서로의 영향을 받지 않는다."
               ],
-              "answer": 2,
+              "answer": 4,
               "page": 749
             },
             {
@@ -10341,7 +10472,7 @@ window.QUESTION_BANK = {
                 "랜덤 포레스트는 분류, 회귀분석 등에 사용되는 앙상블 학습 방법이다.",
                 "랜덤 포레스트는 의사결정 나무 기법에서의 오버피팅 한계를 극복하기 위한 하나의 전략으로 제시되었고, 훈련을 통해 구성한 다수의 나무들로부터 최종 결과를 취합한다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 749
             }
           ]
@@ -10360,7 +10491,7 @@ window.QUESTION_BANK = {
                 "특이도는 TN/(FP+TN)이다.",
                 "F1 스코어는 정밀도와 재현율의 기하평균으로 구한다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 749
             },
             {
@@ -10372,7 +10503,7 @@ window.QUESTION_BANK = {
                 "민감도와 특이도의 차이는 (1-p-c)이다.",
                 "민감도와 특이도의 합은 1보다 크다."
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 749
             },
             {
@@ -10384,7 +10515,7 @@ window.QUESTION_BANK = {
                 "(다), (라), (마), (바)",
                 "(나), (다), (마)"
               ],
-              "answer": 2,
+              "answer": 1,
               "page": 750
             },
             {
@@ -10396,7 +10527,7 @@ window.QUESTION_BANK = {
                 "A-B 구간은 음의 상관관계, B-C 구간은 양의 상관관계가 있다.",
                 "A-B-C 전체 구간에 대하여 상관계수 값은 양이 아니며, 선형의 상관관계가 있다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 750
             },
             {
@@ -10420,7 +10551,7 @@ window.QUESTION_BANK = {
                 "Leave-one-out Cross Validation",
                 "Shuffle-split Cross Validation"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 751
             },
             {
@@ -10432,7 +10563,7 @@ window.QUESTION_BANK = {
                 "(가), (다), (라)",
                 "(가), (나), (다), (라)"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 751
             },
             {
@@ -10444,7 +10575,7 @@ window.QUESTION_BANK = {
                 "은닉층(Hidden Layer)의 수를 줄인다.",
                 "입력 노드의 수를 줄인다."
               ],
-              "answer": 2,
+              "answer": 1,
               "page": 752
             },
             {
@@ -10456,7 +10587,7 @@ window.QUESTION_BANK = {
                 "표준화된 최적 학습률 계산 방법은 없고 실험적으로 찾는다.",
                 "학습률은 모델 수행 도중 변경 또는 조정할 수 없다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 752
             },
             {
@@ -10468,7 +10599,7 @@ window.QUESTION_BANK = {
                 "인공신경망을 구축하기 위해 매개변수와 초매개변수를 데이터 학습 전에 사용자에 의해 정한다.",
                 "보통 매개변수와 초매개변수 모두 최적의 값을 찾는 과정을 수행한다."
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 752
             },
             {
@@ -10480,7 +10611,7 @@ window.QUESTION_BANK = {
                 "데이터를 학습, 검증 데이터로 분류해 분석모형 구축을 위한 학습과정에서 얻어지는 값이다.",
                 "가중치(Weight)와 같이 데이터 분석 모형이 스스로 설정 및 갱신하는 매개변수이다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 753
             },
             {
@@ -10492,7 +10623,7 @@ window.QUESTION_BANK = {
                 "Manual Search",
                 "NAdam(Adam with Nesterov Momentum)"
               ],
-              "answer": 2,
+              "answer": 1,
               "page": 753
             },
             {
@@ -10516,7 +10647,7 @@ window.QUESTION_BANK = {
                 "데이터 시각화를 위하여 시각화 툴 설치가 반드시 필요하다.",
                 "많은 시각화 도구의 장단점을 알고 데이터 특성에 맞는 방법을 선택한다."
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 754
             },
             {
@@ -10528,7 +10659,7 @@ window.QUESTION_BANK = {
                 "막대 그래프는 특정 시점 또는 특정 구간의 값을 표현한다.",
                 "선 그래프는 연속형 데이터값을 표현하기 위해 사용된다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 754
             },
             {
@@ -10540,7 +10671,7 @@ window.QUESTION_BANK = {
                 "병렬 좌표계 설명",
                 "히트맵 설명"
               ],
-              "answer": 2,
+              "answer": 1,
               "page": 755
             },
             {
@@ -10552,7 +10683,7 @@ window.QUESTION_BANK = {
                 "인포그래픽은 스토리를 통해 정보를 전달하는 경향이 강하다.",
                 "좋은 인포그래픽은 직관적으로 정보를 얻을 수 있다."
               ],
-              "answer": 4,
+              "answer": 2,
               "page": 755
             },
             {
@@ -10564,7 +10695,7 @@ window.QUESTION_BANK = {
                 "타임라인 인포그래픽",
                 "프로세스 설명 인포그래픽"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 755
             },
             {
@@ -10649,7 +10780,7 @@ window.QUESTION_BANK = {
                 "형식, 논리, 시각화를 고려하여 누구나 이해할 수 있는 보고서를 작성하여야 한다.",
                 "데이터 분석결과의 객관성을 유지하기 위해 배경지식을 배제해야 한다."
               ],
-              "answer": 2,
+              "answer": 4,
               "page": 759
             },
             {
@@ -10661,7 +10792,7 @@ window.QUESTION_BANK = {
                 "데이터 분석 인력",
                 "데이터 분석 수준 및 역량"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 759
             },
             {
@@ -10673,7 +10804,7 @@ window.QUESTION_BANK = {
                 "플랫폼 계층은 작업 스케줄링, 자원 할당 및 관리, 모니터링 기능을 수행한다.",
                 "인프라스트럭처 계층은 데이터 처리, 분석, 수집, 정제 기능을 수행한다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 759
             },
             {
@@ -10709,7 +10840,7 @@ window.QUESTION_BANK = {
                 "데이터 확보가 가능한지 확인하고 데이터의 유형을 분석한다.",
                 "발생 가능한 장애 요소를 진단하고 이를 해결하기 위한 사전 계획을 수립한다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 760
             },
             {
@@ -10721,7 +10852,7 @@ window.QUESTION_BANK = {
                 "업무 이해 → 데이터 준비 → 데이터 이해 → 모델링 → 평가 → 전개",
                 "업무 이해 → 데이터 이해 → 데이터 준비 → 모델링 → 평가 → 전개"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 760
             },
             {
@@ -10746,7 +10877,7 @@ window.QUESTION_BANK = {
                 "오디오 및 비디오 데이터",
                 "이메일, 문자 메시지, 인보이스 등 텍스트 데이터"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 761
             },
             {
@@ -10770,7 +10901,7 @@ window.QUESTION_BANK = {
                 "데이터 셔플링",
                 "데이터 마스킹"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 762
             },
             {
@@ -10782,7 +10913,7 @@ window.QUESTION_BANK = {
                 "데이터 마스킹",
                 "부분 총계"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 762
             },
             {
@@ -10806,7 +10937,7 @@ window.QUESTION_BANK = {
                 "데이터 일관성",
                 "데이터 유효성"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 763
             },
             {
@@ -10818,7 +10949,7 @@ window.QUESTION_BANK = {
                 "데이터 일관성",
                 "데이터 무결성"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 763
             },
             {
@@ -10843,7 +10974,7 @@ window.QUESTION_BANK = {
                 "데이터노드가 정상적으로 동작하지 않는 경우 전체 시스템이 중단된다.",
                 "블록 단위가 256MB일 때 10MB 파일은 4개의 블록으로 나뉘어 저장된다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 764
             }
           ]
@@ -10874,7 +11005,7 @@ window.QUESTION_BANK = {
                 "자연어 처리에서 전처리란 데이터를 사용자의 용도에 맞게 데이터를 정제하는 과정을 의미한다.",
                 "레거시(Legacy) 시스템으로만 데이터 전처리 작업을 수행해야 한다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 765
             },
             {
@@ -10886,7 +11017,7 @@ window.QUESTION_BANK = {
                 "중앙값",
                 "최빈값"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 765
             },
             {
@@ -10898,7 +11029,7 @@ window.QUESTION_BANK = {
                 "데이터 값이 평균에서 얼마나 표준편차만큼 떨어져 있는지 측정(Z Score)하여 이상값을 판단한다.",
                 "박스플롯에서 사분위수 범위를 이용하여 시각적으로 이상치를 판단한다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 766
             },
             {
@@ -10910,7 +11041,7 @@ window.QUESTION_BANK = {
                 "L1 정규화와 같은 선형회귀 모형에서 정규화 패널티로 인해 분산이 낮은 변수의 계수가 0으로 수렴하게 되는 경우 이 변수를 제외한다.",
                 "특정 분산 임곗값을 설정하고 해당 임곗값 미만의 분산을 가지는 변수를 제외한다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 766
             },
             {
@@ -10922,7 +11053,7 @@ window.QUESTION_BANK = {
                 "임의의 m×n 차원의 행렬로 분해한다.",
                 "분해과정을 통해 특이성을 가진 다차원성을 찾는다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 766
             },
             {
@@ -10934,7 +11065,7 @@ window.QUESTION_BANK = {
                 "원 데이터 값을 기준으로 (합계, 분할값) 변수를 만든다.",
                 "컬럼의 이름을 변경한다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 767
             },
             {
@@ -10958,7 +11089,7 @@ window.QUESTION_BANK = {
                 "Target Encoding",
                 "One-hot Encoding"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 767,
               "quote": "[원-핫 인코딩 예시 표 제공]"
             },
@@ -10971,7 +11102,7 @@ window.QUESTION_BANK = {
                 "선 그래프(Line Chart)",
                 "점 그래프(Dot Plot)"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 768
             },
             {
@@ -10983,7 +11114,7 @@ window.QUESTION_BANK = {
                 "X1(나이)와 X3(구매경험) 사이의 상관계수는 1이다.",
                 "X2(성별)와 X3(구매경험)의 상관계수는 0이다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 768,
               "quote": "[공분산 행렬 표 제공]"
             },
@@ -10996,7 +11127,7 @@ window.QUESTION_BANK = {
                 "변수 X4(Ozone)은 최댓값(Upper Fence)을 넘는 이상값을 가지고 있다.",
                 "변수 X5(Solar.R)의 중앙값은 최댓값(Max)보다 최솟값(Min)에 가깝다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 769,
               "quote": "[요약통계, 상관계수, 박스플롯 제공]"
             },
@@ -11009,7 +11140,7 @@ window.QUESTION_BANK = {
                 "자료에서 도수가 가장 큰 값이 한 개 이상 있으면 그 값이 모두 최빈값이다.",
                 "이상값에 큰 영향을 받지 않는다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 769
             },
             {
@@ -11021,7 +11152,7 @@ window.QUESTION_BANK = {
                 "왜도",
                 "첨도"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 770
             },
             {
@@ -11033,7 +11164,7 @@ window.QUESTION_BANK = {
                 "대부분의 경우 시간과 공간 데이터는 서로 밀접하게 연결되어 있어 두 가지 정보를 함께 고려하여 종합적인 분석을 수행한다.",
                 "시간 데이터를 이용하여 공간 데이터를 쉽게 추론할 수 있다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 770
             },
             {
@@ -11045,7 +11176,7 @@ window.QUESTION_BANK = {
                 "평균(Mean)",
                 "표준편차(Standard Deviation)"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 771
             },
             {
@@ -11057,7 +11188,7 @@ window.QUESTION_BANK = {
                 "지수분포",
                 "카이제곱 분포"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 771
             },
             {
@@ -11069,7 +11200,7 @@ window.QUESTION_BANK = {
                 "모집단의 분포에 대한 어떤 정보가 없더라도 (평균, 표준편차)만 알고 있더라도 표본평균의 분포를 근사적으로 알 수 있다.",
                 "표본의 크기 n이 보통 30 이상인 경우 표본평균은 근사적으로 정규분포를 따른다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 771
             },
             {
@@ -11081,7 +11212,7 @@ window.QUESTION_BANK = {
                 "귀무가설이 참인데 귀무가설을 기각하면서 생기는 오류를 제1종 오류라 한다.",
                 "대립가설이 참인데 대립가설을 기각하면서 생기는 오류를 제2종 오류라 한다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 772
             },
             {
@@ -11093,7 +11224,7 @@ window.QUESTION_BANK = {
                 "t-검정",
                 "Z-검정"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 772
             }
           ]
@@ -11112,7 +11243,7 @@ window.QUESTION_BANK = {
                 "입력 데이터, 속성 및 반응의 특성을 통해 분석모형 기법을 선택하고 다수의 모형을 조합한 앙상블 기법을 고려한다.",
                 "분석을 위한 주제 유형에 있어서 해결해야 할 문제뿐만 아니라 분석 방법도 알고 있다면, 발견적 기법(Discovery)을 이용한다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 772
             },
             {
@@ -11124,7 +11255,7 @@ window.QUESTION_BANK = {
                 "P대학 학생들의 키(신장, cm) 데이터를 이용하여 몸무게를 예측한다.",
                 "카드회사에서 고객들의 회원 가입정보를 이용하여 신용등급을 예측한다."
               ],
-              "answer": 2,
+              "answer": 4,
               "page": 772
             },
             {
@@ -11136,8 +11267,9 @@ window.QUESTION_BANK = {
                 "선형 회귀(Linear Regression)",
                 "나이브 베이즈(Naive Bayes)"
               ],
-              "answer": 1,
-              "page": 772
+              "answer": 2,
+              "page": 772,
+              "quote": ""
             },
             {
               "id": 44,
@@ -11148,7 +11280,7 @@ window.QUESTION_BANK = {
                 "0.1",
                 "1"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 773
             },
             {
@@ -11160,7 +11292,7 @@ window.QUESTION_BANK = {
                 "홀드아웃 방법에 비해 K-겹 교차검증에서는 모든 데이터세트를 훈련, 테스트 데이터로 사용하여 평가 결과가 편향되지 않는다.",
                 "K-겹 교차검증은 홀드아웃 방법보다 연산 과정이 단순하고 시간이 적게 소요된다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 773
             },
             {
@@ -11172,7 +11304,7 @@ window.QUESTION_BANK = {
                 "훈련 데이터는 분석모형을 적합하기 위해 사용된다.",
                 "훈련 데이터와 별개로 중복된 데이터가 없도록 평가 데이터를 구성한다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 773
             },
             {
@@ -11184,7 +11316,7 @@ window.QUESTION_BANK = {
                 "반복 학습 시 하나의 fold를 테스트(평가) 데이터로 사용하고 나머지 (K-1)개의 fold를 학습 데이터로 사용하여 K번 테스트를 진행한다.",
                 "K번 반복 학습이 끝난 성능지표(정확도, 손실 등)를 평균하여 최종 성능평가 결과를 도출하며, 데이터의 개수가 적을 때 유용하다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 774
             },
             {
@@ -11196,7 +11328,7 @@ window.QUESTION_BANK = {
                 "잔차는 모든 독립변수 값에 대해 분산이 일정하다.",
                 "잔차의 자유도는 표본의 크기 - 1이다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 774
             },
             {
@@ -11208,7 +11340,7 @@ window.QUESTION_BANK = {
                 "엘라스틱 넷(ElasticNet)",
                 "Partial Least Square(PLS)"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 774
             },
             {
@@ -11220,7 +11352,7 @@ window.QUESTION_BANK = {
                 "양측 검정의 경우 귀무가설에 대한 기각역은 양측에 있다.",
                 "유의수준은 가설 검정에서 사용하는 통계적 임계값으로 대부분 1%를 사용하며, 단일 가설 검정 시 유의수준을 반복하여 조정한다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 775
             },
             {
@@ -11232,7 +11364,7 @@ window.QUESTION_BANK = {
                 "2",
                 "2.25"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 775,
               "quote": "| 거래 | 품목 |\n|-----|------|\n| 거래1 | {사과, 딸기} |\n| 거래2 | {오이} |\n| 거래3 | {사과, 딸기, 오이} |\n| 거래4 | {사과, 오렌지} |\n| 거래5 | {사과, 오이, 오렌지} |"
             },
@@ -11245,7 +11377,7 @@ window.QUESTION_BANK = {
                 "Gaussian Mixture Model",
                 "K-means 군집분석"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 775
             },
             {
@@ -11257,7 +11389,7 @@ window.QUESTION_BANK = {
                 "a: Gator, b: Degator",
                 "a: Generator, b: Degenerator"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 776
             },
             {
@@ -11269,7 +11401,7 @@ window.QUESTION_BANK = {
                 "Multi-head Attention",
                 "Positional Encoding"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 776
             },
             {
@@ -11281,7 +11413,7 @@ window.QUESTION_BANK = {
                 "1",
                 "2"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 776
             },
             {
@@ -11293,7 +11425,7 @@ window.QUESTION_BANK = {
                 "a: 편미분, b: 기울기",
                 "a: 편미분, b: 학습률"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 777
             },
             {
@@ -11305,7 +11437,7 @@ window.QUESTION_BANK = {
                 "메타데이터 분석",
                 "자연어 처리 등 텍스트 마이닝"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 777
             },
             {
@@ -11317,8 +11449,9 @@ window.QUESTION_BANK = {
                 "N-gram",
                 "You Only Look Once(YOLO)"
               ],
-              "answer": 1,
-              "page": 777
+              "answer": 4,
+              "page": 777,
+              "quote": ""
             },
             {
               "id": 59,
@@ -11329,7 +11462,7 @@ window.QUESTION_BANK = {
                 "부스팅",
                 "배깅"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 778
             },
             {
@@ -11360,7 +11493,7 @@ window.QUESTION_BANK = {
                 "재현율(Recall)=13/14",
                 "특이도(Specificity)=1/3"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 779,
               "quote": "| 예측\\실제 | 긍정(positive) | 부정(negative) |\n|-----|------|------|\n| 긍정(positive) | 13 | 1 |\n| 부정(negative) | 2 | 4 |"
             },
@@ -11373,7 +11506,7 @@ window.QUESTION_BANK = {
                 "`2 × (precision + recall) / (precision × recall)`",
                 "`2 × precision × recall / (precision + recall)`"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 779
             },
             {
@@ -11385,7 +11518,7 @@ window.QUESTION_BANK = {
                 "ROC 곡선의 x축과 y축은 모두 0과 1 사이의 범위 값을 가진다.",
                 "ROC 곡선에서 면적이 1에 가까울수록(왼쪽 위 꼭짓점에 가까울수록) 성능이 우수한 모형이다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 779
             },
             {
@@ -11397,7 +11530,7 @@ window.QUESTION_BANK = {
                 "Root Mean Square Error(RMSE)",
                 "F1-score"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 780
             },
             {
@@ -11409,7 +11542,7 @@ window.QUESTION_BANK = {
                 "일반적으로 K=2일 때보다 K=10일 때 성능이 개선된다.",
                 "K=10인 경우 각 데이터 Fold는 9번 학습 데이터로 이용된다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 780
             },
             {
@@ -11433,7 +11566,7 @@ window.QUESTION_BANK = {
                 "(가), (나)",
                 "(가), (다)"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 781
             },
             {
@@ -11445,7 +11578,7 @@ window.QUESTION_BANK = {
                 "표본의 크기가 큰 경우 모평균에 대한 신뢰구간은 자유도가 `n-1`인 `t`-분포를 이용한다.",
                 "표본의 크기가 큰 경우 표준편차에 대한 신뢰구간은 표준정규분포를 이용한다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 781
             },
             {
@@ -11457,7 +11590,7 @@ window.QUESTION_BANK = {
                 "훈련 데이터 정확도 = 90%, 평가 데이터 정확도 = 70%",
                 "훈련 데이터 정확도 = 100%, 평가 데이터 정확도 = 100%"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 781
             },
             {
@@ -11469,7 +11602,7 @@ window.QUESTION_BANK = {
                 "인공신경망에서 학습률이나 배치 사이즈처럼 사용자가 사전에 정하는 값을 초매개변수라 한다.",
                 "검증 데이터의 성능 평가를 통해 가장 성능이 높은 모형을 선택하는 방법으로 초매개변수를 결정한다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 782
             },
             {
@@ -11481,7 +11614,7 @@ window.QUESTION_BANK = {
                 "회귀분석의 경우 종속변수는 연속적인 값을 가지며, 주로 수치형 데이터를 예측한다.",
                 "분류와 회귀분석은 머신러닝 및 통계분석에서 중요한 역할을 하며, 주어진 문제와 데이터 유형에 따라 적절한 모형을 선택한다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 782
             },
             {
@@ -11493,7 +11626,7 @@ window.QUESTION_BANK = {
                 "(가), (나)",
                 "(가), (다)"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 782
             },
             {
@@ -11505,7 +11638,7 @@ window.QUESTION_BANK = {
                 "두 변수 집단 사이의 상관성을 확인하기 위해 각 집단의 모수 개수보다 큰 자유도를 이용한다.",
                 "두 변수 집단 `(X1, X2)`와 `(Y1, Y2, Y3)` 사이의 선형 결합함수를 각각 `W`, `V`라고 할 때 정준상관계수는 변수 `W`와 `V`의 상관계수를 구하여 분석한다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 783
             },
             {
@@ -11517,7 +11650,7 @@ window.QUESTION_BANK = {
                 "노드를 분할하기 위한 최소 데이터의 개수를 지정하는 경우",
                 "의사결정나무의 최대 깊이를 제한하는 경우"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 783
             },
             {
@@ -11529,7 +11662,7 @@ window.QUESTION_BANK = {
                 "커널 트릭(Kernel Trick)",
                 "향상도(Lift)"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 783
             },
             {
@@ -11541,7 +11674,7 @@ window.QUESTION_BANK = {
                 "분석결과가 표본에서 얻은 경우 결과에 대한 불확실성이 존재하며, 이를 고려하여 최종 결과를 내린다.",
                 "데이터 분석모형 설계 및 구축 시 사용하였던 가정을 배제하여 해석한다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 784
             },
             {
@@ -11553,7 +11686,7 @@ window.QUESTION_BANK = {
                 "특정 시점 또는 특정 시간 구간 값을 표현하기 위해 점그래프를 사용하는 경우 x축 배치를 통해 데이터의 시간 흐름을 파악하기도 한다.",
                 "시간 그래프는 점과 점 사이를 직접 연결한 것이 아니라 변화가 생길 때까지 일정한 선을 유지하다가 다음 값으로 바뀌는 지점에서 직접 변화하는 것을 표현한다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 784
             },
             {
@@ -11589,7 +11722,7 @@ window.QUESTION_BANK = {
                 "데이터 분석 모형의 복잡성이 증가하면 학습 데이터의 수준도 높아져야 한다.",
                 "이런 시점에서는 추가 데이터가 각 모형의 성능에 큰 영향을 미치지 않아 데이터 수가 많아질수록 항상 모형의 성능이 향상되지는 않는다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 785
             }
           ]
@@ -11626,7 +11759,7 @@ window.QUESTION_BANK = {
                 "결과 해석 및 통찰력 도출",
                 "데이터베이스 설계 및 커스터마이징"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 787
             },
             {
@@ -11638,7 +11771,7 @@ window.QUESTION_BANK = {
                 "빅데이터 플랫폼",
                 "클라우드 컴퓨팅 시스템"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 787,
               "quote": "대규모 및 다양한 종류의 데이터를 수집 저장, 처리, 분석할 수 있는 하드웨어 및 소프트웨어 환경을 제공하는 기술적인 인프라이며, 빅데이터 환경에서 데이터 관리, 분석, 시각화 및 의사결정에 필요한 모든 도구와 기능을 제공한다."
             },
@@ -11651,7 +11784,7 @@ window.QUESTION_BANK = {
                 "라벨링된 데이터가 있는 경우 이를 기반으로 새로운 데이터에 대한 예측 수행 시 지도학습이 적합하다.",
                 "목표 변수에 대한 중요한 특성이 명확하게 드러나는 경우 지도학습이 적합하다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 788
             },
             {
@@ -11663,7 +11796,7 @@ window.QUESTION_BANK = {
                 "개인정보 식별하거나 특정 개인에 대한 정보를 식별할 수 있는 다양한 데이터가 개인 정보 보호법의 보호 대상에 해당한다.",
                 "개인정보 보호법에 따라 개인정보보호위원회가 구성되었다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 788
             },
             {
@@ -11675,7 +11808,7 @@ window.QUESTION_BANK = {
                 "가명 처리된 정보는 익명 처리 및 비식별화 조치를 하지 않고 데이터를 활용할 수 있다.",
                 "향후 특정 개인 식별 가능성이 증가할 우려가 있어 데이터를 활용 시 준수해야 할 안전조치 사항을 명시해 설명하였다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 788
             },
             {
@@ -11687,7 +11820,7 @@ window.QUESTION_BANK = {
                 "외부 데이터는 다양한 도메인과 산업에 관련된 정보를 포함한다.",
                 "외부 데이터는 데이터의 소유권 및 저작권 문제가 없어 자유롭게 사용된다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 789
             },
             {
@@ -11711,7 +11844,7 @@ window.QUESTION_BANK = {
                 "비율 척도 - 혈액형",
                 "서열 척도 - 매출액"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 789
             },
             {
@@ -11723,7 +11856,7 @@ window.QUESTION_BANK = {
                 "정량적 데이터 중 상관계수가 작은 데이터는 범주형 데이터로 변환이 가능하다.",
                 "정성적 데이터 중 값을 사용하기 위해 데이터는 연속형 데이터로 변환이 가능하다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 789
             },
             {
@@ -11735,7 +11868,7 @@ window.QUESTION_BANK = {
                 "설문조사 결과로 얻은 나이 데이터에 대해 10~25세는 청년, 40~55세는 중년 등으로 범주화한다.",
                 "숫자로 입력된 데이터를 날짜(YYYY/MM/DD)로 저장한다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 790
             },
             {
@@ -11759,7 +11892,7 @@ window.QUESTION_BANK = {
                 "최소-최대 정규화는 원래 데이터의 분포를 유지하지 않아 데이터 분포의 정보가 일부 손실될 수 있다.",
                 "스케일링 범위를 [0, 1]로 하지 않고 임의의 [a, b]로 변환 및 설정이 불가능하다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 790
             },
             {
@@ -11795,7 +11928,7 @@ window.QUESTION_BANK = {
                 "주요 특성 추출",
                 "불필요한 정보 및 데이터 노이즈 제거"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 791
             },
             {
@@ -11807,7 +11940,7 @@ window.QUESTION_BANK = {
                 "비즈니스 인텔리전스 도구와 통합되어 데이터 분석 및 시각화 활용",
                 "시간적 변화를 추적할 수 없는 비휘발성 저장 집합"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 792
             },
             {
@@ -11831,7 +11964,7 @@ window.QUESTION_BANK = {
                 "NoSQL",
                 "RDBMS"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 792
             },
             {
@@ -11843,7 +11976,7 @@ window.QUESTION_BANK = {
                 "키를 기반으로 데이터를 저장하고 검색하기 때문에 빠른 읽기 및 쓰기 성능을 제공한다.",
                 "일반적으로 데이터 값의 형식에 제한을 두지 않고 모든 데이터를 저장할 수 있다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 792
             }
           ]
@@ -11862,7 +11995,7 @@ window.QUESTION_BANK = {
                 "범주형 변수의 경우 보통 최빈값을 사용하여 결측값을 대체한다.",
                 "수집 데이터의 수가 분석하기에 충분하다면, 결측 데이터를 삭제하는 것도 가능하다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 793
             },
             {
@@ -11874,7 +12007,7 @@ window.QUESTION_BANK = {
                 "상자 크기가 비슷하고 중앙값이 일치하여 지역 간 소득액의 차이가 거의 없다.",
                 "소득액에 대한 대도시 지역의 신뢰구간이 연안 및 남부 지역의 신뢰구간보다 크다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 793,
               "quote": "[박스플롯: 연안, 대도시, 북부, 남부]"
             },
@@ -11887,7 +12020,7 @@ window.QUESTION_BANK = {
                 "Lasso",
                 "Ridge"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 794
             },
             {
@@ -11899,7 +12032,7 @@ window.QUESTION_BANK = {
                 "20%",
                 "6%"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 794
             },
             {
@@ -11911,7 +12044,7 @@ window.QUESTION_BANK = {
                 "종속변수의 예측 예측 결과를 이용하여 파생변수를 만들 수 있다.",
                 "특정 조건을 이용하여 파생변수를 만들 수 있다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 794
             },
             {
@@ -11923,7 +12056,7 @@ window.QUESTION_BANK = {
                 "Min-max 변환",
                 "Yeo-johnson 변환"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 794
             },
             {
@@ -11935,7 +12068,7 @@ window.QUESTION_BANK = {
                 "소수 클래스에 샘플에 높은 가중치를 부여하여 모델이 소수 클래스를 더 잘 학습하도록 유도한다.",
                 "소수 클래스의 경우 언더샘플링 방법으로 데이터 불균형 문제를 해결한다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 795
             },
             {
@@ -11959,7 +12092,7 @@ window.QUESTION_BANK = {
                 "최빈값 < 평균값 < 중앙값",
                 "최빈값 > 평균값 > 중앙값"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 795
             },
             {
@@ -11995,7 +12128,7 @@ window.QUESTION_BANK = {
                 "변동계수는 데이터의 표준편차를 평균으로 나눈 값으로 서로 다른 단위나 크기를 갖는 데이터를 비교할 때 유용하다.",
                 "표본의 크기와 상관없이 표본평균은 모집단 평균과 항상 동일하다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 796
             },
             {
@@ -12007,7 +12140,7 @@ window.QUESTION_BANK = {
                 "오즈비={(0.02×0.98)/(0.08×0.02)} 뭐더도=0.25",
                 "오즈비={(0.08×0.98)/(0.08×0.02)} 뭐더도=-4"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 796,
               "quote": "[표: 기존 공정 불량률 0.08 정상률 0.92 / 신규 공정 불량률 0.02 정상률 0.98]"
             },
@@ -12020,7 +12153,7 @@ window.QUESTION_BANK = {
                 "Perfect Sampling 알고리즘",
                 "Rejection Sampling 알고리즘"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 797
             },
             {
@@ -12032,7 +12165,7 @@ window.QUESTION_BANK = {
                 "n이 커지면 표본평균 분포의 평균은 동일하고, 표준편차는 커진다.",
                 "n이 커지면 표본평균의 분포는 모집단 평균 μ에 유사해진다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 797
             },
             {
@@ -12044,7 +12177,7 @@ window.QUESTION_BANK = {
                 "베타 내적의 정리",
                 "중심극한정리"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 797
             },
             {
@@ -12056,7 +12189,7 @@ window.QUESTION_BANK = {
                 "0.05",
                 "0.06"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 798,
               "quote": "[표: A 유권자 100 / 득표수 71, B 유권자 200 / 득표수 134]"
             },
@@ -12069,7 +12202,7 @@ window.QUESTION_BANK = {
                 "B는 불편추정량이다.",
                 "B는 일치추정량이다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 798,
               "quote": "`A = Σxᵢ / n`, `B = Σ(xᵢ-A)² / n`"
             },
@@ -12095,7 +12228,7 @@ window.QUESTION_BANK = {
                 "`Σ(i=0..6) (10Ci)(0.6)^i(0.4)^(10-i)`",
                 "`Σ(i=0..6) (10Ci)(2/3)^i(1/3)^(10-i)`"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 799,
               "quote": "· 귀무가설 : 마술 성공확률은 0.6 이하이다.\n· 대립가설 : 마술 성공확률은 2/3이다."
             }
@@ -12115,7 +12248,7 @@ window.QUESTION_BANK = {
                 "해결 방안 탐색에서는 분석 역량(Who)과 기법(How)으로 문제를 해결하기 위한 다양한 방안을 모색한다.",
                 "타당성 검토 단계에서는 경제성과 함께 데이터 및 기술적 타당성 등 다각적인 분석을 수행한다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 800
             },
             {
@@ -12127,7 +12260,7 @@ window.QUESTION_BANK = {
                 "모델 평가 및 성능 개선",
                 "탐색적 데이터 분석"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 800
             },
             {
@@ -12151,7 +12284,7 @@ window.QUESTION_BANK = {
                 "독립변수들이 서로 다른 단위나 스케일을 가지고 있는 문제와 다중공선성의 발생 여부는 상관이 없다.",
                 "독립변수들 간에 높은 상관관계가 있는 경우 발생하며, 다중공선성은 회귀분석 결과를 왜곡하고 모델의 해석을 어렵게 만든다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 801
             },
             {
@@ -12163,7 +12296,7 @@ window.QUESTION_BANK = {
                 "제곱합 계 = 99",
                 "회귀 자유도 = 2"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 801,
               "quote": "[표: 회귀 제곱합 72, 잔차 자유도 9, 잔차 제곱평균 3, 합계 자유도 11]"
             },
@@ -12176,7 +12309,7 @@ window.QUESTION_BANK = {
                 "(가), (다)",
                 "(가), (나), (다)"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 801,
               "quote": "(가) 주성분 분석은 독립 차원축소 분석 대상 변수들 간에 상호 관계가 없는 경우에 주로 사용된다.\n(나) 분석대상의 데이터의 분포가 정규분포를 따르는 경우에 적용한다.\n(다) 주어진 데이터셋이 가장 큰 분산을 설명하는 방향을 찾는다."
             },
@@ -12201,7 +12334,7 @@ window.QUESTION_BANK = {
                 "(나), (다)",
                 "(가), (나), (라)"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 802,
               "quote": "(가) 노리 형태로 시각화되어 결과를 이해하기 쉽고 결과에 대한 설명력이 명확하다.\n(나) 분기 기준에서 노드 분할 시 동질성(homogeneity)이 증가하는 방향으로 보기 작업을 수행한다.\n(다) 독립 변수의 스케일 조정 및 정규화 작업 등 데이터 전처리 작업이 필요하다.\n(라) 독립 변수와 범주화 과정을 거쳐서 변수들 사이의 교차작용을 고려한 분기 기준을 결정한다."
             },
@@ -12214,7 +12347,7 @@ window.QUESTION_BANK = {
                 "0.35",
                 "0.37"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 802,
               "quote": "· 은닉 노드 수 = 2개\n· 은닉 노드의 입력값 = (0.2, 0.1)\n· 은닉노드의 가중치 = (0.4, 0.5)\n· 편향 = 0.2"
             },
@@ -12227,7 +12360,7 @@ window.QUESTION_BANK = {
                 "배치의 크기가 작으면 상대적으로 불안정한 그래디언트를 생성하여 학습 과정에 악영향을 미친다.",
                 "일반적으로 작은 배치 크기와 큰 배치 크기 간에는 각각 장단점이 있어 실험을 통해 최적의 배치 크기를 결정한다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 803
             },
             {
@@ -12239,7 +12372,7 @@ window.QUESTION_BANK = {
                 "분류 성능을 높이기 위해 RBF, 다항식, 하이퍼볼릭 등 다양한 커널 함수를 이용한다.",
                 "초매개변수의 최적화를 필요하지 않다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 803
             },
             {
@@ -12251,7 +12384,7 @@ window.QUESTION_BANK = {
                 "마할라노비스 거리(Mahalanobis Distance)",
                 "유클리디안 거리(Euclidean Distance)"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 803,
               "quote": "`D=(Σ(x_i-y_i)^p)^(1/p)`"
             },
@@ -12264,7 +12397,7 @@ window.QUESTION_BANK = {
                 "특성 사이의 미세한 상호작용을 고려하기 때문에 복잡한 분류 문제에 적합하다.",
                 "특정 특성에 대한 클래스의 조건부 확률을 이용하여 새로운 샘플을 분류한다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 804
             },
             {
@@ -12276,7 +12409,7 @@ window.QUESTION_BANK = {
                 "기저벡터",
                 "컨텍스트 벡터"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 804,
               "quote": "seq2seq(sequence-to-sequence) 모델에서 인코더를 통해 `( )`가 만들어진다."
             },
@@ -12289,7 +12422,7 @@ window.QUESTION_BANK = {
                 "Adaptive Gradient(Adagrad) 기법에서는 이전 기울기에 따라 수렴 속도가 달라진다.",
                 "Adam 기법에서는 모멘텀을 이용하지 않는다."
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 804
             },
             {
@@ -12301,7 +12434,7 @@ window.QUESTION_BANK = {
                 "어간 추출(Stemming) : 어간을 추출함으로써 단어를 근본 형태로 줄임",
                 "불용어 제거(Stopwords) : 사용하지 않거나 분석에 필요하지 않은 단어 제거"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 805
             },
             {
@@ -12313,7 +12446,7 @@ window.QUESTION_BANK = {
                 "보팅 : 각 트리가 예측한 클래스를 기반으로 다수결 또는 가중치 평균 등의 방식을 이용하여 최종 예측 수행",
                 "스태킹 : 여러 개의 다른 기계학습 모델들의 예측 결과를 결합하여 최종 예측 수행"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 805
             },
             {
@@ -12325,7 +12458,7 @@ window.QUESTION_BANK = {
                 "XGBoost 알고리즘은 GBM을 기반으로 하며, 일반적으로 GBM보다 계산 속도가 느리다.",
                 "GBM은 부스팅 알고리즘 중 하나로, 너무 많은 트리를 학습하거나 트리의 깊이가 깊을 경우 과적합에 취약하다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 805
             },
             {
@@ -12337,7 +12470,7 @@ window.QUESTION_BANK = {
                 "앙상블 모델은 단일 모델보다 예측 및 분류 성능이 향상될 수가 없다.",
                 "앙상블 분석은 다양한 종류의 모델을 결합하는 개념이며, 랜덤 포레스트는 결정 트리를 기반으로 한 앙상블 학습 모델 중 하나이다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 805
             },
             {
@@ -12349,7 +12482,7 @@ window.QUESTION_BANK = {
                 "비모수 검정 방법이 모수 검정보다 정형적이다.",
                 "비모수 검정 방법은 이상치나 특이점에 대해 민감하지 않고 표본의 크기가 작은 경우에도 적용할 수 있다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 806
             }
           ]
@@ -12380,7 +12513,7 @@ window.QUESTION_BANK = {
                 "재현율(Recall)",
                 "특이도(Specificity)"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 806
             },
             {
@@ -12405,7 +12538,7 @@ window.QUESTION_BANK = {
                 "무작위로 분류하는 모형의 경우 TPR과 FPR은 같은 값으로 수렴하게 된다.",
                 "AUC 값이 작을수록 성능이 우수한 모형이다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 807
             },
             {
@@ -12429,7 +12562,7 @@ window.QUESTION_BANK = {
                 "시계열 데이터의 경우 시간순으로 나눠서 검증하지 않는다.",
                 "주택의 크기(계량 척도)의 값을 주택 가격 예측 모델을 평가하기 위해 교차검증 방법으로 검증한다."
               ],
-              "answer": 4,
+              "answer": 3,
               "page": 808
             },
             {
@@ -12453,7 +12586,7 @@ window.QUESTION_BANK = {
                 "켄달 상관계수",
                 "싱슨 상관계수"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 808
             },
             {
@@ -12465,7 +12598,7 @@ window.QUESTION_BANK = {
                 "K-1개의 데이터세트는 훈련용, 나머지 1개 데이터세트는 검증용으로 이용한다.",
                 "동일한 과정을 K번 반복하여 각각의 폴드가 한 번씩 검증세트로 사용되도록 한다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 808
             },
             {
@@ -12477,7 +12610,7 @@ window.QUESTION_BANK = {
                 "가중치를 비율함수에 추가하여 규제한다.",
                 "드롭아웃 방법을 이용한다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 809
             },
             {
@@ -12489,7 +12622,7 @@ window.QUESTION_BANK = {
                 "과적합 모형의 경우 편향이 높고, 분산은 낮다.",
                 "편향이 낮고 분산이 작으면 상대적으로 우수한 분석모형으로 평가된다."
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 809
             },
             {
@@ -12501,7 +12634,7 @@ window.QUESTION_BANK = {
                 "은닉층의 수와 학습률은 대표적인 초매개변수이다.",
                 "초매개변수는 학습하는 동안 변경된다."
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 809
             },
             {
@@ -12513,7 +12646,7 @@ window.QUESTION_BANK = {
                 "데이터 획득 → 구조화 → 선별 → 마이닝 → 표현 → 정제 → 상호작용",
                 "데이터 획득 → 구조화 → 마이닝 → 선별 → 표현 → 정제 → 상호작용"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 809
             },
             {
@@ -12525,8 +12658,9 @@ window.QUESTION_BANK = {
                 "이상값",
                 "결측값"
               ],
-              "answer": 1,
-              "page": 810
+              "answer": 2,
+              "page": 810,
+              "quote": ""
             },
             {
               "id": 75,
@@ -12537,7 +12671,7 @@ window.QUESTION_BANK = {
                 "2005년 출생아 수와 합계 출산율이 가장 작다.",
                 "2007년 출생아 수와 합계출산율이 가장 크다."
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 810,
               "quote": "[그래프 제공]"
             },
@@ -12574,7 +12708,7 @@ window.QUESTION_BANK = {
                 "격자 지도그래프",
                 "벡토그래프"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 811
             },
             {
@@ -12586,7 +12720,7 @@ window.QUESTION_BANK = {
                 "지역별 코로나 발생률 : 프로세스 인포그래픽, 월별 코로나 발생률 : 나열형 인포그래픽",
                 "지역별 코로나 발생률 : 프로세스 인포그래픽, 월별 코로나 발생률 : 타임라인 인포그래픽"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 811
             },
             {
@@ -12660,8 +12794,9 @@ window.QUESTION_BANK = {
                 "회귀분석",
                 "K-means 클러스터링"
               ],
-              "answer": 1,
-              "page": 813
+              "answer": 3,
+              "page": 813,
+              "quote": ""
             },
             {
               "id": 5,
@@ -12672,8 +12807,9 @@ window.QUESTION_BANK = {
                 "준지도 학습",
                 "지도 학습"
               ],
-              "answer": 1,
-              "page": 814
+              "answer": 3,
+              "page": 814,
+              "quote": ""
             },
             {
               "id": 6,
@@ -12684,7 +12820,7 @@ window.QUESTION_BANK = {
                 "마스크드 오토인코더(Masked Autoencoders)",
                 "생성적 적대 신경망(Generative Adversarial Network)"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 814,
               "quote": "· 두 개의 신경망을 경쟁적으로 훈련시켜 데이터를 생성한다.\n· 생성자는 실제와 유사한 데이터를 생성하여 판별자가 가짜 데이터를 진짜로 인식하도록 유도한다.\n· 판별자는 두 객체를 입력 데이터가 진짜인지 가짜인지를 구별하고 잘못 인식하지 않도록 학습한다.\n· 생성자와 판별자는 서로 적대적인 관계를 가진다."
             },
@@ -12721,8 +12857,9 @@ window.QUESTION_BANK = {
                 "업무 내재적 적용 수준",
                 "전략적 중요도"
               ],
-              "answer": 1,
-              "page": 815
+              "answer": 3,
+              "page": 815,
+              "quote": ""
             },
             {
               "id": 10,
@@ -12745,8 +12882,9 @@ window.QUESTION_BANK = {
                 "멜론 음악",
                 "반도체 판매량"
               ],
-              "answer": 3,
-              "page": 816
+              "answer": 4,
+              "page": 816,
+              "quote": ""
             },
             {
               "id": 12,
@@ -12757,8 +12895,9 @@ window.QUESTION_BANK = {
                 "일반적으로 비정형 데이터와 비교하여 정형 데이터의 수집 난도가 높다.",
                 "자연어 처리를 위해 사용되는 텍스트는 대표적인 비정형 데이터이다."
               ],
-              "answer": 1,
-              "page": 816
+              "answer": 4,
+              "page": 816,
+              "quote": ""
             },
             {
               "id": 13,
@@ -12771,7 +12910,7 @@ window.QUESTION_BANK = {
               ],
               "answer": 3,
               "page": 816,
-              "quote": "[표: 업종 구분, 연도, 평균 연봉(천 원), 지역, 설립연도]"
+              "quote": "![이미지](data:image/jpeg;base64,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)\n"
             },
             {
               "id": 14,
@@ -12782,9 +12921,9 @@ window.QUESTION_BANK = {
                 "비율 척도",
                 "서열 척도"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 817,
-              "quote": "[표: 2월 20개, 3월 30개, 4월 50개, 5월 41개, 6월 35개]"
+              "quote": "![이미지](data:image/jpeg;base64,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)\n"
             },
             {
               "id": 15,
@@ -12795,8 +12934,9 @@ window.QUESTION_BANK = {
                 "표준화(Standardization)",
                 "회귀선으로 대체(Regression)"
               ],
-              "answer": 1,
-              "page": 817
+              "answer": 3,
+              "page": 817,
+              "quote": ""
             },
             {
               "id": 16,
@@ -12807,8 +12947,9 @@ window.QUESTION_BANK = {
                 "데이터 섭동",
                 "특이화"
               ],
-              "answer": 3,
-              "page": 817
+              "answer": 4,
+              "page": 817,
+              "quote": ""
             },
             {
               "id": 17,
@@ -12819,8 +12960,9 @@ window.QUESTION_BANK = {
                 "데이터 차등 정보보호(Differential Privacy)",
                 "L-다양성(L-Diversity)"
               ],
-              "answer": 4,
-              "page": 818
+              "answer": 3,
+              "page": 818,
+              "quote": ""
             },
             {
               "id": 18,
@@ -12856,7 +12998,8 @@ window.QUESTION_BANK = {
                 "컴퓨터 네트워크를 통해 여러 소스 컴퓨터(PC)의 파일에 접근할 수 있다."
               ],
               "answer": 4,
-              "page": 819
+              "page": 819,
+              "quote": ""
             }
           ]
         },
@@ -12870,12 +13013,13 @@ window.QUESTION_BANK = {
               "text": "다음 중 데이터 오류에 대한 설명으로 가장 옳지 않은 것은?",
               "choices": [
                 "노이즈 데이터는 무작위적 변동으로 발생한다.",
-                "노이즈 데이터는 데이터의 품질을 저하시키고 잠재 데이터는 신호의 정확성을 저하시킨다.",
+                "노이즈 데이터는 데이터의 품질을 저하시키고 간섭 데이터는 신호의 정확성을 저하시킨다.",
                 "간섭 데이터는 주기적 패턴이나 규칙성을 가진다.",
-                "측정한 데이터가 주파수와 인접해 발생하여 원래 신호와 겹칠 수 있는 간섭 데이터는 보통 노이즈 데이터로 취급한다."
+                "특정한 패턴이나 주파수로 인해 발생하며, 원래 신호와 겹칠 수 있는 간섭 데이터는 보통 노이즈 데이터로 취급한다."
               ],
-              "answer": 3,
-              "page": 819
+              "answer": 4,
+              "page": 819,
+              "quote": ""
             },
             {
               "id": 22,
@@ -12886,21 +13030,22 @@ window.QUESTION_BANK = {
                 "Operational Data Store(ODS)",
                 "Online Analytical Processing(OLAP)"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 819,
-              "quote": "EDW는 데이터를 저장하기 전에, 서로 운영 시스템의 데이터를 통합하는 장소이며, 운영 시스템의 에러성 데이터를 보완한다. 외부결정 지표를 위해 EDW를 보완하는 요소로 사용되고 주로 운영 보고(Report), 예측자료 데이터를 위한 추가 작업을 위한 여러 소스의 데이터를 통합하도록 설계된 데이터베이스 스토리지, 일반적으로 저장되는 많은 양의 데이터를 다루고 실시간 또는 실시간 근접(Near Real Time) 데이터 또는 저장도 높은 운영성 데이터를 통합하도록 설계된다."
+              "quote": "EDW로 데이터를 저장하기 전에, 임시로 운영 시스템의 데이터를 보관하는 장소이며, 운영 시스템의 이력성 데이터를 보관한다. 의사결정 지원을 위해 EDW를 보완하는 요소로 사용되고, 주로 운영 보고(Report), 제어, 의사결정, 데이터에 대한 추가 작업을 위한 여러 소스의 데이터를 통합하도록 설계된 데이터베이스로 사용된다. 일반적으로 저장되는 많은 양의 데이터와는 다르게 실시간 또는 실시간 근접(Near Real Time) 데이터 또는 저수준 또는 원자성 데이터를 포함하도록 설계된다."
             },
             {
               "id": 23,
               "text": "다음 중 결측치 처리 기법에 대한 설명으로 가장 옳지 않은 것은?",
               "choices": [
-                "결측된 자료는 모두 무작위로 결측되어 완전하게 관측된 자료만 사용하는 완전분석법은 단순 대체 방법 중 하나이다.",
-                "시계열 자료의 결측치를 보완하기 위해 보간법(Interpolation Method)에서 대략적 사정 및 평가 방법을 사용할 수 있다.",
-                "콜드덱(Cold-deck) 기법은 외부 출처 혹은 비슷한 연구 결과를 이용하여 결측치를 대체하는 단순 대체 방법 중 하나이다.",
-                "핫덱(Hot-deck) 기법은 동일하거나 비슷한 성향을 가진 자료들 가운데서 가장 유사한 자료를 선택하여 값을 대체하는 방법 중 하나이다."
+                "불완전 자료는 모두 무시하고 완전하게 관측된 자료만 사용하는 완전분석은 단순 대치 방법 중 하나이다.",
+                "시계열 자료의 결측치를 보완하기 위해 보삽법(Interpolation Method)에서 대략적 사정 및 평가 방법을 이용할 수 있다.",
+                "콜드덱(Cold-deck) 기법은 외부 출처 혹은 비슷한 연구 결과를 이용하여 결측치를 대치하는 단순 확률 대치 방법 중 하나이다.",
+                "핫덱(Hot-deck) 기법은 동일하거나 비슷한 성향을 가진 자료를 여러 개 사용하여 가상 자료를 만들고 대체 내 분산과 대체 사이의 분산을 추정하는 다중 대치 방법 중 하나이다."
               ],
-              "answer": 1,
-              "page": 820
+              "answer": 4,
+              "page": 820,
+              "quote": ""
             },
             {
               "id": 24,
@@ -12911,9 +13056,9 @@ window.QUESTION_BANK = {
                 "X2의 변수에 이상값이 존재한다.",
                 "X4의 중앙값은 X1의 중앙값보다 작다."
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 820,
-              "quote": "[박스플롯: X1, X2, X3, X4]"
+              "quote": "![이미지](data:image/jpeg;base64,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)\n"
             },
             {
               "id": 25,
@@ -12936,7 +13081,7 @@ window.QUESTION_BANK = {
                 "(가), (나), (라)",
                 "(가), (나), (다)"
               ],
-              "answer": 1,
+              "answer": 4,
               "page": 821,
               "quote": "(가) 원래 변수를 선형 변환하여 새로운 변수(주성분)를 생성한다.\n(나) 주성분 분석을 통해 생성된 주성분들은 항상 독립적이다.\n(다) 데이터의 차원을 줄이고, 과적합 문제를 완화하는 데 사용된다.\n(라) 독립성, 등분산성, 정규성을 사전에 가정한다."
             },
@@ -12944,13 +13089,14 @@ window.QUESTION_BANK = {
               "id": 27,
               "text": "차원축소 기법에 대한 설명으로 가장 거리가 먼 것은?",
               "choices": [
-                "t-SNE 방법은 이웃에 가까이 있는 데이터 포인트를 보존하는 데 초점을 둔다.",
+                "t-SNE 방법을 이용하여 주어진 비용함수를 최소화 또는 최대화하는 문제를 해결한다.",
                 "다차원 척도법(MDS)은 이웃한 데이터 쌍의 거리를 저차원 공간에 투영하여 데이터 간의 유사성을 시각화한다.",
                 "주성분 분석(PCA)은 선형적인 차원축소 방법으로 데이터의 분산을 최대화하는 방향으로 차원을 축소한다.",
-                "데이터 분해 방법은 PCA와 비교하여 큰 행렬에서 SVD를 계산하는 데 많은 시간이 걸리므로 적합하지 않다."
+                "특이값 분해 방법은 PCA와 비교하여 큰 행렬에서 SVD를 계산하는 데 많은 시간과 저장공간이 필요하다."
               ],
               "answer": 1,
-              "page": 821
+              "page": 821,
+              "quote": ""
             },
             {
               "id": 28,
@@ -12985,33 +13131,35 @@ window.QUESTION_BANK = {
                 "왜도<0, 최빈값<중위수<평균값",
                 "왜도<0, 최빈값>중위수>평균값"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 822,
-              "quote": "[히스토그램]"
+              "quote": "![이미지](data:image/jpeg;base64,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KMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTgQcby2aJsKMby2aJsKI79E2PyTjBCxvLZomwoxvLZomwojv0TY/JOBBxvLZomwoxvLZomwojv0TY/JOBBxvLZomwoxvLZomwojv0TY/JOBBxvLZomwoxvLZomwojv0TY/JOBBxvLZomwoxvLZomwojv0TY/JOBBxvLZomwoxvLZomwojv0TY/JOBBxvLZomwoxvLZomwojv0TY/JOBBxvLZomwoxvLZomwojv0TY/JOK6sehhaVu8943ls0TYUiz05Dm0hQ4LYiu8o1eNqp6ymOy6l1K1olmy2XWVpSq3TkATkBB6mTCtReVEUyAPOA3qp4DAb1U8D0Azh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYDeqngegDh5wG9VPAYLU5Gp4HoBvAAAP//Z)\n"
             },
             {
               "id": 31,
-              "text": "모분산이 `σ²`이고 표본분산이 `S²`일 경우 표본분산의 MSE(Mean Squared Error, 평균제곱오차)는?",
+              "text": "모분산=$\\sigma^2$이고 표본분산=$S^2$인 경우 표본분산의 MSE(Mean Squared Error, 평균제곱오차)의 값은?",
               "choices": [
-                "`σ²/n`",
-                "`2σ²/n`",
-                "`σ²/(n-1)`",
-                "`2σ²/(n-1)`"
+                "$\\sigma^4 / n$",
+                "$2\\sigma^4 / n$",
+                "$\\sigma^4 / (n-1)$",
+                "$2\\sigma^4 / (n-1)$"
               ],
               "answer": 3,
-              "page": 823
+              "page": 823,
+              "quote": ""
             },
             {
               "id": 32,
-              "text": "다음 중 첨도에 대한 설명으로 가장 옳은 것은?",
+              "text": "다음 중 첨도에 대한 설명으로 가장 옳은 것은? [AI 정답 논란 있음]",
               "choices": [
                 "첨도 통계량은 항상 양수이다.",
                 "첨도의 단위는 평균의 단위와 동일하다.",
                 "첨도는 0의 값을 가질 수 없다.",
                 "첨도는 자료의 모양이 어느 쪽으로 어느 정도 기울어져 있는지를 알아보는 통계량이다."
               ],
-              "answer": 1,
-              "page": 823
+              "answer": 2,
+              "page": 823,
+              "quote": ""
             },
             {
               "id": 33,
@@ -13024,7 +13172,7 @@ window.QUESTION_BANK = {
               ],
               "answer": 1,
               "page": 823,
-              "quote": "[표: 1월~12월 월별 매출액]"
+              "quote": "\n![이미지](data:image/jpeg;base64,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)\n"
             },
             {
               "id": 34,
@@ -13035,8 +13183,9 @@ window.QUESTION_BANK = {
                 "분산",
                 "사분위수 범위"
               ],
-              "answer": 1,
-              "page": 823
+              "answer": 2,
+              "page": 823,
+              "quote": ""
             },
             {
               "id": 35,
@@ -13069,23 +13218,25 @@ window.QUESTION_BANK = {
               "choices": [
                 "정규분포는 모수인 평균과 표준편차에 의해 모양이 결정된다.",
                 "포아송 분포의 분산은 평균의 제곱과 같다.",
-                "시도 횟수 n이 커질수록 표준정규분포와 닮은 가이제곱 분포를 따르게 된다.",
+                "시도 횟수 n이 커질수록 표준정규분포와 닮은 카이제곱 분포를 따르게 된다.",
                 "초기하분포는 비복원추출에서 N개의 모집단 중 n개를 추출할 때, k번의 성공을 한 확률에 대한 분포이다."
               ],
               "answer": 1,
-              "page": 824
+              "page": 824,
+              "quote": ""
             },
             {
               "id": 38,
-              "text": "변수 X에 대해 `E[X]=1/2`, `Var[X]=1/4`일 때의 `E[X^2]`는?",
+              "text": "변수 X에 대해 `E[X]=1/2`, `Var[X]=1/4`일 때의 기댓값은?",
               "choices": [
                 "1/4",
                 "1/2",
                 "3/4",
                 "1"
               ],
-              "answer": 1,
-              "page": 824
+              "answer": 2,
+              "page": 824,
+              "quote": ""
             },
             {
               "id": 39,
@@ -13132,15 +13283,16 @@ window.QUESTION_BANK = {
             },
             {
               "id": 42,
-              "text": "독립변수들 사이에 상관관계가 매우, 즉 다중공선성을 측정하는 지표로 가장 바람직한 것은?",
+              "text": "독립변수들 사이에 상관관계의 여부, 즉 다중공선성을 측정하는 지표로 가장 바람직한 것은?",
               "choices": [
                 "Adjusted R-squared",
                 "분산팽창계수(Variance Inflation Factor)",
                 "쿡의 거리(Cook's Distance)",
                 "Akaike Information Criterion"
               ],
-              "answer": 4,
-              "page": 826
+              "answer": 2,
+              "page": 826,
+              "quote": ""
             },
             {
               "id": 43,
@@ -13153,7 +13305,7 @@ window.QUESTION_BANK = {
               ],
               "answer": 3,
               "page": 826,
-              "quote": "[ANOVA 표: 회귀 SSR 자유도 1 제곱평균 SSR/1, 잔차 SSE 자유도 8 제곱평균 SSE/8, 총 SST 자유도 9, F=8×SSR/SSE]"
+              "quote": "\n![이미지](data:image/jpeg;base64,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)\n"
             },
             {
               "id": 44,
@@ -13164,8 +13316,9 @@ window.QUESTION_BANK = {
                 "카이제곱 통계량",
                 "F-통계량"
               ],
-              "answer": 1,
-              "page": 826
+              "answer": 4,
+              "page": 826,
+              "quote": ""
             },
             {
               "id": 45,
@@ -13176,7 +13329,7 @@ window.QUESTION_BANK = {
                 "(가): 마진, (나): 커널",
                 "(가): 마진, (나): 편향"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 827,
               "quote": "서포트벡터머신(SVM, Support Vector Machine)에서 (가)는 초평면과 직교하고, (나)는 에러를 감쇠한다."
             },
@@ -13189,7 +13342,7 @@ window.QUESTION_BANK = {
                 "x = 2",
                 "x = -0.5"
               ],
-              "answer": 3,
+              "answer": 1,
               "page": 827,
               "quote": "· 분류 데이터: a=(-2, 0), b=(-3, 0), c=(-4, 0), d=(2, 0), e=(3, 0)\n· (a, b, c)는 레이블=0 으로 분류\n· e는 레이블=1로 분류"
             },
@@ -13209,13 +13362,14 @@ window.QUESTION_BANK = {
               "id": 48,
               "text": "다음 중 과거 데이터를 이용하여 미래를 예측하기 위해 사용되는 시계열분석 기법의 수식으로 옳지 않은 것은? [단, 시점에서 S_t는 예측값, Y_t는 관측값, T_t는 추세변동의 평균값, n은 관측 자료의 개수, α, β, ω는 0과 1의 상수이다]",
               "choices": [
-                "단순기법 : `S_t = Y_t`",
-                "가중평균법 : `S_t = Σw_iY_(t-i) / Σw_i`",
-                "평균기법 : `S_t = ΣY_i / n`",
-                "단순지수 평활법 : `S_t = αY_t + (1-α)S_(t-1) + βT_t`"
+                "단순기법 : $S_t = Y_t$",
+                "가중평균법 : $S_t = \\frac{\\sum_{i=1}^{n} \\omega_i Y_{t-i}}{\\sum_{i=1}^{n} \\omega_i}$",
+                "평균기법 : $S_t = \\frac{\\sum_{i=1}^{n} Y_i}{n}$",
+                "단순지수 평활법 : $S_t = \\alpha Y_t + (1-\\alpha)S_{t-1} + \\beta T_t$"
               ],
-              "answer": 3,
-              "page": 828
+              "answer": 4,
+              "page": 828,
+              "quote": ""
             },
             {
               "id": 49,
@@ -13269,16 +13423,16 @@ window.QUESTION_BANK = {
             },
             {
               "id": 53,
-              "text": "아래와 같이 인공신경망 학습과정에서 출력값을 구하기 위해 항등함수(Identity Function)를 이용하는 경우 노드의 출력값(Output Y)은?",
+              "text": "아래와 같이 인공신경망 학습과정에서 출력값을 구하기 위해 항등함수(Identity Function)를 이용하는 경우 노드의 출력값(Output Y)은? [ AI 정답 논란 있음 ]",
               "choices": [
                 "17",
                 "18",
                 "19",
                 "20"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 829,
-              "quote": "[신경망 도식: X1, X2, H1, H2, Y]"
+              "quote": "![이미지](data:image/jpeg;base64,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)\n"
             },
             {
               "id": 54,
@@ -13289,8 +13443,9 @@ window.QUESTION_BANK = {
                 "ReLU 함수를 이용하는 경우 기울기 소실(Gradient Vanishing) 현상 문제를 어느 정도 완화한다.",
                 "입력이 0 이하일 때 기울기가 0이 되어 학습이 되지 않는 문제를 해결하기 위해 Exponential Linear Unit 함수를 이용한다."
               ],
-              "answer": 1,
-              "page": 830
+              "answer": 2,
+              "page": 830,
+              "quote": ""
             },
             {
               "id": 55,
@@ -13313,8 +13468,9 @@ window.QUESTION_BANK = {
                 "Nesterov Accelerated Gradient",
                 "RMSprop"
               ],
-              "answer": 3,
-              "page": 830
+              "answer": 1,
+              "page": 830,
+              "quote": ""
             },
             {
               "id": 57,
@@ -13325,32 +13481,35 @@ window.QUESTION_BANK = {
                 "Stop words removal : 큰 의미가 없는 유용하지 않은 단어 제거",
                 "Tokenization : 긴 형태의 텍스트를 분리하는 문장 및 단어로 나눔"
               ],
-              "answer": 1,
-              "page": 830
+              "answer": 2,
+              "page": 830,
+              "quote": ""
             },
             {
               "id": 58,
               "text": "단어들 사이의 유사성을 측정하는 워드 임베딩 기법에 대한 설명으로 가장 옳은 것은?",
               "choices": [
-                "워드 임베딩은 자연어 처리에서 텍스트 데이터를 컴퓨터가 이해할 수 있는 분산형 벡터로 변환하는 기술이다.",
+                "워드 임베딩은 자연어 처리에서 텍스트 데이터를 컴퓨터가 이해할 수 있는 문자열 벡터로 변환하는 기술이다.",
                 "워드 임베딩에서는 단어들 사이의 유사성을 측정하기 위해 코사인 유사도보다 절대 거리를 측정하는 기법이 주로 사용된다.",
                 "거리는 유사도가 클수록 값이 높아 유용하지 않은 요소가 많아 유사하지 않다고 평가한다.",
                 "코사인 유사도는 최솟값이 -1이고 유사도 값이 클수록 두 단어가 유사하다고 평가한다."
               ],
               "answer": 3,
-              "page": 831
+              "page": 831,
+              "quote": ""
             },
             {
               "id": 59,
-              "text": "네트워크 분석에서 노드들의 연결 정도를 알아보기 위해 사용되는 척도는 무엇인가?",
+              "text": "네트워크 분석에서 노드들의 연결 정도를 알아보기 위해 사용되는 척도는 무엇인가? [AI정답논란]",
               "choices": [
                 "디그리(Degree)",
                 "밀도(Density)",
                 "연결 강도(Strength)",
                 "연결 중심성(Transitivity)"
               ],
-              "answer": 3,
-              "page": 831
+              "answer": 2,
+              "page": 831,
+              "quote": ""
             },
             {
               "id": 60,
@@ -13361,8 +13520,9 @@ window.QUESTION_BANK = {
                 "부스팅은 순차적으로 모델을 학습하고 이전 모델의 오류를 보완한다.",
                 "랜덤 포레스트는 부스팅의 일종으로 약한 모델을 순차적으로 결합하여 강한 모델을 만드는 방법이다."
               ],
-              "answer": 1,
-              "page": 831
+              "answer": 4,
+              "page": 831,
+              "quote": ""
             }
           ]
         },
@@ -13399,13 +13559,14 @@ window.QUESTION_BANK = {
               "id": 63,
               "text": "n개의 데이터에 대한 실제값(A_i)과 예측값(F_i)의 차이를 서로 비교하고자 한다. 다음 중 평균절대백분율 오차를 구하는 식으로 옳은 것은?",
               "choices": [
-                "`1/n × Σ(A_i-F_i)^2`",
-                "`√(1/n × Σ(A_i-F_i)^2)`",
-                "`1/n × Σ|A_i-F_i|`",
-                "`1/n × Σ|((A_i-F_i)/A_i)| × 100`"
+                "$\\frac{1}{n} \\times \\sum_{i=1}^{n} (A_i - F_i)^2$",
+                "$\\sqrt{\\frac{1}{n} \\times \\sum_{i=1}^{n} (A_i - F_i)^2}$",
+                " $\\frac{1}{n} \\times \\sum_{i=1}^{n} |A_i - F_i|$",
+                " $\\frac{1}{n} \\times \\sum_{i=1}^{n} \\left| \\frac{A_i - F_i}{A_i} \\right| \\times 100$"
               ],
-              "answer": 3,
-              "page": 832
+              "answer": 4,
+              "page": 832,
+              "quote": ""
             },
             {
               "id": 64,
@@ -13416,20 +13577,22 @@ window.QUESTION_BANK = {
                 "동질성 검정에 사용되는 각 표본은 서로 독립적으로 표본이 추출되어야 한다.",
                 "동질성 검정에는 일반적으로 군집추출방법으로 표본을 추출한다."
               ],
-              "answer": 1,
-              "page": 832
+              "answer": 4,
+              "page": 832,
+              "quote": ""
             },
             {
               "id": 65,
               "text": "다음 중 두 변수 사이의 상관관계를 표현하는 방법으로 가장 거리가 먼 것은?",
               "choices": [
-                "산점도에서 각 점은 데이터에 한 관측값을 나타내며, 추세 곡선은 두 변수의 선형 관계를 표현한다.",
-                "두 변수 사이의 산포도를 이용하여 노드 경우 히트맵으로 시각화하여 표현한다.",
+                "산점도에서 각 점은 데이터에 한 관측값을 나타내며, x축과  y축은 두 변수의 값을 표현한다.",
+                "두 변수 사이의 산포도를 이용하여 모든 경우 히트맵으로 시각화하여 표현한다.",
                 "히트맵은 데이터의 빈도나 밀도를 색상으로 나타내며, 값의 분포와 변동을 시각적으로 표현한다.",
                 "상관관계 네트워크 형태를 이용하는 경우 노드는 변수, 엣지는 상관관계를 나타낸다."
               ],
-              "answer": 3,
-              "page": 833
+              "answer": 2,
+              "page": 833,
+              "quote": ""
             },
             {
               "id": 66,
@@ -13440,8 +13603,9 @@ window.QUESTION_BANK = {
                 "K-Fold 교차 검증(K-fold Cross Validation)",
                 "LOOCV(Leave-one-out Cross Validation)"
               ],
-              "answer": 3,
-              "page": 833
+              "answer": 4,
+              "page": 833,
+              "quote": ""
             },
             {
               "id": 67,
@@ -13452,8 +13616,9 @@ window.QUESTION_BANK = {
                 "카이제곱 독립성 검정에서는 두 범주형 변수가 관련이 있는지 두 변수가 독립적이라고 가정했을 때 기대되는 빈도를 서로 비교한다.",
                 "카이제곱 동질성 검정에서는 여러 집단이 동일한 분포를 갖고 있는지 혹은 집단 간 차이가 있는지 알아보기 위해 관측빈도와 기대빈도를 서로 비교한다."
               ],
-              "answer": 1,
-              "page": 833
+              "answer": 2,
+              "page": 833,
+              "quote": ""
             },
             {
               "id": 68,
@@ -13464,32 +13629,35 @@ window.QUESTION_BANK = {
                 "검정통계량 분포를 이용하고, 각 검정의 자유도는 검정 유형과 범주의 수에 따라 다르다.",
                 "일반적으로 사용되는 검정통계량은 F-검정 통계량이다."
               ],
-              "answer": 3,
-              "page": 834
+              "answer": 4,
+              "page": 834,
+              "quote": ""
             },
             {
               "id": 69,
-              "text": "과적합 문제를 해결하기 위한 방법 중 하나로 신경망 여부를 사용하지 않은 기법을 무엇이라 하는가?",
+              "text": "과적합 문제를 해결하기 위한 방법 중 하나로 신경망 일부를 사용하지 않은 기법을 무엇이라 하는가?",
               "choices": [
                 "교차 검증",
                 "드롭아웃",
                 "데이터 증강",
                 "회귀 추가"
               ],
-              "answer": 3,
-              "page": 834
+              "answer": 2,
+              "page": 834,
+              "quote": ""
             },
             {
               "id": 70,
               "text": "군집분석에 대한 설명으로 가장 옳지 않은 것은?",
               "choices": [
-                "계층적 군집분석 과정 중에 제거가 속한 군집을 자유롭게 이동하며 최적의 군집을 정한다.",
+                "계층적 군집분석 과정 중에 개체가 속한 군집을 자유롭게 이동하며 최적의 군집을 정한다.",
                 "K-means는 사전에 정해진 K개의 군집 중심을 설정하고, 각 데이터 포인트를 가장 가까운 군집 중심에 할당하는 비계층적 군집분석 기법 중 하나이다.",
                 "군집의 품질을 평가하기 위한 군집 내 응집도와 군집 간 분리도를 기준으로 계산하는 실루엣 지수를 이용한다.",
                 "군집 수를 설정하기 위해 군집 수에 따른 엘보우 그래프를 이용한다."
               ],
               "answer": 1,
-              "page": 834
+              "page": 834,
+              "quote": ""
             },
             {
               "id": 71,
@@ -13500,7 +13668,7 @@ window.QUESTION_BANK = {
                 "K-medoids Clustering",
                 "Self-organizing Map"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 835,
               "quote": "· 군집의 수를 사전에 지정할 필요가 없다.\n· 적절한 수까지 군집의 수가 클수록 성능이 향상되는 특징이 있다.\n· 군집이 포함하는 최대 거리 및 필요한 최소 데이터 포인트 수를 이용한다.\n· 데이터의 밀도 중심을 낮은 방식으로 군집을 형성한다."
             },
@@ -13513,7 +13681,7 @@ window.QUESTION_BANK = {
                 "공분산 행렬(Covariance Matrix)",
                 "상관계수 행렬(Correlation Matrix)"
               ],
-              "answer": 1,
+              "answer": 2,
               "page": 835,
               "quote": "· P쇼핑몰에서 기존에 구매한 제품 목록을 확인하여 새롭을 구매하고자 한다.\n· 구매 행동(Item) 패턴 사이의 구매 또는 연관 관계를 발견한다.\n· 구매 항목 A가 존재할 때 항목 B도 존재하는지 확인한다.\n· 빈발하게 구매하는 항목의 집합을 비용으로 생성한다."
             },
@@ -13526,9 +13694,9 @@ window.QUESTION_BANK = {
                 "지지도=50%, 신뢰도=60%",
                 "지지도=50%, 신뢰도=67%"
               ],
-              "answer": 1,
+              "answer": 3,
               "page": 835,
-              "quote": "{오렌지, 사과}\n{수박, 레몬, 딸기}\n{오렌지, 사과, 수박}\n{오렌지, 사과, 자몽}\n{오렌지, 사과, 자몽, 딸기}"
+              "quote": "{오렌지, 사과}\n{수박, 레몬, 딸기}\n{오렌지, 사과, 수박}\n{오렌지, 사과, 자몽}\n{오렌지, 사과, 자몽, 레몬}\n{오렌지, 사과, 자몽, 딸기}"
             },
             {
               "id": 74,
@@ -13536,11 +13704,12 @@ window.QUESTION_BANK = {
               "choices": [
                 "1개의 은닉층을 가지고 소프트맥스 활성화 함수를 이용하는 경우 모형의 성능은 로지스틱 회귀분석 모형과 동일하다.",
                 "은닉층의 개수는 인공신경망의 성능과 무관하다.",
-                "은닉층이 많고 노드 개수도 많을수록 예측을 하는 경우 수학적으로 로지스틱 회귀분석 모형과 동일하다.",
+                "은닉층이 없고 시그모이드 활성화 함수를 이용하는 경우 수학적으로 로지스틱 회귀분석 모형과 동일하다.",
                 "인공지능에서는 일반적으로 선형적 구조의 활성화 함수를 주로 이용한다."
               ],
-              "answer": 1,
-              "page": 836
+              "answer": 3,
+              "page": 836,
+              "quote": ""
             },
             {
               "id": 75,
@@ -13551,7 +13720,7 @@ window.QUESTION_BANK = {
                 "(가) 합성곱 신경망(CNN) / (나) 강화학습을 통한 학습 수행 / (다) 순환 신경망(RNN)",
                 "(가) 순환 신경망(RNN) / (나) 합성곱 신경망(CNN) / (다) 강화학습을 통한 학습 수행"
               ],
-              "answer": 3,
+              "answer": 4,
               "page": 836,
               "quote": "(가) 영화를 긍정/부정으로 분류하는 문제\n(나) 연도별 강수량 분포그림 작성\n(다) 로봇 보행 알고리즘 작성"
             },
@@ -13564,9 +13733,9 @@ window.QUESTION_BANK = {
                 "성과지표 평가(KPI Assessment)",
                 "ROC 평가(ROC Assessment)"
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 837,
-              "quote": "· 사전에 명확한 Standard로 목표한 분석결과의 성과를 평가한다.\n· 데이터 분석이 의도한 목표에 맞게 이루어졌는지 평가한다.\n· 기준 평가 방법 및 결과에 대한 벤치마킹 결과를 활용한다.\n· 모델의 성능이 원하는 수준을 만족하는지를 확인하는 데 효과적이다."
+              "quote": "· 사전에 명확한 Standard를 토대로 분석결과의 성과를 평가한다.\n· 데이터 분석이 의도한 목표에 맞게 이루어졌는지 평가한다.\n· 기준 평가 방법 및 결과에 대한 벤치마킹 결과를 활용한다.\n· 모델의 성능이 원하는 수준을 만족하는지를 확인하는 데 효과적이다."
             },
             {
               "id": 77,
@@ -13584,13 +13753,14 @@ window.QUESTION_BANK = {
               "id": 78,
               "text": "시각화 결과는 사람의 의도 혹은 실수로 인해 데이터 왜곡이 발생할 수 있다. 다음 중 데이터 왜곡에 해당되지 않은 것은?",
               "choices": [
-                "연대, 남구, 북구 지역의 계절별 온도 변화를 나타낸 구도표",
-                "서로 큰 차이가 없는 선장의 눈금간격 최소승의 시각화로 숨긴 막대 그래프",
-                "3차원으로 회전체를 표현해 과장시킨 파이차트",
-                "지역별 과일 수확량 비교를 위해 사과 막대 표현하고 다른 과일 수확량은 제외한 그래프"
+                "(열대, 남극, 북극) 지역의 계절별 온도 변화를 나타낸 극좌표",
+                "서로 큰 차이가 없는 성적임에도 불구하고 세로축(Y축)의 시작점을 조정한 막대 그래프",
+                "3차원으로 회전체를 표현한 파이차트",
+                "지역별 과일 수확량 비교를 위해 감과 배만 표현하고 다른 과일 수확량은 제외한 그래프"
               ],
               "answer": 1,
-              "page": 837
+              "page": 837,
+              "quote": ""
             },
             {
               "id": 79,
@@ -13601,9 +13771,9 @@ window.QUESTION_BANK = {
                 "Group A의 1사분위수는 20에 가깝다.",
                 "Group A의 중앙값은 Group B의 중앙값보다 크다."
               ],
-              "answer": 3,
+              "answer": 2,
               "page": 838,
-              "quote": "[박스플롯: Group A, Group B]"
+              "quote": "![이미지](data:image/jpeg;base64,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)\n"
             },
             {
               "id": 80,
@@ -13624,8 +13794,9 @@ window.QUESTION_BANK = {
   ],
   "meta": {
     "source": "2025 시대에듀 빅데이터분석기사 필기 한권으로 끝내기",
-    "generatedAt": "2026-03-25",
+    "generatedAt": "2026-03-28",
     "totalQuestions": 444,
-    "totalExamQuestions": 640
+    "totalExamQuestions": 640,
+    "editsApplied": 237
   }
 };
