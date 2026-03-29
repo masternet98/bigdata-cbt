@@ -1772,6 +1772,21 @@ function renderNotesList() {
     return;
   }
 
+  // ─── 오답 현황 요약 ───
+  var summaryBySubject = {};
+  var totalWrongAll = 0, totalCorrectAll = 0;
+  filtered.forEach(function(n) {
+    var sn = n.subjectName || '기타';
+    if (!summaryBySubject[sn]) summaryBySubject[sn] = { wrong: 0, correct: 0, count: 0 };
+    summaryBySubject[sn].wrong += n.wrongCount;
+    summaryBySubject[sn].correct += n.correctCount;
+    summaryBySubject[sn].count++;
+    totalWrongAll += n.wrongCount;
+    totalCorrectAll += n.correctCount;
+  });
+  var totalAll = totalWrongAll + totalCorrectAll;
+  var overallRate = totalAll > 0 ? Math.round((totalWrongAll / totalAll) * 100) : 0;
+
   // 문제 텍스트 가져오기
   const bank = window.QUESTION_BANK;
   const qMap = {};
@@ -1796,6 +1811,31 @@ function renderNotesList() {
 
   var memos = getMemos();
   let html = '';
+
+  // 오답 현황 카드
+  html += '<div class="notes-summary" style="background:#f8f9fa;border-radius:10px;padding:16px;margin-bottom:16px;">';
+  html += '<div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;flex-wrap:wrap;">';
+  html += '<div style="font-size:1.1rem;font-weight:700;">오답 현황</div>';
+  html += '<div style="font-size:0.9rem;color:#555;">오답 문제 <strong>' + filtered.length + '</strong>개</div>';
+  html += '<div style="font-size:0.9rem;color:#555;">전체 오답률 <strong style="color:' + (overallRate > 50 ? '#d93025' : overallRate >= 30 ? '#e65100' : '#0f9d58') + ';">' + overallRate + '%</strong> (' + totalWrongAll + '/' + totalAll + ')</div>';
+  html += '</div>';
+  html += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;">';
+  for (var ssn in summaryBySubject) {
+    var ss = summaryBySubject[ssn];
+    var ssTotal = ss.wrong + ss.correct;
+    var ssRate = ssTotal > 0 ? Math.round((ss.wrong / ssTotal) * 100) : 0;
+    var ssColor = ssRate > 50 ? '#d93025' : ssRate >= 30 ? '#e65100' : '#0f9d58';
+    html += '<div style="background:#fff;border-radius:8px;padding:10px 12px;box-shadow:0 1px 3px rgba(0,0,0,0.08);">';
+    html += '<div style="font-size:0.8rem;color:#888;margin-bottom:4px;">' + escapeHtml(ssn) + '</div>';
+    html += '<div style="display:flex;align-items:center;gap:8px;">';
+    html += '<div style="flex:1;height:6px;background:#eee;border-radius:3px;overflow:hidden;"><div style="height:100%;width:' + ssRate + '%;background:' + ssColor + ';border-radius:3px;"></div></div>';
+    html += '<span style="font-size:0.85rem;font-weight:700;color:' + ssColor + ';">' + ssRate + '%</span>';
+    html += '</div>';
+    html += '<div style="font-size:0.75rem;color:#aaa;margin-top:2px;">' + ss.count + '문제 / 오답 ' + ss.wrong + '회</div>';
+    html += '</div>';
+  }
+  html += '</div></div>';
+
   filtered.forEach(n => {
     const q = qMap[n.key];
     const qText = q ? q.text : '(문제 데이터 없음)';
