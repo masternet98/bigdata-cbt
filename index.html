@@ -1286,6 +1286,10 @@ function updateWrongNotes(questions, answers) {
         lastWrongAt: '',
         lastSelectedAnswer: 0,
       };
+    } else {
+      // 과목명/장명 갱신 (이전에 잘못 저장된 경우 보정)
+      notes[noteKey].subjectName = q.subjectName;
+      notes[noteKey].chapterName = q.chapterName;
     }
 
     if (isCorrect) {
@@ -1742,11 +1746,11 @@ function showNotesPanel() {
   document.getElementById('quizContainer').style.display = 'none';
   document.getElementById('resultContainer').style.display = 'none';
   document.getElementById('notesPanel').style.display = 'block';
-  // 메인화면 source 필터 동기화
+  populateNotesFilters();
+  // 메인화면 source 필터 동기화 (populateNotesFilters 이후에 설정)
   var mainSource = document.getElementById('sourceSelect');
   var notesSource = document.getElementById('notesSourceFilter');
   if (mainSource && notesSource) notesSource.value = mainSource.value;
-  populateNotesFilters();
   renderNotesList();
 }
 
@@ -2109,8 +2113,8 @@ function startWrongQuiz() {
           if (wrongKeys.has(key)) {
             questions.push({
               ...q,
-              subjectName: exam.name,
-              chapterName: sec.name,
+              subjectName: sec.name,
+              chapterName: exam.name,
               key: key
             });
           }
@@ -2171,7 +2175,7 @@ function startSingleNoteQuiz(clickedKey) {
         sec.questions.forEach(function(q) {
           var k = sec.id + '_q' + q.id;
           if (wrongKeys.has(k)) {
-            questions.push({ ...q, subjectName: exam.name, chapterName: sec.name, key: k });
+            questions.push({ ...q, subjectName: sec.name, chapterName: exam.name, key: k });
           }
         });
       });
