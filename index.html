@@ -1583,7 +1583,38 @@ function getChapterStats() {
   const notes = getWrongNotes();
   const stats = {};
 
+  // 현재 선택된 문제유형에 맞는 것만 필터
+  var source = document.getElementById('sourceSelect') ? document.getElementById('sourceSelect').value : 'all';
+  var bank = window.QUESTION_BANK;
+
+  // 유효한 키 셋 구성 (선택된 source에 해당하는 문제만)
+  var validKeys = null;
+  if (source !== 'all' && bank) {
+    validKeys = new Set();
+    if (source === 'practice' || source === 'all') {
+      bank.subjects.forEach(function(s) {
+        s.chapters.forEach(function(ch) {
+          ch.questions.forEach(function(q) {
+            validKeys.add(ch.id + '_q' + q.id);
+          });
+        });
+      });
+    }
+    if (source === 'exams' || source === 'all') {
+      bank.exams.forEach(function(exam) {
+        exam.sections.forEach(function(sec) {
+          sec.questions.forEach(function(q) {
+            validKeys.add(sec.id + '_q' + q.id);
+          });
+        });
+      });
+    }
+  }
+
   for (const key in notes) {
+    // source 필터 적용
+    if (validKeys && !validKeys.has(key)) continue;
+
     const n = notes[key];
     const chKey = n.subjectName + ' > ' + n.chapterName;
     if (!stats[chKey]) {
