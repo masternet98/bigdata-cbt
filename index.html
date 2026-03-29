@@ -343,6 +343,10 @@ body {
 .bottom-nav .btn-list { background: #e8f0fe; border-color: #1a73e8; color: #1a73e8; }
 
 /* 상단 진행 정보 바 */
+.btn-uncertain { background: #fff; color: #e65100; border: 2px solid #e6510033; font-weight: 600; }
+.btn-uncertain:hover { background: #fff3e0; }
+.btn-uncertain.active { background: #ff9800; color: #fff; border-color: #ff9800; }
+.uncertain-nav { box-shadow: inset 0 0 0 2px #ff9800 !important; }
 .btn-quiz-back {
   background: none; border: none; cursor: pointer; font-size: 1.2rem; color: #888;
   padding: 4px 8px; border-radius: 6px; line-height: 1;
@@ -833,6 +837,7 @@ JSON 내보내기: 전체 데이터(오답+수정+메모) 백업 (수동 가져�
   <div class="bottom-bar">
     <div class="bottom-actions">
       <button class="btn btn-success" onclick="checkAnswer()">정답 확인</button>
+      <button class="btn btn-uncertain" id="uncertainBtn" onclick="toggleUncertain()">⚠ 확신 없음</button>
       <button class="btn btn-search" onclick="searchExplanation()">해설 검색</button>
       <button class="btn btn-memo" id="memoBtn" onclick="toggleMemo()">메모</button>
       <button class="btn btn-warning" onclick="submitQuiz()">채점하기</button>
@@ -1195,6 +1200,7 @@ let state = {
   currentIndex: 0,
   answers: {},
   checked: {},
+  uncertain: {},
   subjectId: 'all',
   chapterId: 'all',
   mode: 'sequential',
@@ -1279,6 +1285,10 @@ function updateWrongNotes(questions, answers) {
 
     if (isCorrect) {
       notes[noteKey].correctCount++;
+      // 확신 없이 맞힌 경우 추적
+      if (state.uncertain && state.uncertain[q.key]) {
+        notes[noteKey].uncertainCount = (notes[noteKey].uncertainCount || 0) + 1;
+      }
     } else {
       notes[noteKey].wrongCount++;
       notes[noteKey].lastWrongAt = new Date().toISOString();
@@ -1763,17 +1773,17 @@ function renderNotesList() {
   const chFilter = document.getElementById('notesChapterFilter').value;
   const container = document.getElementById('notesList');
 
-  // 필터된 오답 문제
+  // 필터된 오답 + 확신없음 문제
   let filtered = [];
   for (const key in notes) {
     const n = notes[key];
-    if (n.wrongCount === 0) continue;
+    if (n.wrongCount === 0 && !(n.uncertainCount > 0)) continue;
     if (subFilter !== 'all' && n.subjectName !== subFilter) continue;
     if (chFilter !== 'all' && n.chapterName !== chFilter) continue;
     filtered.push({ ...n, key });
   }
 
-  filtered.sort((a, b) => b.wrongCount - a.wrongCount);
+  filtered.sort((a, b) => (b.wrongCount + (b.uncertainCount || 0)) - (a.wrongCount + (a.uncertainCount || 0)));
 
   // 과목별 전체 풀이 통계 (wrongCount=0 포함)
   var statsBySubject = {};
@@ -1860,7 +1870,8 @@ function renderNotesList() {
     html += '<div style="padding:9px 14px;display:flex;align-items:center;gap:8px;">';
     html += '<span style="font-size:0.75rem;color:#888;white-space:nowrap;">[' + escapeHtml((n.subjectName || '').replace(/^(제\d과목).*/, '$1')) + '] Q' + n.questionId + '</span>';
     html += '<span style="flex:1;font-size:0.85rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">' + escapeHtml(shortText) + '</span>';
-    html += '<span style="font-size:0.75rem;color:#d93025;white-space:nowrap;">오답' + n.wrongCount + '</span>';
+    if (n.wrongCount > 0) html += '<span style="font-size:0.75rem;color:#d93025;white-space:nowrap;">오답' + n.wrongCount + '</span>';
+    if (n.uncertainCount > 0) html += '<span style="font-size:0.75rem;color:#ff9800;white-space:nowrap;">⚠' + n.uncertainCount + '</span>';
     html += '<span style="font-size:0.75rem;color:#999;white-space:nowrap;">정답' + correctAns + '</span>';
     if (memoText) html += '<span style="font-size:0.75rem;">📝</span>';
     html += '<span style="font-size:0.7rem;color:#ccc;">▶</span>';
@@ -1997,7 +2008,7 @@ function startWrongQuiz() {
   const wrongKeys = new Set();
   for (const key in notes) {
     const n = notes[key];
-    if (n.wrongCount === 0) continue;
+    if (n.wrongCount === 0 && !(n.uncertainCount > 0)) continue;
     if (subFilter !== 'all' && n.subjectName !== subFilter) continue;
     if (chFilter !== 'all' && n.chapterName !== chFilter) continue;
     wrongKeys.add(key);
@@ -2068,11 +2079,11 @@ function startSingleNoteQuiz(clickedKey) {
   var subFilter = document.getElementById('notesSubjectFilter').value;
   var chFilter = document.getElementById('notesChapterFilter').value;
 
-  // 필터된 오답 키 수집
+  // 필터된 오답+확신없음 키 수집
   var wrongKeys = new Set();
   for (var key in notes) {
     var n = notes[key];
-    if (n.wrongCount === 0) continue;
+    if (n.wrongCount === 0 && !(n.uncertainCount > 0)) continue;
     if (subFilter !== 'all' && n.subjectName !== subFilter) continue;
     if (chFilter !== 'all' && n.chapterName !== chFilter) continue;
     wrongKeys.add(key);
@@ -2708,7 +2719,10 @@ function sortByWeakness(questions) {
     // 반복 오답 가중치 (3회 이상 +0.1)
     var repeatBonus = n.wrongCount >= 3 ? 0.1 : 0;
 
-    return rate + recency + repeatBonus;
+    // 확신 없음 가중치 (찍어서 맞힌 이력 반영)
+    var uncertainBonus = (n.uncertainCount || 0) > 0 ? Math.min((n.uncertainCount || 0) * 0.15, 0.3) : 0;
+
+    return rate + recency + repeatBonus + uncertainBonus;
   }
 
   // 점수 계산 후 내림차순 정렬
@@ -2921,6 +2935,9 @@ function renderQuestion() {
     }
   }
 
+  // 확신 없음 버튼 상태 업데이트
+  updateUncertainBtn();
+
   // 헤더 정보
   var headerLabel = state.mode === 'editflag' ? '수정필요 모아보기' : (state.quickTestMode ? '퀵테스트' : q.subjectName);
   document.getElementById('headerInfo').textContent = headerLabel + ' | ' + answered + '/' + total + ' 응답';
@@ -2967,6 +2984,9 @@ function renderNavPanel() {
       }
       if (editFlags[qq.key]) {
         cls += ' edit-flagged-nav';
+      }
+      if (state.uncertain[qq.key]) {
+        cls += ' uncertain-nav';
       }
       html += '<button class="' + cls + '" onclick="autoSaveMemo();state.currentIndex=' + i + ';renderQuestion();saveState();toggleNavPanel();">' + (i + 1) + '</button>';
     });
@@ -3128,10 +3148,19 @@ function showResult() {
     html += '</div>';
   }
 
+  // 확신 없음 카운트
+  var uncertainCount = 0;
+  state.questions.forEach(function(q) {
+    if (state.uncertain && state.uncertain[q.key]) uncertainCount++;
+  });
+
   html += '<div class="result-stats">';
   html += '<div class="stat"><div class="num">' + total + '</div><div class="label">전체</div></div>';
   html += '<div class="stat"><div class="num" style="color:#0f9d58">' + correct + '</div><div class="label">정답</div></div>';
   html += '<div class="stat"><div class="num" style="color:#d93025">' + (total - correct) + '</div><div class="label">오답</div></div>';
+  if (uncertainCount > 0) {
+    html += '<div class="stat"><div class="num" style="color:#ff9800">' + uncertainCount + '</div><div class="label">확신 없음</div></div>';
+  }
   html += '</div>';
 
   // 과목별 성적표 (2개 이상 과목일 때 항상 표시)
@@ -3477,6 +3506,30 @@ function autoSaveMemo() {
   if (memoArea.style.display !== 'none' && typeof memoArea._questionKey !== 'undefined') {
     var text = document.getElementById('memoTextarea').value;
     saveMemo(memoArea._questionKey, text);
+  }
+}
+
+function toggleUncertain() {
+  var q = state.questions[state.currentIndex];
+  if (state.uncertain[q.key]) {
+    delete state.uncertain[q.key];
+  } else {
+    state.uncertain[q.key] = true;
+  }
+  updateUncertainBtn();
+  saveState();
+}
+
+function updateUncertainBtn() {
+  var q = state.questions[state.currentIndex];
+  var btn = document.getElementById('uncertainBtn');
+  if (!btn) return;
+  if (state.uncertain[q.key]) {
+    btn.classList.add('active');
+    btn.textContent = '⚠ 확신 없음 ✓';
+  } else {
+    btn.classList.remove('active');
+    btn.textContent = '⚠ 확신 없음';
   }
 }
 
