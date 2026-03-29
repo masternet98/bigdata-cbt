@@ -285,6 +285,7 @@ body {
 .choices li.selected { border-color: #1a73e8; background: #e8f0fe; }
 .choices li.correct { border-color: #0f9d58; background: #e6f4ea; }
 .choices li.wrong { border-color: #d93025; background: #fce8e6; }
+.badge-multi { display:inline-block; background:#fff3e0; color:#e65100; font-size:0.8rem; font-weight:700; padding:2px 8px; border-radius:4px; margin-left:8px; vertical-align:middle; }
 .choices li .marker {
   display: inline-flex;
   align-items: center;
@@ -1215,12 +1216,45 @@ function clearWrongNotes() {
   saveToCloud('cbt_wrong_notes', true);
 }
 
+// ─── 복수 정답(Multi-Answer) 헬퍼 함수 ───
+function isMultiAnswer(q) {
+  return Array.isArray(q.answer);
+}
+
+function checkCorrect(selected, answer) {
+  if (Array.isArray(answer)) {
+    if (!Array.isArray(selected)) return false;
+    if (selected.length !== answer.length) return false;
+    var s1 = selected.slice().sort();
+    var s2 = answer.slice().sort();
+    return s1.every(function(v, i) { return v === s2[i]; });
+  }
+  return selected === answer;
+}
+
+function isInAnswer(choiceNum, answer) {
+  if (Array.isArray(answer)) return answer.indexOf(choiceNum) !== -1;
+  return choiceNum === answer;
+}
+
+function isInSelection(choiceNum, selected) {
+  if (Array.isArray(selected)) return selected.indexOf(choiceNum) !== -1;
+  return choiceNum === selected;
+}
+
+function formatAnswer(answer) {
+  var markers = ['①', '②', '③', '④'];
+  if (Array.isArray(answer)) return answer.map(function(a) { return markers[a - 1]; }).join(', ');
+  return markers[answer - 1];
+}
+// ─── /복수 정답 헬퍼 ───
+
 function updateWrongNotes(questions, answers) {
   const notes = getWrongNotes();
 
   questions.forEach(q => {
-    const selected = answers[q.key] || 0;
-    const isCorrect = selected === q.answer;
+    const selected = answers[q.key] || (isMultiAnswer(q) ? [] : 0);
+    const isCorrect = checkCorrect(selected, q.answer);
     const noteKey = q.key;
 
     if (!notes[noteKey]) {
@@ -1323,13 +1357,13 @@ function showConflictModal(result, afterResolve) {
     html += '<div class="conflict-version conflict-local' + (localNewer ? ' conflict-newer' : '') + '">';
     html += '<div class="conflict-version-header"><span>[현재 수정] ' + localTime + '</span>' + (localNewer ? '<span class="newer-tag">최신</span>' : '') + '</div>';
     html += '문제: ' + escapeHtml((c.local.text||'').substring(0,60)) + (c.local.text && c.local.text.length > 60 ? '...' : '') + '<br>';
-    html += '정답: ' + (c.local.answer ? markers[c.local.answer-1] : '?');
+    html += '정답: ' + (c.local.answer ? formatAnswer(c.local.answer) : '?');
     html += '</div>';
 
     html += '<div class="conflict-version conflict-remote' + (remoteNewer ? ' conflict-newer' : '') + '">';
     html += '<div class="conflict-version-header"><span>[가져온 수정] ' + remoteTime + '</span>' + (remoteNewer ? '<span class="newer-tag">최신</span>' : '') + '</div>';
     html += '문제: ' + escapeHtml((c.remote.text||'').substring(0,60)) + (c.remote.text && c.remote.text.length > 60 ? '...' : '') + '<br>';
-    html += '정답: ' + (c.remote.answer ? markers[c.remote.answer-1] : '?');
+    html += '정답: ' + (c.remote.answer ? formatAnswer(c.remote.answer) : '?');
     html += '</div>';
 
     var defaultRemote = remoteNewer || !c.local.updatedAt;
@@ -1781,8 +1815,8 @@ function renderNotesList() {
     if (q && q.choices && q.choices.length === 4) {
       html += '<div class="notes-q-choices" style="margin:8px 0;font-size:0.85rem;">';
       for (var ci = 0; ci < 4; ci++) {
-        var isCorrect = q.answer === (ci + 1);
-        var isWrong = n.lastSelectedAnswer === (ci + 1) && !isCorrect;
+        var isCorrect = isInAnswer(ci + 1, q.answer);
+        var isWrong = isInSelection(ci + 1, n.lastSelectedAnswer) && !isCorrect;
         var choiceStyle = '';
         if (isCorrect) choiceStyle = 'color:#0f9d58;font-weight:700;';
         else if (isWrong) choiceStyle = 'color:#d93025;text-decoration:line-through;';
@@ -2647,7 +2681,11 @@ function renderQuestion() {
   html += isFlagged ? '수정필요 해제' : '수정필요';
   html += '</button>';
   html += '</div>';
-  html += '<div class="question-text">' + renderMathInText(q.text) + '</div>';
+  html += '<div class="question-text">' + renderMathInText(q.text);
+  if (isMultiAnswer(q)) {
+    html += ' <span class="badge-multi">(복수 선택 — ' + q.answer.length + '개)</span>';
+  }
+  html += '</div>';
   if (q.quote) {
     html += '<div class="question-quote">' + renderQuoteContent(q.quote) + '</div>';
   }
@@ -2657,9 +2695,9 @@ function renderQuestion() {
     var choiceNum = ci + 1;
     var cls = '';
     if (isChecked) {
-      if (choiceNum === q.answer) cls = 'correct';
-      else if (choiceNum === state.answers[q.key] && choiceNum !== q.answer) cls = 'wrong';
-    } else if (state.answers[q.key] === choiceNum) {
+      if (isInAnswer(choiceNum, q.answer)) cls = 'correct';
+      else if (isInSelection(choiceNum, state.answers[q.key]) && !isInAnswer(choiceNum, q.answer)) cls = 'wrong';
+    } else if (isInSelection(choiceNum, state.answers[q.key])) {
       cls = 'selected';
     }
     html += '<li class="' + cls + '" onclick="selectChoice(\'' + q.key + '\', ' + choiceNum + ', ' + (isChecked ? 'true' : 'false') + ')">';
@@ -2728,8 +2766,8 @@ function renderNavPanel() {
       var cls = '';
       if (i === idx) cls = 'current';
       else if (state.checked[qq.key]) {
-        cls = state.answers[qq.key] === qq.answer ? 'correct-nav' : 'wrong-nav';
-      } else if (state.answers[qq.key]) {
+        cls = checkCorrect(state.answers[qq.key], qq.answer) ? 'correct-nav' : 'wrong-nav';
+      } else if (state.answers[qq.key] && (!Array.isArray(state.answers[qq.key]) || state.answers[qq.key].length > 0)) {
         cls = 'answered';
       }
       if (memos[qq.key]) {
@@ -2747,16 +2785,33 @@ function renderNavPanel() {
 
 function selectChoice(key, choiceNum, isChecked) {
   if (isChecked) return;
-  state.answers[key] = choiceNum;
+  var q = state.questions[state.currentIndex];
+  var eq = getEditedQuestion(q);
+  if (isMultiAnswer(eq)) {
+    // 복수 정답: 토글 방식
+    var cur = Array.isArray(state.answers[key]) ? state.answers[key].slice() : [];
+    var idx = cur.indexOf(choiceNum);
+    if (idx !== -1) cur.splice(idx, 1);
+    else cur.push(choiceNum);
+    state.answers[key] = cur.length > 0 ? cur : undefined;
+    if (!state.answers[key]) delete state.answers[key];
+  } else {
+    state.answers[key] = choiceNum;
+  }
   renderQuestion();
   saveState();
 }
 
 function checkAnswer() {
   var q = state.questions[state.currentIndex];
-  if (!state.answers[q.key]) {
+  var eq = getEditedQuestion(q);
+  var sel = state.answers[q.key];
+  if (!sel || (Array.isArray(sel) && sel.length === 0)) {
     alert('선택지를 먼저 선택하세요.');
     return;
+  }
+  if (isMultiAnswer(eq) && Array.isArray(sel) && sel.length !== eq.answer.length) {
+    if (!confirm(eq.answer.length + '개를 선택해야 합니다. 현재 ' + sel.length + '개 선택됨.\n그래도 확인하시겠습니까?')) return;
   }
   state.checked[q.key] = true;
   renderQuestion();
@@ -2824,8 +2879,8 @@ function showResult() {
   var wrongList = [];
 
   state.questions.forEach(function(q, i) {
-    var selected = state.answers[q.key] || 0;
-    if (selected === q.answer) {
+    var selected = state.answers[q.key] || (isMultiAnswer(q) ? [] : 0);
+    if (checkCorrect(selected, q.answer)) {
       correct++;
     } else {
       wrongList.push({ index: i, question: q, selected: selected });
@@ -2843,7 +2898,7 @@ function showResult() {
         subjectScores[q.subjectName] = { total: 0, correct: 0 };
       }
       subjectScores[q.subjectName].total++;
-      if ((state.answers[q.key] || 0) === q.answer) {
+      if (checkCorrect(state.answers[q.key] || (isMultiAnswer(q) ? [] : 0), q.answer)) {
         subjectScores[q.subjectName].correct++;
       }
     });
@@ -2940,11 +2995,19 @@ function showResult() {
     var markers = ['①', '②', '③', '④'];
     html += '<div class="wrong-list"><h3>오답 목록 (클릭하여 확인)</h3>';
     wrongList.forEach(function(w) {
-      var yourAnswer = w.selected > 0 ? markers[w.selected - 1] : '미응답';
+      var yourAnswer;
+      if (Array.isArray(w.selected) && w.selected.length > 0) {
+        yourAnswer = w.selected.map(function(s) { return markers[s - 1]; }).join(', ');
+      } else if (typeof w.selected === 'number' && w.selected > 0) {
+        yourAnswer = markers[w.selected - 1];
+      } else {
+        yourAnswer = '미응답';
+      }
+      var correctAnswer = formatAnswer(w.question.answer);
       html += '<div class="wrong-item" onclick="goToQuestion(' + w.index + ')">';
       html += '<div class="q-info">[' + escapeHtml(w.question.subjectName) + ' > ' + escapeHtml(w.question.chapterName) + '] 문제 ' + w.question.id + '</div>';
       html += '<div>' + escapeHtml(w.question.text.length > 60 ? w.question.text.substring(0, 60) + '...' : w.question.text) + '</div>';
-      html += '<div class="q-answer">선택: ' + yourAnswer + ' / 정답: ' + markers[w.question.answer - 1] + '</div>';
+      html += '<div class="q-answer">선택: ' + yourAnswer + ' / 정답: ' + correctAnswer + '</div>';
       html += '</div>';
     });
     html += '</div>';
@@ -3095,11 +3158,20 @@ function enterEditMode() {
   }
 
   html += '<label>정답</label>';
-  html += '<select id="editAnswer">';
-  for (var j = 1; j <= 4; j++) {
-    html += '<option value="' + j + '"' + (q.answer === j ? ' selected' : '') + '>' + markers[j - 1] + '</option>';
+  if (isMultiAnswer(q)) {
+    html += '<div id="editAnswerMulti" style="display:flex;gap:12px;">';
+    for (var j = 1; j <= 4; j++) {
+      var chk = isInAnswer(j, q.answer) ? ' checked' : '';
+      html += '<label><input type="checkbox" class="editAnswerCheck" value="' + j + '"' + chk + '> ' + markers[j - 1] + '</label>';
+    }
+    html += '</div>';
+  } else {
+    html += '<select id="editAnswer">';
+    for (var j = 1; j <= 4; j++) {
+      html += '<option value="' + j + '"' + (q.answer === j ? ' selected' : '') + '>' + markers[j - 1] + '</option>';
+    }
+    html += '</select>';
   }
-  html += '</select>';
 
   html += '<div class="edit-actions">';
   html += '<button class="btn btn-primary" onclick="saveEditFromForm()" style="padding:8px 16px;font-size:0.85rem;">저장</button>';
@@ -3124,7 +3196,12 @@ function saveEditFromForm() {
       document.getElementById('editChoice3').value,
       document.getElementById('editChoice4').value
     ],
-    answer: parseInt(document.getElementById('editAnswer').value)
+    answer: (function() {
+      var el = document.getElementById('editAnswer');
+      if (el) return parseInt(el.value);
+      var checks = document.querySelectorAll('.editAnswerCheck:checked');
+      return Array.from(checks).map(function(c) { return parseInt(c.value); });
+    })()
   };
   saveEdit(q.key, editData);
   renderQuestion();
