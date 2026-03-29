@@ -726,6 +726,7 @@ body {
   <div class="form-group">
     <label>문제 유형</label>
     <select id="sourceSelect" onchange="updateSource()">
+      <option value="all">전체 (1,079문제)</option>
       <option value="practice">적중예상문제 (439문제)</option>
       <option value="exams">기출복원문제 (640문제)</option>
     </select>
@@ -2343,7 +2344,23 @@ function updateSource() {
 
   subjectSelect.innerHTML = '';
 
-  if (source === 'exams') {
+  if (source === 'all') {
+    subjectLabel.textContent = '과목 선택';
+    chapterLabel.textContent = '세부 선택';
+
+    var allOpt = document.createElement('option');
+    allOpt.value = 'all';
+    allOpt.textContent = '전체';
+    subjectSelect.appendChild(allOpt);
+
+    // 4과목 표시
+    bank.subjects.forEach(function(s) {
+      var opt = document.createElement('option');
+      opt.value = s.id;
+      opt.textContent = s.name;
+      subjectSelect.appendChild(opt);
+    });
+  } else if (source === 'exams') {
     subjectLabel.textContent = '회차 선택';
     chapterLabel.textContent = '과목 선택';
 
@@ -2386,7 +2403,22 @@ function updateChapters() {
   var chSel = document.getElementById('chapterSelect');
   chSel.innerHTML = '<option value="all">전체</option>';
 
-  if (source === 'exams') {
+  if (source === 'all') {
+    // 전체 모드: 과목 선택 시 장 목록 표시
+    if (subjectId === 'all') {
+      // 전체+전체: 장 선택 불필요
+    } else {
+      var subject = bank.subjects.find(function(s) { return s.id === subjectId; });
+      if (subject) {
+        subject.chapters.forEach(function(ch) {
+          var opt = document.createElement('option');
+          opt.value = ch.id;
+          opt.textContent = ch.name;
+          chSel.appendChild(opt);
+        });
+      }
+    }
+  } else if (source === 'exams') {
     // 회차 무관하게 과목(섹션) 4개만 표시
     var secNames = ['제1과목 빅데이터 분석 기획', '제2과목 빅데이터 탐색', '제3과목 빅데이터 모델링', '제4과목 빅데이터 결과 해석'];
     for (var si = 0; si < 4; si++) {
@@ -2426,33 +2458,42 @@ function getQuestions() {
   var chapterId = document.getElementById('chapterSelect').value;
   var questions = [];
 
-  if (source === 'exams') {
-    bank.exams.forEach(function(exam) {
-      if (subjectId !== 'all' && exam.id !== subjectId) return;
-      exam.sections.forEach(function(sec) {
-        // chapterId가 '_s1'~'_s4' 형태면 과목별 통합 필터
-        if (chapterId !== 'all' && !sec.id.endsWith(chapterId)) return;
-        sec.questions.forEach(function(q) {
-          questions.push({
-            ...q,
-            subjectName: exam.name,
-            chapterName: sec.name,
-            key: sec.id + '_q' + q.id
-          });
-        });
-      });
-    });
-  } else {
+  // 적중예상문제 수집 (source='practice' 또는 'all')
+  if (source === 'practice' || source === 'all') {
     bank.subjects.forEach(function(s) {
-      if (subjectId !== 'all' && s.id !== subjectId) return;
+      if (source === 'practice' && subjectId !== 'all' && s.id !== subjectId) return;
+      if (source === 'all' && subjectId !== 'all' && s.id !== subjectId) return;
       s.chapters.forEach(function(ch) {
-        if (chapterId !== 'all' && ch.id !== chapterId) return;
+        if (source === 'practice' && chapterId !== 'all' && ch.id !== chapterId) return;
         ch.questions.forEach(function(q) {
           questions.push({
             ...q,
             subjectName: s.name,
             chapterName: ch.name,
             key: ch.id + '_q' + q.id
+          });
+        });
+      });
+    });
+  }
+
+  // 기출복원문제 수집 (source='exams' 또는 'all')
+  if (source === 'exams' || source === 'all') {
+    bank.exams.forEach(function(exam) {
+      if (source === 'exams' && subjectId !== 'all' && exam.id !== subjectId) return;
+      exam.sections.forEach(function(sec) {
+        if (source === 'exams' && chapterId !== 'all' && !sec.id.endsWith(chapterId)) return;
+        // source='all'이고 과목 필터가 있으면 과목명으로 매칭
+        if (source === 'all' && subjectId !== 'all') {
+          var subj = bank.subjects.find(function(s) { return s.id === subjectId; });
+          if (subj && sec.name.indexOf(subj.name.replace(/^(제\d과목).*/, '$1')) < 0) return;
+        }
+        sec.questions.forEach(function(q) {
+          questions.push({
+            ...q,
+            subjectName: sec.name,
+            chapterName: exam.name,
+            key: sec.id + '_q' + q.id
           });
         });
       });
@@ -2534,81 +2575,73 @@ function startQuiz() {
 function buildExamQuestions() {
   var source = document.getElementById('sourceSelect').value;
   var bank = window.QUESTION_BANK;
+  var QUESTIONS_PER_SUBJECT = 20;
 
+  // 기출복원문제 전용: 1회분 80문제 그대로 출제
   if (source === 'exams') {
     var examId = document.getElementById('subjectSelect').value;
     var selectedExam;
-
     if (examId === 'all') {
       var idx = Math.floor(Math.random() * bank.exams.length);
       selectedExam = bank.exams[idx];
     } else {
       selectedExam = bank.exams.find(function(e) { return e.id === examId; });
     }
-
-    if (!selectedExam) {
-      alert('선택한 회차를 찾을 수 없습니다.');
-      return null;
-    }
-
+    if (!selectedExam) { alert('선택한 회차를 찾을 수 없습니다.'); return null; }
     var questions = [];
     selectedExam.sections.forEach(function(sec) {
       sec.questions.forEach(function(q) {
-        questions.push({
-          ...q,
-          subjectName: sec.name,
-          chapterName: selectedExam.name,
-          key: sec.id + '_q' + q.id
-        });
+        questions.push({ ...q, subjectName: sec.name, chapterName: selectedExam.name, key: sec.id + '_q' + q.id });
       });
     });
-
     return questions;
   }
 
-  // 적중예상문제: 과목별 20문제씩 랜덤 출제
-  var QUESTIONS_PER_SUBJECT = 20;
+  // 적중예상문제 또는 전체: 과목별 20문제씩 랜덤 출제
   var allExamQuestions = [];
   var warnings = [];
 
-  bank.subjects.forEach(function(s) {
-    var subjectQuestions = [];
-    s.chapters.forEach(function(ch) {
-      ch.questions.forEach(function(q) {
-        subjectQuestions.push({
-          id: q.id,
-          text: q.text,
-          choices: q.choices,
-          answer: q.answer,
-          quote: q.quote || null,
-          subjectName: s.name,
-          chapterName: ch.name,
-          key: ch.id + '_q' + q.id
+  bank.subjects.forEach(function(s, si) {
+    var pool = [];
+
+    // 적중예상문제에서 수집
+    if (source === 'practice' || source === 'all') {
+      s.chapters.forEach(function(ch) {
+        ch.questions.forEach(function(q) {
+          pool.push({ ...q, subjectName: s.name, chapterName: ch.name, key: ch.id + '_q' + q.id });
         });
       });
-    });
-
-    subjectQuestions = shuffle(subjectQuestions.slice());
-    var count = Math.min(QUESTIONS_PER_SUBJECT, subjectQuestions.length);
-    if (count < QUESTIONS_PER_SUBJECT) {
-      warnings.push(s.name + ': ' + subjectQuestions.length + '문제만 있어 ' + count + '문제 출제');
     }
-    allExamQuestions = allExamQuestions.concat(subjectQuestions.slice(0, count));
+
+    // 기출복원문제에서 같은 과목 수집 (source='all'일 때)
+    if (source === 'all' && bank.exams) {
+      bank.exams.forEach(function(exam) {
+        if (exam.sections && exam.sections[si]) {
+          var sec = exam.sections[si];
+          sec.questions.forEach(function(q) {
+            pool.push({ ...q, subjectName: s.name, chapterName: exam.name + ' > ' + sec.name, key: sec.id + '_q' + q.id });
+          });
+        }
+      });
+    }
+
+    pool = shuffle(pool.slice());
+    var count = Math.min(QUESTIONS_PER_SUBJECT, pool.length);
+    if (count < QUESTIONS_PER_SUBJECT) {
+      warnings.push(s.name + ': ' + pool.length + '문제만 있어 ' + count + '문제 출제');
+    }
+    allExamQuestions = allExamQuestions.concat(pool.slice(0, count));
   });
 
-  if (allExamQuestions.length === 0) {
-    alert('출제할 문제가 없습니다.');
-    return null;
-  }
-
+  if (allExamQuestions.length === 0) { alert('출제할 문제가 없습니다.'); return null; }
   if (warnings.length > 0) {
     alert('일부 과목의 문제가 부족합니다:\n' + warnings.join('\n') + '\n\n총 ' + allExamQuestions.length + '문제로 시험을 시작합니다.');
   }
-
   return allExamQuestions;
 }
 
 function buildQuickTestQuestions() {
+  var source = document.getElementById('sourceSelect').value;
   var bank = window.QUESTION_BANK;
   var QUESTIONS_PER_SUBJECT = 5;
   var allQuestions = [];
@@ -2617,48 +2650,27 @@ function buildQuickTestQuestions() {
   bank.subjects.forEach(function(s, si) {
     var pool = [];
 
-    // 1) 적중예상문제에서 수집
-    s.chapters.forEach(function(ch) {
-      ch.questions.forEach(function(q) {
-        pool.push({
-          id: q.id,
-          text: q.text,
-          choices: q.choices,
-          answer: q.answer,
-          quote: q.quote || null,
-          page: q.page || null,
-          subjectName: s.name,
-          chapterName: ch.name,
-          key: ch.id + '_q' + q.id,
-          source: 'practice'
+    // 적중예상문제에서 수집
+    if (source === 'practice' || source === 'all') {
+      s.chapters.forEach(function(ch) {
+        ch.questions.forEach(function(q) {
+          pool.push({ ...q, subjectName: s.name, chapterName: ch.name, key: ch.id + '_q' + q.id });
         });
       });
-    });
+    }
 
-    // 2) 기출복원문제에서 같은 과목 수집
-    if (bank.exams) {
+    // 기출복원문제에서 같은 과목 수집
+    if ((source === 'exams' || source === 'all') && bank.exams) {
       bank.exams.forEach(function(exam) {
         if (exam.sections && exam.sections[si]) {
           var sec = exam.sections[si];
           sec.questions.forEach(function(q) {
-            pool.push({
-              id: q.id,
-              text: q.text,
-              choices: q.choices,
-              answer: q.answer,
-              quote: q.quote || null,
-              page: q.page || null,
-              subjectName: s.name,
-              chapterName: exam.name + ' > ' + sec.name,
-              key: sec.id + '_q' + q.id,
-              source: 'exam'
-            });
+            pool.push({ ...q, subjectName: s.name, chapterName: exam.name + ' > ' + sec.name, key: sec.id + '_q' + q.id });
           });
         }
       });
     }
 
-    // 3) 셔플 후 5문제 선택
     pool = shuffle(pool.slice());
     var count = Math.min(QUESTIONS_PER_SUBJECT, pool.length);
     if (count < QUESTIONS_PER_SUBJECT) {
@@ -2667,15 +2679,8 @@ function buildQuickTestQuestions() {
     allQuestions = allQuestions.concat(pool.slice(0, count));
   });
 
-  if (allQuestions.length === 0) {
-    alert('출제할 문제가 없습니다.');
-    return null;
-  }
-
-  if (warnings.length > 0) {
-    alert('출제 경고:\n' + warnings.join('\n'));
-  }
-
+  if (allQuestions.length === 0) { alert('출제할 문제가 없습니다.'); return null; }
+  if (warnings.length > 0) { alert('출제 경고:\n' + warnings.join('\n')); }
   return allQuestions;
 }
 
