@@ -1095,7 +1095,8 @@ function mergeCloudData(key, cloudData) {
         item = ct > lt ? cloud : local;
       }
       // _clearedAt 이전 항목은 무시
-      if (item && clearedAt && item.updatedAt && item.updatedAt <= clearedAt) return;
+      // _clearedAt 이전 항목 또는 updatedAt이 없는 항목은 무시
+      if (item && clearedAt && (!item.updatedAt || item.updatedAt <= clearedAt)) return;
       if (item) merged[qKey] = item;
     });
     localStorage.setItem(key, JSON.stringify(merged));
@@ -1342,7 +1343,7 @@ function getEdits() {
       if (k === '_clearedAt') return;
       if (raw[k] && !raw[k].deleted) {
         // _clearedAt 이후에 생성된 수정만 포함
-        if (clearedAt && raw[k].updatedAt && raw[k].updatedAt <= clearedAt) return;
+        if (clearedAt && (!raw[k].updatedAt || raw[k].updatedAt <= clearedAt)) return;
         result[k] = raw[k];
       }
     });
