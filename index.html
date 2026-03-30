@@ -1043,13 +1043,12 @@ function loadFromCloud() {
 
   Promise.all(promises)
     .then(function() {
-      // 클라우드에 없는 키만 최초 업로드 (기존 클라우드 데이터 보호)
+      // 병합 완료 후: 로컬에 데이터가 있으면 클라우드에 반영
+      // (병합 결과가 클라우드보다 더 완전할 수 있으므로)
       CLOUD_KEYS.forEach(function(k) {
-        if (!cloudExists[k]) {
-          var raw = localStorage.getItem(k);
-          if (raw && raw !== '{}') {
-            saveToCloud(k);
-          }
+        var raw = localStorage.getItem(k);
+        if (raw && raw !== '{}' && raw !== 'null') {
+          saveToCloud(k);
         }
       });
       updateSyncIndicator('done');
@@ -2312,7 +2311,8 @@ function migrateWrongNotes() {
 
   if (changed) {
     store.setItem('cbt_wrong_notes', JSON.stringify(notes));
-    console.log('wrongNotes 과목명 마이그레이션 완료');
+    saveToCloud('cbt_wrong_notes');
+    console.log('wrongNotes 과목명 마이그레이션 완료 + 클라우드 동기화');
   }
 }
 
