@@ -1081,22 +1081,28 @@ function mergeCloudData(key, cloudData) {
     });
     localStorage.setItem(key, JSON.stringify(merged));
   } else if (key === 'cbt_wrong_notes') {
-    // wrongNotes: merge, keep higher wrongCount or newer lastWrongAt
-    var merged = Object.assign({}, localData);
-    Object.keys(cloudData).forEach(function(qKey) {
-      if (!merged[qKey]) {
-        merged[qKey] = cloudData[qKey];
-      } else {
-        // Keep the one with more data (higher total attempts)
-        var localTotal = (merged[qKey].wrongCount || 0) + (merged[qKey].correctCount || 0);
-        var cloudTotal = (cloudData[qKey].wrongCount || 0) + (cloudData[qKey].correctCount || 0);
-        if (cloudTotal > localTotal) {
-          merged[qKey] = cloudData[qKey];
-        } else if (cloudTotal === localTotal) {
-          var lt = merged[qKey].lastWrongAt || '';
-          var ct = cloudData[qKey].lastWrongAt || '';
-          if (ct > lt) merged[qKey] = cloudData[qKey];
+    // wrongNotes: 양쪽 데이터 합산 병합 (max 기준)
+    var merged = {};
+    var allKeys = new Set(Object.keys(localData).concat(Object.keys(cloudData)));
+    allKeys.forEach(function(qKey) {
+      var local = localData[qKey];
+      var cloud = cloudData[qKey];
+      if (!local) { merged[qKey] = cloud; }
+      else if (!cloud) { merged[qKey] = local; }
+      else {
+        // 양쪽 모두 있으면 각 필드별 max 합산
+        merged[qKey] = Object.assign({}, local);
+        merged[qKey].wrongCount = Math.max(local.wrongCount || 0, cloud.wrongCount || 0);
+        merged[qKey].correctCount = Math.max(local.correctCount || 0, cloud.correctCount || 0);
+        merged[qKey].uncertainCount = Math.max(local.uncertainCount || 0, cloud.uncertainCount || 0);
+        // 최신 날짜 유지
+        var lt = local.lastWrongAt || '';
+        var ct = cloud.lastWrongAt || '';
+        if (ct > lt) {
+          merged[qKey].lastWrongAt = ct;
+          merged[qKey].lastSelectedAnswer = cloud.lastSelectedAnswer;
         }
+        // subjectName/chapterName은 로컬 우선 (마이그레이션 적용분)
       }
     });
     localStorage.setItem(key, JSON.stringify(merged));
