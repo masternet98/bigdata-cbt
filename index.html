@@ -1559,27 +1559,36 @@ function toggleBookmark() {
 }
 
 // ===== 수정 필요 플래그 =====
-function getEditFlags() {
+function getEditFlagsRaw() {
   try { return JSON.parse(store.getItem('cbt_edit_flags')) || {}; }
   catch(e) { return {}; }
 }
 
+function getEditFlags() {
+  var raw = getEditFlagsRaw();
+  var active = {};
+  for (var k in raw) {
+    if (raw[k] && !raw[k].deleted) active[k] = raw[k];
+  }
+  return active;
+}
+
 function isEditFlagged(key) {
-  var flags = getEditFlags();
-  return !!flags[key];
+  var flags = getEditFlagsRaw();
+  return flags[key] && !flags[key].deleted;
 }
 
 function toggleEditFlag() {
   var q = state.questions[state.currentIndex];
   if (!q) return;
-  var flags = getEditFlags();
-  if (flags[q.key]) {
-    delete flags[q.key];
+  var flags = getEditFlagsRaw();
+  if (flags[q.key] && !flags[q.key].deleted) {
+    flags[q.key] = { deleted: true, flaggedAt: new Date().toISOString() };
   } else {
     flags[q.key] = { flaggedAt: new Date().toISOString() };
   }
   store.setItem('cbt_edit_flags', JSON.stringify(flags));
-  saveToCloud('cbt_edit_flags');
+  saveToCloud('cbt_edit_flags', true);
   renderQuestion();
 }
 
