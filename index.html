@@ -1066,18 +1066,30 @@ function mergeCloudData(key, cloudData) {
   var localData = raw ? JSON.parse(raw) : {};
 
   if (key === 'cbt_edits') {
-    // edits: timestamp-based merge (newer wins)
-    var merged = Object.assign({}, localData);
-    Object.keys(cloudData).forEach(function(qKey) {
-      if (!merged[qKey]) {
-        merged[qKey] = cloudData[qKey];
-      } else {
-        var localTime = merged[qKey].updatedAt || '';
-        var cloudTime = cloudData[qKey].updatedAt || '';
-        if (cloudTime > localTime) {
-          merged[qKey] = cloudData[qKey];
-        }
+    // edits: timestamp-based merge (newer wins) + _clearedAt 존중
+    var localCleared = localData._clearedAt || '';
+    var cloudCleared = cloudData._clearedAt || '';
+    var clearedAt = localCleared > cloudCleared ? localCleared : cloudCleared;
+    var merged = {};
+    if (clearedAt) merged._clearedAt = clearedAt;
+
+    // 양쪽 키 합산
+    var allKeys = new Set(Object.keys(localData).concat(Object.keys(cloudData)));
+    allKeys.forEach(function(qKey) {
+      if (qKey === '_clearedAt') return;
+      var local = localData[qKey];
+      var cloud = cloudData[qKey];
+      var item = null;
+      if (!local) item = cloud;
+      else if (!cloud) item = local;
+      else {
+        var lt = (local && local.updatedAt) || '';
+        var ct = (cloud && cloud.updatedAt) || '';
+        item = ct > lt ? cloud : local;
       }
+      // _clearedAt 이전 항목은 무시
+      if (item && clearedAt && item.updatedAt && item.updatedAt <= clearedAt) return;
+      if (item) merged[qKey] = item;
     });
     localStorage.setItem(key, JSON.stringify(merged));
   } else if (key === 'cbt_wrong_notes') {
@@ -1317,9 +1329,15 @@ function updateWrongNotes(questions, answers) {
 function getEdits() {
   try {
     var raw = JSON.parse(store.getItem('cbt_edits')) || {};
+    var clearedAt = raw._clearedAt || '';
     var result = {};
     Object.keys(raw).forEach(function(k) {
-      if (raw[k] && !raw[k].deleted) result[k] = raw[k];
+      if (k === '_clearedAt') return;
+      if (raw[k] && !raw[k].deleted) {
+        // _clearedAt 이후에 생성된 수정만 포함
+        if (clearedAt && raw[k].updatedAt && raw[k].updatedAt <= clearedAt) return;
+        result[k] = raw[k];
+      }
     });
     return result;
   } catch (e) {
@@ -4000,7 +4018,8 @@ function exportMergedQuestionsJS() {
   a.click();
 
   if (confirm('수정 이력을 초기화하시겠습니까?\n(questions.js에 이미 반영되었으므로 초기화 권장)')) {
-    store.setItem('cbt_edits', '{}');
+    var clearData = { _clearedAt: new Date().toISOString() };
+    store.setItem('cbt_edits', JSON.stringify(clearData));
     saveToCloud('cbt_edits', true);
     alert('수정 이력이 초기화되었습니다.');
   }
@@ -4052,7 +4071,8 @@ function clearEditsWithCheck() {
 
   if (!confirm(msg)) return;
 
-  store.setItem('cbt_edits', '{}');
+  var clearData = { _clearedAt: new Date().toISOString() };
+  store.setItem('cbt_edits', JSON.stringify(clearData));
   saveToCloud('cbt_edits', true);
   var disp = document.getElementById('editCountDisplay');
   if (disp) disp.textContent = '현재 수정: 0건';
