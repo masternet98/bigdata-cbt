@@ -1052,6 +1052,13 @@ function loadFromCloud() {
         }
       });
       updateSyncIndicator('done');
+      // 클라우드 동기화 완료 후 UI 갱신
+      try {
+        renderChapterStats();
+        renderEditFlagArea();
+        var disp = document.getElementById('editCountDisplay');
+        if (disp) disp.textContent = '현재 수정: ' + Object.keys(getEdits()).length + '건';
+      } catch(e) {}
     })
     .catch(function(err) {
       console.error('Cloud load error:', err);
