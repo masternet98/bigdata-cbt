@@ -2573,7 +2573,8 @@ function updateSource() {
         var cb = document.createElement('input');
         cb.type = 'checkbox';
         cb.value = exam.id;
-        cb.checked = true;
+        var uncheckedByDefault = ['exam2021_2','exam2021_3','exam2022_4','exam2022_5'];
+        cb.checked = uncheckedByDefault.indexOf(exam.id) < 0;
         cb.className = 'examFilterCb';
         label.appendChild(cb);
         label.appendChild(document.createTextNode(exam.name.replace(' 기출복원문제', '')));
