@@ -3225,6 +3225,7 @@ function copyQuestion() {
   q.choices.forEach(function(c, i) {
     text += markers[i] + ' ' + c + '\n';
   });
+  text += '\n쉽고 간단하게 핵심만, 표사용 금지\n';
   navigator.clipboard.writeText(text).then(function() {
     var btn = document.querySelector('[onclick="copyQuestion()"]');
     if (btn) { btn.textContent = '복사됨'; setTimeout(function() { btn.textContent = '복사'; }, 1500); }
