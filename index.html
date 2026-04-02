@@ -735,6 +735,14 @@ body {
       <option value="exams">기출복원문제 (640문제)</option>
     </select>
   </div>
+  <div id="examFilterGroup" class="form-group" style="display:none;">
+    <label>포함할 회차</label>
+    <div id="examFilterChecks" style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;font-size:0.85rem;"></div>
+    <div style="margin-top:6px;display:flex;gap:8px;">
+      <button type="button" class="btn btn-secondary" onclick="toggleAllExams(true)" style="padding:3px 10px;font-size:0.8rem;">전체선택</button>
+      <button type="button" class="btn btn-secondary" onclick="toggleAllExams(false)" style="padding:3px 10px;font-size:0.8rem;">전체해제</button>
+    </div>
+  </div>
   <div class="form-group">
     <label id="subjectLabel">과목 선택</label>
     <select id="subjectSelect">
@@ -2552,6 +2560,30 @@ function updateSource() {
     });
   }
 
+  // 회차 필터 표시/숨김
+  var examFilterGroup = document.getElementById('examFilterGroup');
+  if (examFilterGroup) {
+    if (source === 'exams' || source === 'all') {
+      examFilterGroup.style.display = 'block';
+      var checksDiv = document.getElementById('examFilterChecks');
+      checksDiv.innerHTML = '';
+      bank.exams.forEach(function(exam) {
+        var label = document.createElement('label');
+        label.style.cssText = 'display:flex;align-items:center;gap:4px;cursor:pointer;';
+        var cb = document.createElement('input');
+        cb.type = 'checkbox';
+        cb.value = exam.id;
+        cb.checked = true;
+        cb.className = 'examFilterCb';
+        label.appendChild(cb);
+        label.appendChild(document.createTextNode(exam.name.replace(' 기출복원문제', '')));
+        checksDiv.appendChild(label);
+      });
+    } else {
+      examFilterGroup.style.display = 'none';
+    }
+  }
+
   updateChapters();
   renderChapterStats();
 }
@@ -2639,7 +2671,9 @@ function getQuestions() {
 
   // 기출복원문제 수집 (source='exams' 또는 'all')
   if (source === 'exams' || source === 'all') {
+    var includedExamIds = getIncludedExamIds();
     bank.exams.forEach(function(exam) {
+      if (includedExamIds !== null && includedExamIds.indexOf(exam.id) < 0) return;
       if (source === 'exams' && subjectId !== 'all' && exam.id !== subjectId) return;
       exam.sections.forEach(function(sec) {
         if (source === 'exams' && chapterId !== 'all' && !sec.id.endsWith(chapterId)) return;
@@ -2665,6 +2699,15 @@ function getQuestions() {
 
 function startQuiz() {
   const mode = document.getElementById('modeSelect').value;
+  // 회차 필터 검증
+  var source = document.getElementById('sourceSelect').value;
+  if (source === 'exams' || source === 'all') {
+    var incIds = getIncludedExamIds();
+    if (incIds !== null && incIds.length === 0 && source === 'exams') {
+      alert('포함할 회차를 1개 이상 선택하세요.');
+      return;
+    }
+  }
   let questions;
 
   if (mode === 'quicktest') {
@@ -2742,8 +2785,11 @@ function buildExamQuestions() {
     var examId = document.getElementById('subjectSelect').value;
     var selectedExam;
     if (examId === 'all') {
-      var idx = Math.floor(Math.random() * bank.exams.length);
-      selectedExam = bank.exams[idx];
+      var includedIds = getIncludedExamIds();
+      var pool = bank.exams.filter(function(e) { return !includedIds || includedIds.indexOf(e.id) >= 0; });
+      if (pool.length === 0) { alert('포함된 회차가 없습니다. 회차를 선택하세요.'); return null; }
+      var idx = Math.floor(Math.random() * pool.length);
+      selectedExam = pool[idx];
     } else {
       selectedExam = bank.exams.find(function(e) { return e.id === examId; });
     }
@@ -2775,7 +2821,9 @@ function buildExamQuestions() {
 
     // 기출복원문제에서 같은 과목 수집 (source='all'일 때)
     if (source === 'all' && bank.exams) {
+      var includedExamIds2 = getIncludedExamIds();
       bank.exams.forEach(function(exam) {
+        if (includedExamIds2 !== null && includedExamIds2.indexOf(exam.id) < 0) return;
         if (exam.sections && exam.sections[si]) {
           var sec = exam.sections[si];
           sec.questions.forEach(function(q) {
@@ -2821,7 +2869,9 @@ function buildQuickTestQuestions() {
 
     // 기출복원문제에서 같은 과목 수집
     if ((source === 'exams' || source === 'all') && bank.exams) {
+      var includedExamIdsQ = getIncludedExamIds();
       bank.exams.forEach(function(exam) {
+        if (includedExamIdsQ !== null && includedExamIdsQ.indexOf(exam.id) < 0) return;
         if (exam.sections && exam.sections[si]) {
           var sec = exam.sections[si];
           sec.questions.forEach(function(q) {
@@ -3195,6 +3245,22 @@ function nextQuestion() {
     renderQuestion();
     saveState();
   }
+}
+
+function getIncludedExamIds() {
+  var checks = document.querySelectorAll('.examFilterCb:checked');
+  if (checks.length === 0) {
+    // No checkboxes = source is practice, include nothing from exams
+    var group = document.getElementById('examFilterGroup');
+    if (group && group.style.display === 'none') return null; // null = no filter
+    return [];
+  }
+  return Array.from(checks).map(function(c) { return c.value; });
+}
+
+function toggleAllExams(checked) {
+  var checks = document.querySelectorAll('.examFilterCb');
+  checks.forEach(function(c) { c.checked = checked; });
 }
 
 function searchExplanation() {
